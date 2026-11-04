@@ -1,0 +1,2 @@
+﻿type,title,label,section,file,text
+定理,拉格朗日中值定理,thm:mvt,样本章：中值定理,notes/chapters/ch01-sample.tex,设 ，在 内可导，则存在 ，使 f'( )= b-a .

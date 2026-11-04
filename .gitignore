@@ -1,0 +1,27 @@
+# LaTeX 中间产物
+build/
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.xdv
+*.synctex.gz
+*.bbl
+*.blg
+
+# 密钥与系统文件
+.keys/
+.dsh-prompt-setting/
+.DS_Store
+Thumbs.db
+
+# inbox 只是暂存，原图另存 scan/
+inbox/*
+!inbox/.gitkeep
+
+# 只有 dist/ 里的 PDF 进版本库
+notes/*.pdf

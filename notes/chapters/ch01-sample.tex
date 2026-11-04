@@ -1,0 +1,15 @@
+\section{样本章：中值定理}
+% 本章仅用于验证编译链路，正式笔记到位后可删
+
+\begin{theorem}[拉格朗日中值定理]\label{thm:mvt}
+设 $f\in C[a,b]$，在 $(a,b)$ 内可导，则存在 $\xi\in(a,b)$，使
+\begin{equation}
+  f'(\xi)=\frac{f(b)-f(a)}{b-a}.
+  \label{eq:mvt}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+令 $g(x)=f(x)-\dfrac{f(b)-f(a)}{b-a}(x-a)$，则 $g(a)=g(b)$。
+由罗尔定理，存在 $\xi\in(a,b)$ 使 $g'(\xi)=0$，即得 \eqref{eq:mvt}。
+\end{proof}
