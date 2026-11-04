@@ -95,7 +95,7 @@ $I_{n+1}\notin M_n(\mathbb{F})$, 故 $M_n(\mathbb{F})$ 不是 $M_{n+1}(\mathbb{F
   \item $\mathbb{F}\subseteq \mathbb{F}[x]$ 为子代数.
   设 $B\subseteq \mathbb{F}[x]$ 为子代数, 且 $1,x\in B$, 那么 $B=\mathbb{F}[x]=\langle x\rangle$
   ($\langle 1,x\rangle=\mathbb{F}[x]$, 但一般默认 $\langle\,\cdot\,\rangle$ 包含 $\mathbb{F}$, 故简记为 $\langle x\rangle$).
-  考虑: $\langle x^2\rangle=\operatorname{span}_F\{1,x^2,x^4,\dots,x^{2n},\dots\}$.
+  考虑: $\langle x^2\rangle=\operatorname{span}_\mathbb{F}\{1,x^2,x^4,\dots,x^{2n},\dots\}$.
 \end{enumerate}
 \end{example}
 
@@ -113,7 +113,7 @@ $\mathbb{F}[x]$ 的每个子代数是否都形如 $B=\langle f_1,\dots,f_n\rangl
 \end{example}
 
 \begin{example}
-$\mathbb{F}\mathbb{Z}_2=\operatorname{span}_F\left\{
+$\mathbb{F}\mathbb{Z}_2=\operatorname{span}_\mathbb{F}\left\{
 \begin{pmatrix}1&0\\0&1\end{pmatrix},
 \begin{pmatrix}0&1\\1&0\end{pmatrix}\right\}\subset M_2(\mathbb{F})$ 为子代数.
 \end{example}
@@ -123,7 +123,7 @@ $\mathbb{F}\mathbb{Z}_2=\operatorname{span}_F\left\{
   g\longmapsto \begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},
 \]
 \[
-  \mathbb{F}\mathbb{Z}_3=\operatorname{span}_F\left\{
+  \mathbb{F}\mathbb{Z}_3=\operatorname{span}_\mathbb{F}\left\{
   \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix},
   \begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},
   \begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix}\right\}.
@@ -313,9 +313,9 @@ $\Rightarrow I=\mathbb{H}$. 于是 $\mathbb{H}$ 的理想只有 $\{0\}$ 和 $\ma
 
 \begin{example}
 回忆 $\mathbb{Z}_3=\langle g \mid g^3=1\rangle=\{1,g,g^2\}$,
-$\mathbb{F}\mathbb{Z}_3=\operatorname{span}_F\{1,g,g^2\}$.
+$\mathbb{F}\mathbb{Z}_3=\operatorname{span}_\mathbb{F}\{1,g,g^2\}$.
 令 $\mathbb{F}=\mathbb{C}$, 仍取 $a=\frac{1}{3}(1+\omega g+\omega^2 g^2)$, 其中 $\omega=\exp\left(\frac{2\pi i}{3}\right)$,
-则 $I=\operatorname{span}_F\{a\}=\operatorname{span}_{\mathbb{C}}\{a\}\subseteq\mathbb{C}\mathbb{Z}_3$ 为子空间 (不是子代数!).
+则 $I=\operatorname{span}_\mathbb{F}\{a\}=\operatorname{span}_{\mathbb{C}}\{a\}\subseteq\mathbb{C}\mathbb{Z}_3$ 为子空间 (不是子代数!).
 下面说明 $I\trianglelefteq\mathbb{C}\mathbb{Z}_3$. 由于 $\mathbb{Z}_3$ 交换, 只需证
 $\mathbb{C}\mathbb{Z}_3\cdot I\subseteq I$; 又只需对基验证.
 \begin{align*}
