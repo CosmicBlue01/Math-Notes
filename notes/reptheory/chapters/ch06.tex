@@ -1,0 +1,185 @@
+\section{特征标}
+
+\subsection{特征标}
+
+\begin{definition}[特征标]\label{def:character}
+设 $G$ 为群, $V$ 为 $\mathbb{F}$-线性空间, $\rho\colon G\to\mathrm{GL}_V$ 为表示.
+称 $G$ 上的 $\mathbb{F}$-值函数
+\[
+  \chi\colon G\to\mathbb{F},\qquad g\longmapsto \operatorname{Tr}(\rho(g))
+\]
+为表示 $\rho$ 的特征标. 为强调所对应的表示, 常将 $\chi$ 记为 $\chi_\rho$ 或 $\chi_V$.
+\end{definition}
+
+\begin{remark}
+$\chi_\rho$ 一般不是群同态: 若它是, 就等于要求
+$\operatorname{Tr}(AB)=\operatorname{Tr}(A)\operatorname{Tr}(B)$, 而这不成立.
+\end{remark}
+
+\begin{lemma}\label{lem:char-class}
+设 $V$ 为 $G$ 的表示, 则 $\forall g,h\in G$, $\chi_V(ghg^{-1})=\chi_V(h)$.
+\end{lemma}
+
+\begin{proof}
+$\chi_V(ghg^{-1})=\operatorname{Tr}\bigl(\rho(ghg^{-1})\bigr)
+=\operatorname{Tr}\bigl(\rho(g)\rho(h)\rho(g)^{-1}\bigr)=\operatorname{Tr}\bigl(\rho(h)\bigr)=\chi_V(h)$.
+\end{proof}
+
+\begin{definition}[类函数]\label{def:class-function}
+称函数 $f\colon G\to\mathbb{F}$ 为 $G$ 上的一个类函数, 若 $f$ 在一个共轭类上取常值,
+即在同一共轭类上取值不变.
+\end{definition}
+
+\begin{remark}
+由 Lemma \ref{lem:char-class}, $\chi_V$ 为类函数.
+\end{remark}
+
+\begin{lemma}\label{lem:char-inverse}
+设 $\mathbb{F}=\mathbb{C}$, $\rho\colon G\to\mathrm{GL}_V$ 为表示, 则
+$\chi_\rho(g^{-1})=\overline{\chi_\rho(g)}$.
+\end{lemma}
+
+\begin{proof}
+设 $g^m=1$, 则 $\rho(g)^m=\rho(g^m)=\mathrm{Id}$. 于是 $\rho(g)$ 可对角化, 其本征值
+$\lambda_1,\dots,\lambda_m$ 满足 $\lambda_i^m=1$, 从而 $\lambda_i^{-1}=\overline{\lambda_i}$. 故
+\[
+  \chi_\rho(g^{-1})=\operatorname{Tr}\bigl(\rho(g)^{-1}\bigr)=\sum_i\lambda_i^{-1}
+  =\sum_i\overline{\lambda_i}=\overline{\operatorname{Tr}(\rho(g))}=\overline{\chi_\rho(g)}.
+\]
+\end{proof}
+
+\subsection{$G$ 上的函数与 $\mathbb{F}G$ 的对偶}
+
+\begin{proposition}\label{prop:dual-is-functions}
+$(\mathbb{F}G)^*$ 就是 $G$ 上所有的函数.
+\end{proposition}
+
+\begin{proof}
+对函数 $f\colon G\to\mathbb{F}$, 把 $f$ 线性延拓为 $\mathbb{F}G\to\mathbb{F}$ 上的线性函数,
+即得 $f\in(\mathbb{F}G)^*$; 反之 $(\mathbb{F}G)^*$ 中元素限制在基 $G$ 上即为 $G$ 上的函数.
+\end{proof}
+
+\begin{lemma}\label{lem:dual-algebra}
+$(\mathbb{F}G)^*$ 是代数.
+\end{lemma}
+
+\begin{proof}
+$(\mathbb{F}G)^*$ 自然是线性空间. 定义其上的乘法: $\forall f_1,f_2\in(\mathbb{F}G)^*$,
+\[
+  (f_1\cdot f_2)(g)=f_1(g)\cdot f_2(g),\qquad g\in G .
+\]
+该乘法有单位元 $\mathbf{1}\colon G\to\mathbb{F}$, $g\mapsto 1$. 结合律与双线性性逐点验证即可.
+\end{proof}
+
+\begin{definition}[$*$-代数]\label{def:star-algebra}
+称代数 $A$ 为 $*$-代数, 若存在线性变换 $*\colon A\to A$ 使得
+\begin{enumerate}
+  \item $*\circ *=\mathrm{Id}$;
+  \item $\forall a,b\in A$, $*(ab)=*(b)\cdot *(a)$.
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+全矩阵代数 $M_n(\mathbb{F})$ 在转置下是 $*$-代数:
+\[
+  M_n(\mathbb{F})\to M_n(\mathbb{F}),\qquad A\longmapsto A^{\mathrm{T}},
+\]
+有 $(A^{\mathrm{T}})^{\mathrm{T}}=A$ 且 $(AB)^{\mathrm{T}}=B^{\mathrm{T}}A^{\mathrm{T}}$.
+\end{example}
+
+\begin{proposition}\label{prop:dual-star}
+$(\mathbb{F}G)^*$ 为 $*$-代数.
+\end{proposition}
+
+\begin{proof}
+定义 $*\colon(\mathbb{F}G)^*\to(\mathbb{F}G)^*$, $f\mapsto *(f)$, 其中
+$\bigl(*(f)\bigr)(g)=f(g^{-1})$. 则
+$\bigl(*(*(f))\bigr)(g)=\bigl(*(f)\bigr)(g^{-1})=f(g)$, 即 $*\circ *=\mathrm{Id}$.
+其次对 $f_1,f_2\in(\mathbb{F}G)^*$,
+\[
+  \bigl(*(f_1f_2)\bigr)(g)=(f_1f_2)(g^{-1})=f_1(g^{-1})f_2(g^{-1})
+  =\bigl(*(f_2)\bigr)(g)\bigl(*(f_1)\bigr)(g),
+\]
+即 $*(f_1f_2)=*(f_2)\cdot *(f_1)$.
+\end{proof}
+
+\begin{remark}
+回忆 $V$ 上的双线性函数 $(\cdot,\cdot)\colon V\times V\to\mathbb{F}$.
+称其是对称的, 若 $(\alpha,\beta)=(\beta,\alpha)$, $\alpha,\beta\in V$;
+称其是非退化的, 若 $\forall\beta\in V$, $(\alpha,\beta)=0$ 蕴含 $\alpha=0$.
+$\mathbb{R}^n$ 上的内积即为对称非退化的双线性函数.
+\end{remark}
+
+\begin{proposition}\label{prop:dual-pairing}
+设 $\operatorname{char}\mathbb{F}\nmid |G|$, 则 $(\mathbb{F}G)^*$ 上存在对称非退化的双线性函数.
+\end{proposition}
+
+\begin{proof}
+定义
+\[
+  (\cdot,\cdot)\colon(\mathbb{F}G)^*\times(\mathbb{F}G)^*\to\mathbb{F},\qquad
+  (f_1,f_2)=\frac{1}{|G|}\sum_{g\in G}f_1(g)f_2(g^{-1}).
+\]
+双线性性由逐点运算直接得到. 对称性:
+\[
+  (f_1,f_2)=\frac{1}{|G|}\sum_{g}f_1(g)f_2(g^{-1})
+  =\frac{1}{|G|}\sum_{g}f_2(g)f_1(g^{-1})=(f_2,f_1).
+\]
+非退化性: 设 $f_1\neq 0$, 取 $g\in G$ 使 $f_1(g)\neq 0$, 并令 $\delta_g\in(\mathbb{F}G)^*$
+为 $\delta_g(g')=1$ ($g'=g$), $\delta_g(g')=0$ ($g'\neq g$). 则
+\[
+  (f_1,\delta_g)=\frac{1}{|G|}\sum_{h}f_1(h)\delta_g(h^{-1})=\frac{1}{|G|}f_1(g)\neq 0 .
+\]
+故 $(\cdot,\cdot)$ 非退化.
+\end{proof}
+
+\subsection{特征标的正交性}
+
+先补充一个记号:
+\[
+  \operatorname{Hom}_G(V_1,V_2)=\bigl\{\varphi\colon V_1\to V_2 \bigm| \varphi \text{ 线性, 且 }
+  \varphi(g\cdot v_1)=g\cdot\varphi(v_1),\ g\in G,\ v_1\in V_1\bigr\}.
+\]
+下面以几个特征标的计算引入.
+
+\begin{example}\label{eg:char-Z3}
+(1) 回忆 $\mathbb{C}\mathbb{Z}_3$. 在 II.\ 例 2 中我们讨论了 $\mathbb{C}\mathbb{Z}_n$, 利用结论可写
+\[
+  \mathbb{C}\mathbb{Z}_3=\bigoplus_{j=1}^{3}\mathbb{C}x_j,\qquad
+  \mathbb{C}x_j=\operatorname{span}_{\mathbb{C}}\{x_j\},
+\]
+其中
+\[
+  x_1=\frac{1}{3}(1+\omega^2g+\omega g^2),\quad
+  x_2=\frac{1}{3}(1+\omega g+\omega^2g^2),\quad
+  x_3=\frac{1}{3}(1+g+g^2).
+\]
+记 $\chi_{\mathbb{C}x_2}\colon\mathbb{Z}_3\to\mathbb{C}$ 为
+$1\mapsto 1$, $g\mapsto\omega^2$, $g^2\mapsto\omega^4=\omega$;
+$\chi_{\mathbb{C}x_1}\colon\mathbb{Z}_3\to\mathbb{C}$ 为
+$1\mapsto 1$, $g\mapsto\omega$, $g^2\mapsto\omega^2$. 则
+\[
+  (\chi_{\mathbb{C}x_2},\chi_{\mathbb{C}x_1})
+  =\frac{1}{3}\sum_{g\in\mathbb{Z}_3}\chi_{\mathbb{C}x_2}(g)\chi_{\mathbb{C}x_1}(g^{-1})
+  =\frac{1}{3}(1+\omega+\omega^2)=0,
+\]
+而注意 $(\chi_{\mathbb{C}x_2},\chi_{\mathbb{C}x_2})=(\chi_{\mathbb{C}x_1},\chi_{\mathbb{C}x_1})=1$.
+
+(2) 回忆 $S_3=\{(),(12),(13),(23),(123),(132)\}$,
+\[
+  \rho_{\mathrm{triv}}\colon S_3\to\mathbb{C}^\times,\ g\mapsto 1;\qquad
+  \rho_{\mathrm{sign}}\colon S_3\to\mathbb{C}^\times,\
+  \text{奇置换}\mapsto -1,\ \text{偶置换}\mapsto 1 .
+\]
+再看 $\rho_{\mathrm{std}}\colon S_3\to\mathrm{GL}_2$: 标准表示作用在
+\[
+  V_1=\Bigl\{\sum_i k_ie_i \Bigm| \sum_i k_i=0\Bigr\}
+\]
+上, 取 $V_1$ 的一组基 $\{e_1-e_2,\ e_1-e_3\}$. 显然 $()\mapsto I_2$, 且
+\[
+  (12)(e_1-e_2,\ e_1-e_3)=(e_2-e_1,\ e_2-e_3)
+  =(e_1-e_2,\ e_1-e_3)\begin{pmatrix}-1&-1\\ 0&1\end{pmatrix},
+\]
+故 $(12)\mapsto\begin{pmatrix}-1&-1\\ 0&1\end{pmatrix}$; 而 $(13),(23)$ 与 $(12)$ 共轭.
+由特征标是类函数, 用 $(12)$ 计算的结果与用 $(13),(23)$ 计算的一致, 此处从略.
+\end{example}

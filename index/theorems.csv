@@ -109,3 +109,17 @@
 定理,Maschke,thm:maschke,群的线性表示,notes/reptheory/chapters/ch05.tex,"设 为群, 为域, 若 , 则 的所有有限维表示都是完全可约的, 即都可以写成不可约表示的直和."
 注,,rem:maschke-sharp,群的线性表示,notes/reptheory/chapters/ch05.tex,"关于 的情形, 已在第 3 章的 例子中讨论过: 此时 可约但不可分解. 因此 是 Maschke 定理成立的充要条件 (必要性由该反例说明, 充分性即定理本身)."
 定义,常表示与模表示,def:ordinary-modular,群的线性表示,notes/reptheory/chapters/ch05.tex,"称群代数 的表示为 的 (ordinary representation), 若 ; 否则称为 (modular representation)."
+定义,特征标,def:character,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为 -线性空间, 为表示. 称 上的 -值函数 [ G , g ( (g)) ] 为表示 的特征标. 为强调所对应的表示, 常将 记为 或 ."
+注,,lem:char-class,特征标,notes/reptheory/chapters/ch06.tex,"一般不是群同态: 若它是, 就等于要求 , 而这不成立."
+引理,,lem:char-class,特征标,notes/reptheory/chapters/ch06.tex,"设 为 的表示, 则 , ."
+定义,类函数,def:class-function,特征标,notes/reptheory/chapters/ch06.tex,"称函数 为 上的一个类函数, 若 在一个共轭类上取常值, 即在同一共轭类上取值不变."
+注,,lem:char-inverse,特征标,notes/reptheory/chapters/ch06.tex,"由 Lemma , 为类函数."
+引理,,lem:char-inverse,特征标,notes/reptheory/chapters/ch06.tex,"设 , 为表示, 则 ."
+命题,,prop:dual-is-functions,特征标,notes/reptheory/chapters/ch06.tex,就是 上所有的函数.
+引理,,lem:dual-algebra,特征标,notes/reptheory/chapters/ch06.tex,是代数.
+定义,$*$-代数,def:star-algebra,特征标,notes/reptheory/chapters/ch06.tex,"称代数 为 -代数, 若存在线性变换 使得 ; , ."
+例,,prop:dual-star,特征标,notes/reptheory/chapters/ch06.tex,"全矩阵代数 在转置下是 -代数: [ M_n( ) M_n( ), A A^ , ] 有 且 ."
+命题,,prop:dual-star,特征标,notes/reptheory/chapters/ch06.tex,为 -代数.
+注,,prop:dual-pairing,特征标,notes/reptheory/chapters/ch06.tex,"回忆 上的双线性函数 . 称其是对称的, 若 , ; 称其是非退化的, 若 , 蕴含 . 上的内积即为对称非退化的双线性函数."
+命题,,prop:dual-pairing,特征标,notes/reptheory/chapters/ch06.tex,"设 , 则 上存在对称非退化的双线性函数."
+例,,eg:char-Z3,特征标,notes/reptheory/chapters/ch06.tex,"(1) 回忆 . 在 II. 例 2 中我们讨论了 , 利用结论可写 [ _3= _ j=1 ^ 3 x_j, x_j= _ x_j , ] 其中 [ x_1= 3 (1+ ^2g+ g^2), x_2= 3 (1+ g+ ^2g^2), "
