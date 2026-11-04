@@ -153,3 +153,19 @@
 引理,,lem:rho-f-linear,特征标,notes/reptheory/chapters/ch06.tex,; 且 .
 引理,,lem:rho-f-intertwine,特征标,notes/reptheory/chapters/ch06.tex,.
 推论,,cor:rho-f-scalar,特征标,notes/reptheory/chapters/ch06.tex,"若 不可约, 则 [ (f)= ) V _V . ]"
+引理,,lem:cf-vanishing,特征标,notes/reptheory/chapters/ch06.tex,"设 . 若对每个不可约表示 都有 , 则 ."
+定理,,thm:num-irreducible,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 则 的不可约表示的个数等于 的共轭类的个数."
+定义,特征标表,def:character-table,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 其全体共轭类为 , 取 的代表元 , 记 . 相应地, 设 的不可约表示为 , 特征标为 . 称下面的表格为 的特征标表: [ c|cccc & h_1 ,(g_1) & h_2 ,(g_2) & & h_s ,(g_s) "
+命题,,prop:quotient-irreducible,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为满同态. 若 为 的不可约表示, 即 , 则 也是不可约表示."
+例,,ex:S3-character-table,特征标,notes/reptheory/chapters/ch06.tex,"的特征标表. 我们已经对 非常熟悉, 这里利用上面的关系重新算一遍. 首先 , 回忆平凡表示与符号表示的定义, , 故 [ 1+1+( V_ )^2=6 V_ =2 . ] 先写出如下的表 (共轭类 , , ): [ c|ccc & 1 ("
+定理,,thm:char-algebraic-integer,特征标,notes/reptheory/chapters/ch06.tex,有限群复表示的特征标都取代数整数值.
+注,,lem:algebraic-eigenvalue,特征标,notes/reptheory/chapters/ch06.tex,"称 为代数数, 若 是某个整系数多项式 的根; 进一步, 若 是首一多项式, 则称 为代数整数 (代数数的定义中也可用有理系数多项式)."
+引理,,lem:algebraic-eigenvalue,特征标,notes/reptheory/chapters/ch06.tex,为代数数当且仅当 是某个有理矩阵的特征值; 为代数整数当且仅当 是某个整矩阵的特征值.
+命题,,prop:algebraic-integers-ring,特征标,notes/reptheory/chapters/ch06.tex,代数整数构成环.
+引理,,lem:rational-alg-int,特征标,notes/reptheory/chapters/ch06.tex,"有理数若为代数整数, 则它必为整数."
+例,,ex:S4-character-table,特征标,notes/reptheory/chapters/ch06.tex,"的特征标表. 求特征标表需要先知道共轭类, 下面回顾对称群 的相关知识. 中每个置换都可以写成不相交循环的乘积. 先看循环 , 对 有下述结论."
+定理,,thm:conjugate-cycles,特征标,notes/reptheory/chapters/ch06.tex,"设 , , 则 ."
+定义,分拆,def:partition,特征标,notes/reptheory/chapters/ch06.tex,"将正整数 表示为若干正整数之和 : 若不考虑 的顺序, 称为无序分拆; 否则称为有序分拆."
+定理,,thm:conjugate-same-cycle-type,特征标,notes/reptheory/chapters/ch06.tex,"设 , 则 属于同一共轭类当且仅当它们的循环结构相同."
+推论,,cor:conj-classes-partitions,特征标,notes/reptheory/chapters/ch06.tex,中共轭类的个数等于 的无序分拆的个数.
+定理,,thm:class-size,特征标,notes/reptheory/chapters/ch06.tex,"[ h_i= _ k=1 ^ m _k! ,k^ _k , ] 其中 中有 个长度为 的循环 (相应地, 的分拆中有 个 )."

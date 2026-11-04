@@ -1,6 +1,6 @@
 # 定理索引
 
-共 154 条，由 `tools/make_index.py` 自动生成。
+共 170 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -158,3 +158,19 @@
 | 152 | 引理 |  | `lem:rho-f-linear` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 153 | 引理 |  | `lem:rho-f-intertwine` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 154 | 推论 |  | `cor:rho-f-scalar` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 155 | 引理 |  | `lem:cf-vanishing` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 156 | 定理 |  | `thm:num-irreducible` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 157 | 定义 | 特征标表 | `def:character-table` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 158 | 命题 |  | `prop:quotient-irreducible` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 159 | 例 |  | `ex:S3-character-table` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 160 | 定理 |  | `thm:char-algebraic-integer` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 161 | 注 |  | `lem:algebraic-eigenvalue` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 162 | 引理 |  | `lem:algebraic-eigenvalue` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 163 | 命题 |  | `prop:algebraic-integers-ring` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 164 | 引理 |  | `lem:rational-alg-int` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 165 | 例 |  | `ex:S4-character-table` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 166 | 定理 |  | `thm:conjugate-cycles` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 167 | 定义 | 分拆 | `def:partition` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 168 | 定理 |  | `thm:conjugate-same-cycle-type` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 169 | 推论 |  | `cor:conj-classes-partitions` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 170 | 定理 |  | `thm:class-size` | 特征标 | notes/reptheory/chapters/ch06.tex |

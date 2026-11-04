@@ -693,3 +693,342 @@ $\rho(f)\in\operatorname{End}_G(V)$.
 \]
 故 $\lambda=(f,\chi_{V^*})/\dim V$.
 \end{proof}
+
+\begin{lemma}\label{lem:cf-vanishing}
+设 $f\in Cf(G)$. 若对每个不可约表示 $V_i$ 都有 $(f,\chi_{V_i})=0$, 则 $f=0$.
+\end{lemma}
+
+\begin{proof}
+考虑正则表示 $\rho_{\mathrm{reg}}$. 由 Maschke 定理,
+$\rho_{\mathrm{reg}}=\bigoplus_{i=1}^{s}\rho_i^{(n_i)}$, 故
+\[
+  \rho_{\mathrm{reg}}(f)=\bigoplus_{i=1}^{s}n_i\rho_i(f)
+  =\bigoplus_{i=1}^{s}n_i\,\frac{(f,\chi_{V_i^*})}{\dim V_i}\cdot\mathrm{Id}_{V_i}=0 .
+\]
+于是对任意 $h\in G$,
+\[
+  0=\rho_{\mathrm{reg}}(f)(h)=\frac{1}{|G|}\sum_{g}f(g)\rho_{\mathrm{reg}}(g)(h)
+  =\frac{1}{|G|}\sum_{g}f(g)\,gh,
+\]
+比较 $h$ 的系数即得 $f(g)=0$ 对一切 $g\in G$ 成立, 故 $f=0$.
+\end{proof}
+
+\begin{theorem}\label{thm:num-irreducible}
+设 $G$ 为有限群, 则 $G$ 的不可约表示的个数等于 $G$ 的共轭类的个数.
+\end{theorem}
+
+\begin{proof}
+只需证明 $\{\chi_1,\dots,\chi_s\}$ 构成 $Cf(G)$ 的一组基, 即每个 $f\in Cf(G)$
+都可由它们线性表出. 断言
+\[
+  f=\sum_{i=1}^{s}(f,\chi_i)\chi_i .
+\]
+事实上, 对每个 $j$,
+\[
+  \Bigl(f-\sum_i (f,\chi_i)\chi_i,\ \chi_j\Bigr)
+  =(f,\chi_j)-\sum_i(f,\chi_i)(\chi_i,\chi_j)=(f,\chi_j)-(f,\chi_j)=0 .
+\]
+由 Lemma \ref{lem:cf-vanishing} 即得 $f-\sum_i(f,\chi_i)\chi_i=0$.
+\end{proof}
+
+\subsection{特征标表}
+
+\begin{definition}[特征标表]\label{def:character-table}
+设 $G$ 为有限群, 其全体共轭类为 $C_1,\dots,C_s$, 取 $C_i$ 的代表元 $g_i$,
+记 $h_i=|C_i|$. 相应地, 设 $G$ 的不可约表示为 $V_1,\dots,V_s$, 特征标为
+$\chi_1,\dots,\chi_s$. 称下面的表格为 $G$ 的特征标表:
+\[
+\begin{array}{c|cccc}
+  & h_1\,(g_1) & h_2\,(g_2) & \cdots & h_s\,(g_s)\\
+  & C_1 & C_2 & \cdots & C_s\\ \hline
+  \chi_1 & \chi_1(g_1) & \chi_1(g_2) & \cdots & \chi_1(g_s)\\
+  \chi_2 & \chi_2(g_1) & \chi_2(g_2) & \cdots & \chi_2(g_s)\\
+  \vdots & \vdots & \vdots & & \vdots\\
+  \chi_s & \chi_s(g_1) & \chi_s(g_2) & \cdots & \chi_s(g_s)
+\end{array}
+\]
+\end{definition}
+
+我们的目标是给出表中每一个值. 回忆第一正交关系 $(\chi_i,\chi_j)=\delta_{ij}$, 即
+\[
+  \frac{1}{|G|}\sum_{g\in G}\chi_i(g)\overline{\chi_j(g)}
+  =\frac{1}{|G|}\sum_{k=1}^{s}h_k\,\chi_i(g_k)\overline{\chi_j(g_k)}=\delta_{ij},
+\]
+故
+\begin{equation}\label{eq:row-orthogonality}
+  \sum_{k=1}^{s}h_k\,\chi_i(g_k)\overline{\chi_j(g_k)}=|G|\,\delta_{ij}.
+\end{equation}
+称 \eqref{eq:row-orthogonality} 为行正交关系.
+
+我们也可以换一种表述方式. 特征标表本身就是一个 $s$ 阶方阵, 记
+$X=(\chi_i(g_j))_{s\times s}$, 则行正交关系可写为
+\[
+  X\,\operatorname{diag}(h_1,\dots,h_s)\,\overline{X}^{\mathrm{T}}=|G|\,I_s .
+\]
+作为一个观察,
+\[
+  \overline{X}^{\mathrm{T}}X\,\operatorname{diag}(h_1,\dots,h_s)=|G|\,I_s
+  \ \Longrightarrow\
+  \sum_{k=1}^{s}\overline{\chi_k(g_i)}\,\chi_k(g_j)=\frac{|G|}{h_i}\,\delta_{ij}.
+\]
+称上式为列正交关系 (第二正交关系).
+
+通常情况下取 $C_1=\{e\}$ 为单位元所在的共轭类, 则第一列为
+$\chi_i(e)=\dim V_i$, 于是可用 $|G|=\sum_i(\dim V_i)^2$ 计算; 相应地也常取
+$\chi_1=\chi_{\mathrm{triv}}$ (这总是存在的), 此时第一行全为 $1$.
+
+此外还有一个方法.
+
+\begin{proposition}\label{prop:quotient-irreducible}
+设 $G_1,G_2$ 为群, $\pi\colon G_1\to G_2$ 为满同态. 若 $V$ 为 $G_2$ 的不可约表示,
+即 $\rho\colon G_2\to\mathrm{GL}_V$, 则 $\rho'\triangleq\rho\circ\pi\colon G_1\to\mathrm{GL}_V$
+也是不可约表示.
+\end{proposition}
+
+\begin{proof}
+反设 $V$ 有真子表示 $V'\subset V$. 则对任意 $v\in V'$ 与 $g_1\in G_1$ 有
+$\rho(\pi(g_1))v\in V'$. 由于 $\pi$ 是满射, 对任意 $g_2\in G_2$ 都存在 $g_1\in G_1$
+使 $\pi(g_1)=g_2$, 故 $\rho(g_2)V'\subseteq V'$, 即 $V'$ 也是 $G_2$ 的子表示且
+$V'\subsetneq V$, 与 $V$ 不可约矛盾.
+\end{proof}
+
+一个自然的特例是典范同态 $\pi\colon G\to G/H$ ($H\trianglelefteq G$). 此时对
+$g\in G$ 有 $\pi(g)=gH$. 设 $\tilde\rho\colon G\to\mathrm{GL}_V$ 的特征标为 $\tilde\chi$,
+$\rho\colon G/H\to\mathrm{GL}_V$ 的特征标为 $\chi$, 则
+\[
+  \tilde\chi(g)=\chi(\pi(g))=\chi(gH).
+\]
+
+总结一下, 我们有如下关系:
+\begin{enumerate}
+  \item 共轭类的个数 $=$ 不可约表示的个数;
+  \item $|G|=\sum_{i=1}^{s}(\dim V_i)^2$;
+  \item 行、列正交关系;
+  \item 商群关系 (Proposition \ref{prop:quotient-irreducible}).
+\end{enumerate}
+以下用几个例子来说明.
+
+\begin{example}\label{ex:S3-character-table}
+$S_3$ 的特征标表. 我们已经对 $S_3$ 非常熟悉, 这里利用上面的关系重新算一遍.
+首先 $|S_3|=6$, 回忆平凡表示与符号表示的定义,
+$\dim V_{\mathrm{triv}}=\dim V_{\mathrm{sign}}=1$, 故
+\[
+  1+1+(\dim V_{\mathrm{std}})^2=6 \ \Longrightarrow\ \dim V_{\mathrm{std}}=2 .
+\]
+先写出如下的表 (共轭类 $C_1=\{e\}$, $C_2=\{(12),(13),(23)\}$,
+$C_3=\{(123),(132)\}$):
+\[
+\begin{array}{c|ccc}
+  & 1\ (e) & 3\ (12) & 2\ (123)\\ \hline
+  \chi_{\mathrm{triv}} & 1 & 1 & 1\\
+  \chi_{\mathrm{sign}} & 1 & a & b\\
+  \chi_{\mathrm{std}}  & 2 & c & d
+\end{array}
+\]
+由行正交关系,
+\[
+  1\cdot1\cdot1+3\cdot1\cdot a+2\cdot1\cdot b=0,\qquad
+  1\cdot1\cdot2+3\cdot1\cdot c+2\cdot1\cdot d=0;
+\]
+由列正交关系,
+\[
+  1\cdot1\cdot1+1\cdot a+2\cdot c=0,\qquad
+  1\cdot1\cdot1+1\cdot b+2\cdot d=0 .
+\]
+由此可解得 $a=\frac13(c+d+2)$, $b=-2a-1$, $c=-\frac13(d+2)$; 再由 $C_1$ 列的
+正交关系
+\[
+  1+a^2+c^2=\frac{6}{3}=2\ \Longrightarrow\ a^2+c^2=1 ,
+\]
+便得到两组解 ($d=1$ 或 $d=-\frac12$). 这里遇到了一个问题: 特征标本应是确定的,
+却解出了两组解, 说明还有些信息没有用到.
+\end{example}
+
+\begin{theorem}\label{thm:char-algebraic-integer}
+有限群复表示的特征标都取代数整数值.
+\end{theorem}
+
+\begin{proof}
+设 $G$ 为有限群, 则对任意 $g\in G$, 设 $g$ 的阶为 $m$, 即 $g^m=e$.
+对表示 $\rho\colon G\to\mathrm{GL}_V$, 记 $A=\rho(g)$, 则 $A^m=I$.
+设 $A$ 的特征值为 $\lambda_1,\dots,\lambda_n$, 则 $\lambda_i^m=1$, 即 $\lambda_i$ 为代数整数.
+于是 $\chi(g)=\operatorname{Tr}(A)=\sum_i\lambda_i$ 仍为代数整数.
+\end{proof}
+
+\begin{remark}
+称 $a\in\mathbb{C}$ 为代数数, 若 $a$ 是某个整系数多项式 $f(x)$ 的根; 进一步,
+若 $f(x)$ 是首一多项式, 则称 $a$ 为代数整数 (代数数的定义中也可用有理系数多项式).
+\end{remark}
+
+\begin{lemma}\label{lem:algebraic-eigenvalue}
+$a$ 为代数数当且仅当 $a$ 是某个有理矩阵的特征值; $a$ 为代数整数当且仅当
+$a$ 是某个整矩阵的特征值.
+\end{lemma}
+
+\begin{proof}
+``$\Leftarrow$'' 显然, 只看 ``$\Rightarrow$''. 设 $a$ 为代数数, 其极小多项式为
+\[
+  m_a(x)=x^d+c_{d-1}x^{d-1}+\cdots+c_0,\qquad c_i\in\mathbb{Q},
+\]
+其友矩阵为
+\[
+  C=\begin{pmatrix}
+    0 & 0 & \cdots & 0 & -c_0\\
+    1 & 0 & \cdots & 0 & -c_1\\
+    0 & 1 & \cdots & 0 & -c_2\\
+    \vdots & & \ddots & & \vdots\\
+    0 & 0 & \cdots & 1 & -c_{d-1}
+  \end{pmatrix}.
+\]
+由线性代数, $C$ 的特征多项式恰为 $m_a(x)$ (至多差一个 $\pm1$), 故 $m_a(x)$ 的根
+就是 $C$ 的特征值, 于是 $a$ 是 $C$ 的特征值. 对代数整数论证类似.
+\end{proof}
+
+\begin{proposition}\label{prop:algebraic-integers-ring}
+代数整数构成环.
+\end{proposition}
+
+\begin{proof}
+$0,1$ 及加法逆元的情形是简单的, 下面证明对加法与乘法封闭.
+取代数整数 $\alpha,\beta$, 设 $\alpha$ 是整矩阵 $A_{m\times m}$ 的特征值,
+$\beta$ 是整矩阵 $B_{n\times n}$ 的特征值. 则
+$A\otimes I_n+I_m\otimes B$ 的特征值恰为 $\alpha+\beta$,
+$A\otimes B$ 的特征值恰为 $\alpha\beta$. 显然 $A\otimes I_n+I_m\otimes B$ 与
+$A\otimes B$ 都是整矩阵, 故 $\alpha+\beta$ 与 $\alpha\beta$ 也是代数整数,
+即代数整数构成环.
+\end{proof}
+
+\begin{lemma}\label{lem:rational-alg-int}
+有理数若为代数整数, 则它必为整数.
+\end{lemma}
+
+\begin{proof}
+设 $p/q$ 为代数整数, 其中 $p,q\in\mathbb{Z}$ 且 $\gcd(p,q)=1$. 则 $p/q$ 是某首一
+整系数多项式的根, 由有理根定理知 $q\mid 1$, 故 $q=\pm1$, 即 $p/q\in\mathbb{Z}$.
+\end{proof}
+
+于是 $a,b,c,d$ 只能取整数值, 结合前面解出的两组解即得
+\[
+  (a,b,c,d)=(-1,\,1,\,0,\,-1).
+\]
+$S_3$ 的特征标表如下:
+\[
+\begin{array}{c|ccc}
+  & 1\ (e) & 3\ (12) & 2\ (123)\\ \hline
+  \chi_{\mathrm{triv}} & 1 & 1 & 1\\
+  \chi_{\mathrm{sign}} & 1 & -1 & 1\\
+  \chi_{\mathrm{std}}  & 2 & 0 & -1
+\end{array}
+\]
+
+\begin{example}\label{ex:S4-character-table}
+$S_4$ 的特征标表. 求特征标表需要先知道共轭类, 下面回顾对称群 $S_n$ 的相关知识.
+
+$S_n$ 中每个置换都可以写成不相交循环的乘积. 先看循环
+$\tau=(i_1i_2\cdots i_k)$, 对 $\sigma\in S_n$ 有下述结论.
+\end{example}
+
+\begin{theorem}\label{thm:conjugate-cycles}
+设 $\sigma,\tau\in S_n$, $\tau=(i_1i_2\cdots i_k)$, 则
+$\sigma\tau\sigma^{-1}=(\sigma(i_1)\sigma(i_2)\cdots\sigma(i_k))$.
+\end{theorem}
+
+也就是说, 共轭的置换在分解出的循环长度上不改变. 任取 $\sigma\in S_n$, 则
+\[
+  \sigma=(i_1\cdots i_{s_1})(j_1\cdots j_{s_2})\cdots(l_1\cdots l_{s_k}),
+  \qquad s_1+\cdots+s_k=n .
+\]
+
+\begin{definition}[分拆]\label{def:partition}
+将正整数 $n$ 表示为若干正整数之和 $n=n_1+\cdots+n_k$: 若不考虑
+$n_1,\dots,n_k$ 的顺序, 称为无序分拆; 否则称为有序分拆.
+\end{definition}
+
+回到 $S_n$. 如果能将共轭类与分拆对应起来, 那么 $S_n$ 的共轭类个数就是一个
+简单的问题.
+
+\begin{theorem}\label{thm:conjugate-same-cycle-type}
+设 $\tau,\tau'\in S_n$, 则 $\tau,\tau'$ 属于同一共轭类当且仅当它们的循环结构相同.
+\end{theorem}
+
+\begin{proof}
+($\Rightarrow$) 先前已证, 不再赘述.
+
+($\Leftarrow$) 设 $\tau,\tau'$ 的循环结构为 $(s_1,\dots,s_k)$. 只看第 $i$ 块, 即
+$\tau$ 中为 $(a_{i1}a_{i2}\cdots a_{is_i})$, $\tau'$ 中为 $(b_{i1}b_{i2}\cdots b_{is_i})$.
+取 $\sigma\in S_n$ 使 $\sigma(a_{ij})=b_{ij}$, 则
+\[
+  \sigma(a_{i1}a_{i2}\cdots a_{is_i})\sigma^{-1}
+  =(\sigma(a_{i1})\sigma(a_{i2})\cdots\sigma(a_{is_i}))
+  =(b_{i1}b_{i2}\cdots b_{is_i}),
+\]
+从而 $\sigma\tau\sigma^{-1}=\tau'$, 即 $\tau,\tau'$ 共轭.
+\end{proof}
+
+\begin{corollary}\label{cor:conj-classes-partitions}
+$S_n$ 中共轭类的个数等于 $n$ 的无序分拆的个数.
+\end{corollary}
+
+因此回到 Example \ref{ex:S4-character-table}. 注意
+\[
+  4=1+1+1+1=2+1+1=3+1=2+2,
+\]
+故 $S_4$ 有 $5$ 个共轭类, 相应地
+\[
+\begin{array}{ll}
+  1+1+1+1 & \text{即单位元 } ();\\
+  2+1+1 & \text{即对换 } (12),(13),\dots \quad\text{(奇置换)};\\
+  3+1 & \text{即 } (123),(124),\dots \quad\text{(偶置换)};\\
+  2+2 & \text{即 } (12)(34),\dots \quad\text{(偶置换)};\\
+  4 & \text{即 } (1234),(1324),\dots \quad\text{(奇置换)}.
+\end{array}
+\]
+因此 $n_1^2+n_2^2+n_3^2+n_4^2+n_5^2=24$, 其中 $n_i=\dim V_i$. 已知 $n_1=n_2=1$.
+
+接下来有两种办法. 其一: $S_n$ 的标准表示的维数为 $n-1$, 故 $n_3=3$, 于是
+\[
+  1+1+9+n_4^2+n_5^2=24\ \Longrightarrow\ n_4^2+n_5^2=13,
+\]
+从而 $n_4=2$, $n_5=3$.
+
+其二: 回忆商群的办法. 回忆 Klein 四元群
+\[
+  K_4=\{(),(12)(34),(13)(24),(14)(23)\},
+\]
+有 $K_4\trianglelefteq S_4$, 且 $S_4/K_4\cong S_3$. 设 $\pi\colon S_4\to S_3$, 则
+\[
+  ()\mapsto(),\quad (12)\mapsto(12),\quad (12)(34)\mapsto(),\quad
+  (13)\mapsto(13),\quad (1234)\mapsto(13).
+\]
+由此即可写出相应的特征标.
+
+剩下一个问题: 怎么求 $h_i=|C_i|$?
+
+\begin{theorem}\label{thm:class-size}
+\[
+  h_i=\frac{n!}{\prod_{k=1}^{m}\lambda_k!\,k^{\lambda_k}},
+\]
+其中 $C_i$ 中有 $\lambda_k$ 个长度为 $k$ 的循环 (相应地, $n$ 的分拆中有
+$\lambda_k$ 个 $k$).
+\end{theorem}
+
+\begin{proof}
+一个序列, 即 $1,2,\dots,n$ 的一个排列, 共有 $n!$ 种; 但我们写的是置换,
+会有重复, 重复来自两处.
+
+(1) 一个 $k$-循环 $(a_1\cdots a_k)=(a_2a_3\cdots a_ka_1)=\cdots$ 共有 $k$ 种写法,
+而长度 $k$ 的循环有 $\lambda_k$ 个, 故需除以 $k^{\lambda_k}$.
+
+(2) $\lambda_k$ 个长度为 $k$ 的循环彼此交换次序不改变置换, 故还需除以
+$\prod_k\lambda_k!$.
+
+综上 $h_i=\dfrac{n!}{\prod_k\lambda_k!\,k^{\lambda_k}}$.
+\end{proof}
+
+回到 $S_4$:
+\[
+  h_1=\frac{4!}{4!\cdot1^4}=1,\quad
+  h_2=\frac{4!}{1!\cdot2!\cdot1^2\cdot2^1}=6,\quad
+  h_3=\frac{4!}{1!\cdot1!\cdot3^1}=8,\quad
+  h_4=\frac{4!}{2!\cdot2^2}=3 .
+\]
