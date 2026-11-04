@@ -1,6 +1,6 @@
 # 定理索引
 
-共 71 条，由 `tools/make_index.py` 自动生成。
+共 110 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -75,3 +75,42 @@
 | 69 | 注 |  | `rem:faithful-algebra-only` | 表示 | notes/reptheory/chapters/ch03.tex |
 | 70 | 例 |  | `thm:algebra-embeds-in-matrix` | 表示 | notes/reptheory/chapters/ch03.tex |
 | 71 | 定理 |  | `thm:algebra-embeds-in-matrix` | 表示 | notes/reptheory/chapters/ch03.tex |
+| 72 | 定义 | 自由 Abel 群 | `def:free-abel` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 73 | 定义 | 模的张量积 | `def:tensor` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 74 | 注 |  | `rem:tensor-basic` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 75 | 注 |  | `rem:tensor-form` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 76 | 例 |  | `ex:tensor-basic` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 77 | 定义 | 平衡双加性映射 | `def:balanced` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 78 | 注 |  | `rem:balanced` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 79 | 定理 | 张量积的泛性质 | `thm:tensor-universal` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 80 | 注 |  | `rem:tensor-universal` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 81 | 注 | 证明的结构 | `rem:tensor-proof-pic` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 82 | 例 |  | `ex:tensor-module-structure` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 83 | 注 |  | `rem:tensor-no-module` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 84 | 命题 |  | `prop:tensor-vector-space` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 85 | 定义 | 双线性映射 | `def:bilinear` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 86 | 注 |  | `rem:bilinear` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 87 | 定理 | 线性空间张量积的泛性质 | `thm:tensor-universal-k` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 88 | 引理 |  | `lem:tensor-with-R` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 89 | 推论 |  | `cor:tensor-KV` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 90 | 引理 |  | `lem:tensor-direct-sum` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 91 | 注 |  | `rem:tensor-plus` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 92 | 引理 | 结合律 | `lem:tensor-assoc` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 93 | 命题 |  | `prop:tensor-dim` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 94 | 定义 | 一般线性群 | `def:glv` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 95 | 定义 | 群的线性表示 | `def:group-rep` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 96 | 注 |  | `rem:gl-matrix` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 97 | 命题 |  | `prop:rep-alg` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 98 | 注 |  | `rem:subrep` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 99 | 例 |  | `ex:group-reps` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 100 | 命题 |  | `prop:can-faithful` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 101 | 注 |  | `rem:faithful-not-equiv` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 102 | 命题 |  | `prop:std-irreducible` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 103 | 例 |  | `ex:rep-constructions` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 104 | 命题 |  | `prop:hom-tensor` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 105 | 注 |  | `rem:rep-trace` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 106 | 引理 |  | `lem:complement` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 107 | 引理 |  | `lem:rep-complement` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 108 | 定理 | Maschke | `thm:maschke` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 109 | 注 |  | `rem:maschke-sharp` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |
+| 110 | 定义 | 常表示与模表示 | `def:ordinary-modular` | 群的线性表示 | notes/reptheory/chapters/ch05.tex |

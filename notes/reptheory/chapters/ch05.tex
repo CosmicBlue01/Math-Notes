@@ -1,0 +1,355 @@
+\section{群的线性表示}
+
+\subsection{群表示}
+
+\begin{definition}[一般线性群]\label{def:glv}
+设 $V$ 为线性空间. $V\to V$ 的全体可逆线性变换构成一个群, 称为 $V$ 的\textbf{一般线性群},
+记作 $\mathrm{GL}_V$.
+\end{definition}
+
+\begin{definition}[群的线性表示]\label{def:group-rep}
+设 $G$ 为群, $V$ 为线性空间, 称群同态 $\rho\colon G\to\mathrm{GL}_V$ 为 $G$ 的一个\textbf{线性表示}.
+有时也称 $V$ 是 $G$ 的一个线性表示.
+\end{definition}
+
+\begin{remark}\label{rem:gl-matrix}
+给线性空间 $V$ 的一组基 $\alpha_1,\dots,\alpha_n$, 对 $\sigma\in\mathrm{GL}_V$,
+\begin{equation*}
+  \sigma(\alpha_1,\dots,\alpha_n)=\bigl(\sigma(\alpha_1),\dots,\sigma(\alpha_n)\bigr)
+  =(\alpha_{i_1},\dots,\alpha_{i_n})=(\alpha_1,\dots,\alpha_n)A_\sigma ,
+\end{equation*}
+其中 $i_1,\dots,i_n$ 为 $1,\dots,n$ 的一个排列, $A_\sigma$ 为 $n$ 阶可逆矩阵.
+全体 $n$ 阶可逆矩阵构成群 $\mathrm{GL}_n$. 事实上 $\mathrm{GL}_n\cong\mathrm{GL}_V$, 后续不加区分.
+\end{remark}
+
+\begin{proposition}\label{prop:rep-alg}
+$V$ 为 $G$ 的群表示当且仅当 $V$ 为 $KG$ 的代数表示.
+\end{proposition}
+
+\begin{proof}
+(1) 设 $\rho\colon G\to\mathrm{GL}_V$ 为同态, 要找 $\rho'\colon KG\to\operatorname{End}(V)$.
+定义
+\begin{equation*}
+  \rho'\colon\sum_{g\in G}a_g\,g\longmapsto\sum_{g\in G}a_g\,\rho(g),
+\end{equation*}
+它是线性映射; 只需说明 $\rho'$ 为代数同态. 由 $\rho(e)=\operatorname{Id}$ 有 $\rho'(e)=\operatorname{Id}$, 且
+\begin{align*}
+  \rho'\Bigl(\sum_{g}a_g g\cdot\sum_{h}b_h h\Bigr)
+  &=\rho'\Bigl(\sum_{g,h}a_gb_h\,gh\Bigr)=\sum_{g,h}a_gb_h\,\rho(gh)\\
+  &=\sum_{g,h}a_gb_h\,\rho(g)\rho(h)
+  =\rho'\Bigl(\sum_{g}a_g g\Bigr)\rho'\Bigl(\sum_{h}b_h h\Bigr).
+\end{align*}
+故 $\rho'$ 为代数同态.
+
+(2) 设 $\rho'\colon KG\to\operatorname{End}(V)$ 为代数同态, 定义 $\rho=\rho'|_G\colon G\to\operatorname{End}(V)$.
+由 $\rho'(e)=\operatorname{Id}$ 及 $\forall g\in G$ 存在 $g^{-1}$ 使 $gg^{-1}=e$, 得
+\begin{equation*}
+  \operatorname{Id}=\rho'(e)=\rho'(gg^{-1})=\rho'(g)\rho'(g^{-1})=\rho(g)\rho(g^{-1}),
+\end{equation*}
+故 $\rho(g)$ 可逆, 即 $\rho(g)\in\mathrm{GL}_V$, 从而 $\rho\colon G\to\mathrm{GL}_V$. 于是 $V$ 也是 $G$ 的群表示.
+\end{proof}
+
+\begin{remark}\label{rem:subrep}
+可以类似定义子表示、交、直和、商表示、同态, 此处不再赘述.
+\end{remark}
+
+\begin{example}\label{ex:group-reps}
+(i) \textbf{平凡表示}: $\rho_{\mathrm{triv}}\colon G\to\mathrm{GL}_1=F^\times=F\setminus\{0\}$,
+$\forall g\in G$, $\rho_{\mathrm{triv}}(g)=1$.
+
+(ii) \textbf{符号表示} (sign representation): $\rho_{\mathrm{sign}}\colon S_n\to\mathrm{GL}_1=F^\times$,
+将偶排列映到 $1$, 将奇排列映到 $-1$.
+
+(iii) \textbf{典范表示} (canonical representation): 设 $V$ 为线性空间, 有基 $\alpha_1,\dots,\alpha_n$.
+对 $\sigma\in S_n$,
+\begin{equation*}
+  \sigma(\alpha_1,\dots,\alpha_n):=\bigl(\sigma(\alpha_1),\dots,\sigma(\alpha_n)\bigr)
+  =(\alpha_{\sigma(1)},\dots,\alpha_{\sigma(n)})=(\alpha_1,\dots,\alpha_n)A_\sigma ,
+\end{equation*}
+则 $\sigma\mapsto A_\sigma$ 给出典范表示 $\rho_{\mathrm{can}}$.
+
+(iv) \textbf{标准表示} (standard representation): 先取典范表示 $\rho_{\mathrm{can}}$, 取 $V$ 的子空间
+\begin{equation*}
+  V_1=\Bigl\{\textstyle\sum_i k_i\alpha_i \Bigm| \sum_i k_i=0\Bigr\}.
+\end{equation*}
+对 $g\in S_n$ 有 $g\cdot\sum_i k_i\alpha_i=\sum_i k_i\alpha_{g(i)}\in V_1$, 故 $V_1$ 为不变子空间.
+于是标准表示 $\rho_{\mathrm{std}}=\rho_{\mathrm{can}}|_{V_1}$.
+\end{example}
+
+\begin{proposition}\label{prop:can-faithful}
+$\rho_{\mathrm{can}}$ 是忠实表示, 即它是单射.
+\end{proposition}
+
+\begin{proof}
+只需证明 $\operatorname{Ker}(\rho_{\mathrm{can}})=\{e\}$.
+取 $\sigma\in\operatorname{Ker}(\rho_{\mathrm{can}})$, 则 $\rho_{\mathrm{can}}(\sigma)=\operatorname{Id}$, 即对每个 $i$ 有
+\begin{equation*}
+  \rho_{\mathrm{can}}(\sigma)\alpha_i=\alpha_i=\alpha_{\sigma(i)},
+\end{equation*}
+故 $\sigma(i)=i$ 对一切 $i$ 成立, 从而 $\sigma=e$. 于是 $\rho_{\mathrm{can}}$ 为单射, 即忠实表示.
+\end{proof}
+
+\begin{remark}\label{rem:faithful-not-equiv}
+忠实的群表示与忠实的相应代数表示并不等价.
+\end{remark}
+
+\begin{proposition}\label{prop:std-irreducible}
+设域 $F$, $\operatorname{char}F\neq 2$, $V$ 为 $F$-线性空间, 则 $S_n$ 的标准表示 $V_1$ 是不可约表示.
+\end{proposition}
+
+\begin{proof}
+沿用上面的记号, 设 $W\subsetneq V_1$ 为非零子表示.
+任取 $0\neq w\in W$, 写 $w=\sum_i k_i\alpha_i$, 且 $\sum_i k_i=0$.
+若所有 $k_i$ 相等, 则 $nk_i=0$, 在 $\operatorname{char}F\nmid n$ 时得 $k_i=0$, 与 $w\neq0$ 矛盾;
+故存在 $j\neq l$ 使 $k_j\neq k_l$.
+考虑对换 $\tau=(j\,l)\in S_n$. 由于 $W$ 为不变子空间, $\tau\cdot w\in W$, 故
+\begin{equation*}
+  w-\tau\cdot w=(k_j-k_l)(\alpha_j-\alpha_l)\in W
+  \quad\Longrightarrow\quad \alpha_j-\alpha_l\in W .
+\end{equation*}
+对任意一对指标 $(j',l')$, 总能找到 $\sigma\in S_n$ 使 $\sigma(\alpha_j)=\alpha_{j'}$, $\sigma(\alpha_l)=\alpha_{l'}$, 于是
+$\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
+\begin{equation*}
+  \alpha_1-\alpha_n,\ \dots,\ \alpha_{n-1}-\alpha_n\in W .
+\end{equation*}
+而 $\{\alpha_1-\alpha_n,\dots,\alpha_{n-1}-\alpha_n\}$ 构成 $V_1$ 的一组基, 故 $W=V_1$, 矛盾.
+因此 $V_1$ 不可约.
+\end{proof}
+
+\subsection{群表示的常用构造法}
+
+根据群表示的定义, 群同态 $\rho$ 将 $g\in G$ 映到一个可逆矩阵 $\rho(g)$.
+当更换 $V$ 的基时, $g$ 对应的矩阵变为某个相似矩阵 $T^{-1}\rho(g)T$.
+在这个过程中, 迹是一个不变量, 是和表示 $\rho$ 相关的量, 不依赖于基的选取.
+
+\begin{example}\label{ex:rep-constructions}
+(i) \textbf{直和表示}. 设 $G$ 为群, $V_1,V_2$ 为 $K$-线性空间, 取 $G$ 的两个线性表示
+\begin{equation*}
+  \rho_1\colon G\to\mathrm{GL}_{V_1}\cong\mathrm{GL}_m,\qquad
+  \rho_2\colon G\to\mathrm{GL}_{V_2}\cong\mathrm{GL}_n .
+\end{equation*}
+定义直和表示
+\begin{equation*}
+  \rho_1\oplus\rho_2\colon G\longrightarrow\mathrm{GL}_{V_1\oplus V_2},\qquad
+  g\cdot(v_1+v_2)=g\cdot v_1+g\cdot v_2 .
+\end{equation*}
+设 $g(\alpha_1,\dots,\alpha_m)=(\alpha_1,\dots,\alpha_m)A$, $g(\beta_1,\dots,\beta_n)=(\beta_1,\dots,\beta_n)B$,
+其中 $\alpha_i$ 为 $V_1$ 的基, $\beta_j$ 为 $V_2$ 的基, 则
+\begin{equation*}
+  g(\alpha_1,\dots,\alpha_m,\beta_1,\dots,\beta_n)
+  =(\alpha_1,\dots,\alpha_m,\beta_1,\dots,\beta_n)\begin{pmatrix}A&0\\0&B\end{pmatrix}.
+\end{equation*}
+于是
+\begin{equation*}
+  \operatorname{Tr}\bigl((\rho_1\oplus\rho_2)(g)\bigr)=\operatorname{Tr}(A)+\operatorname{Tr}(B)
+  =\operatorname{Tr}(\rho_1(g))+\operatorname{Tr}(\rho_2(g)),
+\end{equation*}
+即 $\operatorname{Tr}_{\rho_1\oplus\rho_2}=\operatorname{Tr}_{\rho_1}+\operatorname{Tr}_{\rho_2}\colon G\to K$.
+
+(ii) \textbf{张量表示}. 取 $G$ 的两个线性表示
+\begin{equation*}
+  \rho_1\colon G\to\mathrm{GL}_{V_1}\cong\mathrm{GL}_m,\ \text{基 } \alpha_1,\dots,\alpha_m,\ g\mapsto A,
+  \qquad
+  \rho_2\colon G\to\mathrm{GL}_{V_2}\cong\mathrm{GL}_n,\ \text{基 } \beta_1,\dots,\beta_n,\ g\mapsto B .
+\end{equation*}
+由群作用
+\begin{equation*}
+  G\times(V_1\otimes_K V_2)\longrightarrow V_1\otimes_K V_2,\qquad
+  g\cdot(v_1\otimes v_2)\longmapsto(g\cdot v_1)\otimes(g\cdot v_2),
+\end{equation*}
+得到张量表示 $G\to\mathrm{GL}_{V_1\otimes V_2}$ (作用的良定义此处略).
+由于 $\{\alpha_i\otimes\beta_j\}$ 为 $V_1\otimes V_2$ 的基, 有
+\begin{align*}
+  g(\alpha_i\otimes\beta_j)&=(g\cdot\alpha_i)\otimes(g\cdot\beta_j)\\
+  &=\Bigl(\sum_s a_{si}\alpha_s\Bigr)\otimes\Bigl(\sum_t b_{tj}\beta_t\Bigr)
+  =\sum_{s,t}a_{si}b_{tj}\,\alpha_s\otimes\beta_t .
+\end{align*}
+排成矩阵即为 Kronecker 积 $C=A\otimes B=(a_{ij}B)_{m\times m}$, 其中 $A=(a_{ij})_{m\times m}$,
+$B=(b_{ij})_{n\times n}$. 于是
+\begin{equation*}
+  \operatorname{Tr}(C)=\operatorname{Tr}(A\otimes B)=\sum_i a_{ii}\operatorname{Tr}(B)
+  =\operatorname{Tr}(A)\cdot\operatorname{Tr}(B),
+\end{equation*}
+即 $\operatorname{Tr}_{\rho_1\otimes\rho_2}=\operatorname{Tr}_{\rho_1}\operatorname{Tr}_{\rho_2}\colon G\to K$.
+
+(iii) \textbf{对偶表示}. 给群表示 $\rho\colon G\to\mathrm{GL}_V$, 有对偶空间 $V^*=\operatorname{Hom}_K(V,K)$.
+设 $V$ 的基为 $\alpha_1,\dots,\alpha_n$, 则 $V^*$ 的基 $f_1,\dots,f_n$ 满足 $f_i(\alpha_j)=\delta_{ij}$.
+由群作用
+\begin{equation*}
+  G\times V^*\longrightarrow V^*,\qquad (g,f)\longmapsto g\cdot f,\qquad
+  (g\cdot f)(v):=f(g^{-1}\cdot v),
+\end{equation*}
+给出对偶表示 $\rho^*\colon G\to\mathrm{GL}_{V^*}$.
+这需要验证良定义, 即 $g_1\cdot(g_2\cdot f)=(g_1g_2)\cdot f$:
+\begin{align*}
+  \bigl((g_1g_2)\cdot f\bigr)(v)&=f\bigl((g_1g_2)^{-1}\cdot v\bigr)=f\bigl(g_2^{-1}g_1^{-1}\cdot v\bigr)\\
+  &=(g_2\cdot f)(g_1^{-1}\cdot v)=\bigl(g_1\cdot(g_2\cdot f)\bigr)(v).
+\end{align*}
+设 $g(\alpha_1,\dots,\alpha_n)=(\alpha_1,\dots,\alpha_n)A$, $g^*(f_1,\dots,f_n)=(f_1,\dots,f_n)B$,
+其中 $B=A^{-\mathrm{T}}$. 令 $B=(b_{ij})_{n\times n}$, 并设 $g\cdot f_i=\sum_s c_{si}f_s$, 则对每个 $j$,
+\begin{equation*}
+  c_{ji}=(g\cdot f_i)(\alpha_j)=f_i(g^{-1}\alpha_j)=f_i\Bigl(\sum_s b_{sj}\alpha_s\Bigr)=b_{ji},
+\end{equation*}
+故 $g(f_1,\dots,f_n)=(f_1,\dots,f_n)B^{\mathrm{T}}=(f_1,\dots,f_n)A^{-\mathrm{T}}$, 从而
+\begin{equation*}
+  \operatorname{Tr}\bigl(\rho^*(g)\bigr)=\operatorname{Tr}\bigl(\rho(g^{-1})\bigr),
+  \qquad\text{即}\qquad \operatorname{Tr}_{\rho^*}(g)=\operatorname{Tr}_\rho(g^{-1}).
+\end{equation*}
+
+(iv) \textbf{Hom 表示}. 设 $G$ 有线性表示 $V_1,V_2$, 由群作用
+\begin{equation*}
+  G\times\operatorname{Hom}_K(V_1,V_2)\longrightarrow\operatorname{Hom}_K(V_1,V_2),\qquad (g,f)\longmapsto g\cdot f,
+\end{equation*}
+\begin{equation*}
+  (g\cdot f)(v_1)=g\cdot\bigl(f(g^{-1}\cdot v_1)\bigr),\qquad v_1\in V_1,\ f\in\operatorname{Hom}_K(V_1,V_2).
+\end{equation*}
+同样要验证 $\bigl((g_1g_2)\cdot f\bigr)(v_1)=\bigl(g_1\cdot(g_2\cdot f)\bigr)(v_1)$.
+\end{example}
+
+\begin{proposition}\label{prop:hom-tensor}
+作为表示有同构 $\operatorname{Hom}_K(V_1,V_2)\cong V_1^*\otimes_K V_2$.
+\end{proposition}
+
+\begin{proof}
+定义映射
+\begin{equation*}
+  \psi\colon V_1^*\otimes_K V_2\longrightarrow\operatorname{Hom}_K(V_1,V_2),\qquad f\otimes v_2\longmapsto\psi(f\otimes v_2),
+\end{equation*}
+其中 $\psi(f\otimes v_2)(v_1):=f(v_1)\cdot v_2$, $f\in V_1^*$, $v_1\in V_1$, $v_2\in V_2$.
+只需证明 $\psi$ 是表示同构.
+
+回忆熟知结论: 两个维数相等的线性空间之间若有单的线性映射, 则该映射是同构.
+不难发现 $\operatorname{Hom}_K(V_1,V_2)$ 与 $V_1^*\otimes_K V_2$ 都是 $\dim V_1\cdot\dim V_2$ 维的,
+故只需说明 $\psi$ 是单的, 即 $\operatorname{Ker}(\psi)=\{0\}$.
+
+设 $\alpha_1,\dots,\alpha_m$ 为 $V_1$ 的基, $\beta_1,\dots,\beta_n$ 为 $V_2$ 的基,
+$f_1,\dots,f_m$ 为 $V_1^*$ 的基. 设 $\operatorname{Ker}(\psi)$ 中元素为
+\begin{equation*}
+  t=\sum_{j,k}a_{jk}\,f_j\otimes\beta_k .
+\end{equation*}
+由 $\psi(t)=0$ 知对一切 $v_1\in V_1$ 有 $\psi(t)(v_1)=0$, 即
+\begin{equation*}
+  \sum_{j,k}a_{jk}\,f_j(v_1)\beta_k=0 .
+\end{equation*}
+取 $v_1=\alpha_i$, 得
+\begin{equation*}
+  \sum_{j,k}a_{jk}\,f_j(\alpha_i)\beta_k=\sum_{j,k}a_{jk}\delta_{ij}\beta_k=\sum_k a_{ik}\beta_k=0 .
+\end{equation*}
+由 $\beta_k$ 线性无关得 $a_{ik}=0$ 对一切 $i,k$ 成立, 故 $t=0$, 即 $\operatorname{Ker}(\psi)=\{0\}$.
+因此 $\operatorname{Hom}_K(V_1,V_2)\cong V_1^*\otimes_K V_2$.
+\end{proof}
+
+\begin{remark}\label{rem:rep-trace}
+(i) 上面的讨论中同时出现了 $f\in\operatorname{Hom}_K(V_1,V_2)$ 与 $f\in V_1^*$, 容易混淆, 因为 $G$ 作用在它们上时并不相同.
+
+(ii) 取 $V_1=V_2=V$, 则 $V^*\otimes_K V$ 中的元素 $\sum_{i=1}^{n}f_i\otimes\alpha_i$ 不依赖于基的选取
+(其中 $n=\dim V$). 事实上由 $V^*\otimes_K V\cong\operatorname{Hom}_K(V,V)=\operatorname{End}(V)$ 有同构
+$\psi\colon V^*\otimes_K V\to\operatorname{End}(V)$, 而任取 $v=\sum_i a_i\alpha_i$ 有
+$f_i(v)=a_i$, 故
+\begin{equation*}
+  \psi\Bigl(\sum_i f_i\otimes\alpha_i\Bigr)(v)=\sum_i f_i(v)\alpha_i=\sum_i a_i\alpha_i=v,
+\end{equation*}
+即 $\psi\bigl(\sum_i f_i\otimes\alpha_i\bigr)=\operatorname{Id}_V$.
+\end{remark}
+
+\subsection{Maschke 定理}
+
+在给出 Maschke 定理之前, 需要两个引理.
+
+\begin{lemma}\label{lem:complement}
+设线性空间 $V$, 子空间 $V_1\subset V$, 则
+\begin{equation*}
+  V=V_1\oplus V_2\iff \text{存在线性映射 } p\colon V\to V_1\ \text{使}\ p|_{V_1}=\operatorname{Id}_{V_1}.
+\end{equation*}
+\end{lemma}
+
+\begin{proof}
+(1) 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$: 由直和, 每个 $v\in V$ 可唯一写为 $v=v_1+v_2$,
+其中 $v_1\in V_1$, $v_2\in V_2$. 令 $p(v)=v_1$ 即可.
+
+(2) 设已有线性映射 $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
+记 $\operatorname{Ker}(p)=\{v\in V\mid p(v)=0\}$, 证明 $V=V_1\oplus\operatorname{Ker}(p)$.
+对任意 $v\in V$ 有 $p(v)\in V_1$, 故 $p\bigl(p(v)\bigr)=p(v)$.
+考虑 $v-p(v)$, 则
+\begin{equation*}
+  p\bigl(v-p(v)\bigr)=p(v)-p\bigl(p(v)\bigr)=0,
+\end{equation*}
+故 $v-p(v)\in\operatorname{Ker}(p)$, 从而 $V=V_1+\operatorname{Ker}(p)$.
+又若 $u\in V_1\cap\operatorname{Ker}(p)$, 则 $p(u)=0$ 而 $p(u)=u$, 故 $u=0$. 于是 $V=V_1\oplus\operatorname{Ker}(p)$.
+\end{proof}
+
+\begin{lemma}\label{lem:rep-complement}
+设表示 $V$, 子表示 $V_1\subset V$, 则
+\begin{equation*}
+  V=V_1\oplus V_2\iff \text{存在表示同态 } p\colon V\to V_1\ \text{使}\ p|_{V_1}=\operatorname{Id}_{V_1}.
+\end{equation*}
+\end{lemma}
+
+\begin{proof}
+(1) 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$, $v=v_1+v_2\mapsto v_1$
+(其中 $v_1\in V_1$, $v_2\in V_2$). 下面验证 $p$ 是表示同态.
+考虑表示 $\rho\colon G\to\mathrm{GL}_V$, 以及 $\rho|_{V_1}\colon G\to\mathrm{GL}_{V_1}$, 则
+\begin{align*}
+  p\bigl(\rho(g)(v_1+v_2)\bigr)
+  &=p\bigl(\rho(g)v_1+\rho(g)v_2\bigr)=\rho(g)v_1\\
+  &=\rho|_{V_1}(g)v_1=\rho|_{V_1}(g)\,p(v_1+v_2).
+\end{align*}
+(2) 设 $p$ 是表示同态, 仍考虑 $\operatorname{Ker}(p)$. 由同态基本定理, $\operatorname{Ker}(p)$ 是子表示,
+于是同 Lemma \ref{lem:complement} 的论证即得 $V=V_1\oplus\operatorname{Ker}(p)$.
+\end{proof}
+
+\begin{theorem}[Maschke]\label{thm:maschke}
+设 $G$ 为群, $K$ 为域, 若 $\operatorname{char}K\nmid|G|$, 则 $G$ 的所有有限维表示都是完全可约的,
+即都可以写成不可约表示的直和.
+\end{theorem}
+
+\begin{proof}
+设 $V$ 为 $G$ 的有限维表示, $V_1\subset V$ 为子表示. 先仅把 $V,V_1$ 视为线性空间,
+则存在补空间 $U$ 使 $V=V_1\oplus U$. 由 Lemma \ref{lem:complement}, 存在线性映射
+$p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
+
+下面构造新的映射
+\begin{equation*}
+  \bar p\colon V\longrightarrow V_1,\qquad
+  v\longmapsto\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}\cdot v).
+\end{equation*}
+这里由于 $\operatorname{char}K\nmid|G|$, $\frac{1}{|G|}$ 有意义, 上面的定义才是合理的.
+
+(1) 先说明 $\bar p$ 是线性映射:
+\begin{align*}
+  \bar p(v+v')&=\frac{1}{|G|}\sum_{g\in G}g\cdot p\bigl(g^{-1}(v+v')\bigr)
+  =\frac{1}{|G|}\sum_{g\in G}g\cdot\bigl(p(g^{-1}v)+p(g^{-1}v')\bigr)\\
+  &=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)+\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v')
+  =\bar p(v)+\bar p(v'),\\
+  \bar p(kv)&=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}kv)
+  =k\cdot\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)=k\,\bar p(v).
+\end{align*}
+
+(2) 证明 $\bar p$ 确为表示同态, 即证 $\forall h\in G$ 有 $\bar p(h\cdot v)=h\cdot\bar p(v)$.
+事实上, 令 $g'=h^{-1}g$, 则
+\begin{align*}
+  \bar p(h\cdot v)&=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}hv)
+  =\frac{1}{|G|}\sum_{g'\in G}(hg')\cdot p(g'^{-1}v)\\
+  &=h\cdot\frac{1}{|G|}\sum_{g'\in G}g'\cdot p(g'^{-1}v)=h\cdot\bar p(v).
+\end{align*}
+
+(3) 考察 $\bar p$ 在 $V_1$ 上的限制. 对 $v_1\in V_1$, 由于 $V_1$ 是子表示, $g^{-1}v_1\in V_1$, 故
+\begin{equation*}
+  \bar p(v_1)=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v_1)
+  =\frac{1}{|G|}\sum_{g\in G}g\cdot g^{-1}v_1
+  =\frac{1}{|G|}\sum_{g\in G}v_1=\frac{1}{|G|}\,|G|\,v_1=v_1,
+\end{equation*}
+即 $\bar p|_{V_1}=\operatorname{Id}_{V_1}$. 于是由 Lemma \ref{lem:rep-complement}, 存在子表示 $V_2$ 使 $V=V_1\oplus V_2$.
+
+这说明任一有限维表示都可写成两个子表示的直和; 如此下去, 由于维数有限, 最终可分解为不可约表示的直和.
+\end{proof}
+
+\begin{remark}\label{rem:maschke-sharp}
+关于 $\operatorname{char}K\mid|G|$ 的情形, 已在第 3 章的 $\mathbb{Z}_2$ 例子中讨论过:
+此时 $K\mathbb{Z}_2$ 可约但不可分解. 因此 $\operatorname{char}K\nmid|G|$ 是 Maschke 定理成立的关键条件.
+\end{remark}
+
+\begin{definition}[常表示与模表示]\label{def:ordinary-modular}
+称群代数 $KG$ 的表示为 $G$ 的\textbf{常表示} (ordinary representation), 若 $\operatorname{char}K\nmid|G|$;
+否则称为\textbf{模表示} (modular representation).
+\end{definition}
