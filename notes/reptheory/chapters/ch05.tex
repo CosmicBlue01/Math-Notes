@@ -173,8 +173,22 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
   &=\Bigl(\sum_s a_{si}\alpha_s\Bigr)\otimes\Bigl(\sum_t b_{tj}\beta_t\Bigr)
   =\sum_{s,t}a_{si}b_{tj}\,\alpha_s\otimes\beta_t .
 \end{align*}
-排成矩阵即为 Kronecker 积. 记 $A=(a_{ij})_{m\times m}$, $B=(b_{ij})_{n\times n}$, 则 $g$ 在基
-$\{\alpha_i\otimes\beta_j\}$ 下的矩阵为
+排成矩阵即为 Kronecker 积. 记 $A=(a_{ij})_{m\times m}$, $B=(b_{ij})_{n\times n}$,
+则 $g$ 在基 $\{\alpha_i\otimes\beta_j\}$ 下的矩阵 $C$ 若按元素写出, 形如
+\begin{equation*}
+  \footnotesize
+  C=
+  \begin{pmatrix}
+    a_{11}b_{11} & \cdots & a_{11}b_{1n} & \cdots & a_{1m}b_{11} & \cdots & a_{1m}b_{1n}\\
+    \vdots & & \vdots & & \vdots & & \vdots\\
+    a_{11}b_{n1} & \cdots & a_{11}b_{nn} & \cdots & a_{1m}b_{n1} & \cdots & a_{1m}b_{nn}\\
+    \vdots & & \vdots & \ddots & \vdots & & \vdots\\
+    a_{m1}b_{11} & \cdots & a_{m1}b_{1n} & \cdots & a_{mm}b_{11} & \cdots & a_{mm}b_{1n}\\
+    \vdots & & \vdots & & \vdots & & \vdots\\
+    a_{m1}b_{n1} & \cdots & a_{m1}b_{nn} & \cdots & a_{mm}b_{n1} & \cdots & a_{mm}b_{nn}
+  \end{pmatrix}_{mn\times mn},
+\end{equation*}
+即其 $(si,tj)$ 元为 $a_{si}b_{tj}$. 按块写则为
 \begin{equation*}
   C=A\otimes B=
   \begin{pmatrix}
@@ -184,7 +198,7 @@ $\{\alpha_i\otimes\beta_j\}$ 下的矩阵为
     a_{m1}B & a_{m2}B & \cdots & a_{mm}B
   \end{pmatrix}_{mn\times mn},
 \end{equation*}
-其中 $a_{ij}B$ 为 $n\times n$ 的块; 展开后其 $(si,tj)$ 元为 $a_{si}b_{tj}$. 于是
+其中 $a_{ij}B$ 为 $n\times n$ 的块. 于是
 \begin{equation*}
   \operatorname{Tr}(C)=\operatorname{Tr}(A\otimes B)=\sum_i a_{ii}\operatorname{Tr}(B)
   =\operatorname{Tr}(A)\cdot\operatorname{Tr}(B),
