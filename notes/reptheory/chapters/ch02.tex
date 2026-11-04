@@ -1,0 +1,249 @@
+\section{模}
+
+\subsection{模}
+
+\begin{definition}[左模]\label{def:left-module}
+设 $R$ 为环, $M$ 为加法群. 称 $M$ 为一个左 $R$-模, 记作 ${}_R M$, 若存在运算
+\[
+  R\times M\longrightarrow M,\qquad (r,m)\longmapsto r\cdot m,
+\]
+使得
+\begin{enumerate}
+  \item $(r_1r_2)\cdot m=r_1\cdot(r_2\cdot m)$;
+  \item $1_R\cdot m=m$;
+  \item $(r_1+r_2)\cdot m=r_1\cdot m+r_2\cdot m$;
+  \item $r\cdot(m_1+m_2)=r\cdot m_1+r\cdot m_2$.
+\end{enumerate}
+其中 $r,r_1,r_2\in R$, $m,m_1,m_2\in M$.
+\end{definition}
+
+上述映射 $R\times M\to M$ 也记作 $R\curvearrowright M$, 表示 $R$ 作用在 $M$ 上.
+类似地可定义右 $R$-模, 其运算为 $M\times R\to M$. 此后若不特别声明, 模均指左模.
+
+\begin{example}
+\begin{enumerate}
+  \item 设 $R$ 为环, 以 $(r,a)\mapsto ra$ 定义 $R$ 在自身的左作用, 则 $R$ 是一个左 $R$-模,
+  称为\emph{正则模}.
+  \item 设 $R$ 为环, $I\trianglelefteq R$ 为理想, 以 $(r,[r'])\mapsto[rr']$ 定义 $R$ 在 $R/I$ 上的作用,
+  则 $R/I$ 是一个左 $R$-模. 这里需要验证该映射是良定义的:
+  若 $[r]=[r']$, 则 $r-r'\in I$, 从而 $rr''-r'r''\in I$, 即 $[rr'']=[r'r'']$,
+  其中 $r,r',r''\in R$.
+  \item 取整数环 $\mathbb{Z}$, $n\in\mathbb{N}^+$, 记 $\mathbb{Z}/n\mathbb{Z}=\{[0],[1],\dots,[n-1]\}$.
+  \item $\mathbb{Z}\subset\mathbb{Q}$, 但 $\mathbb{Q}$ 不能作用在 $\mathbb{Z}$ 上.
+  若不然, 设 $\mathbb{Q}\times\mathbb{Z}\to\mathbb{Z}$ 为一个作用, 则 $1\cdot 1=1$.
+  记 $a=\frac12\cdot 1\in\mathbb{Z}$, 由 $\left(\frac12+\frac12\right)\cdot 1=1$ 得
+  $a+a=2a=1$, 与 $a\in\mathbb{Z}$ 矛盾.
+  进一步, 设 $n>1$, 考虑 $\mathbb{Q}$ 在 $\mathbb{Z}/n\mathbb{Z}$ 上的作用.
+  令 $c=\frac1n\cdot[1]$. 由 $1\cdot[1]=[1]$ 得
+  \[
+    [1]=1\cdot[1]=n\cdot c=0,
+  \]
+  矛盾. 故这样的作用只在 $n=1$ 时才可能存在.
+\end{enumerate}
+\end{example}
+
+\subsection{子模}
+
+\begin{definition}[子模]\label{def:submodule}
+设 $M$ 为左 $R$-模, $N<M$ 为子加群. 称 $N$ 为 $M$ 的子模, 若对任意 $r\in R$, $n\in N$,
+都有 $r\cdot n\in N$.
+\end{definition}
+
+\subsection{子模的交}
+
+\begin{proposition}\label{prop:submodule-intersection}
+设 $M_1,M_2$ 为左 $R$-模 $M$ 的子模, 则 $M_1\cap M_2$ 仍为 $M$ 的子模.
+\end{proposition}
+
+\begin{proof}
+$0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap M_2$, $r\in R$.
+因为 $M_1,M_2$ 都是子模, 所以 $x-y$ 与 $r\cdot x$ 同时属于 $M_1$ 与 $M_2$,
+即属于 $M_1\cap M_2$. 故 $M_1\cap M_2$ 为 $M$ 的子模.
+\end{proof}
+
+\subsection{模的直和}
+
+\begin{definition}[直和]\label{def:module-direct-sum}
+设 $M_1,M_2$ 为左 $R$-模. $M_1,M_2$ 的直和记为 $M_1\oplus M_2$, 定义为 $M_1\times M_2$,
+其上作用为
+\[
+  R\curvearrowright M_1\oplus M_2,\qquad \bigl(r,(m_1,m_2)\bigr)\longmapsto (r\cdot m_1,\,r\cdot m_2),
+\]
+其中 $r\in R$, $(m_1,m_2)\in M_1\times M_2$.
+\end{definition}
+
+通常可将 $(m_1,m_2)$ 写作 $m_1+m_2$ (这不是加法). 在此记号下作用可写为
+\[
+  r\cdot(m_1+m_2)=r\cdot m_1+r\cdot m_2 .
+\]
+
+\subsection{商模}
+
+\begin{definition}[商模]\label{def:quotient-module}
+设 $R$ 为环, $M$ 为左 $R$-模, $N\leq M$ 为 $M$ 的子模.
+商群 $M/N$ 在运算 $r\cdot[m]\mapsto[rm]$ 下形成左 $R$-模, 其中 $r\in R$, $m\in M$.
+称 $M/N$ 为 $M$ 模去 $N$ 形成的商模.
+\end{definition}
+
+\begin{remark}\label{rem:quotient-group-exists}
+加群 $M$ 默认是 Abel 群, 因此任意子群均正规, 故商群总是存在的.
+\end{remark}
+
+\subsection{不可约模与不可分解模}
+
+\begin{definition}\label{def:irreducible-module}
+设 $M$ 为左 $R$-模.
+\begin{enumerate}
+  \item 称 $M$ 是\emph{不可约的}, 若 $M$ 没有非平凡的子模, 即 $M$ 没有除 $\{0\}$ 和 $M$
+  以外的子模. 这样的 $M$ 也称为\emph{单模}.
+  \item 称 $M$ 是\emph{不可分解的}, 若 $M$ 不能写成两个真子模的直和.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}\label{rem:irreducible-vs-indecomposable}
+\begin{enumerate}
+  \item 不可约模一定是不可分解模.
+  \item 任何模都可以写为一些不可分解模的直和.
+\end{enumerate}
+\end{remark}
+
+\begin{example}
+\begin{enumerate}
+  \item 设 $R=M_n(K)$. $R$ 的不可约模形如 $(\alpha,0,\dots,0)$, 其中 $\alpha\in K^{n\times1}$,
+  即只有第一列非零的矩阵:
+  \[
+    \begin{pmatrix}
+      \alpha_1 & 0 & \cdots & 0\\
+      \alpha_2 & 0 & \cdots & 0\\
+      \vdots & \vdots & & \vdots\\
+      \alpha_n & 0 & \cdots & 0
+    \end{pmatrix}.
+  \]
+  \item 回忆 $\mathbb{Z}_n=\langle g\mid g^n=1\rangle$, 记 $\omega=\exp\left(\frac{2\pi i}{n}\right)$.
+  取
+  \[
+    e_k=\frac{1}{\sqrt{n}}\sum_{j=0}^{n-1}\omega^{-kj}g^j,\qquad
+    U_k=\operatorname{span}_{K}\{e_k\}.
+  \]
+  注意
+  \[
+    g\cdot e_k=\frac{1}{\sqrt{n}}\sum_{j=0}^{n-1}\omega^{-kj}g^{j+1}
+    =\frac{1}{\sqrt{n}}\sum_{m=1}^{n}\omega^{-k(m-1)}g^{m}
+    =\frac{1}{\sqrt{n}}\,\omega^{k}\sum_{m=0}^{n-1}\omega^{-km}g^{m}=\omega^{k}e_k,
+  \]
+  故 $U_k$ 为 $K\mathbb{Z}_n$ 的不可约子模.
+  此外直接验证可得 $e_k^2=e_k$, $e_ke_l=0$ ($k\neq l$), $\sum_{k=0}^{n-1}e_k=1$, 因此
+  \[
+    K\mathbb{Z}_n=\bigoplus_{k=0}^{n-1}U_k .
+  \]
+  \item 任取左 $R$-模 $M$, 可以找到 $M$ 的一个不可约真子模 $M_1$, 并有嵌入 $M_1\hookrightarrow M$
+  与满射 $M\twoheadrightarrow M/M_1$. 记 $M_1'=M/M_1$, 即
+  \[
+    M_1\hookrightarrow M\twoheadrightarrow M/M_1=M_1' .
+  \]
+  再以 $M_1'$ 为起点, 取不可约真子模 $M_2\hookrightarrow M_1'$, 得 $M_1'/M_2=M_2'$,
+  如此下去, 直到所得的商模不可约为止.
+\end{enumerate}
+\end{example}
+
+\begin{definition}[合成列]\label{def:composition-series}
+称上述序列构成的链为 $M$ 的一个合成列.
+\end{definition}
+
+\subsection{模同态}
+
+\begin{definition}[模同态]\label{def:module-hom}
+设 $R$ 为环, ${}_R M$, ${}_R N$ 为左 $R$-模. 称映射 $f\colon M\to N$ 为模同态, 若
+\begin{enumerate}
+  \item $f(m_1+m_2)=f(m_1)+f(m_2)$;
+  \item $f(r\cdot m)=r\cdot f(m)$.
+\end{enumerate}
+其中 $r\in R$, $m,m_1,m_2\in M$.
+\end{definition}
+
+\begin{theorem}[同态基本定理]\label{thm:module-iso}
+设 $f\colon M\to N$ 为左 $R$-模同态, 则
+\begin{enumerate}
+  \item $\operatorname{Ker}(f)=\{m\in M\mid f(m)=0\}$ 为 $M$ 的子模;
+  \item $\operatorname{Im}(f)=\{n\in N\mid \exists m\in M,\ f(m)=n\}$ 为 $N$ 的子模;
+  \item $M/\operatorname{Ker}(f)\cong\operatorname{Im}(f)$.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}\label{rem:module-iso-right}
+上述定理对右 $R$-模同样成立.
+\end{remark}
+
+\subsection{双模}
+
+\begin{definition}[反环]\label{def:opposite-ring}
+称 $R^{\mathrm{op}}$ 为 $R$ 的反环, 若
+\begin{enumerate}
+  \item 作为加群 $R^{\mathrm{op}}=R$;
+  \item 对任意 $r_1,r_2\in R^{\mathrm{op}}$, $r_1*r_2=r_2r_1$,
+\end{enumerate}
+其中 $*$ 为 $R^{\mathrm{op}}$ 上的乘法.
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+  \item 考虑多项式环 $R=K[x]$. 则
+  \[
+    R^{\mathrm{op}}=\{f(x)*g(x)=g(x)f(x)=f(x)g(x)\},
+  \]
+  因此 $R^{\mathrm{op}}=R$.
+  \item 考虑 $R=M_n(K)$. 则 $R^{\mathrm{op}}=M_n^{\mathrm{op}}(K)$, 其乘法为
+  $M_1*M_2=M_2M_1$, 其中 $M_{1,2}\in M_n(K)$.
+\end{enumerate}
+\end{example}
+
+\begin{proposition}
+$M$ 是一个左 $R$-模当且仅当 $M$ 是一个右 $R^{\mathrm{op}}$-模.
+\end{proposition}
+
+\begin{definition}[双模]\label{def:bimodule}
+设 $M$ 为左 $R$-模, 同时为右 $S$-模. 称 $M$ 为一个 $R$-$S$ 双模, 记作 ${}_RM_S$, 若
+\[
+  (r\cdot m)\cdot s=r\cdot(m\cdot s),
+\]
+其中 $m\in M$, $r\in R$, $s\in S$.
+\end{definition}
+
+\begin{example}
+显然 $R$ 本身是一个 $R$-$R$ 双模, 即 ${}_RR_R$.
+\end{example}
+
+\subsection{代数上的模}
+
+\begin{definition}[代数上的模]\label{def:algebra-module}
+设 $A$ 是 $K$-代数, $M$ 是一个 $K$-线性空间. 称 $M$ 为 $A$-模, 若存在运算
+\[
+  A\times M\longrightarrow M,\qquad (a,m)\longmapsto a\cdot m,
+\]
+使得
+\begin{enumerate}
+  \item $(a_1+a_2)\cdot m=a_1\cdot m+a_2\cdot m$;
+  \item $(a_1a_2)\cdot m=a_1\cdot(a_2\cdot m)$;
+  \item $(ka)\cdot m=k(a\cdot m)$;
+  \item $1_A\cdot m=m$;
+  \item $a\cdot(m_1+m_2)=a\cdot m_1+a\cdot m_2$;
+  \item $a\cdot(km)=k(a\cdot m)$.
+\end{enumerate}
+其中 $k\in K$, $a,a_1,a_2\in A$, $m,m_1,m_2\in M$.
+\end{definition}
+
+\begin{remark}\label{rem:algebra-module-parallel}
+可以类似地定义子模、交、直和、商模与同态, 此处不再赘述.
+\end{remark}
+
+\begin{definition}[忠实模]\label{def:faithful-module}
+设 $M$ 为 $K$-代数 $A$ 上的左模. 称 $M$ 是\emph{忠实的} (faithful), 若
+\[
+  \forall m\in M,\quad a\cdot m=0\ \Longrightarrow\ a=0 .
+\]
+\end{definition}
+
+\begin{remark}[零化子]\label{rem:annihilator}
+称 $\{a\in A\mid a\cdot m=0,\ \forall m\in M\}$ 为 $M$ 的零化子, 记为 $\operatorname{Ann}_A(M)$.
+则 $M$ 忠实当且仅当 $\operatorname{Ann}_A(M)=\{0\}$.
+\end{remark}

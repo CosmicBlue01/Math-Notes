@@ -1,0 +1,215 @@
+\section{表示}
+
+\subsection{表示}
+
+\begin{definition}[表示]\label{def:representation}
+设 $A$ 是一个 $K$-代数. $A$ 的一个表示是一个二元组 $(V,\rho)$, 其中
+\begin{enumerate}
+  \item $V$ 是 $K$-线性空间;
+  \item $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$ 是代数同态.
+\end{enumerate}
+有时简称 $V$ 为 $A$ 的一个表示, 或称 $\rho$ 为 $A$ 的一个表示.
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+  \item 由 $K\mathbb{Z}_2\to M_2(K)\cong\operatorname{End}(K^2)$,
+  \[
+    \rho\colon g\longmapsto\begin{pmatrix}0&1\\1&0\end{pmatrix},
+  \]
+  得到 $K\mathbb{Z}_2$ 的一个表示 $(K^2,\rho)$.
+  \item 由 $\mathbb{C}\mathbb{Z}_n\to\operatorname{End}(\mathbb{C})=\mathbb{C}$,
+  \[
+    \rho\colon g^j\longmapsto\xi^j,\qquad \xi=\exp\left(\frac{2\pi i}{n}\right),
+  \]
+  得到 $\mathbb{C}\mathbb{Z}_n$ 的一个表示 $(\mathbb{C},\rho)$.
+\end{enumerate}
+\end{example}
+
+\begin{theorem}\label{thm:rep-is-module}
+$V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
+\end{theorem}
+
+\begin{proof}
+(1) 设 $V$ 是 $A$ 的一个表示, 有同态 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$.
+定义运算
+\[
+  A\times V\longrightarrow V,\qquad (a,v)\longmapsto a\cdot v:=\rho(a)(v).
+\]
+于是
+\begin{align*}
+  (a_1+a_2)\cdot v&=\rho(a_1+a_2)(v)=(\rho(a_1)+\rho(a_2))(v)\\
+  &=\rho(a_1)(v)+\rho(a_2)(v)=a_1\cdot v+a_2\cdot v,\\
+  (a_1a_2)\cdot v&=\rho(a_1a_2)(v)=(\rho(a_1)\rho(a_2))(v)\\
+  &=\rho(a_1)\bigl(\rho(a_2)(v)\bigr)=a_1\cdot(a_2\cdot v),\\
+  (ka)\cdot v&=\rho(ka)(v)=k\rho(a)(v)=k(a\cdot v),\\
+  1_A\cdot v&=\rho(1_A)(v)=\operatorname{Id}(v)=v,\\
+  a\cdot(v_1+v_2)&=\rho(a)(v_1+v_2)=\rho(a)(v_1)+\rho(a)(v_2)\\
+  &=a\cdot v_1+a\cdot v_2,\\
+  a\cdot(kv)&=\rho(a)(kv)=k\rho(a)(v)=k(a\cdot v).
+\end{align*}
+故 $V$ 是一个 $A$-模.
+
+(2) 设 $V$ 是 $A$-模, 运算为 $A\times V\to V$, $(a,v)\mapsto a\cdot v$.
+定义映射 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$, 其中 $\rho(a)$ 由 $\rho(a)(v)=a\cdot v$ 规定.
+只需证明 $\rho$ 是代数同态.
+\begin{enumerate}
+  \item $\rho$ 是线性映射:
+  $\rho(a_1+a_2)(v)=(a_1+a_2)\cdot v=a_1\cdot v+a_2\cdot v=\rho(a_1)(v)+\rho(a_2)(v)$,
+  即 $\rho(a_1+a_2)=\rho(a_1)+\rho(a_2)$;
+  $\rho(ka)(v)=(ka)\cdot v=k(a\cdot v)=k\rho(a)(v)$, 即 $\rho(ka)=k\rho(a)$.
+  \item $\rho$ 保持乘法:
+  $\rho(ab)(v)=(ab)\cdot v=a\cdot(b\cdot v)=\rho(a)\bigl(\rho(b)(v)\bigr)=(\rho(a)\rho(b))(v)$,
+  即 $\rho(ab)=\rho(a)\rho(b)$.
+\end{enumerate}
+故 $V$ 是 $A$ 的表示.
+\end{proof}
+
+\begin{definition}[群的表示]\label{def:group-representation}
+设 $G$ 为群, $V$ 为 $K$-线性空间. 称 $V$ 为 $G$ 的一个 (线性) 表示, 若存在代数同态
+\[
+  \rho\colon KG\longrightarrow\operatorname{End}(V).
+\]
+\end{definition}
+
+\begin{example}
+\begin{enumerate}
+  \item 设 $\rho\colon K\mathbb{Z}_2\to\operatorname{End}(K^2)\cong M_2(K)$, 其中
+  $\mathbb{Z}_2=\langle g\mid g^2=1\rangle$, $K^2=\operatorname{span}_K\{\alpha_1,\alpha_2\}$,
+  $\alpha_1=(1,0)^{\mathrm{T}}$, $\alpha_2=(0,1)^{\mathrm{T}}$, 且
+  \[
+    \rho(g)=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+  \]
+  规定 $g\cdot v=\rho(g)(v)$, 则
+  \begin{align*}
+    g\cdot\alpha_1&=\rho(g)(\alpha_1)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\binom10=\binom01=\alpha_2,\\
+    g\cdot\alpha_2&=\rho(g)(\alpha_2)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\binom01=\binom10=\alpha_1 .
+  \end{align*}
+  \item 正则模: $K\mathbb{Z}_2\curvearrowright K\mathbb{Z}_2=\operatorname{span}_K\{1,g\}$, 记 $K\mathbb{Z}_2=V$,
+  \[
+    \rho\colon K\mathbb{Z}_2\longrightarrow\operatorname{End}(V),\qquad g\longmapsto\rho(g).
+  \]
+  考察 $\rho(g)$ 对基 $\{1,g\}$ 的作用: $1\mapsto g$, $g\mapsto 1$, 对应的矩阵为
+  $\begin{pmatrix}0&1\\1&0\end{pmatrix}$. 可见把 $g$ 映为该矩阵是合理的.
+\end{enumerate}
+\end{example}
+
+\begin{proposition}\label{prop:regular-module-exists}
+任何群代数都有正则模 (都对应唯一同态).
+\end{proposition}
+
+\subsection{表示论的直观解释}
+
+以矩阵来说明. 设 $\rho\colon A\to\operatorname{End}(V)$ 为表示, 取子空间 $V_1\leq V$.
+设 $V_1$ 的一组基为 $\alpha_1,\alpha_2,\dots,\alpha_m$, 那么可以扩充为 $V$ 的一组基
+$\alpha_1,\dots,\alpha_m,\alpha_{m+1},\dots,\alpha_n$.
+
+\begin{definition}[子表示]\label{def:subrepresentation}
+称 $\rho|_{V_1}$ 为 $\rho$ 的子表示, 若对任意 $a\in A$, $v_1\in V_1$, 都有 $\rho(a)(v_1)\in V_1$.
+\end{definition}
+
+此时 $V_1$ 是 $\rho$-不变子空间, 且
+\[
+  \rho(a)(\alpha_1,\dots,\alpha_m,\alpha_{m+1},\dots,\alpha_n)
+  =(\alpha_1,\dots,\alpha_m,\alpha_{m+1},\dots,\alpha_n)
+  \begin{pmatrix}
+    M_1 & C\\
+    0 & M_2
+  \end{pmatrix},
+\]
+其中 $M_1\in M_m(K)$, $M_2\in M_{n-m}(K)$. 由于 $\rho|_{V_1}$ 只对 $\alpha_1,\dots,\alpha_m$ 有作用,
+故 $M_1$ 描述了子表示 (在嵌入意义下); 而在商空间 $V/V_1$ 中, $V_1$ 的元素 (由基
+$\alpha_1,\dots,\alpha_m$ 给出) 被映为 $0$, 故 $V/V_1$ 可由 $M_2$ 描述 (在嵌入意义下).
+
+若出现零块 $0$, 则必出现子表示 $M_1$. 因此若没有零块 $0$, 就找不到非平凡的子表示,
+即该表示不可约.
+
+当左上角 $C=0$ 时, 矩阵变为准对角矩阵
+\[
+  \begin{pmatrix}
+    * & 0\\
+    0 & *
+  \end{pmatrix},
+\]
+记 $M_1$ 对应子空间 $V_1$, $M_2$ 对应子空间 $V_2$, 则可写 $V=V_1\oplus V_2$,
+且 $V/V_1\cong V_2$, $V/V_2\cong V_1$. 此时称表示可分解; 否则称其不可分解,
+此时不会出现准对角的情形.
+
+\begin{example}
+设 $K\mathbb{Z}_2\curvearrowright K\mathbb{Z}_2=\operatorname{span}_K\{1,g\}$.
+先设 $\operatorname{char}K\neq2$, 记
+\[
+  e_1=\frac12(1+g),\qquad e_2=\frac12(1-g).
+\]
+则 $V_1=\operatorname{span}_K\{e_1\}$, $V_2=\operatorname{span}_K\{e_2\}$ 均为子表示, 并且
+\begin{align*}
+  g\cdot e_1&=\frac12 g\cdot(1+g)=\frac12(g+g^2)=\frac12(1+g)=e_1,\\
+  g\cdot e_2&=\frac12 g\cdot(1-g)=\frac12(g-1)=-e_2 .
+\end{align*}
+于是 $K\mathbb{Z}_2$ 可以分解为 $K\mathbb{Z}_2=V_1\oplus V_2$. 既然 $K\mathbb{Z}_2$ 有真子模,
+故 $K\mathbb{Z}_2$ 可约.
+
+再考虑 $\operatorname{char}K=2$. 此时 $K$ 中 $1=-1$, 取 $e_1=1+g$, 有 $g\cdot e_1=e_1$,
+记 $V_1=\operatorname{span}_K\{e_1\}$, 这是 $K\mathbb{Z}_2$ 的子模, 因此 $K\mathbb{Z}_2$ 同样可约.
+但此时 $K\mathbb{Z}_2$ 不可分解: 否则设 $K\mathbb{Z}_2=M_1\oplus M_2$, 其中
+$\dim M_1=\dim M_2=1$. 设 $M_1=\operatorname{span}_K\{\alpha_1\}$, $M_2=\operatorname{span}_K\{\alpha_2\}$,
+并设 $g\cdot\alpha_1=\lambda\alpha_1$, 则 $g^2\cdot\alpha_1=\alpha_1=\lambda^2\alpha_1$, 故 $\lambda^2=1$,
+即 $\lambda=1$ (因为 $-1=1$). 同理 $g\cdot\alpha_2=\alpha_2$. 于是 $g$ 在 $K\mathbb{Z}_2$ 上为恒同映射,
+特别地 $g\cdot1=1$, 但 $g\cdot1=g$, 矛盾. 故 $\operatorname{char}K=2$ 时 $K\mathbb{Z}_2$ 不可分解.
+\end{example}
+
+\subsection{表示同态}
+
+模与表示本质上是一样的, 这里仅给出描述同态的不同语言.
+设表示 $\rho_i\colon A\to\operatorname{End}(V_i)$, 对应运算
+\[
+  A\times V_i\longrightarrow V_i,\qquad (a,v_i)\longmapsto a\cdot v_i:=\rho_i(a)(v_i),
+\]
+其中 $a\in A$, $v_i\in V_i$. 回忆模同态 $f\colon V_1\to V_2$ 的要求: 涉及模运算的第 2 条, 即
+\[
+  f(a\cdot m)=a\cdot f(m),\qquad a\in A,\ m\in V_1 .
+\]
+在表示的语言下可写为
+\[
+  f\bigl(\rho_1(a)(m)\bigr)=\rho_2(a)\bigl(f(m)\bigr),\qquad a\in A,\ m\in V_1 .
+\]
+
+\subsection{忠实表示}
+
+\begin{definition}[忠实表示]\label{def:faithful-rep}
+称表示 $\rho\colon A\to\operatorname{End}(V)$ 是忠实的, 若 $\rho$ 是单射.
+\end{definition}
+
+\begin{proposition}\label{prop:faithful-equiv}
+$V$ 是忠实 $A$-模当且仅当 $V$ 是忠实 $A$-表示.
+\end{proposition}
+
+\begin{proof}
+(1) 设 $V$ 是忠实模, 只要证明 $\rho$ 是单射, 即 $\operatorname{Ker}(\rho)=\{0\}$.
+任取 $a\in\operatorname{Ker}(\rho)$, 则 $\rho(a)=0$, 于是 $\rho(a)(v)=0$, $\forall v\in V$,
+即 $a\cdot v=0$. 由忠实模的定义知 $a=0$. 故 $\operatorname{Ker}(\rho)=\{0\}$, $\rho$ 是单射,
+$V$ 是忠实表示.
+
+(2) 设 $V$ 是忠实表示, 且 $a\cdot v=0$, $\forall v\in V$. 由表示的定义, 这意味着
+$\rho(a)(v)=0$, $\forall v\in V$, 即 $\rho(a)=0$. 而 $\rho$ 是单射, 故 $a=0$. 因此 $V$ 是忠实模.
+\end{proof}
+
+\begin{remark}\label{rem:faithful-algebra-only}
+上述命题中特意强调了 "代数", 这是因为在其他结构中结论不一定成立.
+例如在群表示中表示是 $\rho\colon G\to\operatorname{End}(V)$, 而对模而言仍定义在群代数 $KG$ 上;
+扩大 $\rho$ 的作用范围, 可能不会保证 $\rho$ 仍是单射.
+\end{remark}
+
+\begin{example}
+设 $A$ 是有限维代数, 则总有正则模 ${}_AA$. 若 $a\cdot b=0$ 对一切 $b\in A$ 成立,
+取 $b=1$ 即得 $a=0$. 故正则模一定是忠实模.
+\end{example}
+
+\begin{theorem}\label{thm:algebra-embeds-in-matrix}
+任何有限维代数一定是某个全矩阵代数的子代数.
+\end{theorem}
+
+\begin{proof}
+设 $A$ 为有限维代数, 则 $V={}_AA$ 一定是忠实模, 从而 $V$ 是忠实表示.
+于是存在单同态 $\rho\colon A\to\operatorname{End}(V)\cong M_n(K)$. 视 $\rho$ 为嵌入即得证.
+\end{proof}

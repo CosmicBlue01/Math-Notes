@@ -34,3 +34,39 @@
 例,,thm:first-iso,代数,notes/reptheory/chapters/ch01.tex,"设 , 任取 , 记理想 . 则 为典范同态. 可以考察元素的像, 以 , 为例. , 由于 , 则 . , 则 ."
 定理,同态基本定理,thm:first-iso,代数,notes/reptheory/chapters/ch01.tex,"设 为代数同态, 则 ; 为 的子代数; ."
 例,,,代数,notes/reptheory/chapters/ch01.tex,"设 . , 记同态 , . 于是 , , 从而 [ K[x]/(x-a) K[a]. ]"
+定义,左模,def:left-module,模,notes/reptheory/chapters/ch02.tex,"设 为环, 为加法群. 称 为一个左 -模, 记作 , 若存在运算 [ R M M, (r,m) r m, ] 使得 ; ; ; . 其中 , ."
+例,,,模,notes/reptheory/chapters/ch02.tex,"设 为环, 以 定义 在自身的左作用, 则 是一个左 -模, 称为 . 设 为环, 为理想, 以 定义 在 上的作用, 则 是一个左 -模. 这里需要验证该映射是良定义的: 若 , 则 , 从而 , 即 , 其中 . 取整数环 , , 记 "
+定义,子模,def:submodule,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模, 为子加群. 称 为 的子模, 若对任意 , , 都有 ."
+命题,,prop:submodule-intersection,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模 的子模, 则 仍为 的子模."
+定义,直和,def:module-direct-sum,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模. 的直和记为 , 定义为 , 其上作用为 [ R M_1 M_2, (r,(m_1,m_2) ) (r m_1, ,r m_2), ] 其中 , ."
+定义,商模,def:quotient-module,模,notes/reptheory/chapters/ch02.tex,"设 为环, 为左 -模, 为 的子模. 商群 在运算 下形成左 -模, 其中 , . 称 为 模去 形成的商模."
+注,,rem:quotient-group-exists,模,notes/reptheory/chapters/ch02.tex,"加群 默认是 Abel 群, 因此任意子群均正规, 故商群总是存在的."
+定义,,def:irreducible-module,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模. 称 是 , 若 没有非平凡的子模, 即 没有除 和 以外的子模. 这样的 也称为 . 称 是 , 若 不能写成两个真子模的直和."
+注,,rem:irreducible-vs-indecomposable,模,notes/reptheory/chapters/ch02.tex,不可约模一定是不可分解模. 任何模都可以写为一些不可分解模的直和.
+例,,,模,notes/reptheory/chapters/ch02.tex,"设 . 的不可约模形如 , 其中 , 即只有第一列非零的矩阵: [ _1 & 0 & & 0 _2 & 0 & & 0 & & & _n & 0 & & 0 . ] 回忆 , 记 . 取 [ e_k= _ j=0 ^ n-1 ^ -kj g"
+定义,合成列,def:composition-series,模,notes/reptheory/chapters/ch02.tex,称上述序列构成的链为 的一个合成列.
+定义,模同态,def:module-hom,模,notes/reptheory/chapters/ch02.tex,"设 为环, , 为左 -模. 称映射 为模同态, 若 ; . 其中 , ."
+定理,同态基本定理,thm:module-iso,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模同态, 则 为 的子模; 为 的子模; ."
+注,,rem:module-iso-right,模,notes/reptheory/chapters/ch02.tex,上述定理对右 -模同样成立.
+定义,反环,def:opposite-ring,模,notes/reptheory/chapters/ch02.tex,"称 为 的反环, 若 作为加群 ; 对任意 , , 其中 为 上的乘法."
+例,,def:bimodule,模,notes/reptheory/chapters/ch02.tex,"考虑多项式环 . 则 [ R^ = f(x)*g(x)=g(x)f(x)=f(x)g(x) , ] 因此 . 考虑 . 则 , 其乘法为 , 其中 ."
+命题,,def:bimodule,模,notes/reptheory/chapters/ch02.tex,是一个左 -模当且仅当 是一个右 -模.
+定义,双模,def:bimodule,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模, 同时为右 -模. 称 为一个 - 双模, 记作 , 若 [ (r m) s=r (m s), ] 其中 , , ."
+例,,def:algebra-module,模,notes/reptheory/chapters/ch02.tex,"显然 本身是一个 - 双模, 即 ."
+定义,代数上的模,def:algebra-module,模,notes/reptheory/chapters/ch02.tex,"设 是 -代数, 是一个 -线性空间. 称 为 -模, 若存在运算 [ A M M, (a,m) a m, ] 使得 ; ; ; ; ; . 其中 , , ."
+注,,rem:algebra-module-parallel,模,notes/reptheory/chapters/ch02.tex,"可以类似地定义子模、交、直和、商模与同态, 此处不再赘述."
+定义,忠实模,def:faithful-module,模,notes/reptheory/chapters/ch02.tex,"设 为 -代数 上的左模. 称 是 (faithful), 若 [ m M, a m=0 a=0 . ]"
+注,零化子,rem:annihilator,模,notes/reptheory/chapters/ch02.tex,"称 为 的零化子, 记为 . 则 忠实当且仅当 ."
+定义,表示,def:representation,表示,notes/reptheory/chapters/ch03.tex,"设 是一个 -代数. 的一个表示是一个二元组 , 其中 是 -线性空间; , 是代数同态. 有时简称 为 的一个表示, 或称 为 的一个表示."
+例,,thm:rep-is-module,表示,notes/reptheory/chapters/ch03.tex,"由 , [ g 0&1 1&0 , ] 得到 的一个表示 . 由 , [ g^j ^j, = ( n ), ] 得到 的一个表示 ."
+定理,,thm:rep-is-module,表示,notes/reptheory/chapters/ch03.tex,是 的一个表示当且仅当 是一个 -模.
+定义,群的表示,def:group-representation,表示,notes/reptheory/chapters/ch03.tex,"设 为群, 为 -线性空间. 称 为 的一个 (线性) 表示, 若存在代数同态 [ KG (V). ]"
+例,,,表示,notes/reptheory/chapters/ch03.tex,"设 , 其中 , , , , 且 [ (g)= 0&1 1&0 . ] 规定 , 则 g _1&= (g)( _1)= 0&1 1&0 10= 01= _2, g _2&= (g)( _2)= 0&1 1&0 01= 10= _1 . 正则"
+命题,,prop:regular-module-exists,表示,notes/reptheory/chapters/ch03.tex,任何群代数都有正则模 (都对应唯一同态).
+定义,子表示,def:subrepresentation,表示,notes/reptheory/chapters/ch03.tex,"称 为 的子表示, 若对任意 , , 都有 ."
+例,,,表示,notes/reptheory/chapters/ch03.tex,"设 . 先设 , 记 [ e_1= 12(1+g), e_2= 12(1-g). ] 则 , 均为子表示, 并且 g e_1&= 12 g (1+g)= 12(g+g^2)= 12(1+g)=e_1, g e_2&= 12 g (1-g)="
+定义,忠实表示,def:faithful-rep,表示,notes/reptheory/chapters/ch03.tex,"称表示 是忠实的, 若 是单射."
+命题,,prop:faithful-equiv,表示,notes/reptheory/chapters/ch03.tex,是忠实 -模当且仅当 是忠实 -表示.
+注,,rem:faithful-algebra-only,表示,notes/reptheory/chapters/ch03.tex,"上述命题中特意强调了 ""代数"", 这是因为在其他结构中结论不一定成立. 例如在群表示中表示是 , 而对模而言仍定义在群代数 上; 扩大 的作用范围, 可能不会保证 仍是单射."
+例,,thm:algebra-embeds-in-matrix,表示,notes/reptheory/chapters/ch03.tex,"设 是有限维代数, 则总有正则模 . 若 对一切 成立, 取 即得 . 故正则模一定是忠实模."
+定理,,thm:algebra-embeds-in-matrix,表示,notes/reptheory/chapters/ch03.tex,任何有限维代数一定是某个全矩阵代数的子代数.
