@@ -1,6 +1,6 @@
 # 定理索引
 
-共 147 条，由 `tools/make_index.py` 自动生成。
+共 154 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -151,3 +151,10 @@
 | 145 | 定理 |  | `thm:regular-contains` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 146 | 注 | 正则表示 | `cor:sum-dim-square` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 147 | 推论 |  | `cor:sum-dim-square` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 148 | 定理 |  | `thm:tensor-multiplicity` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 149 | 例 |  | `ex:S3-tensor-square` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 150 | 命题 |  | `prop:class-functions-dim` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 151 | 注 |  | `rem:char-independent` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 152 | 引理 |  | `lem:rho-f-linear` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 153 | 引理 |  | `lem:rho-f-intertwine` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 154 | 推论 |  | `cor:rho-f-scalar` | 特征标 | notes/reptheory/chapters/ch06.tex |

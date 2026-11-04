@@ -146,3 +146,10 @@
 定理,,thm:regular-contains,特征标,notes/reptheory/chapters/ch06.tex,"每个不可约表示 都是正则表示的子表示, 且重数为 ."
 注,正则表示,cor:sum-dim-square,特征标,notes/reptheory/chapters/ch06.tex,"设 , , 则 , , 其中 . 称这个表示为正则表示. 由定义 ; 且 , 而对 , 是置换矩阵且没有不动点, 故 ."
 推论,,cor:sum-dim-square,特征标,notes/reptheory/chapters/ch06.tex,"设 的所有不可约表示为 , 则 ."
+定理,,thm:tensor-multiplicity,特征标,notes/reptheory/chapters/ch06.tex,"取 的所有不可约表示 , 设 , 则 ."
+例,,ex:S3-tensor-square,特征标,notes/reptheory/chapters/ch06.tex,"在 中求 的分解. 事实上 [ ( _ , _ _ ) = 6 _ g S_3 _ (g) _ (g^ -1 ) _ (g^ -1 ) = 6 (4+0+0+0+1+1 )=1, ] 类似可算得 [ ( _ , _ _ )=1, ( _ ,"
+命题,,prop:class-functions-dim,特征标,notes/reptheory/chapters/ch06.tex,.
+注,,rem:char-independent,特征标,notes/reptheory/chapters/ch06.tex,"显然 , 且由 知 在 中线性无关. 因此 的个数有限, 记为 , 且有 . 也就是说, 在同构意义下不可约表示只有有限多个."
+引理,,lem:rho-f-linear,特征标,notes/reptheory/chapters/ch06.tex,; 且 .
+引理,,lem:rho-f-intertwine,特征标,notes/reptheory/chapters/ch06.tex,.
+推论,,cor:rho-f-scalar,特征标,notes/reptheory/chapters/ch06.tex,"若 不可约, 则 [ (f)= ) V _V . ]"

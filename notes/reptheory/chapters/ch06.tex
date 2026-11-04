@@ -580,3 +580,116 @@ $V_{\mathrm{reg}}\cong\bigoplus_{i=1}^{s}V_i^{(\dim V_i)}$, 两边取维数得
 \end{proof}
 
 作为进一步的讨论, 我们考虑张量积的分解公式.
+
+\begin{theorem}\label{thm:tensor-multiplicity}
+取 $G$ 的所有不可约表示 $V_1,\dots,V_s$, 设
+$V_i\otimes V_j=\bigoplus_{k=1}^{s}V_k^{(N_{ij}^k)}$, 则
+$N_{ij}^k=(\chi_k,\chi_i\chi_j)$.
+\end{theorem}
+
+\begin{example}\label{ex:S3-tensor-square}
+在 $S_3$ 中求 $V_{\mathrm{std}}\otimes V_{\mathrm{std}}$ 的分解. 事实上
+\[
+  (\chi_{\mathrm{triv}},\chi_{\mathrm{std}}\chi_{\mathrm{std}})
+  =\frac{1}{6}\sum_{g\in S_3}\chi_{\mathrm{triv}}(g)\chi_{\mathrm{std}}(g^{-1})\chi_{\mathrm{std}}(g^{-1})
+  =\frac{1}{6}\bigl(4+0+0+0+1+1\bigr)=1,
+\]
+类似可算得
+\[
+  (\chi_{\mathrm{sign}},\chi_{\mathrm{std}}\chi_{\mathrm{std}})=1,\qquad
+  (\chi_{\mathrm{std}},\chi_{\mathrm{std}}\chi_{\mathrm{std}})=1 .
+\]
+因此
+\[
+  V_{\mathrm{std}}\otimes V_{\mathrm{std}}
+  \cong V_{\mathrm{triv}}\oplus V_{\mathrm{sign}}\oplus V_{\mathrm{std}} .
+\]
+\end{example}
+
+\subsection{不可约表示的个数}
+
+先引入一些记号. 设 $G$ 为一个群, 记类函数全体构成的空间为 $Cf(G)$,
+显然 $Cf(G)\subseteq(\mathbb{F}G)^*$. 设 $G$ 的全体共轭类为 $C_1,\dots,C_t$.
+
+\begin{proposition}\label{prop:class-functions-dim}
+$\dim Cf(G)=t$.
+\end{proposition}
+
+\begin{proof}
+设 $V=\operatorname{span}\{e_1,\dots,e_t\}$, 其中 $e_i$ 对应共轭类 $C_i$. 考虑
+\[
+  \psi\colon Cf(G)\longrightarrow V^*,\qquad f\longmapsto \psi_f,
+\]
+其中对 $v=\sum_{i=1}^{t}k_ie_i$ 定义 $\psi_f(v)=\sum_{i=1}^{t}k_if(C_i)$.
+
+先说明 $\psi$ 为线性映射:
+\[
+  \psi_{af+bg}(v)=\sum_i k_i(af+bg)(C_i)
+  =a\sum_i k_if(C_i)+b\sum_i k_ig(C_i)=a\psi_f(v)+b\psi_g(v).
+\]
+若 $\psi_f=0$, 则对每个 $e_i$ 有 $\psi_f(e_i)=f(C_i)=0$, 故 $f=0$, 即 $\psi$ 是单射.
+最后, 对任意 $\mu\in V^*$, 令 $a_i=\mu(e_i)$ 并令类函数 $f$ 满足 $f(g)=a_i$
+当 $g\in C_i$, 则 $\psi_f=\mu$, 即 $\psi$ 是满射.
+
+综上, $\psi$ 是线性空间同构, 故 $\dim Cf(G)=\dim V^*=\dim V=t$.
+\end{proof}
+
+\begin{remark}\label{rem:char-independent}
+显然 $\chi_i\in Cf(G)$, 且由 $(\chi_i,\chi_j)=\delta_{ij}$ 知 $\{\chi_i\}$ 在 $Cf(G)$
+中线性无关. 因此 $\{\chi_i\}$ 的个数有限, 记为 $s$, 且有 $s\le t$. 也就是说,
+在同构意义下不可约表示只有有限多个.
+\end{remark}
+
+当然我们自然希望 $s=t$, 这事实上是对的, 为此需要一些准备. 作如下构造:
+设 $(\rho,V)$ 为 $G$ 的表示, $f\in Cf(G)$, 记
+\[
+  \rho(f):=\frac{1}{|G|}\sum_{g\in G}f(g)\rho(g)\in\operatorname{End}(V).
+\]
+
+\begin{lemma}\label{lem:rho-f-linear}
+$\rho(f_1+f_2)=\rho(f_1)+\rho(f_2)$; 且
+$(\rho_1\oplus\rho_2)(f)=\rho_1(f)\oplus\rho_2(f)$.
+\end{lemma}
+
+\begin{proof}
+由定义直接验证.
+\end{proof}
+
+\begin{lemma}\label{lem:rho-f-intertwine}
+$\rho(f)\in\operatorname{End}_G(V)$.
+\end{lemma}
+
+\begin{proof}
+对任意 $h\in G$,
+\begin{align*}
+  \rho(f)(h\cdot v)
+  &=\frac{1}{|G|}\sum_{g}f(g)\rho(g)(h\cdot v)
+   =\frac{1}{|G|}\sum_{g}f(g)\,gh\cdot v\\
+  &=\frac{1}{|G|}\sum_{g}f(g)\,h(h^{-1}gh)\cdot v
+   =h\cdot\frac{1}{|G|}\sum_{g}f(hgh^{-1})\,g\cdot v
+   =h\cdot\rho(f)(v),
+\end{align*}
+其中用到了 $f$ 为类函数.
+\end{proof}
+
+\begin{corollary}\label{cor:rho-f-scalar}
+若 $V$ 不可约, 则
+\[
+  \rho(f)=\frac{(f,\chi_{V^*})}{\dim V}\cdot\mathrm{Id}_V .
+\]
+\end{corollary}
+
+\begin{proof}
+由 Lemma \ref{lem:rho-f-intertwine}, $\rho(f)\in\operatorname{End}_G(V)$; 由 Schur 引理,
+存在 $\lambda\in\mathbb{C}$ 使 $\rho(f)=\lambda\,\mathrm{Id}_V$. 于是
+\[
+  \operatorname{Tr}(\rho(f))=\operatorname{Tr}(\lambda\,\mathrm{Id}_V)=\lambda\dim V,
+\]
+而
+\[
+  \operatorname{Tr}(\rho(f))=\operatorname{Tr}\Bigl(\frac{1}{|G|}\sum_g f(g)\rho(g)\Bigr)
+  =\frac{1}{|G|}\sum_g f(g)\chi_V(g)
+  =\frac{1}{|G|}\sum_g f(g)\overline{\chi_V(g)}=(f,\chi_{V^*}),
+\]
+故 $\lambda=(f,\chi_{V^*})/\dim V$.
+\end{proof}
