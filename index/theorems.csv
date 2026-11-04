@@ -1,6 +1,6 @@
 ﻿type,title,label,section,file,text
 定义,$K$-代数,def:k-algebra,代数,notes/reptheory/chapters/ch01.tex,"给定域 , 称 为 上的代数, 若: 是 -线性空间; 存在二元运算 , , 使得 存在 , 使 , ; , ; 是双线性的, 即 a (b+c)&=a b+a c, & a (kb)&=k(a b), (a+b) c&=a c+b c, "
-例,,eg:algebra,代数,notes/reptheory/chapters/ch01.tex,"给定数域 , 多项式环 是 -代数. 给定数域 , 全体 阶方阵 是 -代数, 称为全矩阵代数. 设 为 -线性空间, 则 是 -代数. Hamilton 四元数 是 -代数, 其乘法表为 ccccc & & & & & & & & & &"
+例,,eg:algebra,代数,notes/reptheory/chapters/ch01.tex,"给定数域 , 多项式环 是 -代数. 给定数域 , 全体 阶方阵 是 -代数, 称为全矩阵代数. 设 为 -线性空间, 则 是 -代数. Hamilton 四元数 是 -代数, 其乘法表为 c|cccc & & & & & & & & & "
 例,,eg:group-algebra-Z2,代数,notes/reptheory/chapters/ch01.tex,"群 . 作同态 : [ 1 1&0 0&1 , -1 0&1 1&0 . ] 于是 [ K _2= _K 1&0 0&1 , 0&1 1&0 ] 为群代数."
 定义,子代数,def:subalgebra,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, , 称 为 的子代数, 若: (单位元必须和 中的一样); 在 的运算下构成 -代数."
 注,,rem:unit-mismatch,代数,notes/reptheory/chapters/ch01.tex,"对定义 中 (1) 的举例. 和 为 -代数, 存在嵌入 , 让 [ A_ n n A&0 0&0 . ] 在嵌入 意义下 . 但是 的单位元 , 故 不是 的子代数."
