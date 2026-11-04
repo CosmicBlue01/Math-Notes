@@ -1,7 +1,37 @@
 # 定理索引
 
-共 1 条，由 `tools/make_index.py` 自动生成。
+共 31 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
-| 1 | 定理 | 拉格朗日中值定理 | `thm:mvt` | 样本章：中值定理 | notes/chapters/ch01-sample.tex |
+| 1 | 定义 | $K$-代数 | `def:k-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 2 | 例 |  | `eg:algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 3 | 例 |  | `eg:group-algebra-Z2` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 4 | 定义 | 子代数 | `def:subalgebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 5 | 注 |  | `rem:unit-mismatch` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 6 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 7 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 8 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 9 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 10 | 例 |  | `def:division-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 11 | 定义 | 可除代数 | `def:division-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 12 | 定理 | Frobenius | `thm:frobenius` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 13 | 定义 | 外直和 | `def:direct-sum` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 14 | 注 |  | `rem:direct-sum-not-subalgebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 15 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 16 | 定义 | 理想 | `def:ideal` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 17 | 注 |  | `rem:summand-ideal` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 18 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 19 | 定义 | 单代数 | `def:simple-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 20 | 定理 |  | `thm:simple-over-C` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 21 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 22 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 23 | 定义 | 商代数 | `def:quotient-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 24 | 注 |  | `rem:ideal-necessary` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 25 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 26 | 定义 | 代数同态 | `def:algebra-hom` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 27 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 28 | 定义 | 典范同态 | `def:canonical-hom` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 29 | 例 |  | `thm:first-iso` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 30 | 定理 | 同态基本定理 | `thm:first-iso` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 31 | 例 |  | `` | 代数 | notes/reptheory/chapters/ch01.tex |

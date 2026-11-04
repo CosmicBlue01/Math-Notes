@@ -25,3 +25,4 @@ inbox/*
 
 # 只有 dist/ 里的 PDF 进版本库
 notes/*.pdf
+.tmp/
