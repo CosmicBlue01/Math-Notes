@@ -320,7 +320,7 @@ $[a]=[b]\Leftrightarrow a-b\in I$. 显然, 加法、数乘在商空间 $A/I$ 上
   A/I\times A/I\longrightarrow A/I\colon\quad ([a],[b])\longmapsto[ab].
 \]
 
-需要验证该定义合理, 即运算结果不依赖代表元的选取. 不然要求 $I$ 为理想.
+需要验证该定义合理, 即运算结果不依赖代表元的选取. 这就要求 $I$ 为理想.
 我们说明: $I$ 为理想时, 该运算是 well-defined 的.
 
 \begin{proof}
@@ -431,8 +431,8 @@ $x^2\mapsto[x^2]$, 则 $[x^2]=[x]^2=[a_0]^2=[a_0^2]$.
 于是 $\operatorname{Ker}(f)\trianglelefteq A$.
 
 (2) $\operatorname{Im}(f)\subseteq B$ 是显然的, 只要说明 $\operatorname{Im}(f)$ 是代数.
-$\Rightarrow$ $\operatorname{Im}(f)$ 是线性空间且对 $B$ 上乘法封闭 (双线性性直接成立).
-$\Leftarrow$ $\operatorname{Im}(f)$ 对加法, 数乘, 乘法封闭 (其余性质自然成立).
+即 $\operatorname{Im}(f)$ 对加法, 数乘, 乘法封闭;
+其余性质由 $B$ 中自然继承.
 取 $b_{1,2}\in\operatorname{Im}(f)$, 则 $\exists a_{1,2}\in A$, s.t. $f(a_{1,2})=b_{1,2}$.
 
 由于 $f$ 是线性映射 (参看 Definition \ref{def:algebra-hom}), 故
@@ -445,7 +445,7 @@ $\Leftarrow$ $\operatorname{Im}(f)$ 对加法, 数乘, 乘法封闭 (其余性�
 
 (3) 定义映射 $\varphi\colon A/\operatorname{Ker}(f)\to\operatorname{Im}(f)$, $[a]\mapsto f(a)$.
 下面说明 $\varphi$ 是同构. 先说明 $\varphi$ 是同态:
-$\varphi([0])=f(0)=0$, 且
+$\varphi([1])=f(1_A)=1_B$, 且
 \[
   \varphi([a][b])=\varphi([ab])=f(ab)=f(a)f(b)=\varphi([a])\varphi([b]),
 \]
@@ -463,7 +463,7 @@ $\varphi([0])=f(0)=0$, 且
 \begin{example}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-  \item 设 $A=K[x]$. $\forall a\in K$, 记同态 $f_a\colon K[x]\to K[a]$, $f_a(x)\mapsto f(a)$.
+  \item 设 $A=K[x]$. $\forall a\in K$, 记同态 $f_a\colon K[x]\to K[a]$, $p(x)\mapsto p(a)$.
   于是 $\operatorname{Im}(f_a)=K[a]$, $\operatorname{Ker}(f_a)=(x-a)$, 从而
   \[
     K[x]/(x-a)\cong K[a].
