@@ -12,7 +12,7 @@
 定义,可除代数,def:division-algebra,代数,notes/reptheory/chapters/ch01.tex,"称代数 是可除代数, 若 中每个非零元都有逆元."
 定理,Frobenius,thm:frobenius,代数,notes/reptheory/chapters/ch01.tex,"上有限维可除代数只有 , , ."
 定义,外直和,def:direct-sum,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 的外直和记作 , 定义为 的 Cartesian 积: [ A_1 A_2= (a_1,a_2) a_i A_i, i=1,2 , ] 直和上运算定义如下: & (a_1,a_2)+(a_1',a_2')=(a_1+a_1"
-注,,rem:direct-sum-not-subalgebra,代数,notes/reptheory/chapters/ch01.tex,"都不是 的子代数, 因为单位元不一致."
+注,,rem:direct-sum-not-subalgebra,代数,notes/reptheory/chapters/ch01.tex,"都不是 的子代数. 按定义 的第 (1) 条, 子代数必须与 有相同的单位元; 而 的单位元是 , 的单位元是 , 二者不同."
 例,,,代数,notes/reptheory/chapters/ch01.tex,"设 , 均为 -代数, 则 [ M_ n_1 (F) M_ n_2 (F) = A&0 0&B | A M_ n_1 (F), B M_ n_2 (F) . ] 代数 . 设 , , 则 均为 的子代数, 空间的和 构成代数 . 没有内直和"
 定义,理想,def:ideal,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 称子空间 是 的左 (右) 理想, 若 ( ). 若 既是左理想, 又是右理想, 则称 是理想. 左理想记作 , 右理想记作 , 理想记作 ."
 注,,rem:summand-ideal,代数,notes/reptheory/chapters/ch01.tex,都是 的理想.

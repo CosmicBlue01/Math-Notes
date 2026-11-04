@@ -17,8 +17,8 @@
 % 只用西文标点：禁用 xeCJK 的全角标点替换与挤压
 \punctstyle{plain}
 \linespread{1.35}
-\setlength{\parskip}{0.6em}
-\setlength{\parindent}{0pt}   % 不缩进, 改用段间距
+\setlength{\parskip}{0.2em}
+\setlength{\parindent}{2em}   % 首行缩进两个汉字
 
 % ---------- 数学 ----------
 \usepackage{amsmath}
@@ -27,11 +27,12 @@
 \usepackage{array}
 
 % ---------- 标题格式：居中、黑体 ----------
+\usepackage{indentfirst}
 \usepackage{titlesec}
 \titleformat{\section}{\centering\heiti\bfseries\large}{\thesection}{0.6em}{}
 \titleformat{\subsection}{\heiti\bfseries\normalsize}{\thesubsection}{0.6em}{}
-\titlespacing*{\section}{0pt}{2ex plus .5ex minus .2ex}{1.2ex}
-\titlespacing*{\subsection}{0pt}{1.6ex plus .3ex}{0.8ex}
+\titlespacing*{\section}{0pt}{3ex plus .6ex minus .3ex}{1.6ex}
+\titlespacing*{\subsection}{0pt}{2.8ex plus .5ex minus .2ex}{1.1ex}
 
 % ---------- 页眉页脚 ----------
 \usepackage{fancyhdr}
@@ -84,3 +85,7 @@
   bookmarksnumbered=true,
 }
 \setlength{\emergencystretch}{3em}
+\makeatletter
+\def\@doendpe{\@endpetrue}   % 列表结束后不取消首行缩进
+\makeatother
+
