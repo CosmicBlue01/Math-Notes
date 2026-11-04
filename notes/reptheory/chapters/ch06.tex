@@ -490,3 +490,93 @@ $\chi_V=\chi_W$.
   \mathrm{Alt}^2(V)=\{\beta\in V\otimes V\mid \theta(\beta)=-\beta\}.
 \]
 \end{example}
+
+\begin{proposition}\label{prop:sym-alt-sub}
+$\mathrm{Sym}^2(V)$ 与 $\mathrm{Alt}^2(V)$ 都是 $V\otimes V$ 的子表示.
+\end{proposition}
+
+\begin{proof}
+二者显然都是子空间, 只需说明它们在 $G$ 的作用下稳定. 只证
+$\mathrm{Sym}^2(V)$, 另一个类似. 对 $\alpha\in\mathrm{Sym}^2(V)$ 与 $g\in G$,
+\[
+  \theta(g\cdot\alpha)=g\cdot\theta(\alpha)=g\cdot\alpha,
+\]
+即 $g\cdot\alpha\in\mathrm{Sym}^2(V)$.
+\end{proof}
+
+\begin{proposition}\label{prop:sym-alt-decomp}
+$V\otimes V\cong\mathrm{Sym}^2(V)\oplus\mathrm{Alt}^2(V)$.
+\end{proposition}
+
+\begin{proof}
+只需证明 $\chi_{V\otimes V}=\chi_{\mathrm{Sym}^2}+\chi_{\mathrm{Alt}^2}$.
+注意 $\chi_{V\otimes V}=\chi_V^2$. 取 $V$ 的一组基 $e_1,\dots,e_n$, 使
+$g\cdot e_i=\lambda_ie_i$, 则 $\{e_i\otimes e_j\}$ 是 $V\otimes V$ 的一组基, 且
+$\chi_V(g)=\sum_i\lambda_i$, 从而 $\chi_{V\otimes V}(g)=\sum_{i,j}\lambda_i\lambda_j$.
+又不难看出
+\[
+  \mathrm{Sym}^2(V)=\operatorname{span}\{e_i\otimes e_j+e_j\otimes e_i\mid 1\le i\le j\le n\},
+\]
+\[
+  \mathrm{Alt}^2(V)=\operatorname{span}\{e_i\otimes e_j-e_j\otimes e_i\mid 1\le i<j\le n\},
+\]
+故 $\dim\mathrm{Sym}^2(V)=\frac{n(n+1)}{2}$, $\dim\mathrm{Alt}^2(V)=\frac{n(n-1)}{2}$, 且
+\[
+  \chi_{\mathrm{Sym}^2}(g)=\sum_{1\le i\le j\le n}\lambda_i\lambda_j,\qquad
+  \chi_{\mathrm{Alt}^2}(g)=\sum_{1\le i<j\le n}\lambda_i\lambda_j .
+\]
+于是 $\chi_V^2(g)=\chi_{\mathrm{Sym}^2}(g)+\chi_{\mathrm{Alt}^2}(g)$, 结论成立.
+\end{proof}
+
+\begin{remark}
+(1) 一般而言, 不可约表示的张量积不再不可约.
+
+(2) 这里称 $\mathrm{Sym}^2(V)$ 为 $V$ 的二阶对称表示, 称 $\mathrm{Alt}^2(V)$ 为
+$V$ 的二阶交错表示.
+\end{remark}
+
+为强调起见, 把前面证明中的结论单独列为定理.
+
+\begin{theorem}[表示的重数]\label{thm:multiplicity}
+若有限维表示 $V$ 可写成不可约表示的直和
+$V=\bigoplus_{i=1}^{r}V_i^{(n_i)}$, 则 $n_i=(\chi_i,\chi_V)$.
+\end{theorem}
+
+\begin{theorem}\label{thm:regular-contains}
+每个不可约表示 $V_i$ 都是正则表示的子表示, 且重数为 $\dim V_i$.
+\end{theorem}
+
+\begin{proof}
+即证 $(\chi_i,\chi_{\mathrm{reg}})=\dim V_i$. 事实上
+\[
+  (\chi_i,\chi_{\mathrm{reg}})=\frac{1}{|G|}\sum_{g}\chi_i(g)\chi_{\mathrm{reg}}(g^{-1})
+  =\frac{1}{|G|}\cdot\chi_i(1)\cdot|G|=\chi_i(1)=\dim V_i .
+\]
+\end{proof}
+
+\begin{remark}[正则表示]
+设 $G=\{g_1,\dots,g_n\}$, $V=\mathbb{F}G=\operatorname{span}_{\mathbb{F}}\{g\mid g\in G\}$,
+则 $\rho\colon G\to\mathrm{GL}_V$, $g\mapsto\rho(g)$, 其中 $\rho(g)(h)=gh$.
+称这个表示为正则表示. 由定义 $\dim V_{\mathrm{reg}}=|G|$; 且 $\chi_{\mathrm{reg}}(1)=|G|$,
+而对 $g\neq 1$, $\rho(g)$ 是置换矩阵且没有不动点, 故 $\chi_{\mathrm{reg}}(g)=0$.
+\end{remark}
+
+\begin{corollary}\label{cor:sum-dim-square}
+设 $G$ 的所有不可约表示为 $V_1,\dots,V_s$, 则
+$|G|=\sum_{i=1}^{s}(\dim V_i)^2$.
+\end{corollary}
+
+\begin{proof}
+由 Theorem \ref{thm:regular-contains}, 有
+$V_{\mathrm{reg}}\cong\bigoplus_{i=1}^{s}V_i^{(\dim V_i)}$, 两边取维数得
+\begin{align*}
+  |G|=\dim V_{\mathrm{reg}}
+  &=\dim\Bigl(\bigoplus_{i=1}^{s}V_i^{(\dim V_i)}\Bigr)\\
+  &=\underbrace{\dim(V_1\oplus\cdots\oplus V_1)}_{\dim V_1\text{ 个}}
+   +\cdots+
+   \underbrace{\dim(V_s\oplus\cdots\oplus V_s)}_{\dim V_s\text{ 个}}\\
+  &=(\dim V_1)^2+\cdots+(\dim V_s)^2=\sum_{i=1}^{s}(\dim V_i)^2 .
+\end{align*}
+\end{proof}
+
+作为进一步的讨论, 我们考虑张量积的分解公式.

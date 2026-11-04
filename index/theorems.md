@@ -1,6 +1,6 @@
 # 定理索引
 
-共 140 条，由 `tools/make_index.py` 自动生成。
+共 147 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -144,3 +144,10 @@
 | 138 | 例 |  | `ex:S3-std-irreducible` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 139 | 定理 | 同构表示的判定 | `thm:iso-iff-char-finite` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 140 | 例 |  | `ex:sym-alt` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 141 | 命题 |  | `prop:sym-alt-sub` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 142 | 命题 |  | `prop:sym-alt-decomp` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 143 | 注 |  | `thm:multiplicity` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 144 | 定理 | 表示的重数 | `thm:multiplicity` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 145 | 定理 |  | `thm:regular-contains` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 146 | 注 | 正则表示 | `cor:sum-dim-square` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 147 | 推论 |  | `cor:sum-dim-square` | 特征标 | notes/reptheory/chapters/ch06.tex |
