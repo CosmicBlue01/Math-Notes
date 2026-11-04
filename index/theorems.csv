@@ -131,3 +131,11 @@
 引理,,lem:zeta-image,特征标,notes/reptheory/chapters/ch06.tex,.
 命题,,prop:dim-invariants,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为表示, 则 [ |G| _ g G _V(g) = |G| _ g G _ V^G (g)= V^G . ]"
 定理,,thm:inner-product-dim,特征标,notes/reptheory/chapters/ch06.tex,"设 为 的两个表示, 则 ."
+引理,,lem:hom-fixed,特征标,notes/reptheory/chapters/ch06.tex,.
+引理,Schur,lem:schur,特征标,notes/reptheory/chapters/ch06.tex,"设 为代数, 为 在代数闭域 上的两个不可约表示, 则 [ _A(V_1,V_2)= 0, & V_1 V_2, 1, & V_1 V_2. ]"
+定理,Frobenius--Schur 第一正交关系,thm:orthogonality,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为 的两个不可约表示, 则 [ ( _ V_1 , _ V_2 )= 0, & V_1 V_2, 1, & V_1 V_2. ]"
+定理,,thm:iso-iff-char,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为 的两个不可约表示, 则 当且仅当 ."
+定理,不可约表示的判定,thm:irreducible-criterion,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 为 的一个复表示, 则 不可约当且仅当 ."
+例,,ex:S3-std-irreducible,特征标,notes/reptheory/chapters/ch06.tex,"在前文中已讨论过对称群 的标准表示, 并证明了它不可约. 现以 为例, 用特征标给出一个更简单的证明: 满足 , 由 Theorem 即知 不可约."
+定理,同构表示的判定,thm:iso-iff-char-finite,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为 的两个有限维表示, 则 当且仅当 ."
+例,,ex:sym-alt,特征标,notes/reptheory/chapters/ch06.tex,"对称表示 (symmetric representation) 与交错表示 (alternating representation). 仍设 为有限群, 为不可约复表示, 定义 [ V V V V, v_1 v_2 v_2 v_1 . ] "

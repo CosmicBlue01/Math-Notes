@@ -305,3 +305,188 @@ $(\chi_{V_1},\chi_{V_2})=\dim\operatorname{Hom}_G(V_1,V_2)$.
 \]
 注意 $V_1^*\otimes V_2\cong\operatorname{Hom}(V_1,V_2)$, 故结论成立.
 \end{proof}
+
+\begin{lemma}\label{lem:hom-fixed}
+$(\operatorname{Hom}(V_1,V_2))^G=\operatorname{Hom}_G(V_1,V_2)$.
+\end{lemma}
+
+\begin{proof}
+$f\in(\operatorname{Hom}(V_1,V_2))^G$ 当且仅当对任意 $g\in G$ 有 $g\cdot f=f$, 即
+\[
+  \forall g\in G,\ \forall v_1\in V_1,\qquad g\cdot f(g^{-1}\cdot v_1)=f(v_1),
+\]
+等价地 $f(g^{-1}\cdot v_1)=g^{-1}\cdot f(v_1)$ 对一切 $g,v_1$ 成立, 这正是
+$f\in\operatorname{Hom}_G(V_1,V_2)$.
+\end{proof}
+
+于是 Theorem \ref{thm:inner-product-dim} 可进一步写为
+\[
+  (\chi_{V_1},\chi_{V_2})=\dim\operatorname{Hom}_G(V_1,V_2).
+\]
+
+\begin{lemma}[Schur]\label{lem:schur}
+设 $A$ 为代数, $V_1,V_2$ 为 $A$ 在代数闭域 $\mathbb{F}$ 上的两个不可约表示, 则
+\[
+  \dim\operatorname{Hom}_A(V_1,V_2)=
+  \begin{cases}
+    0, & V_1\ncong V_2,\\
+    1, & V_1\cong V_2.
+  \end{cases}
+\]
+\end{lemma}
+
+\begin{proof}
+(1) 设 $V_1\ncong V_2$. 任取 $f\in\operatorname{Hom}_A(V_1,V_2)$, 反设 $f\neq 0$.
+由同态基本定理, $\operatorname{Ker}(f)\subseteq V_1$ 且为子模; 既然 $f\neq 0$, 则
+$\operatorname{Ker}(f)\subsetneq V_1$; 而 $V_1$ 不可约, 故 $\operatorname{Ker}(f)=\{0\}$, 即 $f$ 是单射.
+同理 $\operatorname{Im}(f)\subseteq V_2$ 为子模; 既然 $f\neq 0$, 则 $\operatorname{Im}(f)\neq\{0\}$;
+而 $V_2$ 不可约, 故 $\operatorname{Im}(f)=V_2$, 即 $f$ 是满射.
+于是 $f$ 是 $V_1$ 到 $V_2$ 的同构, 与 $V_1\ncong V_2$ 矛盾. 故 $f=0$, 从而
+$\dim\operatorname{Hom}_A(V_1,V_2)=0$.
+
+(2) 设 $V_1\cong V_2$. 取同构 $\psi\in\operatorname{Hom}_A(V_1,V_2)$, 则对任意
+$f\in\operatorname{Hom}_A(V_1,V_2)$ 有 $\psi^{-1}\circ f\in\operatorname{End}_A(V_1)$.
+由于 $\mathbb{F}$ 代数闭, $\psi^{-1}\circ f$ 有特征值 $\lambda\in\mathbb{F}$, 即
+存在 $0\neq v_1\in V_1$ 使 $(\psi^{-1}\circ f-\lambda\,\mathrm{Id}_{V_1})(v_1)=0$,
+故 $\operatorname{Ker}(\psi^{-1}\circ f-\lambda\,\mathrm{Id}_{V_1})\neq\{0\}$.
+由同态基本定理, 该核是 $V_1$ 的子模; 而 $V_1$ 不可约, 故
+$\operatorname{Ker}(\psi^{-1}\circ f-\lambda\,\mathrm{Id}_{V_1})=V_1$, 即
+$\psi^{-1}\circ f=\lambda\,\mathrm{Id}_{V_1}$, 亦即 $f=\lambda\psi$.
+这说明 $\operatorname{Hom}_A(V_1,V_2)=\{\lambda\psi\mid \lambda\in\mathbb{F}\}$, 故其维数为 $1$.
+\end{proof}
+
+\begin{theorem}[Frobenius--Schur 第一正交关系]\label{thm:orthogonality}
+设 $G$ 为群, $V_1,V_2$ 为 $G$ 的两个不可约表示, 则
+\[
+  (\chi_{V_1},\chi_{V_2})=
+  \begin{cases}
+    0, & V_1\ncong V_2,\\
+    1, & V_1\cong V_2.
+  \end{cases}
+\]
+\end{theorem}
+
+\begin{proof}
+先说明 $\operatorname{Hom}_{\mathbb{F}G}(V_1,V_2)=\operatorname{Hom}_G(V_1,V_2)$.
+一方面, 对 $f\in\operatorname{Hom}_{\mathbb{F}G}(V_1,V_2)$ 与 $a\in\mathbb{F}G$ 有
+$f(av_1)=af(v_1)$; 取 $a\in G$ 即得 $f\in\operatorname{Hom}_G(V_1,V_2)$.
+另一方面, 对 $f\in\operatorname{Hom}_G(V_1,V_2)$ 与 $g\in G$ 有 $f(gv_1)=gf(v_1)$;
+对 $a=\sum_g k_g g\in\mathbb{F}G$ 就有
+\[
+  f(av_1)=f\Bigl(\sum_g k_g\,g\cdot v_1\Bigr)
+  =\sum_g k_g\,f(g\cdot v_1)=\sum_g k_g\,g\cdot f(v_1)=a\,f(v_1),
+\]
+从而 $f\in\operatorname{Hom}_{\mathbb{F}G}(V_1,V_2)$.
+
+回到本定理. 由 Theorem \ref{thm:inner-product-dim} 与 Lemma \ref{lem:hom-fixed},
+\[
+  (\chi_{V_1},\chi_{V_2})=\dim\operatorname{Hom}_G(V_1,V_2)
+  =\dim\operatorname{Hom}_{\mathbb{F}G}(V_1,V_2),
+\]
+而群 $G$ 的表示就是群代数 $\mathbb{F}G$ 的表示, 故由 Schur 引理
+(Lemma \ref{lem:schur}) 即得所需结论.
+\end{proof}
+
+\begin{theorem}\label{thm:iso-iff-char}
+设 $G$ 为群, $V_1,V_2$ 为 $G$ 的两个不可约表示, 则
+$V_1\cong V_2$ 当且仅当 $\chi_{V_1}=\chi_{V_2}$.
+\end{theorem}
+
+\begin{proof}
+(1) 设 $V_1\cong V_2$, 即有同构 $\varphi\colon V_1\to V_2$ 使下图交换:
+\[
+  \begin{tikzcd}[row sep=3.2cm, column sep=4.5cm, arrows={->,>=stealth}]
+    V_1 \arrow[r,"\varphi"] \arrow[d,"\rho_1(g)"'] & V_2 \arrow[d,"\rho_2(g)"]\\
+    V_1 \arrow[r,"\varphi"'] & V_2
+  \end{tikzcd}
+\]
+即 $\varphi\circ\rho_1(g)=\rho_2(g)\circ\varphi$, 从而
+$\rho_2(g)=\varphi\circ\rho_1(g)\circ\varphi^{-1}$. 于是
+\[
+  \chi_{V_2}(g)=\operatorname{Tr}(\rho_2(g))
+  =\operatorname{Tr}(\varphi\,\rho_1(g)\,\varphi^{-1})=\operatorname{Tr}(\rho_1(g))=\chi_{V_1}(g),
+\]
+故 $\chi_{V_1}=\chi_{V_2}$.
+
+(2) 反设 $V_1\ncong V_2$, 则由 Theorem \ref{thm:orthogonality} 有
+$(\chi_{V_1},\chi_{V_2})=0$. 但由 $\chi_{V_1}=\chi_{V_2}$,
+\[
+  0=(\chi_{V_1},\chi_{V_2})=(\chi_{V_1},\chi_{V_1})
+  =\frac{1}{|G|}\sum_{g\in G}\chi_{V_1}(g)\overline{\chi_{V_1}(g)}
+  =\frac{1}{|G|}\sum_{g\in G}\bigl|\chi_{V_1}(g)\bigr|^2\ge 0,
+\]
+故 $\chi_{V_1}(g)=0$ 对一切 $g\in G$ 成立. 但 $\chi_{V_1}(1)=\dim V_1>0$, 矛盾.
+因此 $V_1\cong V_2$.
+\end{proof}
+
+\subsection{特征标的应用}
+
+\begin{theorem}[不可约表示的判定]\label{thm:irreducible-criterion}
+设 $G$ 为有限群, $V$ 为 $G$ 的一个复表示, 则 $V$ 不可约当且仅当
+$(\chi_V,\chi_V)=1$.
+\end{theorem}
+
+\begin{proof}
+由 Maschke 定理, 有限维复表示 $V$ 可写成不可约表示的直和. 设
+$V_1,\dots,V_r$ 为互不同构的不可约表示, 记
+\[
+  V=\bigoplus_{i=1}^{r}V_i^{(n_i)},
+\]
+其中 $n_i$ 称为 $V_i$ 出现在 $V$ 中的重数 (即把所有同构于 $V_i$ 的不可约子表示
+合并写作 $V_i^{(n_i)}$). 于是 $\chi_V=\sum_{i=1}^{r}n_i\chi_i$, 这里 $\chi_i=\chi_{V_i}$. 故
+\[
+  (\chi_V,\chi_V)=\Bigl(\sum_i n_i\chi_i,\ \sum_j n_j\chi_j\Bigr)
+  =\sum_{i,j}n_in_j(\chi_i,\chi_j)=\sum_{i=1}^{r}n_i^2 .
+\]
+于是
+\[
+  (\chi_V,\chi_V)=1
+  \iff \exists!\,k,\ n_k=1 \text{ 且 } \forall i\neq k,\ n_i=0
+  \iff V\cong V_k
+  \iff V \text{ 不可约}.
+\]
+\end{proof}
+
+\begin{example}\label{ex:S3-std-irreducible}
+在前文中已讨论过对称群 $S_n$ 的标准表示, 并证明了它不可约.
+现以 $S_3$ 为例, 用特征标给出一个更简单的证明:
+$\rho_{\mathrm{std}}\colon S_3\to\mathrm{GL}_2$ 满足 $(\chi_{\mathrm{std}},\chi_{\mathrm{std}})=1$,
+由 Theorem \ref{thm:irreducible-criterion} 即知 $\rho_{\mathrm{std}}$ 不可约.
+\end{example}
+
+\begin{theorem}[同构表示的判定]\label{thm:iso-iff-char-finite}
+设 $G$ 为群, $V,W$ 为 $G$ 的两个有限维表示, 则 $V\cong W$ 当且仅当
+$\chi_V=\chi_W$.
+\end{theorem}
+
+\begin{proof}
+必要性显然. 反之, 设
+\[
+  V=\bigoplus_{i=1}^{s}V_i^{(n_i)},\qquad W=\bigoplus_{i=1}^{s}V_i^{(m_i)},
+\]
+其中 $V_1,\dots,V_s$ 互不同构且不可约. 只要证明 $n_i=m_i$. 断言
+\[
+  n_i=(\chi_i,\chi_V).
+\]
+事实上, 由 Theorem \ref{thm:orthogonality},
+\[
+  (\chi_i,\chi_V)=\Bigl(\chi_i,\ \sum_{j}n_j\chi_j\Bigr)
+  =\sum_{j}n_j(\chi_i,\chi_j)=n_i .
+\]
+同理 $m_i=(\chi_i,\chi_W)$. 由 $\chi_V=\chi_W$ 得 $n_i=m_i$, 故 $V\cong W$.
+\end{proof}
+
+\begin{example}\label{ex:sym-alt}
+对称表示 (symmetric representation) 与交错表示 (alternating representation).
+仍设 $G$ 为有限群, $V$ 为不可约复表示, 定义
+\[
+  \theta\colon V\otimes V\longrightarrow V\otimes V,\qquad
+  v_1\otimes v_2\longmapsto v_2\otimes v_1 .
+\]
+不难验证 $\theta$ 为表示同态 (需要先确认它良定义), 且易证 $\theta^2=\mathrm{Id}$,
+从而 $\theta$ 可对角化. 下面定义两个子空间
+\[
+  \mathrm{Sym}^2(V)=\{\alpha\in V\otimes V\mid \theta(\alpha)=\alpha\},\qquad
+  \mathrm{Alt}^2(V)=\{\beta\in V\otimes V\mid \theta(\beta)=-\beta\}.
+\]
+\end{example}

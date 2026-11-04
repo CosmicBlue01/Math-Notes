@@ -1,6 +1,6 @@
 # 定理索引
 
-共 132 条，由 `tools/make_index.py` 自动生成。
+共 140 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -136,3 +136,11 @@
 | 130 | 引理 |  | `lem:zeta-image` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 131 | 命题 |  | `prop:dim-invariants` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 132 | 定理 |  | `thm:inner-product-dim` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 133 | 引理 |  | `lem:hom-fixed` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 134 | 引理 | Schur | `lem:schur` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 135 | 定理 | Frobenius--Schur 第一正交关系 | `thm:orthogonality` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 136 | 定理 |  | `thm:iso-iff-char` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 137 | 定理 | 不可约表示的判定 | `thm:irreducible-criterion` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 138 | 例 |  | `ex:S3-std-irreducible` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 139 | 定理 | 同构表示的判定 | `thm:iso-iff-char-finite` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 140 | 例 |  | `ex:sym-alt` | 特征标 | notes/reptheory/chapters/ch06.tex |
