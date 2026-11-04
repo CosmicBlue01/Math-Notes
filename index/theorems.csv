@@ -57,7 +57,7 @@
 注,,rem:algebra-module-parallel,模,notes/reptheory/chapters/ch02.tex,"可以类似地定义子模、交、直和、商模与同态, 此处不再赘述."
 定义,忠实模,def:faithful-module,模,notes/reptheory/chapters/ch02.tex,"设 为 -代数 上的左模. 称 是 (faithful), 若 [ m M, a m=0 a=0 . ]"
 注,零化子,rem:annihilator,模,notes/reptheory/chapters/ch02.tex,"称 为 的零化子, 记为 . 则 忠实当且仅当 ."
-定义,表示,def:representation,表示,notes/reptheory/chapters/ch03.tex,"设 是一个 -代数. 的一个表示是一个二元组 , 其中 是 -线性空间; , 是代数同态. 有时简称 为 的一个表示, 或称 为 的一个表示."
+定义,表示,def:representation,表示,notes/reptheory/chapters/ch03.tex,"设 为 -代数. 的一个表示是一个二元组 , 其中 是 -线性空间; , 是代数同态. 有时简称 为 的一个表示, 或称 为 的一个表示."
 例,,,表示,notes/reptheory/chapters/ch03.tex,"由 , [ g 0&1 1&0 , ] 得到 的一个表示 . 由 , [ g^j ^j, = ( n ), ] 得到 的一个表示 ."
 定理,,thm:rep-is-module,表示,notes/reptheory/chapters/ch03.tex,是 的一个表示当且仅当 是一个 -模.
 定义,群的表示,def:group-representation,表示,notes/reptheory/chapters/ch03.tex,"设 为群, 为 -线性空间. 称 为 的一个 (线性) 表示, 若存在代数同态 [ KG (V). ]"
