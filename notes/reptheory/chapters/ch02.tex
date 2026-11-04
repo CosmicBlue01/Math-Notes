@@ -34,11 +34,11 @@
   记 $a=\frac12\cdot 1\in\mathbb{Z}$, 由 $\left(\frac12+\frac12\right)\cdot 1=1$ 得
   $a+a=2a=1$, 与 $a\in\mathbb{Z}$ 矛盾.
   进一步, 设 $n>1$, 考虑 $\mathbb{Q}$ 在 $\mathbb{Z}/n\mathbb{Z}$ 上的作用.
-  令 $c=\frac1n\cdot[1]$. 由 $1\cdot[1]=[1]$ 得
+  由于 $[n]=[0]$, 得
   \[
-    [1]=1\cdot[1]=n\cdot c=0,
+    [0]=\frac1n\cdot[n]=\frac1n\cdot n\cdot[1]=[1],
   \]
-  矛盾. 故这样的作用只在 $n=1$ 时才可能存在.
+  与 $n>1$ 矛盾. 故这样的作用只在 $n=1$ 时才可能存在.
 \end{enumerate}
 \end{example}
 
@@ -187,11 +187,8 @@ $0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap 
 
 \begin{example}
 \begin{enumerate}
-  \item 考虑多项式环 $R=\mathbb{F}[x]$. 则
-  \[
-    R^{\mathrm{op}}=\{f(x)*g(x)=g(x)f(x)=f(x)g(x)\},
-  \]
-  因此 $R^{\mathrm{op}}=R$.
+  \item 考虑多项式环 $R=\mathbb{F}[x]$. $R^{\mathrm{op}}$ 的乘法为 $f*g=g\cdot f$.
+  由于 $\mathbb{F}[x]$ 交换, $g\cdot f=f\cdot g$, 故 $R^{\mathrm{op}}=R$.
   \item 考虑 $R=M_n(\mathbb{F})$. 则 $R^{\mathrm{op}}=M_n^{\mathrm{op}}(\mathbb{F})$, 其乘法为
   $M_1*M_2=M_2M_1$, 其中 $M_{1,2}\in M_n(\mathbb{F})$.
 \end{enumerate}

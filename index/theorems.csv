@@ -49,7 +49,7 @@
 定理,同态基本定理,thm:module-iso,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模同态, 则 为 的子模; 为 的子模; ."
 注,,rem:module-iso-right,模,notes/reptheory/chapters/ch02.tex,上述定理对右 -模同样成立.
 定义,反环,def:opposite-ring,模,notes/reptheory/chapters/ch02.tex,"称 为 的反环, 若 作为加群 ; 对任意 , , 其中 为 上的乘法."
-例,,def:bimodule,模,notes/reptheory/chapters/ch02.tex,"考虑多项式环 . 则 [ R^ = f(x)*g(x)=g(x)f(x)=f(x)g(x) , ] 因此 . 考虑 . 则 , 其乘法为 , 其中 ."
+例,,def:bimodule,模,notes/reptheory/chapters/ch02.tex,"考虑多项式环 . 的乘法为 . 由于 交换, , 故 . 考虑 . 则 , 其乘法为 , 其中 ."
 命题,,def:bimodule,模,notes/reptheory/chapters/ch02.tex,是一个左 -模当且仅当 是一个右 -模.
 定义,双模,def:bimodule,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模, 同时为右 -模. 称 为一个 - 双模, 记作 , 若 [ (r m) s=r (m s), ] 其中 , , ."
 例,,def:algebra-module,模,notes/reptheory/chapters/ch02.tex,"显然 本身是一个 - 双模, 即 ."
