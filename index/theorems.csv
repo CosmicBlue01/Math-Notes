@@ -107,5 +107,5 @@
 引理,,lem:complement,群的线性表示,notes/reptheory/chapters/ch05.tex,"设线性空间 , 子空间 , 则 V=V_1 V_2 p V V_1 p|_ V_1 = _ V_1 ."
 引理,,lem:rep-complement,群的线性表示,notes/reptheory/chapters/ch05.tex,"设表示 , 子表示 , 则 V=V_1 V_2 p V V_1 p|_ V_1 = _ V_1 ."
 定理,Maschke,thm:maschke,群的线性表示,notes/reptheory/chapters/ch05.tex,"设 为群, 为域, 若 , 则 的所有有限维表示都是完全可约的, 即都可以写成不可约表示的直和."
-注,,rem:maschke-sharp,群的线性表示,notes/reptheory/chapters/ch05.tex,"关于 的情形, 已在第 3 章的 例子中讨论过: 此时 可约但不可分解. 因此 是 Maschke 定理成立的关键条件."
+注,,rem:maschke-sharp,群的线性表示,notes/reptheory/chapters/ch05.tex,"关于 的情形, 已在第 3 章的 例子中讨论过: 此时 可约但不可分解. 因此 是 Maschke 定理成立的充要条件 (必要性由该反例说明, 充分性即定理本身)."
 定义,常表示与模表示,def:ordinary-modular,群的线性表示,notes/reptheory/chapters/ch05.tex,"称群代数 的表示为 的 (ordinary representation), 若 ; 否则称为 (modular representation)."
