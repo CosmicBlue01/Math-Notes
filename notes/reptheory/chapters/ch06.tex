@@ -183,3 +183,125 @@ $1\mapsto 1$, $g\mapsto\omega$, $g^2\mapsto\omega^2$. 则
 故 $(12)\mapsto\begin{pmatrix}-1&-1\\ 0&1\end{pmatrix}$; 而 $(13),(23)$ 与 $(12)$ 共轭.
 由特征标是类函数, 用 $(12)$ 计算的结果与用 $(13),(23)$ 计算的一致, 此处从略.
 \end{example}
+
+类似地, 计算 $(123)$:
+\[
+  (123)(e_1-e_2,\ e_1-e_3)=(e_2-e_3,\ e_2-e_1)
+  =(e_1-e_2,\ e_1-e_3)\begin{pmatrix}-1&-1\\ 1&0\end{pmatrix}.
+\]
+现在有了具体的表示, 便可计算特征标. 由上面的讨论,
+\[
+  (\chi_{\mathrm{triv}},\chi_{\mathrm{triv}})
+  =\frac{1}{6}\sum_{g\in S_3}\chi_{\mathrm{triv}}(g)\chi_{\mathrm{triv}}(g^{-1})
+  =\frac{1}{6}\sum_{g\in S_3}1=1 .
+\]
+注意到 $S_3$ 中 $(),(123),(132)$ 是偶置换, $(12),(13),(23)$ 是奇置换, 于是
+\[
+  (\chi_{\mathrm{triv}},\chi_{\mathrm{sign}})
+  =\frac{1}{6}\sum_{g}\chi_{\mathrm{triv}}(g)\chi_{\mathrm{sign}}(g^{-1})
+  =\frac{1}{6}\bigl(1-1-1-1+1+1\bigr)=0,
+\]
+\[
+  (\chi_{\mathrm{triv}},\chi_{\mathrm{std}})
+  =\frac{1}{6}\sum_{g}\chi_{\mathrm{triv}}(g)\chi_{\mathrm{std}}(g^{-1})
+  =\frac{1}{6}\bigl(2+0+0+0-1-1\bigr)=0 .
+\]
+类似可得
+\[
+  (\chi_{\mathrm{sign}},\chi_{\mathrm{sign}})=1,\qquad
+  (\chi_{\mathrm{sign}},\chi_{\mathrm{std}})=0,\qquad
+  (\chi_{\mathrm{std}},\chi_{\mathrm{std}})=1 .
+\]
+似乎出现了某种正交性, 下面逐步说明.
+
+\begin{lemma}\label{lem:averaging}
+设 $G$ 为群, $\rho\colon G\to\mathrm{GL}_V$ 为表示, 记
+$\zeta=\dfrac{1}{|G|}\sum_{g\in G}\rho(g)$, 则 $\zeta\in\operatorname{Hom}_G(V,V)$.
+\end{lemma}
+
+\begin{proof}
+只需证明 $\zeta(g\cdot v)=g\cdot\zeta(v)$, $g\in G$. 事实上
+\[
+  \zeta(g\cdot v)=\frac{1}{|G|}\sum_{h}\rho(h)\rho(g)(v)
+  =\frac{1}{|G|}\sum_{h}\rho(hg)(v)=\zeta(v),
+\]
+同理 $g\cdot\zeta(v)=\dfrac{1}{|G|}\sum_{h}\rho(g)\rho(h)(v)
+=\dfrac{1}{|G|}\sum_{h}\rho(gh)(v)=\zeta(v)$. 故 $\zeta(g\cdot v)=g\cdot\zeta(v)$.
+\end{proof}
+
+\begin{corollary}\label{cor:zeta-commute}
+$\rho(g)\cdot\zeta=\zeta\cdot\rho(g)=\zeta$.
+\end{corollary}
+
+\begin{definition}\label{def:invariants}
+设 $G$ 为群, $V$ 为 $G$ 的表示, 定义
+\[
+  V^G=\{v\in V\mid g\cdot v=v,\ \forall g\in G\},
+\]
+这是 $V$ 的一个子表示.
+\end{definition}
+
+\begin{remark}
+$V^G$ 是 $V$ 的平凡子表示的和 (而 $V^G$ 本身也是平凡的).
+\end{remark}
+
+\begin{lemma}\label{lem:zeta-idempotent}
+$\zeta^2=\zeta$.
+\end{lemma}
+
+\begin{proof}
+由 $\zeta=\dfrac{1}{|G|}\sum_{g}\rho(g)$ 及 Corollary \ref{cor:zeta-commute},
+$\rho(g)\zeta=\zeta$, 故
+\[
+  \zeta^2=\frac{1}{|G|}\sum_{g}\rho(g)\zeta=\frac{1}{|G|}\sum_{g}\zeta
+  =\frac{1}{|G|}\cdot|G|\cdot\zeta=\zeta .
+\]
+\end{proof}
+
+\begin{lemma}\label{lem:zeta-image}
+$\zeta(V)=V^G$.
+\end{lemma}
+
+\begin{proof}
+(1) 任取 $v\in V$, 则 $\zeta(v)\in V$. 对任意 $g\in G$ 有 $g\cdot\zeta(v)=\zeta(v)$,
+故 $\zeta(v)\in V^G$, 即 $\zeta(V)\subseteq V^G$.
+
+(2) 取 $v\in V^G$, 则
+$\zeta(v)=\dfrac{1}{|G|}\sum_{g}\rho(g)(v)=\dfrac{1}{|G|}\sum_{g}v=v$,
+即 $v=\zeta(v)\in\zeta(V)$, 故 $V^G\subseteq\zeta(V)$.
+
+综上 $\zeta(V)=V^G$.
+\end{proof}
+
+\begin{proposition}\label{prop:dim-invariants}
+设 $G$ 为群, $\rho\colon G\to\mathrm{GL}_V$ 为表示, 则
+\[
+  \frac{1}{|G|}\sum_{g\in G}\chi_V(g)
+  =\frac{1}{|G|}\sum_{g\in G}\chi_{V^G}(g)=\dim V^G .
+\]
+\end{proposition}
+
+\begin{proof}
+由 Lemma \ref{lem:zeta-image}, $\zeta\colon V\to V^G$; 由 Lemma \ref{lem:zeta-idempotent}
+及 Lemma \ref{lem:averaging}, $\zeta|_{V^G}=\mathrm{Id}_{V^G}$.
+于是 $V=\operatorname{Ker}(\zeta)\oplus V^G$, 从而 $\operatorname{Tr}(\zeta)=\operatorname{Tr}(\zeta|_{V^G})$. 故
+\[
+  \frac{1}{|G|}\sum_{g}\chi_V(g)=\operatorname{Tr}(\zeta)
+  =\operatorname{Tr}(\zeta|_{V^G})=\frac{1}{|G|}\sum_{g}\chi_{V^G}(g)
+  =\frac{1}{|G|}\sum_{g}\dim V^G=\dim V^G .
+\]
+\end{proof}
+
+\begin{theorem}\label{thm:inner-product-dim}
+设 $V_1,V_2$ 为 $G$ 的两个表示, 则
+$(\chi_{V_1},\chi_{V_2})=\dim\operatorname{Hom}_G(V_1,V_2)$.
+\end{theorem}
+
+\begin{proof}
+由 Lemma \ref{lem:char-inverse} 与 Proposition \ref{prop:dim-invariants},
+\[
+  (\chi_{V_1},\chi_{V_2})=\frac{1}{|G|}\sum_{g}\chi_{V_1}(g^{-1})\chi_{V_2}(g)
+  =\frac{1}{|G|}\sum_{g}\chi_{V_1^*\otimes V_2}(g)=\dim\,(V_1^*\otimes V_2)^G .
+\]
+注意 $V_1^*\otimes V_2\cong\operatorname{Hom}(V_1,V_2)$, 故结论成立.
+\end{proof}

@@ -123,3 +123,11 @@
 注,,prop:dual-pairing,特征标,notes/reptheory/chapters/ch06.tex,"回忆 上的双线性函数 . 称其是对称的, 若 , ; 称其是非退化的, 若 , 蕴含 . 上的内积即为对称非退化的双线性函数."
 命题,,prop:dual-pairing,特征标,notes/reptheory/chapters/ch06.tex,"设 , 则 上存在对称非退化的双线性函数."
 例,,eg:char-Z3,特征标,notes/reptheory/chapters/ch06.tex,"(1) 回忆 . 在 II. 例 2 中我们讨论了 , 利用结论可写 [ _3= _ j=1 ^ 3 x_j, x_j= _ x_j , ] 其中 [ x_1= 3 (1+ ^2g+ g^2), x_2= 3 (1+ g+ ^2g^2), "
+引理,,lem:averaging,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为表示, 记 , 则 ."
+推论,,cor:zeta-commute,特征标,notes/reptheory/chapters/ch06.tex,.
+定义,,def:invariants,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为 的表示, 定义 [ V^G= v V g v=v, g G , ] 这是 的一个子表示."
+注,,lem:zeta-idempotent,特征标,notes/reptheory/chapters/ch06.tex,是 的平凡子表示的和 (而 本身也是平凡的).
+引理,,lem:zeta-idempotent,特征标,notes/reptheory/chapters/ch06.tex,.
+引理,,lem:zeta-image,特征标,notes/reptheory/chapters/ch06.tex,.
+命题,,prop:dim-invariants,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为表示, 则 [ |G| _ g G _V(g) = |G| _ g G _ V^G (g)= V^G . ]"
+定理,,thm:inner-product-dim,特征标,notes/reptheory/chapters/ch06.tex,"设 为 的两个表示, 则 ."

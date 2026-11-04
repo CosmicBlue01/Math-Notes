@@ -1,6 +1,6 @@
 # 定理索引
 
-共 124 条，由 `tools/make_index.py` 自动生成。
+共 132 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -128,3 +128,11 @@
 | 122 | 注 |  | `prop:dual-pairing` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 123 | 命题 |  | `prop:dual-pairing` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 124 | 例 |  | `eg:char-Z3` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 125 | 引理 |  | `lem:averaging` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 126 | 推论 |  | `cor:zeta-commute` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 127 | 定义 |  | `def:invariants` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 128 | 注 |  | `lem:zeta-idempotent` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 129 | 引理 |  | `lem:zeta-idempotent` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 130 | 引理 |  | `lem:zeta-image` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 131 | 命题 |  | `prop:dim-invariants` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 132 | 定理 |  | `thm:inner-product-dim` | 特征标 | notes/reptheory/chapters/ch06.tex |
