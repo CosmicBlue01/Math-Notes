@@ -264,15 +264,21 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
 \begin{enumerate}
   \item 考虑全矩阵代数 $M_n(F)$. 设 $I_l\trianglelefteq_l M_n(F)$, $I_r\trianglelefteq_r M_n(F)$,
   那么 $I_l$ 中元素有形式 $(\alpha_1,\alpha_2,\dots,\alpha_n)$, $\alpha_i\in F^{n\times 1}$.
-  这些列向量中的某些为 $0$, 即形如
+  这些列向量中的某些为 $0$, 其余列任意. 零列与非零列之间用竖线分隔, 即形如
   \[
-    \begin{pmatrix}0&\cdots&0\end{pmatrix}_{n\times n}
+    \left(0\ \cdots\ 0\ \middle|\ \alpha_{i_1}\ \cdots\ \alpha_{i_k}\ \middle|\ 0\ \cdots\ 0\right),
+    \qquad \alpha_{i_j}\in F^{n\times 1}.
   \]
   类似, $I_r$ 中元素有形式
-  $\begin{pmatrix}\beta_1\\\vdots\\\beta_n\end{pmatrix}$, $\beta_i\in F^{1\times n}$,
-  这些行向量中的某些为 $0$, 即形如
+  $(\beta_1,\dots,\beta_n)^{\mathrm{T}}$, $\beta_i\in F^{1\times n}$,
+  这些行向量中的某些为 $0$, 其余行任意. 零行与非零行之间用横线分隔, 即形如
   \[
-    \begin{pmatrix}0\\\vdots\\0\end{pmatrix}.
+    \begin{pmatrix}
+      0\\ \vdots\\ 0\\ \hline
+      \beta_{j_1}\\ \vdots\\ \beta_{j_k}\\ \hline
+      0\\ \vdots\\ 0
+    \end{pmatrix},
+    \qquad \beta_{j_i}\in F^{1\times n}.
   \]
   自然, 我们考虑理想 $I\trianglelefteq M_n(F)$, $I$ 必然同时为左理想和右理想,
   故只能 $I=\{0\}$ 或 $M_n(F)$.
