@@ -3,9 +3,9 @@
 \subsection{表示}
 
 \begin{definition}[表示]\label{def:representation}
-设 $A$ 是一个 $K$-代数. $A$ 的一个表示是一个二元组 $(V,\rho)$, 其中
+设 $A$ 是一个 $\mathbb{F}$-代数. $A$ 的一个表示是一个二元组 $(V,\rho)$, 其中
 \begin{enumerate}
-  \item $V$ 是 $K$-线性空间;
+  \item $V$ 是 $\mathbb{F}$-线性空间;
   \item $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$ 是代数同态.
 \end{enumerate}
 有时简称 $V$ 为 $A$ 的一个表示, 或称 $\rho$ 为 $A$ 的一个表示.
@@ -13,11 +13,11 @@
 
 \begin{example}
 \begin{enumerate}
-  \item 由 $K\mathbb{Z}_2\to M_2(K)\cong\operatorname{End}(K^2)$,
+  \item 由 $\mathbb{F}\mathbb{Z}_2\to M_2(\mathbb{F})\cong\operatorname{End}(\mathbb{F}^2)$,
   \[
     \rho\colon g\longmapsto\begin{pmatrix}0&1\\1&0\end{pmatrix},
   \]
-  得到 $K\mathbb{Z}_2$ 的一个表示 $(K^2,\rho)$.
+  得到 $\mathbb{F}\mathbb{Z}_2$ 的一个表示 $(\mathbb{F}^2,\rho)$.
   \item 由 $\mathbb{C}\mathbb{Z}_n\to\operatorname{End}(\mathbb{C})=\mathbb{C}$,
   \[
     \rho\colon g^j\longmapsto\xi^j,\qquad \xi=\exp\left(\frac{2\pi i}{n}\right),
@@ -31,7 +31,7 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \end{theorem}
 
 \begin{proof}
-(1) 设 $V$ 是 $A$ 的一个表示, 有同态 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$.
+(1) 设 $V$ 为 $A$ 的一个表示, 有同态 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$.
 定义运算
 \[
   A\times V\longrightarrow V,\qquad (a,v)\longmapsto a\cdot v:=\rho(a)(v).
@@ -50,7 +50,7 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \end{align*}
 故 $V$ 是一个 $A$-模.
 
-(2) 设 $V$ 是 $A$-模, 运算为 $A\times V\to V$, $(a,v)\mapsto a\cdot v$.
+(2) 设 $V$ 为 $A$-模, 运算为 $A\times V\to V$, $(a,v)\mapsto a\cdot v$.
 定义映射 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$, 其中 $\rho(a)$ 由 $\rho(a)(v)=a\cdot v$ 规定.
 只需证明 $\rho$ 是代数同态.
 \begin{enumerate}
@@ -66,7 +66,7 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \end{proof}
 
 \begin{definition}[群的表示]\label{def:group-representation}
-设 $G$ 为群, $V$ 为 $K$-线性空间. 称 $V$ 为 $G$ 的一个 (线性) 表示, 若存在代数同态
+设 $G$ 为群, $V$ 为 $\mathbb{F}$-线性空间. 称 $V$ 为 $G$ 的一个 (线性) 表示, 若存在代数同态
 \[
   \rho\colon KG\longrightarrow\operatorname{End}(V).
 \]
@@ -74,8 +74,8 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 
 \begin{example}
 \begin{enumerate}
-  \item 设 $\rho\colon K\mathbb{Z}_2\to\operatorname{End}(K^2)\cong M_2(K)$, 其中
-  $\mathbb{Z}_2=\langle g\mid g^2=1\rangle$, $K^2=\operatorname{span}_K\{\alpha_1,\alpha_2\}$,
+  \item 设 $\rho\colon \mathbb{F}\mathbb{Z}_2\to\operatorname{End}(\mathbb{F}^2)\cong M_2(\mathbb{F})$, 其中
+  $\mathbb{Z}_2=\langle g\mid g^2=1\rangle$, $\mathbb{F}^2=\operatorname{span}_{\mathbb{F}}\{\alpha_1,\alpha_2\}$,
   $\alpha_1=(1,0)^{\mathrm{T}}$, $\alpha_2=(0,1)^{\mathrm{T}}$, 且
   \[
     \rho(g)=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
@@ -85,9 +85,9 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
     g\cdot\alpha_1&=\rho(g)(\alpha_1)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\binom10=\binom01=\alpha_2,\\
     g\cdot\alpha_2&=\rho(g)(\alpha_2)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\binom01=\binom10=\alpha_1 .
   \end{align*}
-  \item 正则模: $K\mathbb{Z}_2\curvearrowright K\mathbb{Z}_2=\operatorname{span}_K\{1,g\}$, 记 $K\mathbb{Z}_2=V$,
+  \item 正则模: $\mathbb{F}\mathbb{Z}_2\curvearrowright \mathbb{F}\mathbb{Z}_2=\operatorname{span}_{\mathbb{F}}\{1,g\}$, 记 $\mathbb{F}\mathbb{Z}_2=V$,
   \[
-    \rho\colon K\mathbb{Z}_2\longrightarrow\operatorname{End}(V),\qquad g\longmapsto\rho(g).
+    \rho\colon \mathbb{F}\mathbb{Z}_2\longrightarrow\operatorname{End}(V),\qquad g\longmapsto\rho(g).
   \]
   考察 $\rho(g)$ 对基 $\{1,g\}$ 的作用: $1\mapsto g$, $g\mapsto 1$, 对应的矩阵为
   $\begin{pmatrix}0&1\\1&0\end{pmatrix}$. 可见把 $g$ 映为该矩阵是合理的.
@@ -117,7 +117,7 @@ $\alpha_1,\dots,\alpha_m,\alpha_{m+1},\dots,\alpha_n$.
     0 & M_2
   \end{pmatrix},
 \]
-其中 $M_1\in M_m(K)$, $M_2\in M_{n-m}(K)$. 由于 $\rho|_{V_1}$ 只对 $\alpha_1,\dots,\alpha_m$ 有作用,
+其中 $M_1\in M_m(\mathbb{F})$, $M_2\in M_{n-m}(\mathbb{F})$. 由于 $\rho|_{V_1}$ 只对 $\alpha_1,\dots,\alpha_m$ 有作用,
 故 $M_1$ 描述了子表示 (在嵌入意义下); 而在商空间 $V/V_1$ 中, $V_1$ 的元素 (由基
 $\alpha_1,\dots,\alpha_m$ 给出) 被映为 $0$, 故 $V/V_1$ 可由 $M_2$ 描述 (在嵌入意义下).
 
@@ -136,26 +136,26 @@ $\alpha_1,\dots,\alpha_m$ 给出) 被映为 $0$, 故 $V/V_1$ 可由 $M_2$ 描述
 此时不会出现准对角的情形.
 
 \begin{example}
-设 $K\mathbb{Z}_2\curvearrowright K\mathbb{Z}_2=\operatorname{span}_K\{1,g\}$.
-先设 $\operatorname{char}K\neq2$, 记
+设 $\mathbb{F}\mathbb{Z}_2\curvearrowright \mathbb{F}\mathbb{Z}_2=\operatorname{span}_{\mathbb{F}}\{1,g\}$.
+先设 $\operatorname{char}\mathbb{F}\neq2$, 记
 \[
   e_1=\frac12(1+g),\qquad e_2=\frac12(1-g).
 \]
-则 $V_1=\operatorname{span}_K\{e_1\}$, $V_2=\operatorname{span}_K\{e_2\}$ 均为子表示, 并且
+则 $V_1=\operatorname{span}_{\mathbb{F}}\{e_1\}$, $V_2=\operatorname{span}_{\mathbb{F}}\{e_2\}$ 均为子表示, 并且
 \begin{align*}
   g\cdot e_1&=\frac12 g\cdot(1+g)=\frac12(g+g^2)=\frac12(1+g)=e_1,\\
   g\cdot e_2&=\frac12 g\cdot(1-g)=\frac12(g-1)=-e_2 .
 \end{align*}
-于是 $K\mathbb{Z}_2$ 可以分解为 $K\mathbb{Z}_2=V_1\oplus V_2$. 既然 $K\mathbb{Z}_2$ 有真子模,
-故 $K\mathbb{Z}_2$ 可约.
+于是 $\mathbb{F}\mathbb{Z}_2$ 可以分解为 $\mathbb{F}\mathbb{Z}_2=V_1\oplus V_2$. 既然 $\mathbb{F}\mathbb{Z}_2$ 有真子模,
+故 $\mathbb{F}\mathbb{Z}_2$ 可约.
 
-再考虑 $\operatorname{char}K=2$. 此时 $K$ 中 $1=-1$, 取 $e_1=1+g$, 有 $g\cdot e_1=e_1$,
-记 $V_1=\operatorname{span}_K\{e_1\}$, 这是 $K\mathbb{Z}_2$ 的子模, 因此 $K\mathbb{Z}_2$ 同样可约.
-但此时 $K\mathbb{Z}_2$ 不可分解: 否则设 $K\mathbb{Z}_2=M_1\oplus M_2$, 其中
-$\dim M_1=\dim M_2=1$. 设 $M_1=\operatorname{span}_K\{\alpha_1\}$, $M_2=\operatorname{span}_K\{\alpha_2\}$,
+再考虑 $\operatorname{char}\mathbb{F}=2$. 此时 $\mathbb{F}$ 中 $1=-1$, 取 $e_1=1+g$, 有 $g\cdot e_1=e_1$,
+记 $V_1=\operatorname{span}_{\mathbb{F}}\{e_1\}$, 这是 $\mathbb{F}\mathbb{Z}_2$ 的子模, 因此 $\mathbb{F}\mathbb{Z}_2$ 同样可约.
+但此时 $\mathbb{F}\mathbb{Z}_2$ 不可分解: 否则设 $\mathbb{F}\mathbb{Z}_2=M_1\oplus M_2$, 其中
+$\dim M_1=\dim M_2=1$. 设 $M_1=\operatorname{span}_{\mathbb{F}}\{\alpha_1\}$, $M_2=\operatorname{span}_{\mathbb{F}}\{\alpha_2\}$,
 并设 $g\cdot\alpha_1=\lambda\alpha_1$, 则 $g^2\cdot\alpha_1=\alpha_1=\lambda^2\alpha_1$, 故 $\lambda^2=1$,
-即 $\lambda=1$ (因为 $-1=1$). 同理 $g\cdot\alpha_2=\alpha_2$. 于是 $g$ 在 $K\mathbb{Z}_2$ 上为恒同映射,
-特别地 $g\cdot1=1$, 但 $g\cdot1=g$, 矛盾. 故 $\operatorname{char}K=2$ 时 $K\mathbb{Z}_2$ 不可分解.
+即 $\lambda=1$ (因为 $-1=1$). 同理 $g\cdot\alpha_2=\alpha_2$. 于是 $g$ 在 $\mathbb{F}\mathbb{Z}_2$ 上为恒同映射,
+特别地 $g\cdot1=1$, 但 $g\cdot1=g$, 矛盾. 故 $\operatorname{char}\mathbb{F}=2$ 时 $\mathbb{F}\mathbb{Z}_2$ 不可分解.
 \end{example}
 
 \subsection{表示同态}
@@ -185,23 +185,23 @@ $V$ 是忠实 $A$-模当且仅当 $V$ 是忠实 $A$-表示.
 \end{proposition}
 
 \begin{proof}
-(1) 设 $V$ 是忠实模, 只要证明 $\rho$ 是单射, 即 $\operatorname{Ker}(\rho)=\{0\}$.
+(1) 设 $V$ 为忠实模, 只要证明 $\rho$ 是单射, 即 $\operatorname{Ker}(\rho)=\{0\}$.
 任取 $a\in\operatorname{Ker}(\rho)$, 则 $\rho(a)=0$, 于是 $\rho(a)(v)=0$, $\forall v\in V$,
 即 $a\cdot v=0$. 由忠实模的定义知 $a=0$. 故 $\operatorname{Ker}(\rho)=\{0\}$, $\rho$ 是单射,
 $V$ 是忠实表示.
 
-(2) 设 $V$ 是忠实表示, 且 $a\cdot v=0$, $\forall v\in V$. 由表示的定义, 这意味着
+(2) 设 $V$ 为忠实表示, 且 $a\cdot v=0$, $\forall v\in V$. 由表示的定义, 这意味着
 $\rho(a)(v)=0$, $\forall v\in V$, 即 $\rho(a)=0$. 而 $\rho$ 是单射, 故 $a=0$. 因此 $V$ 是忠实模.
 \end{proof}
 
 \begin{remark}\label{rem:faithful-algebra-only}
 上述命题中特意强调了 "代数", 这是因为在其他结构中结论不一定成立.
-例如在群表示中表示是 $\rho\colon G\to\operatorname{End}(V)$, 而对模而言仍定义在群代数 $KG$ 上;
+例如在群表示中表示是 $\rho\colon G\to\operatorname{End}(V)$, 而对模而言仍定义在群代数 $\mathbb{F}G$ 上;
 扩大 $\rho$ 的作用范围, 可能不会保证 $\rho$ 仍是单射.
 \end{remark}
 
 \begin{example}
-设 $A$ 是有限维代数, 则总有正则模 ${}_AA$. 若 $a\cdot b=0$ 对一切 $b\in A$ 成立,
+设 $A$ 为有限维代数, 则总有正则模 ${}_AA$. 若 $a\cdot b=0$ 对一切 $b\in A$ 成立,
 取 $b=1$ 即得 $a=0$. 故正则模一定是忠实模.
 \end{example}
 
@@ -211,5 +211,5 @@ $\rho(a)(v)=0$, $\forall v\in V$, 即 $\rho(a)=0$. 而 $\rho$ 是单射, 故 $a=
 
 \begin{proof}
 设 $A$ 为有限维代数, 则 $V={}_AA$ 一定是忠实模, 从而 $V$ 是忠实表示.
-于是存在单同态 $\rho\colon A\to\operatorname{End}(V)\cong M_n(K)$. 视 $\rho$ 为嵌入即得证.
+于是存在单同态 $\rho\colon A\to\operatorname{End}(V)\cong M_n(\mathbb{F})$. 视 $\rho$ 为嵌入即得证.
 \end{proof}

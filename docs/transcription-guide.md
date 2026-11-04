@@ -68,7 +68,9 @@ xdvipdfmx main.xdv
 
 - 矩阵 `pmatrix`，行列向量 `\begin{pmatrix}...\end{pmatrix}`。
 - 直和 `\oplus`，张量积 `\otimes`，理想 `\trianglelefteq` / `\trianglelefteq_l` / `\trianglelefteq_r`。
-- 域：`\mathbb{R}` `\mathbb{C}` `\mathbb{Z}` `\mathbb{H}`（黑体字母自动走 STIX Two 的 bb 字形）。
+- 域：一般域一律写 `\mathbb{F}`（不用 `K`、`F`）；具体数系用 `\mathbb{R}` `\mathbb{C}` `\mathbb{Z}` `\mathbb{Q}` `\mathbb{H}`（黑体字母自动走 STIX Two 的 bb 字形）。环用 `R`，代数用 `A`，群用 `G`。
+- 假设句式统一「设 $X$ 为 ……」，不写「设 $X$ 是一个 ……」。
+- 交换图一律用 `tikz-cd`：`\begin{tikzcd}[row sep=1.4cm, column sep=2.4cm, arrows={->,>=stealth}]`，标签写在引号里，如 `\arrow[r,"\pi"]`、`\arrow[dr,"f"']`。不要用 `array` 手拼箭头。
 - 算子用 `\operatorname{span}` `\operatorname{End}` `\operatorname{Ker}` `\operatorname{Im}`。
 - display 公式前后各留一个空行，别贴着段落；短公式留在行内。
 - **行内不要放大矩阵**，会把行距撑开，改 display 或 `smallmatrix`。

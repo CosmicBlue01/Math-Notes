@@ -109,7 +109,7 @@ $0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap 
 
 \begin{example}
 \begin{enumerate}
-  \item 设 $R=M_n(K)$. $R$ 的不可约模形如 $(\alpha,0,\dots,0)$, 其中 $\alpha\in K^{n\times1}$,
+  \item 设 $R=M_n(\mathbb{F})$. $R$ 的不可约模形如 $(\alpha,0,\dots,0)$, 其中 $\alpha\in \mathbb{F}^{n\times1}$,
   即只有第一列非零的矩阵:
   \[
     \begin{pmatrix}
@@ -123,7 +123,7 @@ $0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap 
   取
   \[
     e_k=\frac{1}{\sqrt{n}}\sum_{j=0}^{n-1}\omega^{-kj}g^j,\qquad
-    U_k=\operatorname{span}_{K}\{e_k\}.
+    U_k=\operatorname{span}_{\mathbb{F}}\{e_k\}.
   \]
   注意
   \[
@@ -131,10 +131,10 @@ $0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap 
     =\frac{1}{\sqrt{n}}\sum_{m=1}^{n}\omega^{-k(m-1)}g^{m}
     =\frac{1}{\sqrt{n}}\,\omega^{k}\sum_{m=0}^{n-1}\omega^{-km}g^{m}=\omega^{k}e_k,
   \]
-  故 $U_k$ 为 $K\mathbb{Z}_n$ 的不可约子模.
+  故 $U_k$ 为 $\mathbb{F}\mathbb{Z}_n$ 的不可约子模.
   此外直接验证可得 $e_k^2=e_k$, $e_ke_l=0$ ($k\neq l$), $\sum_{k=0}^{n-1}e_k=1$, 因此
   \[
-    K\mathbb{Z}_n=\bigoplus_{k=0}^{n-1}U_k .
+    \mathbb{F}\mathbb{Z}_n=\bigoplus_{k=0}^{n-1}U_k .
   \]
   \item 任取左 $R$-模 $M$, 可以找到 $M$ 的一个不可约真子模 $M_1$, 并有嵌入 $M_1\hookrightarrow M$
   与满射 $M\twoheadrightarrow M/M_1$. 记 $M_1'=M/M_1$, 即
@@ -187,13 +187,13 @@ $0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap 
 
 \begin{example}
 \begin{enumerate}
-  \item 考虑多项式环 $R=K[x]$. 则
+  \item 考虑多项式环 $R=\mathbb{F}[x]$. 则
   \[
     R^{\mathrm{op}}=\{f(x)*g(x)=g(x)f(x)=f(x)g(x)\},
   \]
   因此 $R^{\mathrm{op}}=R$.
-  \item 考虑 $R=M_n(K)$. 则 $R^{\mathrm{op}}=M_n^{\mathrm{op}}(K)$, 其乘法为
-  $M_1*M_2=M_2M_1$, 其中 $M_{1,2}\in M_n(K)$.
+  \item 考虑 $R=M_n(\mathbb{F})$. 则 $R^{\mathrm{op}}=M_n^{\mathrm{op}}(\mathbb{F})$, 其乘法为
+  $M_1*M_2=M_2M_1$, 其中 $M_{1,2}\in M_n(\mathbb{F})$.
 \end{enumerate}
 \end{example}
 
@@ -216,7 +216,7 @@ $M$ 是一个左 $R$-模当且仅当 $M$ 是一个右 $R^{\mathrm{op}}$-模.
 \subsection{代数上的模}
 
 \begin{definition}[代数上的模]\label{def:algebra-module}
-设 $A$ 是 $K$-代数, $M$ 是一个 $K$-线性空间. 称 $M$ 为 $A$-模, 若存在运算
+设 $A$ 为 $\mathbb{F}$-代数, $M$ 是一个 $\mathbb{F}$-线性空间. 称 $M$ 为 $A$-模, 若存在运算
 \[
   A\times M\longrightarrow M,\qquad (a,m)\longmapsto a\cdot m,
 \]
@@ -229,7 +229,7 @@ $M$ 是一个左 $R$-模当且仅当 $M$ 是一个右 $R^{\mathrm{op}}$-模.
   \item $a\cdot(m_1+m_2)=a\cdot m_1+a\cdot m_2$;
   \item $a\cdot(km)=k(a\cdot m)$.
 \end{enumerate}
-其中 $k\in K$, $a,a_1,a_2\in A$, $m,m_1,m_2\in M$.
+其中 $k\in \mathbb{F}$, $a,a_1,a_2\in A$, $m,m_1,m_2\in M$.
 \end{definition}
 
 \begin{remark}\label{rem:algebra-module-parallel}
@@ -237,7 +237,7 @@ $M$ 是一个左 $R$-模当且仅当 $M$ 是一个右 $R^{\mathrm{op}}$-模.
 \end{remark}
 
 \begin{definition}[忠实模]\label{def:faithful-module}
-设 $M$ 为 $K$-代数 $A$ 上的左模. 称 $M$ 是\emph{忠实的} (faithful), 若
+设 $M$ 为 $\mathbb{F}$-代数 $A$ 上的左模. 称 $M$ 是\emph{忠实的} (faithful), 若
 \[
   \forall m\in M,\quad a\cdot m=0\ \Longrightarrow\ a=0 .
 \]

@@ -4,7 +4,7 @@
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
-| 1 | 定义 | $K$-代数 | `def:k-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 1 | 定义 | $\mathbb{F}$-代数 | `def:k-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 2 | 例 |  | `eg:algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 3 | 例 |  | `eg:group-algebra-Z2` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 4 | 定义 | 子代数 | `def:subalgebra` | 代数 | notes/reptheory/chapters/ch01.tex |
@@ -63,7 +63,7 @@
 | 57 | 定义 | 忠实模 | `def:faithful-module` | 模 | notes/reptheory/chapters/ch02.tex |
 | 58 | 注 | 零化子 | `rem:annihilator` | 模 | notes/reptheory/chapters/ch02.tex |
 | 59 | 定义 | 表示 | `def:representation` | 表示 | notes/reptheory/chapters/ch03.tex |
-| 60 | 例 |  | `thm:rep-is-module` | 表示 | notes/reptheory/chapters/ch03.tex |
+| 60 | 例 |  | `` | 表示 | notes/reptheory/chapters/ch03.tex |
 | 61 | 定理 |  | `thm:rep-is-module` | 表示 | notes/reptheory/chapters/ch03.tex |
 | 62 | 定义 | 群的表示 | `def:group-representation` | 表示 | notes/reptheory/chapters/ch03.tex |
 | 63 | 例 |  | `` | 表示 | notes/reptheory/chapters/ch03.tex |

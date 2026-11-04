@@ -23,7 +23,7 @@
 \end{remark}
 
 \begin{proposition}\label{prop:rep-alg}
-$V$ 为 $G$ 的群表示当且仅当 $V$ 为 $KG$ 的代数表示.
+$V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
 \end{proposition}
 
 \begin{proof}
@@ -94,7 +94,7 @@ $\rho_{\mathrm{can}}$ 是忠实表示, 即它是单射.
 \end{remark}
 
 \begin{proposition}\label{prop:std-irreducible}
-设域 $F$, $\operatorname{char}F\neq 2$, $V$ 为 $F$-线性空间, 则 $S_n$ 的标准表示 $V_1$ 是不可约表示.
+设域 $\mathbb{F}$, $\operatorname{char}F\neq 2$, $V$ 为 $\mathbb{F}$-线性空间, 则 $S_n$ 的标准表示 $V_1$ 是不可约表示.
 \end{proposition}
 
 \begin{proof}
@@ -123,7 +123,7 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
 在这个过程中, 迹是一个不变量, 是和表示 $\rho$ 相关的量, 不依赖于基的选取.
 
 \begin{example}\label{ex:rep-constructions}
-(i) \textbf{直和表示}. 设 $G$ 为群, $V_1,V_2$ 为 $K$-线性空间, 取 $G$ 的两个线性表示
+(i) \textbf{直和表示}. 设 $G$ 为群, $V_1,V_2$ 为 $\mathbb{F}$-线性空间, 取 $G$ 的两个线性表示
 \begin{equation*}
   \rho_1\colon G\to\mathrm{GL}_{V_1}\cong\mathrm{GL}_m,\qquad
   \rho_2\colon G\to\mathrm{GL}_{V_2}\cong\mathrm{GL}_n .
@@ -144,7 +144,7 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
   \operatorname{Tr}\bigl((\rho_1\oplus\rho_2)(g)\bigr)=\operatorname{Tr}(A)+\operatorname{Tr}(B)
   =\operatorname{Tr}(\rho_1(g))+\operatorname{Tr}(\rho_2(g)),
 \end{equation*}
-即 $\operatorname{Tr}_{\rho_1\oplus\rho_2}=\operatorname{Tr}_{\rho_1}+\operatorname{Tr}_{\rho_2}\colon G\to K$.
+即 $\operatorname{Tr}_{\rho_1\oplus\rho_2}=\operatorname{Tr}_{\rho_1}+\operatorname{Tr}_{\rho_2}\colon G\to \mathbb{F}$.
 
 (ii) \textbf{张量表示}. 取 $G$ 的两个线性表示
 \begin{equation*}
@@ -154,7 +154,7 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
 \end{equation*}
 由群作用
 \begin{equation*}
-  G\times(V_1\otimes_K V_2)\longrightarrow V_1\otimes_K V_2,\qquad
+  G\times(V_1\otimes_{\mathbb{F}} V_2)\longrightarrow V_1\otimes_{\mathbb{F}} V_2,\qquad
   g\cdot(v_1\otimes v_2)\longmapsto(g\cdot v_1)\otimes(g\cdot v_2),
 \end{equation*}
 得到张量表示 $G\to\mathrm{GL}_{V_1\otimes V_2}$ (作用的良定义此处略).
@@ -170,9 +170,9 @@ $B=(b_{ij})_{n\times n}$. 于是
   \operatorname{Tr}(C)=\operatorname{Tr}(A\otimes B)=\sum_i a_{ii}\operatorname{Tr}(B)
   =\operatorname{Tr}(A)\cdot\operatorname{Tr}(B),
 \end{equation*}
-即 $\operatorname{Tr}_{\rho_1\otimes\rho_2}=\operatorname{Tr}_{\rho_1}\operatorname{Tr}_{\rho_2}\colon G\to K$.
+即 $\operatorname{Tr}_{\rho_1\otimes\rho_2}=\operatorname{Tr}_{\rho_1}\operatorname{Tr}_{\rho_2}\colon G\to \mathbb{F}$.
 
-(iii) \textbf{对偶表示}. 给群表示 $\rho\colon G\to\mathrm{GL}_V$, 有对偶空间 $V^*=\operatorname{Hom}_K(V,K)$.
+(iii) \textbf{对偶表示}. 给群表示 $\rho\colon G\to\mathrm{GL}_V$, 有对偶空间 $V^*=\operatorname{Hom}_{\mathbb{F}}(V,\mathbb{F})$.
 设 $V$ 的基为 $\alpha_1,\dots,\alpha_n$, 则 $V^*$ 的基 $f_1,\dots,f_n$ 满足 $f_i(\alpha_j)=\delta_{ij}$.
 由群作用
 \begin{equation*}
@@ -198,28 +198,28 @@ $B=(b_{ij})_{n\times n}$. 于是
 
 (iv) \textbf{Hom 表示}. 设 $G$ 有线性表示 $V_1,V_2$, 由群作用
 \begin{equation*}
-  G\times\operatorname{Hom}_K(V_1,V_2)\longrightarrow\operatorname{Hom}_K(V_1,V_2),\qquad (g,f)\longmapsto g\cdot f,
+  G\times\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)\longrightarrow\operatorname{Hom}_{\mathbb{F}}(V_1,V_2),\qquad (g,f)\longmapsto g\cdot f,
 \end{equation*}
 \begin{equation*}
-  (g\cdot f)(v_1)=g\cdot\bigl(f(g^{-1}\cdot v_1)\bigr),\qquad v_1\in V_1,\ f\in\operatorname{Hom}_K(V_1,V_2).
+  (g\cdot f)(v_1)=g\cdot\bigl(f(g^{-1}\cdot v_1)\bigr),\qquad v_1\in V_1,\ f\in\operatorname{Hom}_{\mathbb{F}}(V_1,V_2).
 \end{equation*}
 同样要验证 $\bigl((g_1g_2)\cdot f\bigr)(v_1)=\bigl(g_1\cdot(g_2\cdot f)\bigr)(v_1)$.
 \end{example}
 
 \begin{proposition}\label{prop:hom-tensor}
-作为表示有同构 $\operatorname{Hom}_K(V_1,V_2)\cong V_1^*\otimes_K V_2$.
+作为表示有同构 $\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)\cong V_1^*\otimes_{\mathbb{F}} V_2$.
 \end{proposition}
 
 \begin{proof}
 定义映射
 \begin{equation*}
-  \psi\colon V_1^*\otimes_K V_2\longrightarrow\operatorname{Hom}_K(V_1,V_2),\qquad f\otimes v_2\longmapsto\psi(f\otimes v_2),
+  \psi\colon V_1^*\otimes_{\mathbb{F}} V_2\longrightarrow\operatorname{Hom}_{\mathbb{F}}(V_1,V_2),\qquad f\otimes v_2\longmapsto\psi(f\otimes v_2),
 \end{equation*}
 其中 $\psi(f\otimes v_2)(v_1):=f(v_1)\cdot v_2$, $f\in V_1^*$, $v_1\in V_1$, $v_2\in V_2$.
 只需证明 $\psi$ 是表示同构.
 
 回忆熟知结论: 两个维数相等的线性空间之间若有单的线性映射, 则该映射是同构.
-不难发现 $\operatorname{Hom}_K(V_1,V_2)$ 与 $V_1^*\otimes_K V_2$ 都是 $\dim V_1\cdot\dim V_2$ 维的,
+不难发现 $\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)$ 与 $V_1^*\otimes_{\mathbb{F}} V_2$ 都是 $\dim V_1\cdot\dim V_2$ 维的,
 故只需说明 $\psi$ 是单的, 即 $\operatorname{Ker}(\psi)=\{0\}$.
 
 设 $\alpha_1,\dots,\alpha_m$ 为 $V_1$ 的基, $\beta_1,\dots,\beta_n$ 为 $V_2$ 的基,
@@ -236,15 +236,15 @@ $f_1,\dots,f_m$ 为 $V_1^*$ 的基. 设 $\operatorname{Ker}(\psi)$ 中元素为
   \sum_{j,k}a_{jk}\,f_j(\alpha_i)\beta_k=\sum_{j,k}a_{jk}\delta_{ij}\beta_k=\sum_k a_{ik}\beta_k=0 .
 \end{equation*}
 由 $\beta_k$ 线性无关得 $a_{ik}=0$ 对一切 $i,k$ 成立, 故 $t=0$, 即 $\operatorname{Ker}(\psi)=\{0\}$.
-因此 $\operatorname{Hom}_K(V_1,V_2)\cong V_1^*\otimes_K V_2$.
+因此 $\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)\cong V_1^*\otimes_{\mathbb{F}} V_2$.
 \end{proof}
 
 \begin{remark}\label{rem:rep-trace}
-(i) 上面的讨论中同时出现了 $f\in\operatorname{Hom}_K(V_1,V_2)$ 与 $f\in V_1^*$, 容易混淆, 因为 $G$ 作用在它们上时并不相同.
+(i) 上面的讨论中同时出现了 $f\in\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)$ 与 $f\in V_1^*$, 容易混淆, 因为 $G$ 作用在它们上时并不相同.
 
-(ii) 取 $V_1=V_2=V$, 则 $V^*\otimes_K V$ 中的元素 $\sum_{i=1}^{n}f_i\otimes\alpha_i$ 不依赖于基的选取
-(其中 $n=\dim V$). 事实上由 $V^*\otimes_K V\cong\operatorname{Hom}_K(V,V)=\operatorname{End}(V)$ 有同构
-$\psi\colon V^*\otimes_K V\to\operatorname{End}(V)$, 而任取 $v=\sum_i a_i\alpha_i$ 有
+(ii) 取 $V_1=V_2=V$, 则 $V^*\otimes_{\mathbb{F}} V$ 中的元素 $\sum_{i=1}^{n}f_i\otimes\alpha_i$ 不依赖于基的选取
+(其中 $n=\dim V$). 事实上由 $V^*\otimes_{\mathbb{F}} V\cong\operatorname{Hom}_{\mathbb{F}}(V,V)=\operatorname{End}(V)$ 有同构
+$\psi\colon V^*\otimes_{\mathbb{F}} V\to\operatorname{End}(V)$, 而任取 $v=\sum_i a_i\alpha_i$ 有
 $f_i(v)=a_i$, 故
 \begin{equation*}
   \psi\Bigl(\sum_i f_i\otimes\alpha_i\Bigr)(v)=\sum_i f_i(v)\alpha_i=\sum_i a_i\alpha_i=v,
@@ -294,12 +294,12 @@ $f_i(v)=a_i$, 故
   &=p\bigl(\rho(g)v_1+\rho(g)v_2\bigr)=\rho(g)v_1\\
   &=\rho|_{V_1}(g)v_1=\rho|_{V_1}(g)\,p(v_1+v_2).
 \end{align*}
-(2) 设 $p$ 是表示同态, 仍考虑 $\operatorname{Ker}(p)$. 由同态基本定理, $\operatorname{Ker}(p)$ 是子表示,
+(2) 设 $p$ 为表示同态, 仍考虑 $\operatorname{Ker}(p)$. 由同态基本定理, $\operatorname{Ker}(p)$ 是子表示,
 于是同 Lemma \ref{lem:complement} 的论证即得 $V=V_1\oplus\operatorname{Ker}(p)$.
 \end{proof}
 
 \begin{theorem}[Maschke]\label{thm:maschke}
-设 $G$ 为群, $K$ 为域, 若 $\operatorname{char}K\nmid|G|$, 则 $G$ 的所有有限维表示都是完全可约的,
+设 $G$ 为群, $\mathbb{F}$ 为域, 若 $\operatorname{char}\mathbb{F}\nmid|G|$, 则 $G$ 的所有有限维表示都是完全可约的,
 即都可以写成不可约表示的直和.
 \end{theorem}
 
@@ -313,7 +313,7 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
   \bar p\colon V\longrightarrow V_1,\qquad
   v\longmapsto\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}\cdot v).
 \end{equation*}
-这里由于 $\operatorname{char}K\nmid|G|$, $\frac{1}{|G|}$ 有意义, 上面的定义才是合理的.
+这里由于 $\operatorname{char}\mathbb{F}\nmid|G|$, $\frac{1}{|G|}$ 有意义, 上面的定义才是合理的.
 
 (1) 先说明 $\bar p$ 是线性映射:
 \begin{align*}
@@ -345,12 +345,12 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
 \end{proof}
 
 \begin{remark}\label{rem:maschke-sharp}
-关于 $\operatorname{char}K\mid|G|$ 的情形, 已在第 3 章的 $\mathbb{Z}_2$ 例子中讨论过:
-此时 $K\mathbb{Z}_2$ 可约但不可分解. 因此 $\operatorname{char}K\nmid|G|$ 是 Maschke 定理成立的充要条件
+关于 $\operatorname{char}\mathbb{F}\mid|G|$ 的情形, 已在第 3 章的 $\mathbb{Z}_2$ 例子中讨论过:
+此时 $\mathbb{F}\mathbb{Z}_2$ 可约但不可分解. 因此 $\operatorname{char}\mathbb{F}\nmid|G|$ 是 Maschke 定理成立的充要条件
 (必要性由该反例说明, 充分性即定理本身).
 \end{remark}
 
 \begin{definition}[常表示与模表示]\label{def:ordinary-modular}
-称群代数 $KG$ 的表示为 $G$ 的\textbf{常表示} (ordinary representation), 若 $\operatorname{char}K\nmid|G|$;
+称群代数 $\mathbb{F}G$ 的表示为 $G$ 的\textbf{常表示} (ordinary representation), 若 $\operatorname{char}\mathbb{F}\nmid|G|$;
 否则称为\textbf{模表示} (modular representation).
 \end{definition}

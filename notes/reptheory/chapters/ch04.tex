@@ -15,7 +15,7 @@
 \end{definition}
 
 \begin{definition}[模的张量积]\label{def:tensor}
-设 $R$ 是一个环, $M_R$ 为右 $R$-模, ${}_R N$ 为左 $R$-模.
+设 $R$ 为环, $M_R$ 为右 $R$-模, ${}_R N$ 为左 $R$-模.
 记由集合 $M\times N$ 生成的自由 Abel 群为 $C(M\times N)$.
 设 $L$ 为由以下三类元素生成的 $C(M\times N)$ 的子群:
 \begin{enumerate}[label=(\arabic*)]
@@ -122,7 +122,7 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 \subsection{泛性质}
 
 \begin{definition}[平衡双加性映射]\label{def:balanced}
-设 $R$ 是环, $M$ 为右 $R$-模, $N$ 为左 $R$-模, $L$ 为加群.
+设 $R$ 为环, $M$ 为右 $R$-模, $N$ 为左 $R$-模, $L$ 为加群.
 称 $f\colon M\times N\to L$ 为\textbf{平衡双加性映射}, 若
 \begin{enumerate}[label=(\arabic*)]
   \item $f(m_1+m_2,n)=f(m_1,n)+f(m_2,n)$;
@@ -137,15 +137,14 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 \end{remark}
 
 \begin{theorem}[张量积的泛性质]\label{thm:tensor-universal}
-设 $R$ 是环, $M_R$, ${}_R N$ 为模, $L$ 为加群.
+设 $R$ 为环, $M_R$, ${}_R N$ 为模, $L$ 为加群.
 对任意平衡双加性映射 $f\colon M\times N\to L$, 都存在唯一的加群同态 $\bar f\colon M\otimes_R N\to L$,
 使得下图交换, 即 $\bar f\circ\pi=f$:
 \[
-  \begin{array}{ccc}
-    M\times N & \xrightarrow{\ \pi\ } & M\otimes_R N\\[10pt]
-    {\scriptstyle f}\Big\downarrow & \searrow{\ \scriptstyle\exists!\,\bar f} & \\[10pt]
-    L & &
-  \end{array}
+  \begin{tikzcd}[row sep=1.4cm, column sep=2.4cm, arrows={->,>=stealth}]
+    M\times N \arrow[r,"\pi"] \arrow[dr,"f"'] & M\otimes_R N \arrow[d,"\exists!\,\bar f"] \\
+    & L
+  \end{tikzcd}
 \]
 \end{theorem}
 
@@ -183,11 +182,10 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 \begin{remark}[证明的结构]\label{rem:tensor-proof-pic}
 定理的证明可概括为下图:
 \[
-  \begin{array}{ccccc}
-    M\times N & \xrightarrow{\ i\ } & C(M\times N) & \xrightarrow{\ \pi\ } & M\otimes_R N\\[10pt]
-    & {\scriptstyle f}\searrow & {\scriptstyle \tilde f}\Big\downarrow & \swarrow{\ \scriptstyle \bar f} & \\[10pt]
-    & & L & &
-  \end{array}
+  \begin{tikzcd}[row sep=1.4cm, column sep=1.7cm, arrows={->,>=stealth}]
+    M\times N \arrow[r,"i"] \arrow[dr,"f"'] & C(M\times N) \arrow[r,"\pi"] \arrow[d,"\tilde f"] & M\otimes_R N \arrow[dl,"\bar f"] \\
+    & L &
+  \end{tikzcd}
 \]
 其中 $i$ 为嵌入, $\pi$ 为商映射, 上方复合为 $\pi\circ i$.
 \end{remark}
@@ -215,18 +213,18 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 \end{remark}
 
 \begin{proposition}\label{prop:tensor-vector-space}
-设 $K$ 是域, 给定线性空间 $M_K$ 和 ${}_K N$, 则 $M\otimes_K N$ 也是 $K$-线性空间.
+设 $\mathbb{F}$ 为域, 给定线性空间 $M_{\mathbb{F}}$ 和 ${}_{\mathbb{F}} N$, 则 $M\otimes_{\mathbb{F}} N$ 也是 $\mathbb{F}$-线性空间.
 \end{proposition}
 
 \begin{definition}[双线性映射]\label{def:bilinear}
-设 $K$ 是域, 给定线性空间 $M_K$, ${}_K N$, $V$.
-称 $F\colon M\otimes_K N\to V$ 为\textbf{平衡双加性映射}, 若
+设 $\mathbb{F}$ 为域, 给定线性空间 $M_{\mathbb{F}}$, ${}_{\mathbb{F}} N$, $V$.
+称 $F\colon M\otimes_{\mathbb{F}} N\to V$ 为\textbf{平衡双加性映射}, 若
 \begin{enumerate}[label=(\arabic*)]
   \item $F(m_1+m_2,n)=F(m_1,n)+F(m_2,n)$;
   \item $F(m,n_1+n_2)=F(m,n_1)+F(m,n_2)$;
   \item $F(m\cdot k,n)=F(km,n)=F(m,kn)$.
 \end{enumerate}
-其中 $k\in K$, $m,m_1,m_2\in M$, $n,n_1,n_2\in N$.
+其中 $k\in \mathbb{F}$, $m,m_1,m_2\in M$, $n,n_1,n_2\in N$.
 \end{definition}
 
 \begin{remark}\label{rem:bilinear}
@@ -235,19 +233,18 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 \end{remark}
 
 \begin{theorem}[线性空间张量积的泛性质]\label{thm:tensor-universal-k}
-设 $V_1,V_2$ 为 $K$-线性空间.
-对任意双线性映射 $f\colon V_1\times V_2\to V_3$ ($V_3$ 为 $K$-线性空间),
-都存在唯一的线性映射 $\bar f\colon V_1\otimes_K V_2\to V_3$, 使下图交换:
+设 $V_1,V_2$ 为 $\mathbb{F}$-线性空间.
+对任意双线性映射 $f\colon V_1\times V_2\to V_3$ ($V_3$ 为 $\mathbb{F}$-线性空间),
+都存在唯一的线性映射 $\bar f\colon V_1\otimes_{\mathbb{F}} V_2\to V_3$, 使下图交换:
 \[
-  \begin{array}{ccc}
-    V_1\times V_2 & \xrightarrow{\ \pi\ } & V_1\otimes_K V_2\\[10pt]
-    {\scriptstyle f}\Big\downarrow & \searrow{\ \scriptstyle\exists!\,\bar f} & \\[10pt]
-    V_3 & &
-  \end{array}
+  \begin{tikzcd}[row sep=1.4cm, column sep=2.4cm, arrows={->,>=stealth}]
+    V_1\times V_2 \arrow[r,"\pi"] \arrow[dr,"f"'] & V_1\otimes_{\mathbb{F}} V_2 \arrow[d,"\exists!\,\bar f"] \\
+    & V_3
+  \end{tikzcd}
 \]
 \end{theorem}
 
-同构意义下, 给定维数的线性空间唯一. 为确定 $V_1\otimes_K V_2$ 的维数和基, 需要下面几个引理.
+同构意义下, 给定维数的线性空间唯一. 为确定 $V_1\otimes_{\mathbb{F}} V_2$ 的维数和基, 需要下面几个引理.
 
 \begin{lemma}\label{lem:tensor-with-R}
 设 $R$ 为环, $M$ 为左 $R$-模, 则作为左 $R$-模有 $R\otimes_R M\cong M$.
@@ -267,7 +264,7 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 \end{proof}
 
 \begin{corollary}\label{cor:tensor-KV}
-设 $K$ 为域, $V$ 为 $K$-线性空间, 则有线性空间同构 $K\otimes_K V\cong V$.
+设 $\mathbb{F}$ 为域, $V$ 为 $\mathbb{F}$-线性空间, 则有线性空间同构 $\mathbb{F}\otimes_{\mathbb{F}} V\cong V$.
 \end{corollary}
 
 \begin{lemma}\label{lem:tensor-direct-sum}
@@ -306,29 +303,29 @@ $(M_1\otimes_R N)\oplus(M_2\otimes_R N)$ 中的加法是分量相加.
 \end{lemma}
 
 \begin{proposition}\label{prop:tensor-dim}
-设 $V_1,V_2$ 为 $K$-线性空间, 且 $\dim V_1=m$, $\dim V_2=n$, 那么
+设 $V_1,V_2$ 为 $\mathbb{F}$-线性空间, 且 $\dim V_1=m$, $\dim V_2=n$, 那么
 \begin{enumerate}[label=(\arabic*)]
-  \item $\dim(V_1\otimes_K V_2)=mn$;
-  \item 若 $V_1=\operatorname{span}_K\{\alpha_1,\dots,\alpha_m\}$,
-        $V_2=\operatorname{span}_K\{\beta_1,\dots,\beta_n\}$, 则
+  \item $\dim(V_1\otimes_{\mathbb{F}} V_2)=mn$;
+  \item 若 $V_1=\operatorname{span}_{\mathbb{F}}\{\alpha_1,\dots,\alpha_m\}$,
+        $V_2=\operatorname{span}_{\mathbb{F}}\{\beta_1,\dots,\beta_n\}$, 则
         \[
-          V_1\otimes_K V_2=\operatorname{span}_K\{\alpha_i\otimes\beta_j\mid 1\le i\le m,\ 1\le j\le n\}.
+          V_1\otimes_{\mathbb{F}} V_2=\operatorname{span}_{\mathbb{F}}\{\alpha_i\otimes\beta_j\mid 1\le i\le m,\ 1\le j\le n\}.
         \]
 \end{enumerate}
 \end{proposition}
 
 \begin{proof}
 任取 $\alpha=\sum_i k_i\alpha_i\in V_1$, $\beta=\sum_j l_j\beta_j\in V_2$, 则
-$\alpha\otimes\beta\in V_1\otimes_K V_2$, 且有
+$\alpha\otimes\beta\in V_1\otimes_{\mathbb{F}} V_2$, 且有
 \[
   \alpha\otimes\beta=\sum_{i,j} k_il_j\,\alpha_i\otimes\beta_j .
 \]
-另外, 记 $K\alpha_i=\operatorname{span}_K\{\alpha_i\}$, 则显然有 $V_1=\bigoplus_{i=1}^{m}K\alpha_i$.
+另外, 记 $\mathbb{F}\alpha_i=\operatorname{span}_{\mathbb{F}}\{\alpha_i\}$, 则显然有 $V_1=\bigoplus_{i=1}^{m}\mathbb{F}\alpha_i$.
 于是由 Lemma \ref{lem:tensor-direct-sum} 与 Corollary \ref{cor:tensor-KV},
 \[
-  V_1\otimes_K V_2=\Bigl(\bigoplus_{i=1}^{m}K\alpha_i\Bigr)\otimes_K V_2
-  \cong\bigoplus_{i=1}^{m}(K\alpha_i\otimes_K V_2)\cong\bigoplus_{i=1}^{m}V_2,
+  V_1\otimes_{\mathbb{F}} V_2=\Bigl(\bigoplus_{i=1}^{m}\mathbb{F}\alpha_i\Bigr)\otimes_{\mathbb{F}} V_2
+  \cong\bigoplus_{i=1}^{m}(\mathbb{F}\alpha_i\otimes_{\mathbb{F}} V_2)\cong\bigoplus_{i=1}^{m}V_2,
 \]
-故 $\dim(V_1\otimes_K V_2)=mn$, 且 $\{\alpha_i\otimes\beta_j\mid 1\le i\le m,\ 1\le j\le n\}$
-为 $V_1\otimes_K V_2$ 的一组基.
+故 $\dim(V_1\otimes_{\mathbb{F}} V_2)=mn$, 且 $\{\alpha_i\otimes\beta_j\mid 1\le i\le m,\ 1\le j\le n\}$
+为 $V_1\otimes_{\mathbb{F}} V_2$ 的一组基.
 \end{proof}

@@ -5,10 +5,10 @@
 
 \subsection{代数}
 
-\begin{definition}[$K$-代数]\label{def:k-algebra}
-给定域 $K$, 称 $A$ 为 $K$ 上的代数, 若:
+\begin{definition}[$\mathbb{F}$-代数]\label{def:k-algebra}
+给定域 $\mathbb{F}$, 称 $A$ 为 $\mathbb{F}$ 上的代数, 若:
 \begin{enumerate}
-  \item $A$ 是 $K$-线性空间;
+  \item $A$ 是 $\mathbb{F}$-线性空间;
   \item 存在二元运算 $m\colon A\times A\to A$, $(a,b)\mapsto ab$, 使得
   \begin{enumerate}
     \item 存在 $1\in A$, 使 $1\cdot a=a\cdot 1=a$, $\forall a\in A$;
@@ -18,7 +18,7 @@
       a\cdot(b+c)&=a\cdot b+a\cdot c, & a\cdot(kb)&=k(a\cdot b),\\
       (a+b)\cdot c&=a\cdot c+b\cdot c, & (ka)\cdot b&=k(a\cdot b),
     \end{align*}
-    其中 $a,b,c\in A$, $k\in K$.
+    其中 $a,b,c\in A$, $k\in \mathbb{F}$.
   \end{enumerate}
 \end{enumerate}
 称 $m$ 为 $A$ 的乘法.
@@ -27,9 +27,9 @@
 \begin{example}\label{eg:algebra}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-  \item 给定数域 $F$, 多项式环 $F[x]$ 是 $F$-代数.
-  \item 给定数域 $F$, 全体 $n$ 阶方阵 $M_n(F)$ 是 $F$-代数, 称为全矩阵代数.
-  \item 设 $V$ 为 $F$-线性空间, 则 $\operatorname{End}(V)$ 是 $F$-代数.
+  \item 给定数域 $\mathbb{F}$, 多项式环 $\mathbb{F}[x]$ 是 $\mathbb{F}$-代数.
+  \item 给定数域 $\mathbb{F}$, 全体 $n$ 阶方阵 $M_n(\mathbb{F})$ 是 $\mathbb{F}$-代数, 称为全矩阵代数.
+  \item 设 $V$ 为 $\mathbb{F}$-线性空间, 则 $\operatorname{End}(V)$ 是 $\mathbb{F}$-代数.
   \item Hamilton 四元数 $\mathbb{H}=\operatorname{span}_{\mathbb{R}}\{1,i,j,k\}$ 是 $\mathbb{R}$-代数, 其乘法表为
   \begin{center}
   \begin{tabular}{c|cccc}
@@ -41,12 +41,12 @@
     $k$ & $k$ & $j$ & $-i$ & $-1$
   \end{tabular}
   \end{center}
-  \item 群代数. 给定群 $G$, 域 $K$, 记 $KG=\operatorname{span}_K\{g \mid g\in G\}$, 其中对 $g,g'\in G$, $g\cdot g'$ 用 $G$ 中的乘法定义为 $gg'\in G$. 可以证明 $KG$ 为 $K$-代数.
+  \item 群代数. 给定群 $G$, 域 $\mathbb{F}$, 记 $\mathbb{F}G=\operatorname{span}_{\mathbb{F}}\{g \mid g\in G\}$, 其中对 $g,g'\in G$, $g\cdot g'$ 用 $G$ 中的乘法定义为 $gg'\in G$. 可以证明 $\mathbb{F}G$ 为 $\mathbb{F}$-代数.
 \end{enumerate}
 \end{example}
 
 \begin{example}\label{eg:group-algebra-Z2}
-群 $\mathbb{Z}_2=\langle g \mid g^2=1\rangle$. 作同态 $\mathbb{Z}_2\to M_2(K)$:
+群 $\mathbb{Z}_2=\langle g \mid g^2=1\rangle$. 作同态 $\mathbb{Z}_2\to M_2(\mathbb{F})$:
 \[
   1\longmapsto \begin{pmatrix}1&0\\0&1\end{pmatrix},\qquad
   -1\longmapsto \begin{pmatrix}0&1\\1&0\end{pmatrix}.
@@ -54,7 +54,7 @@
 
 于是
 \[
-  K\mathbb{Z}_2=\operatorname{span}_K\left\{
+  \mathbb{F}\mathbb{Z}_2=\operatorname{span}_{\mathbb{F}}\left\{
   \begin{pmatrix}1&0\\0&1\end{pmatrix},
   \begin{pmatrix}0&1\\1&0\end{pmatrix}\right\}
 \]
@@ -65,10 +65,10 @@
 \subsection{子代数}
 
 \begin{definition}[子代数]\label{def:subalgebra}
-设 $A$ 为 $F$-代数, $\varnothing\neq B\subseteq A$, 称 $B$ 为 $A$ 的子代数, 若:
+设 $A$ 为 $\mathbb{F}$-代数, $\varnothing\neq B\subseteq A$, 称 $B$ 为 $A$ 的子代数, 若:
 \begin{enumerate}
   \item $1_A\in B$ (单位元必须和 $A$ 中的一样);
-  \item $B$ 在 $A$ 的运算下构成 $F$-代数.
+  \item $B$ 在 $A$ 的运算下构成 $\mathbb{F}$-代数.
 \end{enumerate}
 \end{definition}
 
@@ -79,33 +79,33 @@
 
 \begin{remark}\label{rem:unit-mismatch}
 对 Definition \ref{def:subalgebra} 中 (1) 的举例.
-$M_n(F)$ 和 $M_{n+1}(F)$ 为 $F$-代数, 存在嵌入
-$\lambda\colon M_n(F)\hookrightarrow M_{n+1}(F)$,
+$M_n(\mathbb{F})$ 和 $M_{n+1}(\mathbb{F})$ 为 $\mathbb{F}$-代数, 存在嵌入
+$\lambda\colon M_n(\mathbb{F})\hookrightarrow M_{n+1}(\mathbb{F})$,
 让
 \[
   A_{n\times n}\longmapsto \begin{pmatrix}A&0\\0&0\end{pmatrix}.
 \]
-在嵌入 $\lambda$ 意义下 $M_n(F)\leq M_{n+1}(F)$. 但是 $M_{n+1}(F)$ 的单位元
-$I_{n+1}\notin M_n(F)$, 故 $M_n(F)$ 不是 $M_{n+1}(F)$ 的子代数.
+在嵌入 $\lambda$ 意义下 $M_n(\mathbb{F})\leq M_{n+1}(\mathbb{F})$. 但是 $M_{n+1}(\mathbb{F})$ 的单位元
+$I_{n+1}\notin M_n(\mathbb{F})$, 故 $M_n(\mathbb{F})$ 不是 $M_{n+1}(\mathbb{F})$ 的子代数.
 \end{remark}
 
 \begin{example}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-  \item $F\subseteq F[x]$ 为子代数.
-  设 $B\subseteq F[x]$ 为子代数, 且 $1,x\in B$, 那么 $B=F[x]=\langle x\rangle$
-  ($\langle 1,x\rangle=F[x]$, 但一般默认 $\langle\,\cdot\,\rangle$ 包含 $F$, 故简记为 $\langle x\rangle$).
+  \item $\mathbb{F}\subseteq \mathbb{F}[x]$ 为子代数.
+  设 $B\subseteq \mathbb{F}[x]$ 为子代数, 且 $1,x\in B$, 那么 $B=\mathbb{F}[x]=\langle x\rangle$
+  ($\langle 1,x\rangle=\mathbb{F}[x]$, 但一般默认 $\langle\,\cdot\,\rangle$ 包含 $\mathbb{F}$, 故简记为 $\langle x\rangle$).
   考虑: $\langle x^2\rangle=\operatorname{span}_F\{1,x^2,x^4,\dots,x^{2n},\dots\}$.
 \end{enumerate}
 \end{example}
 
 \begin{remark}\label{rem:hilbert-basis}
-$F[x]$ 的每个子代数是否都形如 $B=\langle f_1,\dots,f_n\rangle$?
+$\mathbb{F}[x]$ 的每个子代数是否都形如 $B=\langle f_1,\dots,f_n\rangle$?
 这个问题与 Hilbert 基定理有关, 此处不展开.
 \end{remark}
 
 \begin{example}
-全矩阵代数 $M_n(F)$ 的子代数:
+全矩阵代数 $M_n(\mathbb{F})$ 的子代数:
 \begin{enumerate}
   \item 上三角矩阵 (常记为 $B$) 的全体为子代数;
   \item 对角矩阵 (常记为 $T$) 的全体为子代数.
@@ -113,17 +113,17 @@ $F[x]$ 的每个子代数是否都形如 $B=\langle f_1,\dots,f_n\rangle$?
 \end{example}
 
 \begin{example}
-$F\mathbb{Z}_2=\operatorname{span}_F\left\{
+$\mathbb{F}\mathbb{Z}_2=\operatorname{span}_F\left\{
 \begin{pmatrix}1&0\\0&1\end{pmatrix},
-\begin{pmatrix}0&1\\1&0\end{pmatrix}\right\}\subset M_2(F)$ 为子代数.
+\begin{pmatrix}0&1\\1&0\end{pmatrix}\right\}\subset M_2(\mathbb{F})$ 为子代数.
 \end{example}
 
-进一步地, 可定义 $\mathbb{Z}_3=\langle g \mid g^3=1\rangle=\{1,g,g^2\}$, 同态 $\mathbb{Z}_3\to M_3(F)$:
+进一步地, 可定义 $\mathbb{Z}_3=\langle g \mid g^3=1\rangle=\{1,g,g^2\}$, 同态 $\mathbb{Z}_3\to M_3(\mathbb{F})$:
 \[
   g\longmapsto \begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},
 \]
 \[
-  F\mathbb{Z}_3=\operatorname{span}_F\left\{
+  \mathbb{F}\mathbb{Z}_3=\operatorname{span}_F\left\{
   \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix},
   \begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},
   \begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix}\right\}.
@@ -142,11 +142,11 @@ $F\mathbb{Z}_2=\operatorname{span}_F\left\{
 即得 $\mathbb{Z}_n$ 的一个矩阵实现.
 
 \begin{example}[子群代数]
-设 $H<G$, 则 $FH\subseteq FG$ 为子代数.
+设 $H<G$, 则 $\mathbb{F}H\subseteq FG$ 为子代数.
 \end{example}
 
 \begin{remark}\label{rem:subalgebra-not-subgroup}
-由 $FH\subseteq FG$ 不能推出 $H<G$. 反例: 取 $F=\mathbb{C}$, 仍考虑
+由 $\mathbb{F}H\subseteq FG$ 不能推出 $H<G$. 反例: 取 $\mathbb{F}=\mathbb{C}$, 仍考虑
 $\mathbb{Z}_3=\langle g \mid g^3=1\rangle$, $\mathbb{C}\mathbb{Z}_3=\operatorname{span}_{\mathbb{C}}\{1,g,g^2\}$,
 记 $\omega=\exp\left(\frac{2\pi i}{3}\right)$.
 现考虑元素
@@ -190,13 +190,13 @@ $\mathbb{R}$ 上有限维可除代数只有 $\mathbb{R}$, $\mathbb{C}$, $\mathbb
 \begin{proof}
 $1_A$ 同时属于 $B_1$ 与 $B_2$, 故 $1_A\in B_1\cap B_2$. 设 $x,y\in B_1\cap B_2$, $k\in F$.
 因为 $B_1,B_2$ 都是子代数, 所以 $x+y$, $kx$, $xy$ 同时属于 $B_1$ 与 $B_2$, 即属于 $B_1\cap B_2$.
-于是 $B_1\cap B_2$ 在 $A$ 的运算下构成 $F$-代数, 且与 $A$ 有相同的单位元, 故为 $A$ 的子代数.
+于是 $B_1\cap B_2$ 在 $A$ 的运算下构成 $\mathbb{F}$-代数, 且与 $A$ 有相同的单位元, 故为 $A$ 的子代数.
 \end{proof}
 
 \subsection{代数直和}
 
 \begin{definition}[外直和]\label{def:direct-sum}
-设 $A_1,A_2$ 为 $F$-代数, $A_1,A_2$ 的外直和记作 $A_1\times A_2$, 定义为 $A_1,A_2$ 的 Cartesian 积:
+设 $A_1,A_2$ 为 $\mathbb{F}$-代数, $A_1,A_2$ 的外直和记作 $A_1\times A_2$, 定义为 $A_1,A_2$ 的 Cartesian 积:
 \[
   A_1\times A_2=\{(a_1,a_2)\mid a_i\in A_i,\ i=1,2\},
 \]
@@ -232,16 +232,16 @@ $A_1,A_2$ 都不是 $A_1\oplus A_2$ 的子代数. 按 Definition \ref{def:subalg
 \begin{example}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-  \item 设 $M_{n_1}(F)$, $M_{n_2}(F)$ 均为 $F$-代数, 则
+  \item 设 $M_{n_1}(\mathbb{F})$, $M_{n_2}(\mathbb{F})$ 均为 $\mathbb{F}$-代数, 则
   \[
-    M_{n_1}(F)\oplus M_{n_2}(F)
+    M_{n_1}(\mathbb{F})\oplus M_{n_2}(\mathbb{F})
     =\left\{\begin{pmatrix}A&0\\0&B\end{pmatrix}
-    \ \middle|\ A\in M_{n_1}(F),\ B\in M_{n_2}(F)\right\}.
+    \ \middle|\ A\in M_{n_1}(\mathbb{F}),\ B\in M_{n_2}(\mathbb{F})\right\}.
   \]
-  \item 代数 $F[x]$. 设 $B_1=F[x^2]$, $B_2=F[x^3]$, 则 $B_1,B_2$ 均为 $F[x]$ 的子代数,
-  空间的和 $B_1+B_2$ 构成代数 $F\langle x^2,x^3\rangle$.
-  $B_1,B_2$ 没有内直和, 因为 $B_1\cap B_2=F[x^6]\neq\{0\}$.
-  此外, 外直和 $B_1\times B_2$ 与 $F\langle x^2,x^3\rangle$ 不同构,
+  \item 代数 $\mathbb{F}[x]$. 设 $B_1=\mathbb{F}[x^2]$, $B_2=\mathbb{F}[x^3]$, 则 $B_1,B_2$ 均为 $\mathbb{F}[x]$ 的子代数,
+  空间的和 $B_1+B_2$ 构成代数 $\mathbb{F}\langle x^2,x^3\rangle$.
+  $B_1,B_2$ 没有内直和, 因为 $B_1\cap B_2=\mathbb{F}[x^6]\neq\{0\}$.
+  此外, 外直和 $B_1\times B_2$ 与 $\mathbb{F}\langle x^2,x^3\rangle$ 不同构,
   因为对 $b_1\in B_1$, $b_2\in B_2$ 有
   $(b_1,0)\cdot(0,b_2)=0$,
   这意味着 $B_1\times B_2$ 有零因子.
@@ -251,7 +251,7 @@ $A_1,A_2$ 都不是 $A_1\oplus A_2$ 的子代数. 按 Definition \ref{def:subalg
 \subsection{代数理想}
 
 \begin{definition}[理想]\label{def:ideal}
-设 $A$ 为 $F$-代数, 称子空间 $I\subseteq A$ 是 $A$ 的左 (右) 理想, 若 $AI\subseteq I$ ($IA\subseteq I$).
+设 $A$ 为 $\mathbb{F}$-代数, 称子空间 $I\subseteq A$ 是 $A$ 的左 (右) 理想, 若 $AI\subseteq I$ ($IA\subseteq I$).
 若 $I$ 既是左理想, 又是右理想, 则称 $I$ 是理想.
 左理想记作 $I\trianglelefteq_l A$, 右理想记作 $I\trianglelefteq_r A$, 理想记作 $I\trianglelefteq A$.
 \end{definition}
@@ -275,24 +275,24 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
 \begin{example}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-  \item 考虑全矩阵代数 $M_n(F)$. 设 $I_l\trianglelefteq_l M_n(F)$, $I_r\trianglelefteq_r M_n(F)$,
-  那么 $I_l$ 中元素有形式 $(\alpha_1,\alpha_2,\dots,\alpha_n)$, $\alpha_i\in F^{n\times 1}$.
+  \item 考虑全矩阵代数 $M_n(\mathbb{F})$. 设 $I_l\trianglelefteq_l M_n(\mathbb{F})$, $I_r\trianglelefteq_r M_n(\mathbb{F})$,
+  那么 $I_l$ 中元素有形式 $(\alpha_1,\alpha_2,\dots,\alpha_n)$, $\alpha_i\in \mathbb{F}^{n\times 1}$.
   这些列向量中的某些为 $0$, 其余列任意, 即形如 (其中 $0$ 为零列)
   \[
     \left(\alpha_{i_1}\ \ 0\ \alpha_{i_2}\ \ 0\ \cdots\ 0\ \alpha_{i_k}\ \ 0\ \cdots\right),
-    \qquad \alpha_{i_j}\in F^{n\times 1}.
+    \qquad \alpha_{i_j}\in \mathbb{F}^{n\times 1}.
   \]
   类似, $I_r$ 中元素有形式
-  $(\beta_1,\dots,\beta_n)^{\mathrm{T}}$, $\beta_i\in F^{1\times n}$,
+  $(\beta_1,\dots,\beta_n)^{\mathrm{T}}$, $\beta_i\in \mathbb{F}^{1\times n}$,
   这些行向量中的某些为 $0$, 其余行任意, 即形如 (其中 $0$ 为零行)
   \[
     \begin{pmatrix}
       \beta_{j_1}\\ 0\\ \beta_{j_2}\\ 0\\ \vdots\\ \beta_{j_k}\\ 0
     \end{pmatrix},
-    \qquad \beta_{j_i}\in F^{1\times n}.
+    \qquad \beta_{j_i}\in \mathbb{F}^{1\times n}.
   \]
-  设 $I\trianglelefteq M_n(F)$, 则 $I$ 必然同时为左理想和右理想,
-  故只能 $I=\{0\}$ 或 $M_n(F)$.
+  设 $I\trianglelefteq M_n(\mathbb{F})$, 则 $I$ 必然同时为左理想和右理想,
+  故只能 $I=\{0\}$ 或 $M_n(\mathbb{F})$.
 \end{enumerate}
 \end{example}
 
@@ -313,8 +313,8 @@ $\Rightarrow I=\mathbb{H}$. 于是 $\mathbb{H}$ 的理想只有 $\{0\}$ 和 $\ma
 
 \begin{example}
 回忆 $\mathbb{Z}_3=\langle g \mid g^3=1\rangle=\{1,g,g^2\}$,
-$F\mathbb{Z}_3=\operatorname{span}_F\{1,g,g^2\}$.
-令 $F=\mathbb{C}$, 仍取 $a=\frac{1}{3}(1+\omega g+\omega^2 g^2)$, 其中 $\omega=\exp\left(\frac{2\pi i}{3}\right)$,
+$\mathbb{F}\mathbb{Z}_3=\operatorname{span}_F\{1,g,g^2\}$.
+令 $\mathbb{F}=\mathbb{C}$, 仍取 $a=\frac{1}{3}(1+\omega g+\omega^2 g^2)$, 其中 $\omega=\exp\left(\frac{2\pi i}{3}\right)$,
 则 $I=\operatorname{span}_F\{a\}=\operatorname{span}_{\mathbb{C}}\{a\}\subseteq\mathbb{C}\mathbb{Z}_3$ 为子空间 (不是子代数!).
 下面说明 $I\trianglelefteq\mathbb{C}\mathbb{Z}_3$. 由于 $\mathbb{Z}_3$ 交换, 只需证
 $\mathbb{C}\mathbb{Z}_3\cdot I\subseteq I$; 又只需对基验证.
@@ -352,7 +352,7 @@ $ab-a'b\in I\Rightarrow[ab]=[a'b]$.
 
 \begin{remark}\label{rem:ideal-necessary}
 $I$ 为理想是必要的, 我们用一个例子来说明:
-取全矩阵代数 $M_2(F)$, 设
+取全矩阵代数 $M_2(\mathbb{F})$, 设
 $I=\left\{\begin{pmatrix}0&x\\0&0\end{pmatrix}\ \middle|\ x\in F\right\}$.
 显然, $I$ 为子空间而不是理想.
 \end{remark}
@@ -362,7 +362,7 @@ $I=\left\{\begin{pmatrix}0&x\\0&0\end{pmatrix}\ \middle|\ x\in F\right\}$.
   a=\begin{pmatrix}0&0\\1&0\end{pmatrix},\qquad
   i=\begin{pmatrix}0&1\\0&0\end{pmatrix}
 \]
-在商空间 $M_2(F)/I$ 中.
+在商空间 $M_2(\mathbb{F})/I$ 中.
 由于 $i\in I$, 故 $[i]=[0]$. 按定义计算两个乘法:
 \begin{align*}
   [a]\cdot[i] &= [a\cdot i]
@@ -374,7 +374,7 @@ $I=\left\{\begin{pmatrix}0&x\\0&0\end{pmatrix}\ \middle|\ x\in F\right\}$.
 此时乘法不是 well-defined 的.
 
 \begin{example}
-设 $A_1,A_2$ 为 $F$-代数, 记 $A=A_1\oplus A_2$, 那么 $A/A_1\cong A_2$, $A/A_2\cong A_1$.
+设 $A_1,A_2$ 为 $\mathbb{F}$-代数, 记 $A=A_1\oplus A_2$, 那么 $A/A_1\cong A_2$, $A/A_2\cong A_1$.
 \end{example}
 
 \begin{proof}
@@ -394,7 +394,7 @@ $I=\left\{\begin{pmatrix}0&x\\0&0\end{pmatrix}\ \middle|\ x\in F\right\}$.
 \subsection{代数同态}
 
 \begin{definition}[代数同态]\label{def:algebra-hom}
-设 $A,B$ 为 $K$-代数, 称线性映射 $f\colon A\to B$ 为同态, 若:
+设 $A,B$ 为 $\mathbb{F}$-代数, 称线性映射 $f\colon A\to B$ 为同态, 若:
 \begin{enumerate}
   \item $\forall a,b\in A$, $f(ab)=f(a)f(b)$;
   \item $f(1_A)=1_B$.
@@ -408,9 +408,9 @@ $I=\left\{\begin{pmatrix}0&x\\0&0\end{pmatrix}\ \middle|\ x\in F\right\}$.
 \begin{enumerate}
   \item 线性空间 $V$, $\dim(V)=n$, $V$ 有一组基 $\{\alpha_1,\dots,\alpha_n\}$.
   $V$ 上线性变换 $\sigma\in\operatorname{End}(V)$, 给出
-  $\sigma(\alpha_1,\dots,\alpha_n)=(\alpha_1,\dots,\alpha_n)A$, $A\in M_n(K)$.
-  $\sigma\mapsto A_\sigma$ 是代数同态 (实际上 $\operatorname{End}(V)\cong M_n(K)$).
-  \item $f\colon K\mathbb{Z}_2\to M_2(K)$,
+  $\sigma(\alpha_1,\dots,\alpha_n)=(\alpha_1,\dots,\alpha_n)A$, $A\in M_n(\mathbb{F})$.
+  $\sigma\mapsto A_\sigma$ 是代数同态 (实际上 $\operatorname{End}(V)\cong M_n(\mathbb{F})$).
+  \item $f\colon \mathbb{F}\mathbb{Z}_2\to M_2(\mathbb{F})$,
   \[
     1\mapsto\begin{pmatrix}1&0\\0&1\end{pmatrix},\qquad
     g\mapsto\begin{pmatrix}0&1\\1&0\end{pmatrix}
@@ -420,12 +420,12 @@ $I=\left\{\begin{pmatrix}0&x\\0&0\end{pmatrix}\ \middle|\ x\in F\right\}$.
 \end{example}
 
 \begin{definition}[典范同态]\label{def:canonical-hom}
-设 $A$ 是代数, $I\trianglelefteq A$, 映射 $\pi\colon A\to A/I$, $a\mapsto[a]$, 称 $\pi$ 为典范同态.
+设 $A$ 为代数, $I\trianglelefteq A$, 映射 $\pi\colon A\to A/I$, $a\mapsto[a]$, 称 $\pi$ 为典范同态.
 \end{definition}
 
 \begin{example}
-设 $A=K[x]$, 任取 $a_0\in K$, 记理想 $I_{a_0}=(x-a_0)$.
-则 $\pi_{a_0}\colon K[x]\to K[x]/I_{a_0}$ 为典范同态.
+设 $A=\mathbb{F}[x]$, 任取 $a_0\in \mathbb{F}$, 记理想 $I_{a_0}=(x-a_0)$.
+则 $\pi_{a_0}\colon \mathbb{F}[x]\to \mathbb{F}[x]/I_{a_0}$ 为典范同态.
 可以考察元素的像, 以 $x$, $x^2$ 为例.
 $x\mapsto[x]$, 由于 $I_{a_0}=(x-a_0)$, 则 $x-a_0\in I_{a_0}\Rightarrow[x]=[a_0]$.
 $x^2\mapsto[x^2]$, 则 $[x^2]=[x]^2=[a_0]^2=[a_0^2]$.
@@ -464,7 +464,7 @@ $x^2\mapsto[x^2]$, 则 $[x^2]=[x]^2=[a_0]^2=[a_0^2]$.
   b_1+b_2 &= f(a_1)+f(a_2)=f(a_1+a_2)\in\operatorname{Im}(f),\\
   kb_1 &= kf(a_1)=f(ka_1)\in\operatorname{Im}(f),
 \end{align*}
-其中 $k\in K$. 其次 $b_1b_2=f(a_1)f(a_2)=f(a_1a_2)\in\operatorname{Im}(f)$.
+其中 $k\in \mathbb{F}$. 其次 $b_1b_2=f(a_1)f(a_2)=f(a_1a_2)\in\operatorname{Im}(f)$.
 故 $\operatorname{Im}(f)$ 是 $B$ 的子代数.
 
 (3) 定义映射 $\varphi\colon A/\operatorname{Ker}(f)\to\operatorname{Im}(f)$, $[a]\mapsto f(a)$.
@@ -487,10 +487,10 @@ $\varphi([1])=f(1_A)=1_B$, 且
 \begin{example}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-  \item 设 $A=K[x]$. $\forall a\in K$, 记同态 $f_a\colon K[x]\to K[a]$, $p(x)\mapsto p(a)$.
-  于是 $\operatorname{Im}(f_a)=K[a]$, $\operatorname{Ker}(f_a)=(x-a)$, 从而
+  \item 设 $A=\mathbb{F}[x]$. $\forall a\in \mathbb{F}$, 记同态 $f_a\colon \mathbb{F}[x]\to \mathbb{F}[a]$, $p(x)\mapsto p(a)$.
+  于是 $\operatorname{Im}(f_a)=\mathbb{F}[a]$, $\operatorname{Ker}(f_a)=(x-a)$, 从而
   \[
-    K[x]/(x-a)\cong K[a].
+    \mathbb{F}[x]/(x-a)\cong \mathbb{F}[a].
   \]
 \end{enumerate}
 \end{example}
