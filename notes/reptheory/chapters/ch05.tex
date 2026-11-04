@@ -173,8 +173,18 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
   &=\Bigl(\sum_s a_{si}\alpha_s\Bigr)\otimes\Bigl(\sum_t b_{tj}\beta_t\Bigr)
   =\sum_{s,t}a_{si}b_{tj}\,\alpha_s\otimes\beta_t .
 \end{align*}
-排成矩阵即为 Kronecker 积 $C=A\otimes B=(a_{ij}B)_{m\times m}$, 其中 $A=(a_{ij})_{m\times m}$,
-$B=(b_{ij})_{n\times n}$. 于是
+排成矩阵即为 Kronecker 积. 记 $A=(a_{ij})_{m\times m}$, $B=(b_{ij})_{n\times n}$, 则 $g$ 在基
+$\{\alpha_i\otimes\beta_j\}$ 下的矩阵为
+\begin{equation*}
+  C=A\otimes B=
+  \begin{pmatrix}
+    a_{11}B & a_{12}B & \cdots & a_{1m}B\\
+    a_{21}B & a_{22}B & \cdots & a_{2m}B\\
+    \vdots  & \vdots  & \ddots & \vdots\\
+    a_{m1}B & a_{m2}B & \cdots & a_{mm}B
+  \end{pmatrix}_{mn\times mn},
+\end{equation*}
+其中 $a_{ij}B$ 为 $n\times n$ 的块; 展开后其 $(si,tj)$ 元为 $a_{si}b_{tj}$. 于是
 \begin{equation*}
   \operatorname{Tr}(C)=\operatorname{Tr}(A\otimes B)=\sum_i a_{ii}\operatorname{Tr}(B)
   =\operatorname{Tr}(A)\cdot\operatorname{Tr}(B),
