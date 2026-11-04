@@ -17,7 +17,8 @@
 % 只用西文标点：禁用 xeCJK 的全角标点替换与挤压
 \punctstyle{plain}
 \linespread{1.35}
-\setlength{\parskip}{0.2em}
+\setlength{\parskip}{0.6em}
+\setlength{\parindent}{0pt}   % 不缩进, 改用段间距
 
 % ---------- 数学 ----------
 \usepackage{amsmath}
@@ -27,8 +28,8 @@
 
 % ---------- 标题格式：居中、黑体 ----------
 \usepackage{titlesec}
-\titleformat{\section}{\centering\heiti\large}{\thesection}{0.6em}{}
-\titleformat{\subsection}{\heiti\normalsize}{\thesubsection}{0.6em}{}
+\titleformat{\section}{\centering\heiti\bfseries\large}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\heiti\bfseries\normalsize}{\thesubsection}{0.6em}{}
 \titlespacing*{\section}{0pt}{2ex plus .5ex minus .2ex}{1.2ex}
 \titlespacing*{\subsection}{0pt}{1.6ex plus .3ex}{0.8ex}
 
@@ -40,7 +41,7 @@
 \fancyfoot[C]{\small\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
-\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{}   % 页眉固定为课程名
 
 % ---------- 列表：论文式 (1) (2) ----------
 \usepackage{enumitem}
@@ -55,9 +56,9 @@
   {0.9em}   % 下方间距
   {\normalfont}  % 正文字体
   {}        % 缩进
-  {\heiti}  % 标题字体
+  {\heiti\bfseries}  % 标题字体
   {}        % 标题后标点
-  {0.5em}   % 标题后间距
+  {0.7em}   % 标题后间距
   {\thmname{#1}\thmnumber{ #2}\thmnote{\normalfont\ (#3)}}
 
 \theoremstyle{cnplain}
