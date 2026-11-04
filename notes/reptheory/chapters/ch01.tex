@@ -95,7 +95,7 @@ $I_{n+1}\notin M_n(\mathbb{F})$, 故 $M_n(\mathbb{F})$ 不是 $M_{n+1}(\mathbb{F
   \item $\mathbb{F}\subseteq \mathbb{F}[x]$ 为子代数.
   设 $B\subseteq \mathbb{F}[x]$ 为子代数, 且 $1,x\in B$, 那么 $B=\mathbb{F}[x]=\langle x\rangle$
   ($\langle 1,x\rangle=\mathbb{F}[x]$, 但一般默认 $\langle\,\cdot\,\rangle$ 包含 $\mathbb{F}$, 故简记为 $\langle x\rangle$).
-  考虑: $\langle x^2\rangle=\operatorname{span}_\mathbb{F}\{1,x^2,x^4,\dots,x^{2n},\dots\}$.
+  考虑: $\langle x^2\rangle=\operatorname{span}_{\mathbb{F}}\{1,x^2,x^4,\dots,x^{2n},\dots\}$.
 \end{enumerate}
 \end{example}
 
@@ -113,7 +113,7 @@ $\mathbb{F}[x]$ 的每个子代数是否都形如 $B=\langle f_1,\dots,f_n\rangl
 \end{example}
 
 \begin{example}
-$\mathbb{F}\mathbb{Z}_2=\operatorname{span}_\mathbb{F}\left\{
+$\mathbb{F}\mathbb{Z}_2=\operatorname{span}_{\mathbb{F}}\left\{
 \begin{pmatrix}1&0\\0&1\end{pmatrix},
 \begin{pmatrix}0&1\\1&0\end{pmatrix}\right\}\subset M_2(\mathbb{F})$ 为子代数.
 \end{example}
@@ -123,7 +123,7 @@ $\mathbb{F}\mathbb{Z}_2=\operatorname{span}_\mathbb{F}\left\{
   g\longmapsto \begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},
 \]
 \[
-  \mathbb{F}\mathbb{Z}_3=\operatorname{span}_\mathbb{F}\left\{
+  \mathbb{F}\mathbb{Z}_3=\operatorname{span}_{\mathbb{F}}\left\{
   \begin{pmatrix}1&0&0\\0&1&0\\0&0&1\end{pmatrix},
   \begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix},
   \begin{pmatrix}0&1&0\\0&0&1\\1&0&0\end{pmatrix}\right\}.
@@ -275,24 +275,43 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
 \begin{example}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-  \item 考虑全矩阵代数 $M_n(\mathbb{F})$. 设 $I_l\trianglelefteq_l M_n(\mathbb{F})$, $I_r\trianglelefteq_r M_n(\mathbb{F})$,
-  那么 $I_l$ 中元素有形式 $(\alpha_1,\alpha_2,\dots,\alpha_n)$, $\alpha_i\in \mathbb{F}^{n\times 1}$.
-  这些列向量中的某些为 $0$, 其余列任意, 即形如 (其中 $0$ 为零列)
+  \item 考虑全矩阵代数 $M_n(\mathbb{F})$. 记 $E_{ij}$ 为第 $(i,j)$ 个矩阵单位, $e_j$ 为第 $j$ 个标准基向量.
+  设 $I_l\trianglelefteq_l M_n(\mathbb{F})$ 为左理想, 令
+  \[
+    W=\{Ae_j \mid A\in I_l,\ 1\le j\le n\}\subseteq \mathbb{F}^{n}
+  \]
+  为 $I_l$ 中所有矩阵的列向量张成的子空间, 则
+  \[
+    I_l=\{A\in M_n(\mathbb{F}) \mid \operatorname{Im}(A)\subseteq W\}.
+  \]
+  事实上, "$\subseteq$" 由 $W$ 的定义直接得到. 反之设 $A$ 的每一列都属于 $W$,
+  则对每个 $j$ 存在 $B\in I_l$ 与 $k$ 使 $Ae_j=Be_k$, 于是
+  $Ae_j e_j^{\mathrm{T}}=B e_k e_j^{\mathrm{T}}=BE_{kj}\in I_l$;
+  由 $A=\sum_j Ae_j e_j^{\mathrm{T}}$ 得 $A\in I_l$.
+
+  于是左理想与 $\mathbb{F}^{n}$ 的子空间一一对应. 取 $W=\operatorname{span}_{\mathbb{F}}\{e_{i_1},\dots,e_{i_k}\}$,
+  即得"只有第 $i_1,\dots,i_k$ 列可能非零"的左理想, 其元素形如 (其中 $0$ 为零列)
   \[
     \left(\alpha_{i_1}\ \ 0\ \alpha_{i_2}\ \ 0\ \cdots\ 0\ \alpha_{i_k}\ \ 0\ \cdots\right),
-    \qquad \alpha_{i_j}\in \mathbb{F}^{n\times 1}.
+    \qquad \alpha_{i_j}\in \mathbb{F}^{n\times 1};
   \]
-  类似, $I_r$ 中元素有形式
-  $(\beta_1,\dots,\beta_n)^{\mathrm{T}}$, $\beta_i\in \mathbb{F}^{1\times n}$,
-  这些行向量中的某些为 $0$, 其余行任意, 即形如 (其中 $0$ 为零行)
+  取 $W=\mathbb{F}^{n}$ 得 $I_l=M_n(\mathbb{F})$, 取 $W=\{0\}$ 得 $I_l=\{0\}$.
+
+  同理, 对右理想 $I_r\trianglelefteq_r M_n(\mathbb{F})$, 令 $U$ 为其所有行向量张成的子空间, 则
+  $I_r=\{A\in M_n(\mathbb{F})\mid$ $A$ 的每一行都属于 $U\}$;
+  取 $U=\operatorname{span}_{\mathbb{F}}\{e_{j_1}^{\mathrm{T}},\dots,e_{j_k}^{\mathrm{T}}\}$ 即得"只有第 $j_1,\dots,j_k$ 行可能非零"的右理想,
+  其元素形如 (其中 $0$ 为零行)
   \[
     \begin{pmatrix}
       \beta_{j_1}\\ 0\\ \beta_{j_2}\\ 0\\ \vdots\\ \beta_{j_k}\\ 0
     \end{pmatrix},
     \qquad \beta_{j_i}\in \mathbb{F}^{1\times n}.
   \]
-  设 $I\trianglelefteq M_n(\mathbb{F})$, 则 $I$ 必然同时为左理想和右理想,
-  故只能 $I=\{0\}$ 或 $M_n(\mathbb{F})$.
+
+  最后设 $I\trianglelefteq M_n(\mathbb{F})$ 同时为左、右理想. 若 $I\neq\{0\}$, 取 $0\neq A\in I$
+  并设 $a_{ij}\neq 0$, 则 $E_{ij}=a_{ij}^{-1}E_{ii}AE_{jj}\in I$;
+  于是全部矩阵单位都属于 $I$, 从而 $I=M_n(\mathbb{F})$.
+  故 $I$ 只能是 $\{0\}$ 或 $M_n(\mathbb{F})$.
 \end{enumerate}
 \end{example}
 
@@ -313,9 +332,9 @@ $\Rightarrow I=\mathbb{H}$. 于是 $\mathbb{H}$ 的理想只有 $\{0\}$ 和 $\ma
 
 \begin{example}
 回忆 $\mathbb{Z}_3=\langle g \mid g^3=1\rangle=\{1,g,g^2\}$,
-$\mathbb{F}\mathbb{Z}_3=\operatorname{span}_\mathbb{F}\{1,g,g^2\}$.
+$\mathbb{F}\mathbb{Z}_3=\operatorname{span}_{\mathbb{F}}\{1,g,g^2\}$.
 令 $\mathbb{F}=\mathbb{C}$, 仍取 $a=\frac{1}{3}(1+\omega g+\omega^2 g^2)$, 其中 $\omega=\exp\left(\frac{2\pi i}{3}\right)$,
-则 $I=\operatorname{span}_\mathbb{F}\{a\}=\operatorname{span}_{\mathbb{C}}\{a\}\subseteq\mathbb{C}\mathbb{Z}_3$ 为子空间 (不是子代数!).
+则 $I=\operatorname{span}_{\mathbb{F}}\{a\}=\operatorname{span}_{\mathbb{C}}\{a\}\subseteq\mathbb{C}\mathbb{Z}_3$ 为子空间 (不是子代数!).
 下面说明 $I\trianglelefteq\mathbb{C}\mathbb{Z}_3$. 由于 $\mathbb{Z}_3$ 交换, 只需证
 $\mathbb{C}\mathbb{Z}_3\cdot I\subseteq I$; 又只需对基验证.
 \begin{align*}
@@ -442,7 +461,8 @@ $x^2\mapsto[x^2]$, 则 $[x^2]=[x]^2=[a_0]^2=[a_0^2]$.
 \end{theorem}
 
 \begin{proof}
-(1) $\forall a\in A$, $a_0\in\operatorname{Ker}(f)$, 有
+\begin{enumerate}
+\item $\forall a\in A$, $a_0\in\operatorname{Ker}(f)$, 有
 \begin{align*}
   f(a\cdot a_0) &= f(a)\cdot f(a_0)=f(a)\cdot 0=0
   \Rightarrow a\cdot a_0\in\operatorname{Ker}(f)
@@ -454,7 +474,7 @@ $x^2\mapsto[x^2]$, 则 $[x^2]=[x]^2=[a_0]^2=[a_0^2]$.
 
 于是 $\operatorname{Ker}(f)\trianglelefteq A$.
 
-(2) $\operatorname{Im}(f)\subseteq B$ 是显然的, 只要说明 $\operatorname{Im}(f)$ 是代数.
+\item $\operatorname{Im}(f)\subseteq B$ 是显然的, 只要说明 $\operatorname{Im}(f)$ 是代数.
 即 $\operatorname{Im}(f)$ 对加法, 数乘, 乘法封闭;
 其余性质由 $B$ 中自然继承.
 取 $b_{1,2}\in\operatorname{Im}(f)$, 则 $\exists a_{1,2}\in A$, s.t. $f(a_{1,2})=b_{1,2}$.
@@ -467,7 +487,7 @@ $x^2\mapsto[x^2]$, 则 $[x^2]=[x]^2=[a_0]^2=[a_0^2]$.
 其中 $k\in \mathbb{F}$. 其次 $b_1b_2=f(a_1)f(a_2)=f(a_1a_2)\in\operatorname{Im}(f)$.
 故 $\operatorname{Im}(f)$ 是 $B$ 的子代数.
 
-(3) 定义映射 $\varphi\colon A/\operatorname{Ker}(f)\to\operatorname{Im}(f)$, $[a]\mapsto f(a)$.
+\item 定义映射 $\varphi\colon A/\operatorname{Ker}(f)\to\operatorname{Im}(f)$, $[a]\mapsto f(a)$.
 下面说明 $\varphi$ 是同构. 先说明 $\varphi$ 是同态:
 $\varphi([1])=f(1_A)=1_B$, 且
 \[
@@ -475,11 +495,15 @@ $\varphi([1])=f(1_A)=1_B$, 且
 \]
 其中 $a,b\in A$. 故 $\varphi$ 是同态. 下证 $\varphi$ 是双射.
 
-(i) $\varphi$ 是单射. 设 $f(a_1)=f(a_2)\Rightarrow f(a_1-a_2)=0
+\begin{enumerate}
+\item $\varphi$ 是单射. 设 $f(a_1)=f(a_2)\Rightarrow f(a_1-a_2)=0
 \Rightarrow a_1-a_2\in\operatorname{Ker}(f)\Rightarrow[a_1]=[a_2]$. 得证.
 
-(ii) $\varphi$ 是满射. $\forall b\in\operatorname{Im}(f)$, $\exists a\in A$, $f(a)=b$.
+\item $\varphi$ 是满射. $\forall b\in\operatorname{Im}(f)$, $\exists a\in A$, $f(a)=b$.
 故总有 $[a]\in A/\operatorname{Ker}(f)$, s.t. $\varphi([a])=f(a)=b$.
+
+\end{enumerate}
+\end{enumerate}
 
 综合以上, $\varphi$ 是同构, 故 $A/\operatorname{Ker}(f)\cong\operatorname{Im}(f)$.
 \end{proof}

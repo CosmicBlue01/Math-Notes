@@ -27,7 +27,8 @@ $V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
 \end{proposition}
 
 \begin{proof}
-(1) 设 $\rho\colon G\to\mathrm{GL}_V$ 为同态, 要找 $\rho'\colon KG\to\operatorname{End}(V)$.
+\begin{enumerate}
+\item 设 $\rho\colon G\to\mathrm{GL}_V$ 为同态, 要找 $\rho'\colon KG\to\operatorname{End}(V)$.
 定义
 \begin{equation*}
   \rho'\colon\sum_{g\in G}a_g\,g\longmapsto\sum_{g\in G}a_g\,\rho(g),
@@ -41,12 +42,13 @@ $V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
 \end{align*}
 故 $\rho'$ 为代数同态.
 
-(2) 设 $\rho'\colon KG\to\operatorname{End}(V)$ 为代数同态, 定义 $\rho=\rho'|_G\colon G\to\operatorname{End}(V)$.
+\item 设 $\rho'\colon KG\to\operatorname{End}(V)$ 为代数同态, 定义 $\rho=\rho'|_G\colon G\to\operatorname{End}(V)$.
 由 $\rho'(e)=\operatorname{Id}$ 及 $\forall g\in G$ 存在 $g^{-1}$ 使 $gg^{-1}=e$, 得
 \begin{equation*}
   \operatorname{Id}=\rho'(e)=\rho'(gg^{-1})=\rho'(g)\rho'(g^{-1})=\rho(g)\rho(g^{-1}),
 \end{equation*}
 故 $\rho(g)$ 可逆, 即 $\rho(g)\in\mathrm{GL}_V$, 从而 $\rho\colon G\to\mathrm{GL}_V$. 于是 $V$ 也是 $G$ 的群表示.
+\end{enumerate}
 \end{proof}
 
 \begin{remark}\label{rem:subrep}
@@ -54,13 +56,15 @@ $V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
 \end{remark}
 
 \begin{example}\label{ex:group-reps}
-(i) \textbf{平凡表示}: $\rho_{\mathrm{triv}}\colon G\to\mathrm{GL}_1=F^\times=F\setminus\{0\}$,
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+\item \textbf{平凡表示}: $\rho_{\mathrm{triv}}\colon G\to\mathrm{GL}_1=F^\times=F\setminus\{0\}$,
 $\forall g\in G$, $\rho_{\mathrm{triv}}(g)=1$.
 
-(ii) \textbf{符号表示} (sign representation): $\rho_{\mathrm{sign}}\colon S_n\to\mathrm{GL}_1=F^\times$,
+\item \textbf{符号表示} (sign representation): $\rho_{\mathrm{sign}}\colon S_n\to\mathrm{GL}_1=F^\times$,
 将偶排列映到 $1$, 将奇排列映到 $-1$.
 
-(iii) \textbf{典范表示} (canonical representation): 设 $V$ 为线性空间, 有基 $\alpha_1,\dots,\alpha_n$.
+\item \textbf{典范表示} (canonical representation): 设 $V$ 为线性空间, 有基 $\alpha_1,\dots,\alpha_n$.
 对 $\sigma\in S_n$,
 \begin{equation*}
   \sigma(\alpha_1,\dots,\alpha_n):=\bigl(\sigma(\alpha_1),\dots,\sigma(\alpha_n)\bigr)
@@ -68,12 +72,13 @@ $\forall g\in G$, $\rho_{\mathrm{triv}}(g)=1$.
 \end{equation*}
 则 $\sigma\mapsto A_\sigma$ 给出典范表示 $\rho_{\mathrm{can}}$.
 
-(iv) \textbf{标准表示} (standard representation): 先取典范表示 $\rho_{\mathrm{can}}$, 取 $V$ 的子空间
+\item \textbf{标准表示} (standard representation): 先取典范表示 $\rho_{\mathrm{can}}$, 取 $V$ 的子空间
 \begin{equation*}
   V_1=\Bigl\{\textstyle\sum_i k_i\alpha_i \Bigm| \sum_i k_i=0\Bigr\}.
 \end{equation*}
 对 $g\in S_n$ 有 $g\cdot\sum_i k_i\alpha_i=\sum_i k_i\alpha_{g(i)}\in V_1$, 故 $V_1$ 为不变子空间.
 于是标准表示 $\rho_{\mathrm{std}}=\rho_{\mathrm{can}}|_{V_1}$.
+\end{enumerate}
 \end{example}
 
 \begin{proposition}\label{prop:can-faithful}
@@ -123,7 +128,9 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
 在这个过程中, 迹是一个不变量, 是和表示 $\rho$ 相关的量, 不依赖于基的选取.
 
 \begin{example}\label{ex:rep-constructions}
-(i) \textbf{直和表示}. 设 $G$ 为群, $V_1,V_2$ 为 $\mathbb{F}$-线性空间, 取 $G$ 的两个线性表示
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+\item \textbf{直和表示}. 设 $G$ 为群, $V_1,V_2$ 为 $\mathbb{F}$-线性空间, 取 $G$ 的两个线性表示
 \begin{equation*}
   \rho_1\colon G\to\mathrm{GL}_{V_1}\cong\mathrm{GL}_m,\qquad
   \rho_2\colon G\to\mathrm{GL}_{V_2}\cong\mathrm{GL}_n .
@@ -146,10 +153,11 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
 \end{equation*}
 即 $\operatorname{Tr}_{\rho_1\oplus\rho_2}=\operatorname{Tr}_{\rho_1}+\operatorname{Tr}_{\rho_2}\colon G\to \mathbb{F}$.
 
-(ii) \textbf{张量表示}. 取 $G$ 的两个线性表示
+\item \textbf{张量表示}. 取 $G$ 的两个线性表示
 \begin{equation*}
   \rho_1\colon G\to\mathrm{GL}_{V_1}\cong\mathrm{GL}_m,\ \text{基 } \alpha_1,\dots,\alpha_m,\ g\mapsto A,
-  \qquad
+\end{equation*}
+\begin{equation*}
   \rho_2\colon G\to\mathrm{GL}_{V_2}\cong\mathrm{GL}_n,\ \text{基 } \beta_1,\dots,\beta_n,\ g\mapsto B .
 \end{equation*}
 由群作用
@@ -172,7 +180,7 @@ $B=(b_{ij})_{n\times n}$. 于是
 \end{equation*}
 即 $\operatorname{Tr}_{\rho_1\otimes\rho_2}=\operatorname{Tr}_{\rho_1}\operatorname{Tr}_{\rho_2}\colon G\to \mathbb{F}$.
 
-(iii) \textbf{对偶表示}. 给群表示 $\rho\colon G\to\mathrm{GL}_V$, 有对偶空间 $V^*=\operatorname{Hom}_{\mathbb{F}}(V,\mathbb{F})$.
+\item \textbf{对偶表示}. 给群表示 $\rho\colon G\to\mathrm{GL}_V$, 有对偶空间 $V^*=\operatorname{Hom}_{\mathbb{F}}(V,\mathbb{F})$.
 设 $V$ 的基为 $\alpha_1,\dots,\alpha_n$, 则 $V^*$ 的基 $f_1,\dots,f_n$ 满足 $f_i(\alpha_j)=\delta_{ij}$.
 由群作用
 \begin{equation*}
@@ -196,7 +204,7 @@ $B=(b_{ij})_{n\times n}$. 于是
   \qquad\text{即}\qquad \operatorname{Tr}_{\rho^*}(g)=\operatorname{Tr}_\rho(g^{-1}).
 \end{equation*}
 
-(iv) \textbf{Hom 表示}. 设 $G$ 有线性表示 $V_1,V_2$, 由群作用
+\item \textbf{Hom 表示}. 设 $G$ 有线性表示 $V_1,V_2$, 由群作用
 \begin{equation*}
   G\times\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)\longrightarrow\operatorname{Hom}_{\mathbb{F}}(V_1,V_2),\qquad (g,f)\longmapsto g\cdot f,
 \end{equation*}
@@ -204,6 +212,7 @@ $B=(b_{ij})_{n\times n}$. 于是
   (g\cdot f)(v_1)=g\cdot\bigl(f(g^{-1}\cdot v_1)\bigr),\qquad v_1\in V_1,\ f\in\operatorname{Hom}_{\mathbb{F}}(V_1,V_2).
 \end{equation*}
 同样要验证 $\bigl((g_1g_2)\cdot f\bigr)(v_1)=\bigl(g_1\cdot(g_2\cdot f)\bigr)(v_1)$.
+\end{enumerate}
 \end{example}
 
 \begin{proposition}\label{prop:hom-tensor}
@@ -240,9 +249,10 @@ $f_1,\dots,f_m$ 为 $V_1^*$ 的基. 设 $\operatorname{Ker}(\psi)$ 中元素为
 \end{proof}
 
 \begin{remark}\label{rem:rep-trace}
-(i) 上面的讨论中同时出现了 $f\in\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)$ 与 $f\in V_1^*$, 容易混淆, 因为 $G$ 作用在它们上时并不相同.
+\begin{enumerate}
+\item 上面的讨论中同时出现了 $f\in\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)$ 与 $f\in V_1^*$, 容易混淆, 因为 $G$ 作用在它们上时并不相同.
 
-(ii) 取 $V_1=V_2=V$, 则 $V^*\otimes_{\mathbb{F}} V$ 中的元素 $\sum_{i=1}^{n}f_i\otimes\alpha_i$ 不依赖于基的选取
+\item 取 $V_1=V_2=V$, 则 $V^*\otimes_{\mathbb{F}} V$ 中的元素 $\sum_{i=1}^{n}f_i\otimes\alpha_i$ 不依赖于基的选取
 (其中 $n=\dim V$). 事实上由 $V^*\otimes_{\mathbb{F}} V\cong\operatorname{Hom}_{\mathbb{F}}(V,V)=\operatorname{End}(V)$ 有同构
 $\psi\colon V^*\otimes_{\mathbb{F}} V\to\operatorname{End}(V)$, 而任取 $v=\sum_i a_i\alpha_i$ 有
 $f_i(v)=a_i$, 故
@@ -250,6 +260,7 @@ $f_i(v)=a_i$, 故
   \psi\Bigl(\sum_i f_i\otimes\alpha_i\Bigr)(v)=\sum_i f_i(v)\alpha_i=\sum_i a_i\alpha_i=v,
 \end{equation*}
 即 $\psi\bigl(\sum_i f_i\otimes\alpha_i\bigr)=\operatorname{Id}_V$.
+\end{enumerate}
 \end{remark}
 
 \subsection{Maschke 定理}
@@ -264,10 +275,11 @@ $f_i(v)=a_i$, 故
 \end{lemma}
 
 \begin{proof}
-(1) 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$: 由直和, 每个 $v\in V$ 可唯一写为 $v=v_1+v_2$,
+\begin{enumerate}
+\item 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$: 由直和, 每个 $v\in V$ 可唯一写为 $v=v_1+v_2$,
 其中 $v_1\in V_1$, $v_2\in V_2$. 令 $p(v)=v_1$ 即可.
 
-(2) 设已有线性映射 $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
+\item 设已有线性映射 $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
 记 $\operatorname{Ker}(p)=\{v\in V\mid p(v)=0\}$, 证明 $V=V_1\oplus\operatorname{Ker}(p)$.
 对任意 $v\in V$ 有 $p(v)\in V_1$, 故 $p\bigl(p(v)\bigr)=p(v)$.
 考虑 $v-p(v)$, 则
@@ -276,6 +288,7 @@ $f_i(v)=a_i$, 故
 \end{equation*}
 故 $v-p(v)\in\operatorname{Ker}(p)$, 从而 $V=V_1+\operatorname{Ker}(p)$.
 又若 $u\in V_1\cap\operatorname{Ker}(p)$, 则 $p(u)=0$ 而 $p(u)=u$, 故 $u=0$. 于是 $V=V_1\oplus\operatorname{Ker}(p)$.
+\end{enumerate}
 \end{proof}
 
 \begin{lemma}\label{lem:rep-complement}
@@ -286,7 +299,8 @@ $f_i(v)=a_i$, 故
 \end{lemma}
 
 \begin{proof}
-(1) 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$, $v=v_1+v_2\mapsto v_1$
+\begin{enumerate}
+\item 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$, $v=v_1+v_2\mapsto v_1$
 (其中 $v_1\in V_1$, $v_2\in V_2$). 下面验证 $p$ 是表示同态.
 考虑表示 $\rho\colon G\to\mathrm{GL}_V$, 以及 $\rho|_{V_1}\colon G\to\mathrm{GL}_{V_1}$, 则
 \begin{align*}
@@ -294,8 +308,9 @@ $f_i(v)=a_i$, 故
   &=p\bigl(\rho(g)v_1+\rho(g)v_2\bigr)=\rho(g)v_1\\
   &=\rho|_{V_1}(g)v_1=\rho|_{V_1}(g)\,p(v_1+v_2).
 \end{align*}
-(2) 设 $p$ 为表示同态, 仍考虑 $\operatorname{Ker}(p)$. 由同态基本定理, $\operatorname{Ker}(p)$ 是子表示,
+\item 设 $p$ 为表示同态, 仍考虑 $\operatorname{Ker}(p)$. 由同态基本定理, $\operatorname{Ker}(p)$ 是子表示,
 于是同 Lemma \ref{lem:complement} 的论证即得 $V=V_1\oplus\operatorname{Ker}(p)$.
+\end{enumerate}
 \end{proof}
 
 \begin{theorem}[Maschke]\label{thm:maschke}
@@ -315,7 +330,8 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
 \end{equation*}
 这里由于 $\operatorname{char}\mathbb{F}\nmid|G|$, $\frac{1}{|G|}$ 有意义, 上面的定义才是合理的.
 
-(1) 先说明 $\bar p$ 是线性映射:
+\begin{enumerate}
+\item 先说明 $\bar p$ 是线性映射:
 \begin{align*}
   \bar p(v+v')&=\frac{1}{|G|}\sum_{g\in G}g\cdot p\bigl(g^{-1}(v+v')\bigr)
   =\frac{1}{|G|}\sum_{g\in G}g\cdot\bigl(p(g^{-1}v)+p(g^{-1}v')\bigr)\\
@@ -325,7 +341,7 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
   =k\cdot\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)=k\,\bar p(v).
 \end{align*}
 
-(2) 证明 $\bar p$ 确为表示同态, 即证 $\forall h\in G$ 有 $\bar p(h\cdot v)=h\cdot\bar p(v)$.
+\item 证明 $\bar p$ 确为表示同态, 即证 $\forall h\in G$ 有 $\bar p(h\cdot v)=h\cdot\bar p(v)$.
 事实上, 令 $g'=h^{-1}g$, 则
 \begin{align*}
   \bar p(h\cdot v)&=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}hv)
@@ -333,7 +349,7 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
   &=h\cdot\frac{1}{|G|}\sum_{g'\in G}g'\cdot p(g'^{-1}v)=h\cdot\bar p(v).
 \end{align*}
 
-(3) 考察 $\bar p$ 在 $V_1$ 上的限制. 对 $v_1\in V_1$, 由于 $V_1$ 是子表示, $g^{-1}v_1\in V_1$, 故
+\item 考察 $\bar p$ 在 $V_1$ 上的限制. 对 $v_1\in V_1$, 由于 $V_1$ 是子表示, $g^{-1}v_1\in V_1$, 故
 \begin{equation*}
   \bar p(v_1)=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v_1)
   =\frac{1}{|G|}\sum_{g\in G}g\cdot g^{-1}v_1
@@ -342,6 +358,7 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
 即 $\bar p|_{V_1}=\operatorname{Id}_{V_1}$. 于是由 Lemma \ref{lem:rep-complement}, 存在子表示 $V_2$ 使 $V=V_1\oplus V_2$.
 
 这说明任一有限维表示都可写成两个子表示的直和; 如此下去, 由于维数有限, 最终可分解为不可约表示的直和.
+\end{enumerate}
 \end{proof}
 
 \begin{remark}\label{rem:maschke-sharp}

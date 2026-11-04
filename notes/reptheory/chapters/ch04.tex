@@ -28,11 +28,12 @@
 \end{definition}
 
 \begin{remark}\label{rem:tensor-basic}
-(i) $M\times N$ 仅仅是集合而不是模的直和, 我们没有在它上面定义运算, 故不存在"坐标分量对应相加"的说法; 只应将元素看作没有任何关系的形式记号.
+\begin{enumerate}
+\item $M\times N$ 仅仅是集合而不是模的直和, 我们没有在它上面定义运算, 故不存在"坐标分量对应相加"的说法; 只应将元素看作没有任何关系的形式记号.
 
-(ii) $M\otimes_R N$ 为 Abel 群.
+\item $M\otimes_R N$ 为 Abel 群.
 
-(iii) 有典范同态
+\item 有典范同态
 \[
   \pi\colon C(M\times N)\longrightarrow M\otimes_R N,\qquad (m,n)\longmapsto \pi\bigl((m,n)\bigr),
 \]
@@ -45,6 +46,7 @@
 \[
   (m\cdot r)\otimes n=m\otimes(r\cdot n).
 \]
+\end{enumerate}
 \end{remark}
 
 \begin{remark}\label{rem:tensor-form}
@@ -60,7 +62,9 @@ $C(M\times N)$ 中的元素形如 $\sum_i b_i(m_i,n_i)$, $b_i\in\mathbb{Z}$, 故
 \end{remark}
 
 \begin{example}\label{ex:tensor-basic}
-(i) 考虑 $\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}$. 注意
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+\item 考虑 $\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}$. 注意
 \[
   \sum_i m_i\otimes n_i=\sum_i 1\cdot m_i\otimes n_i=\sum_i 1\otimes m_i n_i=1\otimes\sum_i m_i n_i .
 \]
@@ -92,7 +96,7 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 \]
 于是 $\varphi'\varphi=\operatorname{Id}$, 故 $\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}\cong\mathbb{Z}$.
 
-(ii) $\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}/n\mathbb{Z}$. 定义
+\item $\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}/n\mathbb{Z}$. 定义
 \[
   \varphi\colon \mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}\longrightarrow\mathbb{Z}/n\mathbb{Z},\qquad
   \sum_i m_i\otimes[n_i]\longmapsto\sum_i m_i[n_i],
@@ -103,20 +107,21 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 \]
 即可.
 
-(iii) 设 $R$ 为环, $M$ 为左 $R$-模, 则 $R\otimes_R M\cong M$. 定义
+\item 设 $R$ 为环, $M$ 为左 $R$-模, 则 $R\otimes_R M\cong M$. 定义
 \[
   \varphi\colon R\otimes_R M\longrightarrow M,\qquad \sum_i r_i\otimes m_i\longmapsto\sum_i r_i\cdot m_i,
   \qquad
   \varphi'\colon M\longrightarrow R\otimes_R M,\qquad m\longmapsto 1\otimes m .
 \]
 
-(iv) 取右模 $\mathbb{Q}_{\mathbb{Z}}$ 和左模 ${}_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}$, 则 $\mathbb{Q}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}=\{0\}$.
+\item 取右模 $\mathbb{Q}_{\mathbb{Z}}$ 和左模 ${}_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}$, 则 $\mathbb{Q}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}=\{0\}$.
 这是因为取 $\frac{p}{q}\in\mathbb{Q}$, $[s]\in\mathbb{Z}/n\mathbb{Z}$, 有
 \[
   \frac{p}{q}\otimes[s]=\frac{p}{nq}\cdot n\otimes[s]=\frac{p}{nq}\otimes[ns]=0 .
 \]
 
-(v) $\mathbb{Z}/m\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}/\gcd(m,n)\mathbb{Z}$.
+\item $\mathbb{Z}/m\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}/\gcd(m,n)\mathbb{Z}$.
+\end{enumerate}
 \end{example}
 
 \subsection{泛性质}
@@ -170,13 +175,15 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 \end{proof}
 
 \begin{remark}\label{rem:tensor-universal}
-(i) 典范映射
+\begin{enumerate}
+\item 典范映射
 \[
   \pi\colon M\times N\longrightarrow M\otimes_R N,\qquad (m,n)\longmapsto m\otimes n
 \]
 本身就是平衡双加性映射.
 
-(ii) 若 $L'$ 满足同样的泛性质, 则 $L'\cong M\otimes_R N$.
+\item 若 $L'$ 满足同样的泛性质, 则 $L'\cong M\otimes_R N$.
+\end{enumerate}
 \end{remark}
 
 \begin{remark}[证明的结构]\label{rem:tensor-proof-pic}
@@ -195,17 +202,20 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 为引出线性空间的张量积, 先给出三个铺垫性的例子.
 
 \begin{example}\label{ex:tensor-module-structure}
-(i) 给定环 $R$, $S$, 取 $S$-$R$ 双模 ${}_S M_R$ 和左模 ${}_R N$.
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+\item 给定环 $R$, $S$, 取 $S$-$R$ 双模 ${}_S M_R$ 和左模 ${}_R N$.
 此时 $M\otimes_R N$ 自然成为一个左 $S$-模:
 \[
   S\times(M\otimes_R N)\longrightarrow M\otimes_R N,\qquad (s,m\otimes n)\longmapsto (s\cdot m)\otimes n .
 \]
 注意这里 $m\otimes n$ 是等价类, 故验证上述运算是否良定义是必要的.
 
-(ii) 给定环 $R$, $S$, 取右模 $M_R$ 和 $R$-$S$ 双模 ${}_R N_S$.
+\item 给定环 $R$, $S$, 取右模 $M_R$ 和 $R$-$S$ 双模 ${}_R N_S$.
 类似地, $M\otimes_R N$ 是右 $S$-模.
 
-(iii) 若 $R$ 是交换环, 则 $R=R^{\mathrm{op}}$, 此时 $M\otimes_R N$ 是 $R$-$R$ 双模.
+\item 若 $R$ 是交换环, 则 $R=R^{\mathrm{op}}$, 此时 $M\otimes_R N$ 是 $R$-$R$ 双模.
+\end{enumerate}
 \end{example}
 
 \begin{remark}\label{rem:tensor-no-module}

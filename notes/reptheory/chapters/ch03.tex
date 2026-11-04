@@ -12,6 +12,7 @@
 \end{definition}
 
 \begin{example}
+\mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
   \item 由 $\mathbb{F}\mathbb{Z}_2\to M_2(\mathbb{F})\cong\operatorname{End}(\mathbb{F}^2)$,
   \[
@@ -31,7 +32,8 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \end{theorem}
 
 \begin{proof}
-(1) 设 $V$ 为 $A$ 的一个表示, 有同态 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$.
+\begin{enumerate}
+\item 设 $V$ 为 $A$ 的一个表示, 有同态 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$.
 定义运算
 \[
   A\times V\longrightarrow V,\qquad (a,v)\longmapsto a\cdot v:=\rho(a)(v).
@@ -50,7 +52,7 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \end{align*}
 故 $V$ 是一个 $A$-模.
 
-(2) 设 $V$ 为 $A$-模, 运算为 $A\times V\to V$, $(a,v)\mapsto a\cdot v$.
+\item 设 $V$ 为 $A$-模, 运算为 $A\times V\to V$, $(a,v)\mapsto a\cdot v$.
 定义映射 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$, 其中 $\rho(a)$ 由 $\rho(a)(v)=a\cdot v$ 规定.
 只需证明 $\rho$ 是代数同态.
 \begin{enumerate}
@@ -63,6 +65,7 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
   即 $\rho(ab)=\rho(a)\rho(b)$.
 \end{enumerate}
 故 $V$ 是 $A$ 的表示.
+\end{enumerate}
 \end{proof}
 
 \begin{definition}[群的表示]\label{def:group-representation}
@@ -73,6 +76,7 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \end{definition}
 
 \begin{example}
+\mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
   \item 设 $\rho\colon \mathbb{F}\mathbb{Z}_2\to\operatorname{End}(\mathbb{F}^2)\cong M_2(\mathbb{F})$, 其中
   $\mathbb{Z}_2=\langle g\mid g^2=1\rangle$, $\mathbb{F}^2=\operatorname{span}_{\mathbb{F}}\{\alpha_1,\alpha_2\}$,
@@ -185,13 +189,15 @@ $V$ 是忠实 $A$-模当且仅当 $V$ 是忠实 $A$-表示.
 \end{proposition}
 
 \begin{proof}
-(1) 设 $V$ 为忠实模, 只要证明 $\rho$ 是单射, 即 $\operatorname{Ker}(\rho)=\{0\}$.
+\begin{enumerate}
+\item 设 $V$ 为忠实模, 只要证明 $\rho$ 是单射, 即 $\operatorname{Ker}(\rho)=\{0\}$.
 任取 $a\in\operatorname{Ker}(\rho)$, 则 $\rho(a)=0$, 于是 $\rho(a)(v)=0$, $\forall v\in V$,
 即 $a\cdot v=0$. 由忠实模的定义知 $a=0$. 故 $\operatorname{Ker}(\rho)=\{0\}$, $\rho$ 是单射,
 $V$ 是忠实表示.
 
-(2) 设 $V$ 为忠实表示, 且 $a\cdot v=0$, $\forall v\in V$. 由表示的定义, 这意味着
+\item 设 $V$ 为忠实表示, 且 $a\cdot v=0$, $\forall v\in V$. 由表示的定义, 这意味着
 $\rho(a)(v)=0$, $\forall v\in V$, 即 $\rho(a)=0$. 而 $\rho$ 是单射, 故 $a=0$. 因此 $V$ 是忠实模.
+\end{enumerate}
 \end{proof}
 
 \begin{remark}\label{rem:faithful-algebra-only}
