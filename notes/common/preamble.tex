@@ -16,12 +16,19 @@
 \setCJKmonofont{FangSong}
 % 只用西文标点：禁用 xeCJK 的全角标点替换与挤压
 \punctstyle{plain}
-\linespread{1.35}
-\setlength{\parskip}{0.2em}
+\linespread{1.30}
+\setlength{\parskip}{0.35em}
 \setlength{\parindent}{2em}   % 首行缩进两个汉字
 
 % ---------- 数学 ----------
 \usepackage{amsmath}
+
+% ---------- 公式上下间距 ----------
+\setlength{\abovedisplayskip}{9pt plus 3pt minus 4pt}
+\setlength{\belowdisplayskip}{9pt plus 3pt minus 4pt}
+\setlength{\abovedisplayshortskip}{5pt plus 2pt}
+\setlength{\belowdisplayshortskip}{6pt plus 2pt}
+
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{array}
@@ -53,8 +60,8 @@
 % ---------- 定理环境 ----------
 \usepackage{amsthm}
 \newtheoremstyle{cnplain}
-  {0.9em}   % 上方间距
-  {0.9em}   % 下方间距
+  {1.1em}   % 上方间距
+  {1.1em}   % 下方间距
   {\normalfont}  % 正文字体
   {}        % 缩进
   {\heiti\bfseries}  % 标题字体
@@ -63,16 +70,16 @@
   {\thmname{#1}\thmnumber{ #2}\thmnote{\normalfont\ (#3)}}
 
 \theoremstyle{cnplain}
-\newtheorem{theorem}{定理}[section]
-\newtheorem{lemma}[theorem]{引理}
-\newtheorem{proposition}[theorem]{命题}
-\newtheorem{corollary}[theorem]{推论}
-\newtheorem{definition}[theorem]{定义}
-\newtheorem{example}[theorem]{例}
-\newtheorem{remark}[theorem]{注}
-\newtheorem{exercise}[theorem]{习题}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{exercise}[theorem]{Exercise}
 
-\renewcommand{\proofname}{\heiti 证明}
+\renewcommand{\proofname}{\normalfont\bfseries Proof}
 \renewcommand{\qedsymbol}{\rule{0.55em}{0.55em}}
 
 % ---------- 超链接 ----------
