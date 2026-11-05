@@ -70,7 +70,7 @@
 定义,双模,def:bimodule,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模, 同时为右 -模. 称 为一个 - 双模, 记作 , 若 [ (r m) s=r (m s), ] 其中 , , ."
 例,,ex:bimodule-regular,模,notes/reptheory/chapters/ch02.tex,"显然 本身是一个 - 双模, 即 ."
 定义,代数上的模,def:algebra-module,模,notes/reptheory/chapters/ch02.tex,"设 为 -代数, 为 -线性空间. 称 为 -模, 若存在运算 [ A M M, (a,m) a m, ] 使得 ; ; ; ; ; . 其中 , , ."
-注,,rem:algebra-module-parallel,模,notes/reptheory/chapters/ch02.tex,"可以类似地定义子模、交、直和、商模与同态, 此处不再赘述."
+注,,rem:algebra-module-parallel,模,notes/reptheory/chapters/ch02.tex,"可以类似地定义子模, 交, 直和, 商模与同态, 此处不再赘述."
 定义,忠实模,def:faithful-module,模,notes/reptheory/chapters/ch02.tex,"设 为 -代数 上的左模. 称 是 (faithful), 若 [ m M, a m=0 a=0 . ]"
 注,零化子,rem:annihilator,模,notes/reptheory/chapters/ch02.tex,"称 为 的零化子, 记为 . 则 忠实当且仅当 ."
 定义,表示,def:representation,表示,notes/reptheory/chapters/ch03.tex,"设 为 -代数. 的一个表示是一个二元组 , 其中 是 -线性空间; , 是代数同态. 有时简称 为 的一个表示, 或称 为 的一个表示."
@@ -112,7 +112,7 @@
 定义,群的线性表示,def:group-rep,群的线性表示,notes/reptheory/chapters/ch05.tex,"设 为群, 为线性空间, 称群同态 为 的一个 . 有时也称 是 的一个线性表示."
 注,,rem:gl-matrix,群的线性表示,notes/reptheory/chapters/ch05.tex,"给线性空间 的一组基 , 对 , ( _1, , _n)= ( ( _1), , ( _n) ) =( _ i_1 , , _ i_n )=( _1, , _n)A_ , 其中 为 的一个排列, 为 阶可逆矩阵. 全体 阶可逆矩阵构成群 ."
 命题,,prop:rep-alg,群的线性表示,notes/reptheory/chapters/ch05.tex,为 的群表示当且仅当 为 的代数表示.
-注,,rem:subrep,群的线性表示,notes/reptheory/chapters/ch05.tex,"可以类似定义子表示、交、直和、商表示、同态, 此处不再赘述."
+注,,rem:subrep,群的线性表示,notes/reptheory/chapters/ch05.tex,"可以类似定义子表示, 交, 直和, 商表示, 同态, 此处不再赘述."
 例,,ex:group-reps,群的线性表示,notes/reptheory/chapters/ch05.tex,": , , . (sign representation): , 将偶排列映到 , 将奇排列映到 . (canonical representation): 设 为线性空间, 有基 . 对 , ( _1, , _n):= ( ( _1), "
 命题,,prop:can-faithful,群的线性表示,notes/reptheory/chapters/ch05.tex,"是忠实表示, 即它是单射."
 注,,rem:faithful-not-equiv,群的线性表示,notes/reptheory/chapters/ch05.tex,忠实的群表示与忠实的相应代数表示并不等价.
