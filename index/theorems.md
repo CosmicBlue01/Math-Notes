@@ -1,6 +1,6 @@
 # 定理索引
 
-共 195 条，由 `tools/make_index.py` 自动生成。
+共 220 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -199,3 +199,28 @@
 | 193 | 引理 |  | `lem:kernel-of-direct-sum` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 194 | 定理 |  | `thm:normal-subgroup-as-kernel` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 195 | 推论 |  | `cor:simple-criterion` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 196 | 命题 |  | `prop:hom-left-S-module` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 197 | 注 |  | `lem:hom-R-M` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 198 | 引理 |  | `lem:hom-R-M` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 199 | 定理 | Hom--Tensor 伴随 | `thm:hom-tensor-adjunction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 200 | 定义 | 诱导表示 | `def:induced-rep` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 201 | 引理 |  | `lem:induced-dim` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 202 | 引理 |  | `lem:induced-basis` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 203 | 例 |  | `ex:induced-examples` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 204 | 命题 |  | `prop:induced-character-zero` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 205 | 推论 |  | `cor:induced-normal` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 206 | 推论 |  | `cor:induced-central` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 207 | 例 |  | `ex:S3-in-S4-character` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 208 | 命题 |  | `prop:induction-subrep` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 209 | 命题 | 传递性 | `prop:induction-transitive` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 210 | 定义 | 限制 | `def:restriction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 211 | 引理 |  | `lem:induction-direct-sum` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 212 | 引理 | 投影公式 | `lem:projection-formula` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 213 | 命题 |  | `prop:dual-induction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 214 | 推论 |  | `cor:induced-character-properties` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 215 | 注 |  | `thm:frobenius-reciprocity-1` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 216 | 定理 | Frobenius 互反律 I | `thm:frobenius-reciprocity-1` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 217 | 定理 | Frobenius 互反律 II | `thm:frobenius-reciprocity-2` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 218 | 引理 |  | `lem:tensor-hom-dual` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 219 | 注 |  | `` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 220 | 推论 |  | `cor:frobenius-character` | 诱导表示 | notes/reptheory/chapters/ch07.tex |

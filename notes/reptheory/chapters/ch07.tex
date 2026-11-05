@@ -1,0 +1,472 @@
+\section{诱导表示}
+
+\subsection{Hom 与 Tensor}
+
+回忆: 若 ${}_R M$ 为左 $R$-模, 则 $R\otimes_R M\cong M$.
+
+\begin{proposition}\label{prop:hom-left-S-module}
+设模 ${}_R M_S$, ${}_R N$, 则 $\operatorname{Hom}_R({}_R M_S,\ {}_R N)$ 为左 $S$-模.
+\end{proposition}
+
+\begin{proof}
+对 $s\in S$, $f\in\operatorname{Hom}_R({}_R M_S,{}_R N)$, 定义 $(s\cdot f)(m):=f(m\cdot s)$.
+
+首先验证 $s_1,s_2\in S$ 时 $(s_1s_2)\cdot f=s_1\cdot(s_2\cdot f)$: 事实上
+\[
+  \bigl(s_1\cdot(s_2\cdot f)\bigr)(m)=(s_2\cdot f)(m\cdot s_1)
+  =f\bigl((m\cdot s_1)\cdot s_2\bigr)=f\bigl(m\cdot(s_1s_2)\bigr)=\bigl((s_1s_2)\cdot f\bigr)(m).
+\]
+另一方面还要验证 $s\cdot f\in\operatorname{Hom}_R(M,N)$: 对 $r\in R$,
+\[
+  (s\cdot f)(r\cdot m)=f\bigl((r\cdot m)\cdot s\bigr)=f\bigl(r\cdot(m\cdot s)\bigr)
+  =r\cdot f(m\cdot s)=r\cdot(s\cdot f)(m).
+\]
+故 $s\cdot f\in\operatorname{Hom}_R(M,N)$, 即 $\operatorname{Hom}_R({}_R M_S,{}_R N)$ 为左 $S$-模.
+\end{proof}
+
+\begin{remark}
+类似地, $\operatorname{Hom}_R({}_R M,{}_R N_S)$ 为右 $S$-模.
+\end{remark}
+
+\begin{lemma}\label{lem:hom-R-M}
+设 $R$ 为环, ${}_R M$ 为左 $R$-模, 则作为左 $R$-模
+$\operatorname{Hom}_R({}_R R_R,{}_R M)\cong M$.
+\end{lemma}
+
+\begin{proof}
+设 $\Phi\colon\operatorname{Hom}_R({}_R R_R,{}_R M)\to M$, $f\mapsto f(1_R)$.
+$\Phi$ 是加群同态, 下面说明它是 $R$-模同态: 对 $r'\in R$,
+\[
+  \Phi(r'\cdot f)=(r'\cdot f)(1_R)=f(1_R\cdot r')=f(r')=r'\cdot f(1_R)=r'\cdot\Phi(f).
+\]
+再设 $\Psi\colon M\to\operatorname{Hom}_R({}_R R_R,{}_R M)$, $m\mapsto f_m$, 其中 $f_m(r):=r\cdot m$.
+先说明 $f_m\in\operatorname{Hom}_R(R,M)$:
+\[
+  f_m(rr')=(rr')\cdot m=r\cdot(r'\cdot m)=r\cdot f_m(r').
+\]
+最后说明 $\Phi\circ\Psi=\mathrm{Id}_M$ 且 $\Psi\circ\Phi=\mathrm{Id}$.
+一方面 $\Phi\circ\Psi\colon M\to M$,
+\[
+  (\Phi\circ\Psi)(m)=\Phi(f_m)=f_m(1_R)=1_R\cdot m=m .
+\]
+另一方面 $\Psi\circ\Phi\colon\operatorname{Hom}_R(R,M)\to\operatorname{Hom}_R(R,M)$,
+\[
+  (\Psi\circ\Phi)(f)(r)=r\cdot\Phi(f)=r\cdot f(1_R)=f(r\cdot 1_R)=f(r),
+\]
+即 $(\Psi\circ\Phi)(f)=f$. 故 $\operatorname{Hom}_R(R,M)\cong M$.
+\end{proof}
+
+有上面的铺垫, 我们给出如下定理, 习惯说 Hom 与 Tensor 是相伴的.
+
+\begin{theorem}[Hom--Tensor 伴随]\label{thm:hom-tensor-adjunction}
+设 $R,S$ 为环, ${}_R M_S$ 是一个 $R$-$S$ 双模, ${}_S N$ 为左 $S$-模, ${}_R L$ 为左 $R$-模, 则有
+加群同构
+\[
+  \operatorname{Hom}_R(M\otimes_S N,\ L)\cong\operatorname{Hom}_S\bigl(N,\ \operatorname{Hom}_R(M,L)\bigr).
+\]
+\end{theorem}
+
+\begin{proof}
+分三步说明.
+
+1° 定义 $\Phi\colon\operatorname{Hom}_R(M\otimes_S N,L)\to\operatorname{Hom}_S(N,\operatorname{Hom}_R(M,L))$,
+$f\longmapsto\bigl(n\mapsto(m\mapsto f(m\otimes n))\bigr)$, 即
+\[
+  \Phi(f)(n)(m):=f(m\otimes n).
+\]
+首先说明 $\Phi(f)(n)\in\operatorname{Hom}_R(M,L)$:
+\[
+  \bigl(\Phi(f)(n)\bigr)(r\cdot m)=f(r\cdot m\otimes n)=f\bigl(r\cdot(m\otimes n)\bigr)
+  =r\cdot f(m\otimes n)=r\cdot\bigl(\Phi(f)(n)(m)\bigr).
+\]
+再说明 $\Phi(f)\in\operatorname{Hom}_S(N,\operatorname{Hom}_R(M,L))$:
+\[
+  \Phi(f)(s\cdot n)(m)=f(m\otimes s\cdot n)=f\bigl((m\cdot s)\otimes n\bigr)
+  =\Phi(f)(n)(m\cdot s)=\bigl(s\cdot\Phi(f)(n)\bigr)(m).
+\]
+
+2° 定义 $\Psi\colon\operatorname{Hom}_S(N,\operatorname{Hom}_R(M,L))\to\operatorname{Hom}_R(M\otimes_S N,L)$,
+$f\longmapsto\bigl(m\otimes n\mapsto f(n)(m)\bigr)$.
+
+要说明 $\Psi(f)$ 是良定义的, 即不依赖代表元的选取; 回忆张量积的定义, 验证三类元素被映为 $0$:
+\begin{align*}
+  &\Psi(f)\bigl((m_1+m_2)\otimes n-m_1\otimes n-m_2\otimes n\bigr)\\
+  &\qquad=f(n)(m_1+m_2)-f(n)(m_1)-f(n)(m_2)=0,\\
+  &\Psi(f)\bigl(m\otimes(n_1+n_2)-m\otimes n_1-m\otimes n_2\bigr)=0,\\
+  &\Psi(f)\bigl((m\cdot s)\otimes n-m\otimes(s\cdot n)\bigr)
+  =f(s\cdot n)(m)-f(n)(m\cdot s)=0 .
+\end{align*}
+还需验证 $\Psi(f)\in\operatorname{Hom}_R(M\otimes_S N,L)$:
+\[
+  \Psi(f)\bigl(r\cdot(m\otimes n)\bigr)=\Psi(f)(r\cdot m\otimes n)=f(n)(r\cdot m)
+  =r\cdot f(n)(m)=r\cdot\Psi(f)(m\otimes n).
+\]
+
+3° 现在只需说明 $\Psi\circ\Phi=\Phi\circ\Psi=\mathrm{Id}$. 事实上
+\[
+  \Psi\circ\Phi\ (f)(m\otimes n)=\Psi\bigl(\Phi(f)\bigr)(m\otimes n)=\Phi(f)(n)(m)=f(m\otimes n),
+\]
+\[
+  \Phi\circ\Psi\ (f)(n)(m)=\Phi\bigl(\Psi(f)\bigr)(n)(m)=\Psi(f)(m\otimes n)=f(n)(m).
+\]
+故 $\Psi\circ\Phi=\Phi\circ\Psi=\mathrm{Id}$.
+\end{proof}
+
+\subsection{诱导表示}
+
+诱导表示的本质思想是: 通过子群的表示得到整个群的表示.
+这和之前我们在讨论特征标时用的商群办法相类似. 先给出诱导表示的定义.
+本节起取基域为 $\mathbb{C}$.
+
+\begin{definition}[诱导表示]\label{def:induced-rep}
+设 $G$ 为群, 子群 $H<G$, $\rho\colon H\to\mathrm{GL}_V$ 为 $H$ 的表示,
+称 $\mathbb{C}G\otimes_{\mathbb{C}H}V$ 为从 $H$ 到 $G$ 的诱导表示,
+记作 $\rho_H^G$ (也写作 $\rho\uparrow_H^G$), 也常记作 $V_H^G$.
+\end{definition}
+
+\begin{lemma}\label{lem:induced-dim}
+设 $[G:H]=\ell$, $\dim V=n$, 则 $\dim V_H^G=\ell\cdot n$.
+\end{lemma}
+
+\begin{proof}
+取一组左陪集代表元为 $g_1,\dots,g_\ell$, 则 $G=g_1H\cup\cdots\cup g_\ell H$.
+作为线性空间有
+\[
+  \mathbb{C}G=\mathbb{C}g_1H\oplus\cdots\oplus\mathbb{C}g_\ell H .
+\]
+进一步, 作为左 $\mathbb{C}H$-模也有上述分解. 显然, 作为左 $H$-模
+$\mathbb{C}g_iH\cong\mathbb{C}H$. 于是
+\[
+  V_H^G=\mathbb{C}G\otimes_{\mathbb{C}H}V
+  =(\mathbb{C}g_1H\oplus\cdots\oplus\mathbb{C}g_\ell H)\otimes_{\mathbb{C}H}V
+\]
+\[
+  \cong\underbrace{(\mathbb{C}H\oplus\cdots\oplus\mathbb{C}H)}_{\ell\ \text{个}}\otimes_{\mathbb{C}H}V
+  \cong\bigoplus_{i=1}^{\ell}\mathbb{C}H\otimes_{\mathbb{C}H}V\cong\bigoplus_{i=1}^{\ell}V,
+\]
+故 $\dim V_H^G=\ell\cdot\dim V=\ell\cdot n$.
+\end{proof}
+
+\begin{lemma}\label{lem:induced-basis}
+设 $v_1,\dots,v_n$ 为 $V$ 的一组基, $g_1,\dots,g_\ell$ 为左陪集代表元, 则
+$\{g_i\otimes v_j\mid 1\le i\le\ell,\ 1\le j\le n\}$ 为 $V_H^G$ 的一组基.
+\end{lemma}
+
+\begin{proof}
+只要证明 $V_H^G$ 中每个元素都可由 $\{g_i\otimes v_j\}$ 线性表出.
+取 $V_H^G$ 中一个元素 $g\otimes v$. 由于 $G$ 是左陪集的并, 存在唯一的 $1\le s\le\ell$ 与
+$h\in H$ 使 $g=g_sh$, 于是
+\[
+  g\otimes v=g_sh\otimes v=g_s\otimes h\cdot v .
+\]
+又 $h\cdot v\in V$, 设 $h\cdot v=\sum_j k_jv_j$, 则
+\[
+  g\otimes v=g_s\otimes\sum_j k_jv_j=\sum_j k_j\,g_s\otimes v_j .
+\]
+故 $\{g_i\otimes v_j\}$ 张成 $V_H^G$, 它们线性无关性由维数即得.
+\end{proof}
+
+下面来看表示作用的形式. 沿用上面的记号, 设 $V_H^G$ 有一组基
+$\{g_i\otimes v_j\mid 1\le i\le\ell,\ 1\le j\le n\}$.
+设 $\rho\colon H\to\mathrm{GL}_V$, $h\mapsto\rho(h)=(a_{ij}(h))_{n\times n}$, 即
+$a_{ij}(h)$ 由 $h\cdot v_j=\sum_i a_{ij}(h)v_i$ 定义.
+
+对 $g\in G$ 与基元素 $g_i\otimes v_j$, 由陪集分解存在唯一的 $s$ 与 $h\in H$ 使
+$gg_i\in g_sH$, 即 $gg_i=g_sh$, 于是
+\[
+  g\cdot(g_i\otimes v_j)=gg_i\otimes v_j=g_sh\otimes v_j=g_s\otimes h\cdot v_j
+  =g_s\otimes\sum_k a_{kj}(h)v_k=\sum_k a_{kj}(h)\,g_s\otimes v_k .
+\]
+记 $\rho^{\uparrow}(g)$ 为 $g$ 在这组基下的矩阵, 则
+\[
+  g\cdot(g_1\otimes v_1,\dots,g_\ell\otimes v_n)
+  =(g_1\otimes v_1,\dots,g_\ell\otimes v_n)\cdot\rho^{\uparrow}(g).
+\]
+
+其中
+\[
+  A=\Bigl(\widehat\rho\bigl(g_s^{-1}gg_i\bigr)\Bigr)_{\substack{1\le s\le\ell\\ 1\le i\le\ell}}
+  =
+  \begin{pmatrix}
+    \widehat\rho(g_1^{-1}gg_1) & \widehat\rho(g_1^{-1}gg_2) & \cdots & \widehat\rho(g_1^{-1}gg_\ell)\\
+    \widehat\rho(g_2^{-1}gg_1) & \widehat\rho(g_2^{-1}gg_2) & \cdots & \widehat\rho(g_2^{-1}gg_\ell)\\
+    \vdots & \vdots & & \vdots\\
+    \widehat\rho(g_\ell^{-1}gg_1) & \widehat\rho(g_\ell^{-1}gg_2) & \cdots & \widehat\rho(g_\ell^{-1}gg_\ell)
+  \end{pmatrix},
+\]
+这里 $\widehat\rho(h)=\rho(h)$ 当 $h\in H$, 而 $\widehat\rho(h)=0$ 当 $h\notin H$;
+每个 $\widehat\rho(\,\cdot\,)$ 是 $n\times n$ 的块.
+
+\begin{example}\label{ex:induced-examples}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+\item 取 $H$ 的正则表示 $\mathbb{C}H$, 则从 $H$ 到 $G$ 的一个诱导表示
+$\mathbb{C}G\otimes_{\mathbb{C}H}\mathbb{C}H\cong\mathbb{C}G$, 该诱导表示就是 $\mathbb{C}G$ 的正则表示.
+\item 我们知道 $S_3<S_4$, 取 $S_3$ 的二维不可约表示 $V$, 则
+\[
+  \dim V_{S_3}^{S_4}=\frac{4!}{3!}\cdot 2=8,
+\]
+显然不是不可约的.
+\end{enumerate}
+\end{example}
+
+为了解决上面的问题, 回忆 \S 6.4 中讨论过的分解公式, 我们需要了解诱导表示的特征标.
+设 $\chi_V$ 为 $H$ 的表示 $V$ 的特征标.
+
+记 $\widehat\chi_V(g)=\chi_V(g)$ 当 $g\in H$, 而 $\widehat\chi_V(g)=0$ 当 $g\notin H$, 则可写出
+诱导表示的特征标为
+\[
+  \chi_{V_H^G}(g)=\sum_{s=1}^{\ell}\widehat\chi_V\bigl(g_s^{-1}gg_s\bigr).
+\]
+我们认识到这个公式有一个重大缺点: 即在使用时必须知道一组代表元, 这很麻烦.
+为此我们把公式修改如下. 考虑
+\[
+  \sum_{x\in G}\widehat\chi(x^{-1}gx)
+  =\sum_{s=1}^{\ell}\sum_{h\in H}\widehat\chi\bigl((g_sh)^{-1}g(g_sh)\bigr)
+  =\sum_{s=1}^{\ell}\sum_{h\in H}\widehat\chi\bigl(h^{-1}g_s^{-1}gg_sh\bigr)
+  =|H|\sum_{s=1}^{\ell}\widehat\chi\bigl(g_s^{-1}gg_s\bigr),
+\]
+因此
+\begin{equation}\label{eq:induced-character}
+  \chi_{V_H^G}(g)=\frac{1}{|H|}\sum_{x\in G}\widehat\chi\bigl(x^{-1}gx\bigr).
+\end{equation}
+
+\begin{proposition}\label{prop:induced-character-zero}
+若 $g\notin\bigcup_{i}g_iHg_i^{-1}$, 则 $\chi_{V_H^G}(g)=0$.
+\end{proposition}
+
+\begin{corollary}\label{cor:induced-normal}
+若 $H\trianglelefteq G$, 则 $g\notin H\Rightarrow\chi_{V_H^G}(g)=0$.
+\end{corollary}
+
+\begin{corollary}\label{cor:induced-central}
+若 $H\subseteq Z(G)$, 则 $\chi_{V_H^G}(g)=[G:H]\,\chi(g)$.
+\end{corollary}
+
+\begin{proof}
+$H\subseteq Z(G)$ 时, 当 $g\notin H$ 有 $\chi_{V_H^G}(g)=0$; 故只需看 $g\in H$ 的情形:
+\[
+  \chi_{V_H^G}(g)=\sum_{s=1}^{\ell}\widehat\chi\bigl(g_s^{-1}gg_s\bigr)
+  =\sum_{s=1}^{\ell}\chi(g)=[G:H]\,\chi(g).
+\]
+\end{proof}
+
+\begin{example}\label{ex:S3-in-S4-character}
+回到 $V_{S_3}^{S_4}$. 我们先求 $\chi_{V_{S_3}^{S_4}}$ 在各共轭类上的取值, 可得
+\[
+  \chi_{V_{S_3}^{S_4}}\bigl((1)\bigr)=8,\qquad
+  \chi_{V_{S_3}^{S_4}}\bigl((12)\bigr)=0,\qquad
+  \chi_{V_{S_3}^{S_4}}\bigl((123)\bigr)=-1,
+\]
+\[
+  \chi_{V_{S_3}^{S_4}}\bigl((12)(34)\bigr)=0,\qquad
+  \chi_{V_{S_3}^{S_4}}\bigl((1234)\bigr)=0 .
+\]
+于是, 不妨令 $S_4$ 的 $5$ 个不可约特征标为 $\chi_1,\dots,\chi_5$, 有
+\[
+  (\chi_1,\chi_{V_{S_3}^{S_4}})=\frac{1}{|S_4|}\sum_{i=1}^{5}|C_i|\,\chi_1(g_i)\chi_{V_{S_3}^{S_4}}(g_i)=0
+  =(\chi_2,\chi_{V_{S_3}^{S_4}}).
+\]
+
+也有
+\[
+  (\chi_3,\chi_{V_{S_3}^{S_4}})=(\chi_4,\chi_{V_{S_3}^{S_4}})=(\chi_5,\chi_{V_{S_3}^{S_4}})=1,
+\]
+故
+\[
+  V_{S_3}^{S_4}=V_3\oplus V_4\oplus V_5 .
+\]
+\end{example}
+
+\subsection{基本性质}
+
+\begin{proposition}\label{prop:induction-subrep}
+设 $G$ 为群, 子群 $H<G$, $W_1\subseteq W$ 为 $H$ 的子表示, 则 $W_{1H}^{G}$ 是 $W_H^G$ 的子表示.
+\end{proposition}
+
+\begin{proof}
+显然 $W_{1H}^{G}\subseteq W_H^{G}$; 又对 $g\in G$, $x\in W_{1H}^{G}$,
+\[
+  g\cdot x=g\cdot\Bigl(\sum_i g_i\otimes w_i\Bigr)=\sum_i gg_i\otimes w_i\in W_{1H}^{G},
+\]
+故 $W_{1H}^{G}$ 为 $W_H^{G}$ 的子表示.
+\end{proof}
+
+\begin{proposition}[传递性]\label{prop:induction-transitive}
+若子群链 $H\le K\le G$, $W$ 为 $H$ 的表示, 则 $(W_H^K)_K^G=W_H^G$.
+\end{proposition}
+
+\begin{proof}
+\begin{align*}
+  (W_H^K)_K^G&=\mathbb{C}G\otimes_{\mathbb{C}K}\bigl(\mathbb{C}K\otimes_{\mathbb{C}H}W\bigr)\\
+  &=\bigl(\mathbb{C}G\otimes_{\mathbb{C}K}\mathbb{C}K\bigr)\otimes_{\mathbb{C}H}W\\
+  &=\mathbb{C}G\otimes_{\mathbb{C}H}W=W_H^G .
+\end{align*}
+\end{proof}
+
+为以后书写方便, 对 $G$ 的所有表示形成一个范畴 $\mathrm{Rep}\,G$, 态射为表示同态.
+当然我们不会对范畴作太多解释.
+
+\begin{definition}[限制]\label{def:restriction}
+设 $G$ 为群, $H<G$, $V\in\mathrm{Rep}\,G$, 称 $V|_H$ 为 $V$ 在 $H$ 上的限制 (restriction),
+有时简记为 $V_H$, 也有的记作 $\rho_H$, $\chi_H$.
+\end{definition}
+
+\begin{lemma}\label{lem:induction-direct-sum}
+设 $G$ 为群, $H<G$, $W_{1,2,\dots,n}$ 为 $H$ 的表示, 则
+\[
+  (W_1\oplus\cdots\oplus W_n)_H^G\cong W_{1H}^G\oplus\cdots\oplus W_{nH}^G .
+\]
+\end{lemma}
+
+\begin{proof}
+\[
+  (W_1\oplus\cdots\oplus W_n)_H^G\cong\mathbb{C}G\otimes_{\mathbb{C}H}(W_1\oplus\cdots\oplus W_n)
+  \cong\mathbb{C}G\otimes_{\mathbb{C}H}W_1\oplus\cdots\oplus\mathbb{C}G\otimes_{\mathbb{C}H}W_n
+  =W_{1H}^G\oplus\cdots\oplus W_{nH}^G .
+\]
+\end{proof}
+
+\begin{lemma}[投影公式]\label{lem:projection-formula}
+设 $G$ 为群, $H<G$, 取 $U\in\mathrm{Rep}\,H$, $V\in\mathrm{Rep}\,G$, 则
+\[
+  U_H^G\otimes V\cong\bigl(U\otimes V_H\bigr)_H^G .
+\]
+\end{lemma}
+
+\begin{proof}
+左边 $=\ U_H^G\otimes V\cong(\mathbb{C}G\otimes_{\mathbb{C}H}U)\otimes V$,
+右边 $=\ (U\otimes V_H)_H^G\cong\mathbb{C}G\otimes_{\mathbb{C}H}(U\otimes V)$.
+构造 $\Psi\colon(U\otimes V_H)_H^G\to U_H^G\otimes V$, $g\otimes u\otimes v\longmapsto g\otimes u\otimes g\cdot v$;
+显然 $\Psi$ 是良定义的, 且任取 $g\otimes u\otimes v$ 则有原像 $g\otimes u\otimes g^{-1}\cdot v$;
+又两边维数相同, 故 $\Psi$ 是双射. 最后说明 $\Psi$ 是同态: 对 $g'\in G$,
+\begin{align*}
+  \Psi\bigl(g'\cdot(g\otimes u\otimes v)\bigr)
+  &=\Psi\bigl(g'g\otimes u\otimes g'\cdot v\bigr)
+   =g'g\otimes u\otimes g'g\cdot(g^{-1}g'\cdot v)\\
+  &=g'\cdot(g\otimes u\otimes g\cdot v)=g'\cdot\Psi(g\otimes u\otimes v).
+\end{align*}
+故 $\Psi$ 为同构, 即左边 $\cong$ 右边.
+\end{proof}
+
+\begin{proposition}\label{prop:dual-induction}
+设 $G$ 为群, $H<G$, $W\in\mathrm{Rep}\,H$, 则 $(W_H^G)^*\cong(W^*)_H^G$.
+\end{proposition}
+
+\begin{proof}
+我们用特征标来说明. 由 \eqref{eq:induced-character},
+\[
+  \chi_{W_H^G}(g)=\frac{1}{|H|}\sum_{x\in G}\widehat\chi_W\bigl(x^{-1}gx\bigr),
+  \qquad
+\]
+\[
+  \chi_{(W_H^G)^*}(g)=\overline{\chi_{W_H^G}(g)}
+  =\frac{1}{|H|}\sum_{x\in G}\overline{\widehat\chi_W\bigl(x^{-1}gx\bigr)}
+  =\frac{1}{|H|}\sum_{x\in G}\widehat{\chi_{W^*}}\bigl(x^{-1}gx\bigr),
+\]
+后者正是 $(W^*)_H^G$ 的特征标.
+\end{proof}
+
+当然, 以上几个结论有对应的特征标形式, 我们直接合在一起.
+
+\begin{corollary}\label{cor:induced-character-properties}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+  \item $(\chi_1+\cdots+\chi_n)^G=\chi_1^G+\cdots+\chi_n^G$;
+  \item $\chi^G\lambda=(\chi\lambda_H)^G$, 其中 $\lambda$ 为 $G$ 的某个表示的特征标;
+  \item $\overline{\chi^G}=\overline{\chi}^{\,G}$.
+\end{enumerate}
+\end{corollary}
+
+\begin{remark}
+$\chi^G$ 即为诱导表示的特征标, 后面为方便, $V_H^G$ 简写为 $V^G$.
+\end{remark}
+
+\subsection{Frobenius 互反律}
+
+\begin{theorem}[Frobenius 互反律 I]\label{thm:frobenius-reciprocity-1}
+设 $G$ 为群, $H<G$, $M\in\mathrm{Rep}\,H$, $N\in\mathrm{Rep}\,G$, 则
+\[
+  \operatorname{Hom}_{\mathbb{C}G}\bigl(M^G,N\bigr)\cong\operatorname{Hom}_{\mathbb{C}H}\bigl(M,N_H\bigr).
+\]
+\end{theorem}
+
+\begin{proof}
+\[
+  \operatorname{Hom}_{\mathbb{C}G}\bigl(M^G,N\bigr)
+  \cong\operatorname{Hom}_{\mathbb{C}G}\bigl(\mathbb{C}G\otimes_{\mathbb{C}H}M,\ N\bigr)
+\]
+\[
+  \cong\operatorname{Hom}_{\mathbb{C}H}\bigl(M,\ \operatorname{Hom}_{\mathbb{C}G}(\mathbb{C}G,N)\bigr)
+  \cong\operatorname{Hom}_{\mathbb{C}H}(M,N_H),
+\]
+其中最后一步用了 $\operatorname{Hom}_{\mathbb{C}G}(\mathbb{C}G,N)\cong N_H$.
+\end{proof}
+
+\begin{theorem}[Frobenius 互反律 II]\label{thm:frobenius-reciprocity-2}
+设 $G$ 为群, $H<G$, $M\in\mathrm{Rep}\,G$, $N\in\mathrm{Rep}\,H$, 则
+\[
+  \operatorname{Hom}_{\mathbb{C}G}\bigl(M,N^G\bigr)\cong\operatorname{Hom}_{\mathbb{C}H}(M_H,N).
+\]
+\end{theorem}
+
+\begin{proof}
+\[
+  \operatorname{Hom}_{\mathbb{C}G}(M,N^G)\cong\operatorname{Hom}_{\mathbb{C}G}\bigl(M,\ \mathbb{C}G\otimes_{\mathbb{C}H}N\bigr)
+  \cong\operatorname{Hom}_{\mathbb{C}G}\bigl(M,\ \operatorname{Hom}_{\mathbb{C}H}(\mathbb{C}G,N)\bigr),
+\]
+其中第二步用下面的引理. 于是
+\[
+  \cong\operatorname{Hom}_{\mathbb{C}H}\bigl(\mathbb{C}G\otimes_{\mathbb{C}G}M,\ N\bigr)
+  \cong\operatorname{Hom}_{\mathbb{C}H}(M_H,N).
+\]
+\end{proof}
+
+\begin{lemma}\label{lem:tensor-hom-dual}
+$\mathbb{C}G\otimes_{\mathbb{C}H}N\cong\operatorname{Hom}_{\mathbb{C}H}(\mathbb{C}G,N)$.
+\end{lemma}
+
+\begin{proof}
+先取对偶: $(\mathbb{C}G\otimes_{\mathbb{C}H}N)^*=\operatorname{Hom}_{\mathbb{C}}(\mathbb{C}G\otimes_{\mathbb{C}H}N,\mathbb{C})
+\cong\operatorname{Hom}_{\mathbb{C}H}\bigl(\mathbb{C}G,\operatorname{Hom}_{\mathbb{C}}(N,\mathbb{C})\bigr)
+\cong\operatorname{Hom}_{\mathbb{C}H}(\mathbb{C}G,N^*)$.
+再由双对偶: 记 $\ell=[G:H]$,
+\[
+  \mathbb{C}G\otimes_{\mathbb{C}H}N
+\]
+\[
+  \cong\bigl(\operatorname{Hom}_{\mathbb{C}H}(\mathbb{C}G,N^*)\bigr)^*
+  \cong\Bigl(\operatorname{Hom}_{\mathbb{C}H}\Bigl(\bigoplus_{i=1}^{\ell}\mathbb{C}H,\ N^*\Bigr)\Bigr)^*
+  \cong\Bigl(\bigoplus_{i=1}^{\ell}N^*\Bigr)^*
+\]
+\[
+  \cong\bigoplus_{i=1}^{\ell}N\cong\bigoplus_{i=1}^{\ell}\operatorname{Hom}_{\mathbb{C}H}(\mathbb{C}H,N)
+  \cong\operatorname{Hom}_{\mathbb{C}H}(\mathbb{C}G,N).
+\]
+\end{proof}
+
+\begin{remark}
+上述证明写得比较粗糙, 我们主要作如下几点补充说明.
+
+\sloppy
+首先是 $\operatorname{Hom}$ 与直和的作用:
+\[
+  \operatorname{Hom}_{\mathbb{C}}\Bigl(\bigoplus_{i\in I}M_i,\ N\Bigr)\cong\prod_{i\in I}\operatorname{Hom}_{\mathbb{C}}(M_i,N).
+\]
+定义 $\Phi\colon\operatorname{Hom}_{\mathbb{C}}(\bigoplus_{i\in I}M_i,N)\to\prod_{i\in I}\operatorname{Hom}_{\mathbb{C}}(M_i,N)$,
+$f\longmapsto(f|_{M_i})_{i\in I}$;
+反向 $\Psi\colon\prod_{i\in I}\operatorname{Hom}_{\mathbb{C}}(M_i,N)\to\operatorname{Hom}_{\mathbb{C}}(\bigoplus_{i\in I}M_i,N)$,
+$(f_i)_{i\in I}\longmapsto f$, 其中 $f((m_i)_{i\in I})=\sum_{i\in I}f_i(m_i)$.
+直接验证可得 $\Psi\circ\Phi=\Phi\circ\Psi=\mathrm{Id}$.
+
+另一方面要说明: 有限直和与取对偶交换, 这实际上就是上面结论的推论.
+令 $M_i=V_i$, $N=\mathbb{C}$, 就有 $\bigl(\bigoplus_{i\in I}V_i\bigr)^*\cong\prod_{i\in I}V_i^*$;
+而有限项时, 直积就是直和, 即得证. 这样上面引理就详细证完了.
+\fussy
+\end{remark}
+
+最后给出 Frobenius 互反律的特征标形式.
+
+\begin{corollary}\label{cor:frobenius-character}
+$(\chi^G,\lambda)=(\chi,\lambda_H)$, 其中 $\chi$ 为 $H$ 的表示的特征标, $\lambda$ 为 $G$ 的表示的特征标.
+\end{corollary}
