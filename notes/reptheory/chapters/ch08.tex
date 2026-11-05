@@ -68,9 +68,8 @@
   而我们也有 $\mathrm{GL}_n(\mathbb{C})$, $\mathrm{SL}_n(\mathbb{C})$ 也是拓扑群.
 
   \item $O(n)=\{A\in\mathrm{GL}_n(\mathbb{R})\mid AA^{\mathrm{T}}=I_n\}$ (正交群),
-  $U(n)=\{A\in\mathrm{GL}_n(\mathbb{C})\mid AA^{\mathrm{T}}=I_n\}$ (酉群),
+  $U(n)=\{A\in\mathrm{GL}_n(\mathbb{C})\mid AA^{\dagger}=I_n\}$ (酉群),
   都是拓扑群, 这一点我们就不证了. 我们说 $O(n)$, $U(n)$ 都是紧的.
-  \par 本书中复矩阵的 $A^{\mathrm{T}}$ 一律指共轭转置 $\bar A^{\mathrm{T}}$.
 \end{enumerate}
 \end{example}
 
@@ -363,7 +362,7 @@ $\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上�
   \item 由
   \[
     \chi(g^{-1})=\operatorname{Tr}\bigl(\rho(g)^{-1}\bigr)
-    \overset{\text{unitary}}{=}\operatorname{Tr}\bigl(\overline{\rho(g)^{\mathrm{T}}}\bigr)
+    \overset{\text{unitary}}{=}\operatorname{Tr}\bigl(\rho(g)^{\dagger}\bigr)
     =\operatorname{Tr}\bigl(\overline{\rho(g)}\bigr)=\sum_{i}\overline{a_{ii}(g)}
     =\overline{\chi(g)} .
   \]
@@ -560,7 +559,7 @@ $S^1$ 上连续函数的一组正交函数的线性逼近.
 
 \subsection{$SU_2$ 的所有不可约表示}
 
-回忆 $SU_2=\{A\in M_2(\mathbb{C})\mid AA^{\mathrm{T}}=I_2,\ \det(A)=1\}$.
+回忆 $SU_2=\{A\in M_2(\mathbb{C})\mid AA^{\dagger}=I_2,\ \det(A)=1\}$.
 
 \begin{proposition}\label{prop:SU2-form}
 $SU_2=\Bigl\{\begin{pmatrix}z_1&z_2\\-\bar z_2&\bar z_1\end{pmatrix}\ \Bigm|\ z_{1,2}\in\mathbb{C},\
@@ -570,7 +569,7 @@ $SU_2=\Bigl\{\begin{pmatrix}z_1&z_2\\-\bar z_2&\bar z_1\end{pmatrix}\ \Bigm|\ z_
 \begin{proof}
 设 $A=\begin{pmatrix}z_1&z_2\\z_3&z_4\end{pmatrix}$, 则
 \[
-  A\cdot A^{\mathrm{T}}=\begin{pmatrix}z_1&z_2\\z_3&z_4\end{pmatrix}
+  A\cdot A^{\dagger}=\begin{pmatrix}z_1&z_2\\z_3&z_4\end{pmatrix}
   \begin{pmatrix}\bar z_1&\bar z_3\\ \bar z_2&\bar z_4\end{pmatrix}
   =\begin{pmatrix}1&\\&1\end{pmatrix},
 \]
@@ -584,7 +583,7 @@ $SU_2=\Bigl\{\begin{pmatrix}z_1&z_2\\-\bar z_2&\bar z_1\end{pmatrix}\ \Bigm|\ z_
 又 $|A|=1$ 时
 \[
   A^{-1}=\begin{pmatrix}z_4&-z_2\\-z_3&z_1\end{pmatrix}
-  =\overline{A^{\mathrm{T}}}=\begin{pmatrix}\bar z_1&\bar z_3\\ \bar z_2&\bar z_4\end{pmatrix},
+  =A^{\dagger}=\begin{pmatrix}\bar z_1&\bar z_3\\ \bar z_2&\bar z_4\end{pmatrix},
 \]
 故 $z_4=\bar z_1$, $z_3=-\bar z_2$, 即
 \[
@@ -696,7 +695,7 @@ $SU_2$ 的全部不可约表示为 $\{V_n\mid n\in\mathbb{N}\}$.
 \begin{proof}
 只要证明: $\chi_n=\chi_{V_n}$ 为 $SU_2$ 上连续类函数全体的完备系 (Peter--Weyl).
 设 $f$ 为 $SU_2$ 的任一连续类函数. 对 $\forall B\in SU_2$, 存在酉矩阵 $U$ 使得
-$UBU^{\mathrm{T}}=\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}$, $\theta\in\mathbb{R}$, 则
+$UBU^{\dagger}=\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}$, $\theta\in\mathbb{R}$, 则
 \[
   f(B)=f\Bigl(\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}\Bigr).
 \]
