@@ -1,0 +1,257 @@
+\section{The Local Theory of Curves}
+
+\begin{definition}\label{def:regular-curve}
+A curve $\vec r(t)\colon(a,b)\to\mathbb{R}^n$, where $\vec r(t)=(x_1(t),\dots,x_n(t))$, is \emph{regular} if
+\begin{enumerate}
+  \item $x_i(t)\in C^{\infty}(a,b)$;
+  \item $\forall t\in(a,b)$, $|\vec r'(t)|\neq0$.
+\end{enumerate}
+Specifically, we often take $n=2,3$.
+\end{definition}
+
+\noindent\textbf{Notations.} $\vec r'=\frac{\mathrm d}{\mathrm dt}\vec r(t)$ and $\vec r'(s)=\frac{\mathrm d}{\mathrm ds}\vec r(s)$ for a regular curve $\vec r$, where $s$ is called the arc length of $\vec r$, defined by the following formula:
+\[
+  s=\int_a^t|\vec r'(u)|\,\mathrm du .
+\]
+
+Hence
+\[
+  \frac{\mathrm ds}{\mathrm dt}=|\vec r'(t)|,
+\]
+and
+\[
+  \vec r'(s)=\frac{\mathrm d\vec r}{\mathrm ds}
+  =\frac{\mathrm d\vec r}{\mathrm dt}\cdot\frac{\mathrm dt}{\mathrm ds}
+  =\vec r'\cdot\frac{1}{|\vec r'|}
+  \quad\Longrightarrow\quad
+  \forall s,\ |\vec r'(s)|=1.
+\]
+
+\noindent\textbf{Notations.} Let $T(s)=\vec r'(s)$ be the tangent vector and $N(s)$ the normal vector with $|N|=1$. We assume that $T$ is rotated counterclockwise by $\pi/2$ to obtain $N$.
+
+\subsection{Plane Curves}
+
+Let $\vec r=\vec r(s)$, $T(s)=\vec r'(s)$, $|T(s)|=1$. Then
+\[
+  |T(s)|^2=1
+  \ \Longrightarrow\
+  \frac{\mathrm d}{\mathrm ds}|T(s)|^2=0,\ \text{i.e.}\
+  \frac{\mathrm d}{\mathrm ds}\langle T,T\rangle=0
+  \ \Longrightarrow\
+  2\langle T,T'\rangle=0
+  \ \Longrightarrow\
+  \langle T,T'\rangle=0,
+\]
+i.e. $T'(s)=K_r(s)N(s)$, where $K_r$ is some function, called the relative curvature of $\vec r$.
+
+\begin{lemma}\label{lem:plane-frenet}
+\[
+  \frac{\mathrm d}{\mathrm ds}
+  \begin{pmatrix}T\\N\end{pmatrix}
+  =\begin{pmatrix}0&K_r\\-K_r&0\end{pmatrix}
+  \begin{pmatrix}T\\N\end{pmatrix}.
+\]
+\end{lemma}
+
+\begin{proof}
+$T'(s)=K_rN(s)$. Since $|N(s)|=1$, $0=\langle N',N\rangle$. From $\frac{\mathrm d}{\mathrm ds}\langle T,N\rangle=0$ we get $\langle T',N\rangle+\langle T,N'\rangle=0$, hence
+\[
+  K_r\langle N,N\rangle+\langle T,N'\rangle=0
+  \ \Longrightarrow\
+  \langle T,N'\rangle=-K_r,
+\]
+i.e. $N'(s)=-K_rT(s)$.
+\end{proof}
+
+\begin{example}\label{ex:circle-curvature}
+Given $\vec r(t)=(x_0+R\cos t,\ y_0+R\sin t)$ for $t\in(0,\pi)$, $R\in\mathbb{R}_+$, $(x_0,y_0)\in\mathbb{R}^2$, find $K_r(s)$.
+
+\textbf{Hint:}
+\[
+  \vec r'(t)=R(-\sin t,\cos t)
+  \ \Longrightarrow\
+  |\vec r'(t)|=R=\frac{\mathrm ds}{\mathrm dt}
+  \ \Longrightarrow\
+  s=Rt.
+\]
+Hence
+\[
+  \vec r(s)=\Bigl(x_0+R\cos\frac{s}{R},\ y_0+R\sin\frac{s}{R}\Bigr),
+\]
+\[
+  T(s)=\vec r'(s)=\Bigl(-\sin\frac{s}{R},\cos\frac{s}{R}\Bigr),
+\]
+\[
+  T'(s)=\frac1R\Bigl(-\cos\frac{s}{R},-\sin\frac{s}{R}\Bigr),\qquad
+  N(s)=\Bigl(-\cos\frac{s}{R},-\sin\frac{s}{R}\Bigr),
+\]
+\[
+  \Longrightarrow\ K_r(s)=\frac1R.
+\]
+\end{example}
+
+\begin{example}\label{ex:curvature-parametrized}
+For a parameterized curve $\vec r(t)=(x(t),y(t))$,
+\[
+  K_r(t)=\frac{x'y''-x''y'}{(x'^2+y'^2)^{3/2}}.
+\]
+\end{example}
+
+\subsection{Space Curves}
+
+Let $\vec r(s)=(x_1(s),x_2(s),x_3(s))$, $s\in I$ be a regular curve.
+
+\begin{definition}\label{def:curvature}
+The curvature of $\vec r(s)$ is $K(s)=|\vec r''(s)|$. $\rho(s)=\frac{1}{K(s)}$ is called the radius of curvature.
+\end{definition}
+
+Since $|\vec r'(s)|=1$, i.e. $\langle\vec r'(s),\vec r'(s)\rangle=1$, we have $\langle\vec r''(s),\vec r'(s)\rangle=0$ for all $s$. Assume $K(s)\neq0$; then
+\[
+  N(s)=\frac{\vec r''(s)}{|\vec r''(s)|}=\frac{\vec r''(s)}{K(s)},
+  \qquad
+  \vec r''(s)=K(s)N(s),
+  \qquad\text{i.e.}\quad \dot T=KN.
+\]
+
+\begin{definition}\label{def:binormal}
+$B(s)=T(s)\times N(s)$ is called the binormal vector of $\vec r(s)$. Hence we have an orthogonal frame along $\vec r(s)$, called the Frenet frame: $\{\vec r(s);T,N,B\}$.
+\end{definition}
+
+\begin{definition}\label{def:torsion}
+The torsion of $\vec r(s)$ is $\tau(s)=\langle\dot N,B\rangle$.
+\end{definition}
+
+\begin{remark}\label{rem:torsion-symmetry}
+$\langle\dot N,B\rangle=\langle\dot N,T\times N\rangle=-\langle\dot N,N\times T\rangle=-\langle N,T\times\dot N\rangle$. Since
+\[
+  \langle N,\dot B\rangle
+  =\langle\dot T\times N,N\rangle+\langle T\times\dot N,N\rangle
+  =\langle KN\times N,N\rangle-\langle\dot N,B\rangle
+  =-\langle\dot N,B\rangle,
+\]
+we have $\tau(s)=\langle\dot N,B\rangle=-\langle N,\dot B\rangle$.
+\end{remark}
+
+\begin{theorem}[Serret--Frenet formulae]\label{thm:serret-frenet}
+Let $\vec r(s)$, $s\in I$ be a regular space curve. Then
+\[
+  \frac{\mathrm d}{\mathrm ds}
+  \begin{pmatrix}T\\N\\B\end{pmatrix}
+  =\begin{pmatrix}0&K&0\\-K&0&\tau\\0&-\tau&0\end{pmatrix}
+  \begin{pmatrix}T\\N\\B\end{pmatrix}.
+\]
+\end{theorem}
+
+\begin{proof}
+We have $\langle\dot T,T\rangle=\langle\dot N,N\rangle=\langle\dot B,B\rangle=0$ and $\dot T=KN$. Since $\langle T,N\rangle=0$,
+\[
+  \langle\dot T,N\rangle+\langle T,\dot N\rangle=0
+  \ \Longrightarrow\
+  \langle\dot N,T\rangle=-K.
+\]
+And $0=\langle B,T\rangle$ gives
+\[
+  0=\langle\dot B,T\rangle+\langle B,\dot T\rangle
+  =\langle\dot B,T\rangle+\langle B,KN\rangle,
+\]
+hence $\langle\dot B,T\rangle=0$.
+
+Finally, $\dot N\perp N$ and $\dot B\perp B$ since $|N|=|B|=1$, so
+\[
+  \dot N=\langle\dot N,T\rangle T+\langle\dot N,B\rangle B=-KT+\tau B,
+  \qquad
+  \dot B=\langle\dot B,T\rangle T+\langle\dot B,N\rangle N=-\tau N,
+\]
+where $\langle\dot N,B\rangle=\tau$ by definition and $\langle\dot B,N\rangle=-\tau$ by Remark~\ref{rem:torsion-symmetry}.
+\end{proof}
+
+\begin{remark}\label{rem:frenet-derivation}
+Note that $\dot T(s)=\vec r''(s)=K(s)N(s)$ and $\dot N(s)=-K(s)T(s)+\tau(s)B(s)$, so
+\[
+  \vec r'''(s)=\dot KN+K\dot N=\dot KN-K^2T+K\tau B.
+\]
+It is worth noting that
+\[
+  \dot N=\frac1K\bigl(\vec r'''-\dot KN\bigr).
+\]
+Hence
+\[
+  \tau=-\langle\dot B,N\rangle=\langle B,\dot N\rangle
+  =\frac1K\bigl(\langle B,\vec r'''\rangle-\dot K\langle B,N\rangle\bigr)
+  =\frac1K\langle B,\vec r'''\rangle.
+\]
+\end{remark}
+
+That is,
+\[
+  \tau(s)=\frac{1}{K^2(s)}\bigl\langle\vec r'\times\vec r'',\ \vec r'''\bigr\rangle .
+\]
+
+\begin{example}\label{ex:circular-helix}
+The circular helix: $\vec r(t)=(R\cos t,\ R\sin t,\ bt)$, $R\in\mathbb{R}_+$, $b\in\mathbb{R}$.
+\end{example}
+
+\begin{proposition}\label{prop:plane-iff-zero-torsion}
+A space curve is a plane curve iff $\tau(s)=0$ for all $s\in I$.
+\end{proposition}
+
+\begin{proof}
+$1^\circ$ ``$\Longrightarrow$''. If $\vec r(s)$, $s\in I$ is a plane curve, then there are $\vec n_0\in\mathbb{R}^3$, $|\vec n_0|=1$ and $x_0\in\mathbb{R}^3$ such that $\langle\vec n_0,\vec r(s)-x_0\rangle=0$. Hence
+\[
+  \langle\vec n_0,T(s)\rangle=0
+  \ \Longrightarrow\
+  \langle\vec n_0,\vec r''(s)\rangle=0,
+\]
+i.e. $\langle\vec n_0,N(s)\rangle=0$. Thus $\vec n_0\perp T$, $\vec n_0\perp N$, so $\vec n_0\parallel B$, and $\tau=-\langle\dot B,N\rangle=0$.
+
+$2^\circ$ ``$\Longleftarrow$''. If $\tau(s)=0$ for all $s\in I$, then $0=\tau(s)=-\langle\dot B,N\rangle$. Since $0=\langle\dot B,B\rangle$, we have $\dot B\perp B$; write $\dot B=\alpha T$. As
+\[
+  \langle\dot B,T\rangle=-\langle B,\dot T\rangle=-\langle B,KN\rangle=0,
+\]
+we get $\alpha=0$, hence $\dot B(s)=0$. Say $B(s)=\vec n_0$ for some $\vec n_0$, $|\vec n_0|=1$. By definition
+\[
+  0=\langle B(s),T(s)\rangle=\langle\vec n_0,\vec r'(s)\rangle
+  =\frac{\mathrm d}{\mathrm ds}\bigl\langle\vec n_0,\vec r(s)-x_0\bigr\rangle,
+\]
+so $\vec r(s)$, $s\in I$ is a plane curve.
+\end{proof}
+
+\begin{definition}\label{def:helix}
+A curve is called a \emph{helix} if the tangent lines of $\vec r(s)$ make a constant angle with a fixed direction.
+\end{definition}
+
+\begin{lemma}\label{lem:helix-ratio}
+Assume $\tau(s)\neq0$ for all $s\in I$. Then $\vec r$ is a helix iff $\frac{K(s)}{\tau(s)}=\text{const}$ for all $s\in I$.
+\end{lemma}
+
+\begin{proof}
+$1^\circ$ ``$\Longrightarrow$''. If $\vec r$ is a helix, then there is $\vec a\in\mathbb{R}^3$, $|\vec a|=1$, such that $\langle T(s),\vec a\rangle=\text{const}$, hence $\langle\dot T,\vec a\rangle=0$, i.e. $\langle N(s),\vec a\rangle=0$ for all $s$.
+
+That is to say, $\vec a=\cos\theta\,T+\sin\theta\,B$ for some $\theta=\theta(s)$. Then
+\[
+  0=-\sin\theta\,\dot\theta\,T+\cos\theta\,\dot T+\cos\theta\,\dot\theta\,B+\sin\theta\,\dot B
+  =\dot\theta(-\sin\theta\,T+\cos\theta\,B)+\cos\theta\,(KN)+\sin\theta\,(-\tau N).
+\]
+Hence $\dot\theta=0$, so $\theta=\theta_0$ for some constant $\theta_0$, and $K\cos\theta-\tau\sin\theta=0$, i.e. $\tan\theta=\frac{K}{\tau}$. Thus
+\[
+  \frac{K}{\tau}=\tan\theta_0=\text{const}.
+\]
+
+$2^\circ$ ``$\Longleftarrow$''. By assumption $\frac{K}{\tau}=\text{const}=\tan\theta$ with $\theta$ fixed. Take $\vec a(s)=\cos\theta\,T+\sin\theta\,B$, as in $1^\circ$. Then $\vec a(s)\equiv\vec a_0$, so $\vec r(s)$ is a helix.
+\end{proof}
+
+\begin{theorem}[Fundamental theorem for the local theory of curves]\label{thm:fundamental}
+Given smooth function $K(s)$, $\tau(s)$ on $(a,b)$ with $K(s)>0$, then there exists $\vec r(s)$ has arc length $s$ with curvature $K(s)$ and torsion $\tau(s)$. Moreover, such a curve is unique up to a rigid motion of $\mathbb{R}^3$: for any $s_0\in(a,b)$ and any positively oriented orthonormal frame $\{x_0;T_0,N_0,B_0\}$, there is exactly one such curve with
+\[
+  \vec r(s_0)=x_0,\quad T(s_0)=T_0,\quad N(s_0)=N_0,\quad B(s_0)=B_0 .
+\]
+\end{theorem}
+
+\begin{exercise}\label{exe:curvature-torsion}
+For $\vec r(s)\in\mathbb{R}^3$ be a curve, $s\in I$, we have
+\[
+  K(s)=\frac{|\vec r'\times\vec r''|}{|\vec r'|^3},
+  \qquad
+  \tau(s)=\frac{\bigl\langle\vec r'\times\vec r'',\ \vec r'''\bigr\rangle}{|\vec r'\times\vec r''|^2}.
+\]
+\end{exercise}

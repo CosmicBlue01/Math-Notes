@@ -1,1 +1,16 @@
 ﻿type,title,label,section,file,text
+定义,,def:regular-curve,The Local Theory of Curves,notes/dg/chapters/ch01.tex,"A curve , where , is if ; , . Specifically, we often take ."
+引理,,lem:plane-frenet,The Local Theory of Curves,notes/dg/chapters/ch01.tex,[ ds T = 0&K_r -K_r&0 T . ]
+例,,ex:circle-curvature,The Local Theory of Curves,notes/dg/chapters/ch01.tex,"Given for , , , find . [ r'(t)=R(- t, t) | r'(t)|=R= dt s=Rt. ] Hence [ r(s)= (x_0+R R , y_0+R R ), ] [ T(s)= r'(s)= (- "
+例,,ex:curvature-parametrized,The Local Theory of Curves,notes/dg/chapters/ch01.tex,"For a parameterized curve , [ K_r(t)= (x'^2+y'^2)^ 3/2 . ]"
+定义,,def:curvature,The Local Theory of Curves,notes/dg/chapters/ch01.tex,The curvature of is . is called the radius of curvature.
+定义,,def:binormal,The Local Theory of Curves,notes/dg/chapters/ch01.tex,"is called the binormal vector of . Hence we have an orthogonal frame along , called the Frenet frame: ."
+定义,,def:torsion,The Local Theory of Curves,notes/dg/chapters/ch01.tex,The torsion of is .
+注,,rem:torsion-symmetry,The Local Theory of Curves,notes/dg/chapters/ch01.tex,". Since [ N, B = T N,N + T N,N = KN N,N - N,B =- N,B , ] we have ."
+定理,Serret--Frenet formulae,thm:serret-frenet,The Local Theory of Curves,notes/dg/chapters/ch01.tex,"Let , be a regular space curve. Then [ ds T = 0&K&0 -K&0& 0&- &0 T . ]"
+注,,rem:frenet-derivation,The Local Theory of Curves,notes/dg/chapters/ch01.tex,"Note that and , so [ r'''(s)= KN+K N= KN-K^2T+K B. ] It is worth noting that [ N= 1K ( r'''- KN ). ] Hence [ =- B,N = B,"
+例,,ex:circular-helix,The Local Theory of Curves,notes/dg/chapters/ch01.tex,"The circular helix: , , ."
+命题,,prop:plane-iff-zero-torsion,The Local Theory of Curves,notes/dg/chapters/ch01.tex,A space curve is a plane curve iff for all .
+定义,,def:helix,The Local Theory of Curves,notes/dg/chapters/ch01.tex,A curve is called a if the tangent lines of make a constant angle with a fixed direction.
+引理,,lem:helix-ratio,The Local Theory of Curves,notes/dg/chapters/ch01.tex,Assume for all . Then is a helix iff for all .
+定理,Fundamental theorem for the local theory of curves,thm:fundamental,The Local Theory of Curves,notes/dg/chapters/ch01.tex,"Given smooth function , on with , then there exists has arc length with curvature and torsion . Moreover, such a curve i"
