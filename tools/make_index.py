@@ -61,6 +61,8 @@ def main():
     courses = sorted(p for p in SRC.iterdir() if p.is_dir() and (p / "main.tex").exists())
     for course in courses:
         rows = []
+        m = re.search(r"\\title\{([^}]*)\}", (course / "main.tex").read_text(encoding="utf-8"))
+        title = m.group(1).strip() if m else course.name
         for p in sorted(course.rglob("*.tex")):
             if p.name == "preamble.tex":
                 continue
@@ -71,7 +73,7 @@ def main():
             w.writeheader()
             w.writerows(rows)
 
-        lines = [f"# 定理索引 · {course.name}", "",
+        lines = [f"# 定理索引 · {title}", "",
                  f"共 {len(rows)} 条，由 `tools/make_index.py` 自动生成。", "",
                  "| # | 类型 | 标题 | 标签 | 章节 | 文件 |", "|---|---|---|---|---|---|"]
         for i, r in enumerate(rows, 1):

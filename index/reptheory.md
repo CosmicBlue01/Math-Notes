@@ -1,4 +1,4 @@
-# 定理索引 · reptheory
+# 定理索引 · 表示论
 
 共 285 条，由 `tools/make_index.py` 自动生成。
 
