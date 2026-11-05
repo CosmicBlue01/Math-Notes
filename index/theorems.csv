@@ -6,7 +6,7 @@
 注,,rem:unit-in-group,代数,notes/reptheory/chapters/ch01.tex,"群的定义中不要求子集的单位元与整个群一致, 因为乘法封闭性已经保证了这一点; 子代数则不同, 必须显式要求 ."
 注,,rem:unit-mismatch,代数,notes/reptheory/chapters/ch01.tex,"对 Definition 中 (1) 的举例. 和 为 -代数, 存在嵌入 , 让 [ A_ n n A&0 0&0 . ] 在嵌入 意义下 . 但是 的单位元 , 故 不是 的子代数."
 例,,rem:hilbert-basis,代数,notes/reptheory/chapters/ch01.tex,"为子代数. 设 为子代数, 且 , 那么 ( , 但一般默认 包含 , 故简记为 ). 考虑: ."
-注,,rem:hilbert-basis,代数,notes/reptheory/chapters/ch01.tex,"的每个子代数是否都形如 ? 这个问题与 Hilbert 基定理有关, 此处不展开."
+注,,rem:hilbert-basis,代数,notes/reptheory/chapters/ch01.tex,"的每个子代数是否都形如 ? 这正是 Hilbert 基定理 (Hilbert basis theorem) 的内容, 此处不展开."
 例,,,代数,notes/reptheory/chapters/ch01.tex,全矩阵代数 的子代数: 上三角矩阵 (常记为 ) 的全体为子代数; 对角矩阵 (常记为 ) 的全体为子代数.
 例,,,代数,notes/reptheory/chapters/ch01.tex,为子代数.
 例,子群代数,rem:subalgebra-not-subgroup,代数,notes/reptheory/chapters/ch01.tex,"设 , 则 为子代数."
