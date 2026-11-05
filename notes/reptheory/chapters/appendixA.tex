@@ -1,0 +1,191 @@
+\newcommand{\yb}{\framebox[1.15em]{\rule{0pt}{1.1em}}}
+\section{对称群的表示与 Young 图}
+
+\noindent\textbf{说明.}\ 本附录不是手稿内容, 而是为补全 $S_n$ 的不可约表示的分类而增补的.
+正文第 6 章只对 $S_3$, $S_4$ 逐个算出了特征标表, 并未回答"$S_n$ 一共有哪些不可约表示、
+维数各是多少". 本附录回答这两个问题: 不可约表示与 $n$ 的分拆一一对应, 维数由钩长公式给出.
+
+\subsection{分拆与 Young 图}
+
+\begin{definition}[分拆]\label{def:app-partition}
+设 $n\ge1$. 称 $\lambda=(\lambda_1,\lambda_2,\dots,\lambda_k)$ 为 $n$ 的一个分拆, 若
+\[
+  \lambda_1\ge\lambda_2\ge\cdots\ge\lambda_k\ge1,\qquad \lambda_1+\cdots+\lambda_k=n .
+\]
+记作 $\lambda\vdash n$; 并约定 $\lambda_{i}=0$ ($i>k$). 称 $k$ 为 $\lambda$ 的长度,
+称使 $\lambda_i>0$ 的 $i$ 的个数为 $\ell(\lambda)$.
+\end{definition}
+
+$n$ 的分拆与 $n$ 的无序分拆 (Definition \ref{def:partition}) 是同一件事, 而由
+Corollary \ref{cor:conj-classes-partitions} 它又等于 $S_n$ 的共轭类个数.
+
+\begin{definition}[Young 图]\label{def:young-diagram}
+在平面上画 $k$ 行左对齐的方格, 第 $i$ 行有 $\lambda_i$ 个方格, 所得的图形称为
+$\lambda$ 的 Young 图. 把 Young 图沿主对角线翻转所得图形的行数依次记为
+$\lambda'_1\ge\lambda'_2\ge\cdots$, 称 $\lambda'=(\lambda'_1,\lambda'_2,\dots)$ 为 $\lambda$
+的共轭分拆.
+\end{definition}
+
+例如 $n=4$ 的五个分拆与它们的 Young 图为
+\[
+\begin{array}{l}
+\yb\yb\yb\yb
+\end{array}
+\quad
+\begin{array}{l}
+\yb\yb\yb\\[2pt]
+\yb
+\end{array}
+\quad
+\begin{array}{l}
+\yb\yb\\[2pt]
+\yb\yb
+\end{array}
+\quad
+\begin{array}{l}
+\yb\yb\\[2pt]
+\yb\\[2pt]
+\yb
+\end{array}
+\quad
+\begin{array}{l}
+\yb\\[2pt]
+\yb\\[2pt]
+\yb\\[2pt]
+\yb
+\end{array}
+\]
+其中第二个与第四个互为共轭分拆, 第三个是自共轭的.
+
+\subsection{行群、列群与 Young 对称化子}
+
+固定 $\lambda\vdash n$, 并把 $\lambda$ 的 $n$ 个方格用 $1,2,\dots,n$ 任意填满.
+令 $R_\lambda$ 为使每一行的数字集合不变的全部置换之集, $C_\lambda$ 为使每一列的数字集合
+不变的全部置换之集. 显然
+\[
+  R_\lambda\cong\prod_i S_{\lambda_i},\qquad
+  C_\lambda\cong\prod_j S_{\lambda'_j},
+\]
+称它们为 $\lambda$ 的行群与列群. 在群代数 $\mathbb{C}S_n$ 中置
+\[
+  a_\lambda=\sum_{\sigma\in R_\lambda}\sigma,\qquad
+  b_\lambda=\sum_{\tau\in C_\lambda}\operatorname{sgn}(\tau)\,\tau,\qquad
+  c_\lambda=a_\lambda b_\lambda .
+\]
+称 $c_\lambda$ 为 $\lambda$ 的 Young 对称化子 (Young symmetrizer).
+
+\begin{example}\label{eg:app-symmetrizer-small}
+(1) $\lambda=(n)$: $R_\lambda=S_n$, $C_\lambda=\{1\}$, 故 $a_\lambda=\sum_{\sigma\in S_n}\sigma$,
+$b_\lambda=1$, $c_\lambda=a_\lambda$. 由 $\sigma c_\lambda=c_\lambda$ 知 $\mathbb{C}S_n c_\lambda$
+是一维的, 就是平凡表示.
+
+(2) $\lambda=(1^n)$: $R_\lambda=\{1\}$, $C_\lambda=S_n$, 故 $c_\lambda=b_\lambda
+=\sum_\tau\operatorname{sgn}(\tau)\tau$. 由 $\sigma c_\lambda=\operatorname{sgn}(\sigma)c_\lambda$
+知 $\mathbb{C}S_n c_\lambda$ 是一维的, 就是符号表示.
+
+(3) $\lambda=(2,1)$, $n=3$: 取填法 $\begin{array}{l}\fbox{1}\fbox{2}\\[1pt]\fbox{3}\end{array}$, 则
+$R_\lambda=\{1,(12)\}$, $C_\lambda=\{1,(13)\}$, 于是
+\[
+  c_\lambda=\bigl(1+(12)\bigr)\bigl(1-(13)\bigr)=1+(12)-(13)-(123).
+\]
+直接验证 $\mathbb{C}S_3c_\lambda$ 是二维不可约表示, 即标准表示.
+\end{example}
+
+\begin{lemma}\label{lem:app-c-square}
+设 $f^\lambda=\dim_{\mathbb{C}}V_\lambda$, 其中 $V_\lambda=\mathbb{C}S_nc_\lambda$. 则
+\[
+  c_\lambda^2=\frac{n!}{f^\lambda}\,c_\lambda .
+\]
+特别地 $c_\lambda\ne0$, 且 $e_\lambda=\frac{f^\lambda}{n!}c_\lambda$ 是幂等元.
+\end{lemma}
+
+这个引理的计算是标准的 (比较 $c_\lambda^2$ 中各项的系数), 此处只引用结论; 由它立刻看出
+$V_\lambda$ 是 $\mathbb{C}S_n$ 的左理想, 且 $c_\lambda$ 在 $V_\lambda$ 上作用为 $n!/f^\lambda$ 倍恒等.
+
+\subsection{不可约表示的分类}
+
+\begin{theorem}[Young]\label{thm:app-young}
+设 $n\ge1$. 则
+\begin{enumerate}
+  \item 对每个 $\lambda\vdash n$, $V_\lambda=\mathbb{C}S_nc_\lambda$ 是不可约左 $\mathbb{C}S_n$-模;
+  \item 若 $\lambda\ne\mu$, 则 $V_\lambda\ncong V_\mu$;
+  \item 每个不可约复表示都同构于某个 $V_\lambda$.
+\end{enumerate}
+\end{theorem}
+
+第 (3) 条与"不可约表示的个数等于共轭类的个数" (Theorem \ref{thm:num-irreducible}) 合起来,
+说明 $n$ 的分拆个数正好是 $S_n$ 的不可约表示个数; 事实上由 (1)(2) 已得到"至少这么多"
+个互不同构的不可约表示, 而共轭类个数也等于分拆个数, 两边就吻合了.
+把 $\mathbb{C}S_n=\bigoplus_{\lambda\vdash n}V_\lambda^{\oplus f^\lambda}$ 两边取维数, 即得
+\begin{equation}\label{eq:app-sum-squares}
+  \sum_{\lambda\vdash n}\bigl(f^\lambda\bigr)^2=n! .
+\end{equation}
+
+\subsection{钩长公式}\label{sec:app-hook}
+
+\begin{definition}[钩长]\label{def:app-hook}
+设 $\lambda$ 的 Young 图中, 方格 $x$ 位于第 $i$ 行第 $j$ 列. 称
+\[
+  h(x)=\lambda_i-j+\lambda'_j-i+1
+\]
+为 $x$ 的钩长, 它是"$x$ 本身 + 它右边的方格 + 它下面的方格"的总数.
+\end{definition}
+
+\begin{theorem}[钩长公式]\label{thm:app-hook}
+设 $\lambda\vdash n$, 则
+\[
+  f^\lambda=\dim V_\lambda=\frac{n!}{\displaystyle\prod_{x\in\lambda}h(x)} .
+\]
+\end{theorem}
+
+\begin{example}\label{eg:app-hook-S4}
+$n=4$ 时五个分拆的维数与式 \eqref{eq:app-sum-squares} 的验证:
+\[
+\begin{array}{c|ccccc}
+  \lambda & (4) & (3,1) & (2,2) & (2,1,1) & (1^4)\\ \hline
+  \prod h(x) & 24 & 8 & 12 & 8 & 24\\
+  f^\lambda & 1 & 3 & 2 & 3 & 1
+\end{array}
+\]
+于是 $1^2+3^2+2^2+3^2+1^2=24=4!$, 与第 6 章算出的 $S_4$ 特征标表
+(维数 $1,1,2,3,3$) 一致.
+
+$n=5$ 时同理:
+\[
+\begin{array}{c|ccccccc}
+  \lambda & (5) & (4,1) & (3,2) & (3,1,1) & (2,2,1) & (2,1,1,1) & (1^5)\\ \hline
+  f^\lambda & 1 & 4 & 5 & 6 & 5 & 4 & 1
+\end{array}
+\]
+而 $1^2+4^2+5^2+6^2+5^2+4^2+1^2=120=5!$, 与 $S_5$ 有 $7$ 个共轭类 (即 $7$ 个分拆) 相符.
+\end{example}
+
+\subsection{特征的 Frobenius 公式 (陈述)}
+
+维数只是一行, 要算整张特征标表还需要下面的公式. 设 $\lambda\vdash n$,
+取变元 $x_1,\dots,x_k$, 记
+\[
+  \Delta(x)=\prod_{1\le i<j\le k}(x_i-x_j),\qquad
+  p_j(x)=x_1^j+\cdots+x_k^j\quad(j\ge1).
+\]
+对共轭类 $\mu=(1^{a_1}2^{a_2}\cdots)$, 记 $\gamma^\mu_j=a_j$, 并取
+$\delta=(k-1,k-2,\dots,1,0)$.
+
+\begin{theorem}[Frobenius]\label{thm:app-frobenius}
+设 $\lambda\vdash n$, $\mu$ 为 $S_n$ 的一个共轭类 (由循环型给出), 则
+\[
+  \chi_\lambda(\mu)=\Bigl[\Delta(x)\prod_{j\ge1}p_j(x)^{\gamma^\mu_j}\Bigr]_{\lambda+\delta},
+\]
+其中 $[\cdot]_{\lambda+\delta}$ 表示取 $x^{\lambda+\delta}=x_1^{\lambda_1+\delta_1}\cdots
+x_k^{\lambda_k+\delta_k}$ 这一项的系数.
+\end{theorem}
+
+\begin{example}\label{eg:app-frobenius-S3}
+$S_3$, $\lambda=(2,1)$, $k=3$, $\delta=(2,1,0)$, $\lambda+\delta=(4,2,1)$.
+\begin{itemize}
+  \item $\mu=(1^3)$: $\gamma=(3,0,0)$, 取 $\Delta\cdot p_1^3$ 中 $x_1^4x_2^2x_3$ 的系数, 得 $2$;
+  \item $\mu=(2,1)$: $\gamma=(1,1,0)$, 取 $\Delta\cdot p_1p_2$ 中该项系数, 得 $0$;
+  \item $\mu=(3)$: $\gamma=(0,0,1)$, 取 $\Delta\cdot p_3$ 中该项系数, 得 $-1$.
+\end{itemize}
+这与第 6 章 $S_3$ 表中 $\chi_{\mathrm{std}}$ 那一行 $(2,0,-1)$ 完全一致.
+\end{example}
