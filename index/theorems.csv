@@ -169,3 +169,28 @@
 定理,,thm:conjugate-same-cycle-type,特征标,notes/reptheory/chapters/ch06.tex,"设 , 则 属于同一共轭类当且仅当它们的循环结构相同."
 推论,,cor:conj-classes-partitions,特征标,notes/reptheory/chapters/ch06.tex,中共轭类的个数等于 的无序分拆的个数.
 定理,,thm:class-size,特征标,notes/reptheory/chapters/ch06.tex,"[ h_i= _ k=1 ^ m _k! ,k^ _k , ] 其中 中有 个长度为 的循环 (相应地, 的分拆中有 个 )."
+定义,中心化子,def:centralizer,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, , 称 为 在 中的中心化子."
+引理,,lem:class-size-index,特征标,notes/reptheory/chapters/ch06.tex,"设 为 所在的共轭类, 则 ."
+引理,,lem:class-sum-integral,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 为不可约表示, 则 为代数整数."
+定理,整除定理,thm:degree-divides-order,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 为 的不可约表示, 则 ."
+定义,导群,def:commutator-subgroup,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 称 为 的导群."
+引理,,lem:abelian-quotient,特征标,notes/reptheory/chapters/ch06.tex,为 Abel 群.
+定理,,thm:one-dim-count,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 则 [ | V V G , V=1 |=|G/G'|. ]"
+推论,,cor:Sn-one-dim,特征标,notes/reptheory/chapters/ch06.tex,"设 , , 则 , 于是 的一维不可约表示只有 个."
+定理,,thm:degree-divides-center-quotient,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 为不可约表示的维数, 则 [ n_i |G/Z(G)|, n_i^2 |G/Z(G)|. ]"
+定理,,thm:row-column-sums,特征标,notes/reptheory/chapters/ch06.tex,"特征标表中任意一列元素之和是整数; 相反地, 任意一行元素之和是非负整数."
+定理,,thm:one-dim-times-irreducible,特征标,notes/reptheory/chapters/ch06.tex,"设 为一个一维特征标, 为一个不可约特征标, 则 也不可约."
+定义,Frobenius--Schur 指标,def:fs-indicator,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为 的一个不可约复表示, 为其特征标, 称 [ (V)= |G| _ g G (g^2) ] 为表示 的 Frobenius--Schur 指标."
+定理,,thm:fsch-values,特征标,notes/reptheory/chapters/ch06.tex,"只能取 三个值, 且 若 , 则 取实值, 且 可实现为一个不可约实表示, 此时 ; 若 , 则 不取实值 (存在 使 ), 此时 ; 若 , 则 取实值, 但 不可实现为不可约实表示, 此时 ."
+定义,,def:types,特征标,notes/reptheory/chapters/ch06.tex,"称 是实型 (real type) 的, 若 ; 称 是复型 (complex type) 的, 若 ; 称 是四元数型 (quaternionic type) 的, 若 ."
+定理,,thm:abelian-all-one-dim,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 则 为 Abel 群当且仅当 的所有不可约表示都是一维的."
+例,,ex:Zn-irreducibles,特征标,notes/reptheory/chapters/ch06.tex,"考虑 , 其中 . 令 , 定义 [ _j _n ^*, g _n^ ,j (0 j n-1). ] 显然 为 的一个不可约表示."
+命题,,,特征标,notes/reptheory/chapters/ch06.tex,"若 , 则 ."
+注,,thm:abelian-structure,特征标,notes/reptheory/chapters/ch06.tex,"上面的例子告诉我们 ; 那么为什么要坚持写 , 而不直接写 呢?"
+定理,有限 Abel 群结构定理,thm:abelian-structure,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限 Abel 群, 则 [ G _ m_1 _ m_2 _ m_t (m_i ). ]"
+引理,,lem:tensor-of-irreducibles,特征标,notes/reptheory/chapters/ch06.tex,"若 分别为 的不可约表示, 则 不可约."
+定义,特征标的核,def:kernel-of-character,特征标,notes/reptheory/chapters/ch06.tex,"设 为一个表示, 记 [ _ = g G _ (g)= _ (e) , ] 称为特征标 的核."
+命题,,prop:kernel-equality,特征标,notes/reptheory/chapters/ch06.tex,.
+引理,,lem:kernel-of-direct-sum,特征标,notes/reptheory/chapters/ch06.tex,"若 可写为不可约表示的直和 , 则 [ = _ n_i>0 _i . ]"
+定理,,thm:normal-subgroup-as-kernel,特征标,notes/reptheory/chapters/ch06.tex,"设 为任意正规子群, 则 [ N= _ N , ] 其中 为 的不可约特征标的全体."
+推论,,cor:simple-criterion,特征标,notes/reptheory/chapters/ch06.tex,是单群当且仅当对每个 都有 或 .

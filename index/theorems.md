@@ -1,6 +1,6 @@
 # 定理索引
 
-共 170 条，由 `tools/make_index.py` 自动生成。
+共 195 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -174,3 +174,28 @@
 | 168 | 定理 |  | `thm:conjugate-same-cycle-type` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 169 | 推论 |  | `cor:conj-classes-partitions` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 170 | 定理 |  | `thm:class-size` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 171 | 定义 | 中心化子 | `def:centralizer` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 172 | 引理 |  | `lem:class-size-index` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 173 | 引理 |  | `lem:class-sum-integral` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 174 | 定理 | 整除定理 | `thm:degree-divides-order` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 175 | 定义 | 导群 | `def:commutator-subgroup` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 176 | 引理 |  | `lem:abelian-quotient` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 177 | 定理 |  | `thm:one-dim-count` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 178 | 推论 |  | `cor:Sn-one-dim` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 179 | 定理 |  | `thm:degree-divides-center-quotient` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 180 | 定理 |  | `thm:row-column-sums` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 181 | 定理 |  | `thm:one-dim-times-irreducible` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 182 | 定义 | Frobenius--Schur 指标 | `def:fs-indicator` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 183 | 定理 |  | `thm:fsch-values` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 184 | 定义 |  | `def:types` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 185 | 定理 |  | `thm:abelian-all-one-dim` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 186 | 例 |  | `ex:Zn-irreducibles` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 187 | 命题 |  | `` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 188 | 注 |  | `thm:abelian-structure` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 189 | 定理 | 有限 Abel 群结构定理 | `thm:abelian-structure` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 190 | 引理 |  | `lem:tensor-of-irreducibles` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 191 | 定义 | 特征标的核 | `def:kernel-of-character` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 192 | 命题 |  | `prop:kernel-equality` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 193 | 引理 |  | `lem:kernel-of-direct-sum` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 194 | 定理 |  | `thm:normal-subgroup-as-kernel` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 195 | 推论 |  | `cor:simple-criterion` | 特征标 | notes/reptheory/chapters/ch06.tex |

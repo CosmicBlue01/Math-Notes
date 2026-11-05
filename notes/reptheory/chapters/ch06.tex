@@ -1032,3 +1032,501 @@ $\prod_k\lambda_k!$.
   h_3=\frac{4!}{1!\cdot1!\cdot3^1}=8,\quad
   h_4=\frac{4!}{2!\cdot2^2}=3 .
 \]
+
+对 $4$, $h_5=\dfrac{4!}{1!\cdot4}=6$. 结合前面所说, 可以写出如下表:
+\[
+\begin{array}{c|ccccc}
+  & 1\ (e) & 6\ (12) & 8\ (123) & 3\ (12)(34) & 6\ (1234)\\ \hline
+  \chi_1 & 1 & 1 & 1 & 1 & 1\\
+  \chi_2 & 1 & -1 & 1 & 1 & -1\\
+  \chi_3 & 2 & 0 & -1 & 2 & 0\\
+  \chi_4 & 3 & a & b & c & f\\
+  \chi_5 & 3 & -a & -b & d & -f
+\end{array}
+\]
+利用列正交关系可以进一步把未知量定出来. 由 $C_2$ 列,
+\[
+  1^2+(-1)^2+0^2+a^2+(-a)^2=\frac{24}{6}=4\ \Longrightarrow\ a=\pm1 .
+\]
+不妨令 $a=1$. 再由 $C_3$ 列得 $b=0$; 由 $C_5$ 列得 $f=\pm1$, 此时尚不能确定 $f$.
+\[
+  1+1+4+2c+3d=0\ \Longrightarrow\ c+d=-2 ;
+\]
+借由 $C_4$ 列, $1-1+0+c-d=0\ \Longrightarrow\ c=d$, 故 $c=d=-1$.
+最后由 $\chi_4$ 与 $\chi_1$ 的行正交关系,
+\[
+  1\cdot1\cdot3+6\cdot1\cdot1+8\cdot1\cdot0+3\cdot1\cdot(-1)+6\cdot1\cdot f=0
+  \ \Longrightarrow\ f=-1 .
+\]
+于是 $S_4$ 的特征标表如下:
+\[
+\begin{array}{c|ccccc}
+  & 1\ (e) & 6\ (12) & 8\ (123) & 3\ (12)(34) & 6\ (1234)\\ \hline
+  \chi_1 & 1 & 1 & 1 & 1 & 1\\
+  \chi_2 & 1 & -1 & 1 & 1 & -1\\
+  \chi_3 & 2 & 0 & -1 & 2 & 0\\
+  \chi_4 & 3 & 1 & 0 & -1 & -1\\
+  \chi_5 & 3 & -1 & 0 & -1 & 1
+\end{array}
+\]
+
+作为一种``担忧'', 我们注意到在 $S_4$ 时, 由多个平方之和为某个数,
+可能会陷入迷茫: 不知道如何选取恰当的 $n_i$. 为此需要一个观察.
+$S_3$ 中为 $1,1,2$; $S_4$ 中为 $1,1,2,3,3$, 而
+$1\mid6$, $2\mid6$; $1\mid24$, $2\mid24$, $3\mid24$. 于是猜测
+\[
+  \dim V_i \mid |G| .
+\]
+为此需要一些铺垫.
+
+\begin{definition}[中心化子]\label{def:centralizer}
+设 $G$ 为群, $g\in G$, 称 $Z_g=\{h\in G\mid hg=gh\}$ 为 $g$ 在 $G$ 中的中心化子.
+\end{definition}
+
+\begin{lemma}\label{lem:class-size-index}
+设 $C_g$ 为 $g$ 所在的共轭类, 则 $|C_g|=[G:Z_g]$.
+\end{lemma}
+
+\begin{proof}
+定义 $\varphi\colon G/Z_g\to C_g$, $xZ_g\mapsto xgx^{-1}$.
+首先说明 $\varphi$ 是良定义的: 若 $x_1Z_g=x_2Z_g$, 则 $x_2^{-1}x_1\in Z_g$, 于是
+$(x_2^{-1}x_1)g=g(x_2^{-1}x_1)$, 即 $x_1gx_1^{-1}=x_2gx_2^{-1}$.
+
+其次 $\varphi$ 是单射: 若 $\varphi(x_1Z_g)=\varphi(x_2Z_g)$, 则 $x_1gx_1^{-1}=x_2gx_2^{-1}$,
+故 $x_2^{-1}x_1\in Z_g$, 即 $x_1Z_g=x_2Z_g$.
+
+最后 $\varphi$ 是满射: 对任意 $c\in C_g$, 存在 $x\in G$ 使 $c=xgx^{-1}$,
+即 $c=\varphi(xZ_g)$.
+
+于是 $|C_g|=[G:Z_g]$.
+\end{proof}
+
+\begin{lemma}\label{lem:class-sum-integral}
+设 $G$ 为有限群, $\rho\colon G\to\mathrm{GL}_V$ 为不可约表示, 则
+$\dfrac{[G:Z_g]\,\chi_V(g)}{\chi_V(e)}$ 为代数整数.
+\end{lemma}
+
+\begin{proof}
+构造 $f=\sum_{h\in C_g}\rho(h)\in\operatorname{End}(V)$.
+断言 $f\in\operatorname{End}_G(V)$. 事实上, 对任意 $k\in G$,
+\[
+  f(k\cdot v)=\sum_{h}\rho(h)(k\cdot v)=\sum_{h}k\cdot(h\cdot v)
+  =k\cdot\sum_{h}h\cdot v=k\cdot f(v).
+\]
+由 Schur 引理, $f=\lambda\,\mathrm{Id}_V$, 故
+\[
+  \mathrm{Tr}(f)=\lambda\dim V=\lambda\,\chi_V(e).
+\]
+另一方面
+\[
+  \mathrm{Tr}(f)=\sum_{h\in C_g}\chi_V(h)=|C_g|\,\chi_V(g)
+  =[G:Z_g]\,\chi_V(g),
+\]
+故 $\lambda=\dfrac{[G:Z_g]\chi_V(g)}{\chi_V(e)}$.
+
+再说明 $\lambda$ 是代数整数. 由于 $\mathbb{C}G$ 作为正则表示可写为不可约表示的直和,
+对每个 $k\in G$, $k$ 在 $\mathbb{C}G$ 上对应的矩阵是置换矩阵, 从而是整数矩阵;
+于是 $\sum_{h\in C_g}\rho(h)$ 在某一组基下也是整数矩阵, 其特征值 $\lambda$ 为代数整数.
+\end{proof}
+
+\begin{theorem}[整除定理]\label{thm:degree-divides-order}
+设 $G$ 为有限群, $V$ 为 $G$ 的不可约表示, 则 $\dim V\mid |G|$.
+\end{theorem}
+
+\begin{proof}
+由 $1=(\chi_V,\chi_V)=\dfrac{1}{|G|}\sum_{g}\chi_V(g)\chi_V(g^{-1})$ 得
+\[
+  |G|=\sum_{g\in G}\chi_V(g)\chi_V(g^{-1}) .
+\]
+按共轭类合并, 并除以 $\chi_V(e)$,
+\[
+  \frac{|G|}{\chi_V(e)}
+  =\sum_{i}\frac{[G:Z_{g_i}]\,\chi_V(g_i)}{\chi_V(e)}\,\chi_V(g_i^{-1}).
+\]
+由 Lemma \ref{lem:class-sum-integral}, 右端每一项都是代数整数之积, 故右端为代数整数,
+即 $\dfrac{|G|}{\chi_V(e)}$ 为代数整数. 又它是有理数, 故为整数, 即 $\dim V\mid|G|$.
+\end{proof}
+
+下面会出现这样的问题: 既然特征标表反映了群的特点, 能否由表反过来读出群的信息?
+很遗憾, 这是不可以的. 看下面两个例子.
+
+\noindent\textbf{例.} 二面体群
+$D_8=\{x,y\mid x^4=y^2=1,\ yxy=x^{-1}\}$.
+首先 $D_8=\{1,x,x^2,x^3,y,xy,x^2y,x^3y\}$, 作为说明:
+$yx=x^{-1}y=x^3y$, $yx^2=x^2y$, $yx^3=xy$.
+共轭类为
+\[
+  C_1=\{1\},\quad C_2=\{x,x^3\},\quad C_3=\{x^2\},\quad
+  C_4=\{y,x^2y\},\quad C_5=\{xy,x^3y\}.
+\]
+$|D_8|=8$, 已知 $n_1=1$, 故 $n_2^2+n_3^2+n_4^2+n_5^2=7$, 且 $n_i\mid 8$,
+$n_i\le 2$, 于是 $n_2=n_3=n_4=1$, $n_5=2$. 可以先将特征标表写成下表:
+\[
+\begin{array}{c|ccccc}
+  & 1 & 2 & 1 & 2 & 2\\
+  & 1 & x & x^2 & y & xy\\ \hline
+  \chi_1 & 1 & 1 & 1 & 1 & 1\\
+  \chi_2 & 1 & & & & \\
+  \chi_3 & 1 & & & & \\
+  \chi_4 & 1 & & & & \\
+  \chi_5 & 2 & & & &
+\end{array}
+\]
+
+考虑 $D_8$ 的中心 $Z(D_8)=\{1,x^2\}$, 则
+\[
+  D_8/Z(D_8)=\bigl\{\{1,x^2\},\ \{x,x^3\},\ \{y,x^2y\},\ \{xy,x^3y\}\bigr\}.
+\]
+四阶群只有四阶循环群 $\mathbb{Z}_4$ 与 Klein 四元群 $\mathbb{Z}_2\times\mathbb{Z}_2$ 两种.
+由元素的阶可知
+\[
+  D_8/Z(D_8)\cong\mathbb{Z}_2\times\mathbb{Z}_2=\{1,\bar x,\bar y,\bar x\bar y\},
+\]
+其中 $\{1,x^2\}\mapsto1$, $\{x,x^3\}\mapsto\bar x$, $\{y,x^2y\}\mapsto\bar y$,
+$\{xy,x^3y\}\mapsto\bar x\bar y$.
+
+先考虑 $\mathbb{Z}_2\times\mathbb{Z}_2$ 的特征标表:
+\[
+\begin{array}{c|cccc}
+  & 1 & 1 & 1 & 1\\
+  & 1 & \bar x & \bar y & \bar x\bar y\\ \hline
+  \chi_1 & 1 & 1 & 1 & 1\\
+  \chi_2 & 1 & 1 & -1 & -1\\
+  \chi_3 & 1 & -1 & 1 & -1\\
+  \chi_4 & 1 & -1 & -1 & 1
+\end{array}
+\]
+注意到该群中除 $1$ 外的元素都是 $2$ 阶的, 故 $\chi(g)$ 只能取 $\pm1$. 由行、列正交关系
+可补完全表; 再由商群的办法得到
+\[
+\begin{array}{c|ccccc}
+  & 1 & 2 & 1 & 2 & 2\\
+  & 1 & x & x^2 & y & xy\\ \hline
+  \chi_1 & 1 & 1 & 1 & 1 & 1\\
+  \chi_2 & 1 & 1 & 1 & -1 & -1\\
+  \chi_3 & 1 & -1 & 1 & 1 & -1\\
+  \chi_4 & 1 & -1 & 1 & -1 & 1\\
+  \chi_5 & 2 & a & b & c & d
+\end{array}
+\]
+余下的 $\chi_5$ 用列正交关系补全即可: $b=-2$, $a=c=d=0$. 完整表为
+\[
+\begin{array}{c|ccccc}
+  & 1 & 2 & 1 & 2 & 2\\
+  & 1 & x & x^2 & y & xy\\ \hline
+  \chi_1 & 1 & 1 & 1 & 1 & 1\\
+  \chi_2 & 1 & 1 & 1 & -1 & -1\\
+  \chi_3 & 1 & -1 & 1 & 1 & -1\\
+  \chi_4 & 1 & -1 & 1 & -1 & 1\\
+  \chi_5 & 2 & 0 & -2 & 0 & 0
+\end{array}
+\]
+
+作一个简单说明: $V_5$ 本质上是自然表示,
+\[
+  x\mapsto\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad
+  y\mapsto\begin{pmatrix}1&0\\0&-1\end{pmatrix},
+\]
+即 $x$ 是逆时针旋转 $90^\circ$, $y$ 是关于 $x$ 轴的反射. 由
+$V_5\otimes V_5=\bigoplus_k V_k^{(N_{55}^k)}$ 与
+$N_{ij}^k=(\chi_k,\chi_i\chi_j)=\dfrac{1}{|G|}\sum_g\chi_k(g)\chi_i(g)\chi_j(g)$ 得
+\[
+  N_{55}^1=\frac18(1\cdot1\cdot4+1\cdot1\cdot4)=1,\quad
+  N_{55}^2=\frac18(1\cdot1\cdot4+1\cdot1\cdot4)=1,
+\]
+\[
+  N_{55}^3=N_{55}^4=1,\quad
+  N_{55}^5=\frac18\bigl(2\cdot2\cdot4+1\cdot(-2)\cdot4\bigr)=0 .
+\]
+
+因此 $V_5\otimes V_5=V_1\oplus V_2\oplus V_3\oplus V_4$.
+
+\noindent\textbf{例.} 四元数群
+$Q_8=\{x,y\mid x^4=y^4=1,\ x^2=y^2,\ xy=y^2x^3\}$.
+首先 $Q_8=\{1,x,x^2,x^3,y,xy,x^2y,x^3y\}$, 共轭类为
+\[
+  C_1=\{1\},\ C_2=\{x,x^3\},\ C_3=\{x^2\},\ C_4=\{y,x^2y\},\ C_5=\{xy,x^3y\}.
+\]
+同样 $Z(Q_8)=\{1,x^2\}$,
+\[
+  Q_8/Z(Q_8)=\bigl\{\{1,x^2\},\{x,x^3\},\{y,x^2y\},\{xy,x^3y\}\bigr\}
+  \cong\mathbb{Z}_2\times\mathbb{Z}_2,
+\]
+于是 $Q_8$ 的特征标表与 $D_8$ 的完全相同:
+\[
+\begin{array}{c|ccccc}
+  & 1 & 2 & 1 & 2 & 2\\
+  & 1 & x & x^2 & y & xy\\ \hline
+  \chi_1 & 1 & 1 & 1 & 1 & 1\\
+  \chi_2 & 1 & 1 & 1 & -1 & -1\\
+  \chi_3 & 1 & -1 & 1 & 1 & -1\\
+  \chi_4 & 1 & -1 & 1 & -1 & 1\\
+  \chi_5 & 2 & 0 & -2 & 0 & 0
+\end{array}
+\]
+但 $D_8$ 中 $4$ 阶元只有 $x,x^3$, 而 $Q_8$ 中 $4$ 阶元有 $x,x^3,y,xy,x^2y,x^3y$,
+故 $D_8\ncong Q_8$. 也就是说, 特征标表并不能决定群.
+
+同样给出 $Q_8$ 的二维表示:
+\[
+  x\mapsto\begin{pmatrix}i&0\\0&-i\end{pmatrix},\qquad
+  y\mapsto\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
+  xy\mapsto\begin{pmatrix}0&i\\-i&0\end{pmatrix}.
+\]
+
+最后, 作为本节的一点补充内容 (为书写方便, 此部分的证明一概略去):
+先回顾一些有助于理解特征标表的方法与抽象代数的知识.
+
+\begin{definition}[导群]\label{def:commutator-subgroup}
+设 $G$ 为群, 称 $G'=\langle[g,h]=ghg^{-1}h^{-1}\mid g,h\in G\rangle$ 为 $G$ 的导群.
+\end{definition}
+
+\begin{lemma}\label{lem:abelian-quotient}
+$G/G'$ 为 Abel 群.
+\end{lemma}
+
+\begin{theorem}\label{thm:one-dim-count}
+设 $G$ 为有限群, 则
+\[
+  \bigl|\{V\mid V\ \text{为}\ G\ \text{的不可约表示},\ \dim V=1\}\bigr|=|G/G'|.
+\]
+\end{theorem}
+
+\begin{corollary}\label{cor:Sn-one-dim}
+设 $n\ge3$, $G=S_n$, 则 $G'=A_n$, 于是 $S_n$ 的一维不可约表示只有 $2$ 个.
+\end{corollary}
+
+此前我们有 $n_i\mid|G|$, 下面给出更强的结论:
+
+\begin{theorem}\label{thm:degree-divides-center-quotient}
+设 $G$ 为有限群, $n_i$ 为不可约表示的维数, 则
+\[
+  n_i\mid |G/Z(G)|,\qquad n_i^2\le |G/Z(G)|.
+\]
+\end{theorem}
+
+\begin{theorem}\label{thm:row-column-sums}
+特征标表中任意一列元素之和是整数; 相反地, 任意一行元素之和是非负整数.
+\end{theorem}
+
+下面这个定理更加强大, 可由非平凡的一维特征标与已知的不可约特征标得到新的一行.
+
+\begin{theorem}\label{thm:one-dim-times-irreducible}
+设 $\chi_0$ 为一个一维特征标, $\chi$ 为一个不可约特征标, 则 $\chi_0\chi$ 也不可约.
+\end{theorem}
+
+最后再引入一个定义.
+
+\begin{definition}[Frobenius--Schur 指标]\label{def:fs-indicator}
+设 $G$ 为群, $V$ 为 $G$ 的一个不可约复表示, $\chi$ 为其特征标, 称
+\[
+  \mathrm{FSch}(V)=\frac{1}{|G|}\sum_{g\in G}\chi(g^2)
+\]
+为表示 $V$ 的 Frobenius--Schur 指标.
+\end{definition}
+
+\begin{theorem}\label{thm:fsch-values}
+$\mathrm{FSch}(V)$ 只能取 $-1,0,1$ 三个值, 且
+\begin{enumerate}
+  \item 若 $\mathrm{FSch}(V)=1$, 则 $\chi$ 取实值, 且 $V$ 可实现为一个不可约实表示,
+        此时 $V\cong V^*$;
+  \item 若 $\mathrm{FSch}(V)=0$, 则 $\chi$ 不取实值 (存在 $g$ 使 $\chi(g)\in\mathbb{C}\setminus\mathbb{R}$),
+        此时 $V\ncong V^*$;
+  \item 若 $\mathrm{FSch}(V)=-1$, 则 $\chi$ 取实值, 但 $V$ 不可实现为不可约实表示,
+        此时 $V\cong V^*$.
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}\label{def:types}
+称 $V$ 是实型 (real type) 的, 若 $\mathrm{FSch}(V)=1$; 称 $V$ 是复型 (complex type)
+的, 若 $\mathrm{FSch}(V)=0$; 称 $V$ 是四元数型 (quaternionic type) 的,
+若 $\mathrm{FSch}(V)=-1$.
+\end{definition}
+
+\subsection{Abel 群的表示}
+
+前面的内容中提到, 一维不可约表示的个数恰好等于 $|G/G'|$;
+而若 $G$ 为 Abel 群, 则 $G'=\{e\}$, $|G/G'|=|G|$. 于是有下面的定理.
+
+\begin{theorem}\label{thm:abelian-all-one-dim}
+设 $G$ 为有限群, 则 $G$ 为 Abel 群当且仅当 $G$ 的所有不可约表示都是一维的.
+\end{theorem}
+
+\begin{proof}
+($\Rightarrow$) 若 $G$ 为 Abel 群, 则对任意 $g,h\in G$ 有 $h^{-1}gh=g$,
+故 $|C_g|=1$, 即 $G$ 的共轭类有 $|G|$ 个. 又
+\[
+  n_1^2+\cdots+n_{|G|}^2=|G|,
+\]
+故所有 $n_i=1$, 即不可约表示都是一维的.
+
+($\Leftarrow$) 若所有不可约表示都是一维的, 则
+$|G|=1+1+\cdots+1=s$, 即 $G$ 有 $|G|$ 个共轭类, 故每个共轭类只含一个元素,
+从而 $G$ 为 Abel 群.
+\end{proof}
+
+\begin{example}\label{ex:Zn-irreducibles}
+考虑 $\mathbb{Z}_n=\langle g\rangle$, 其中 $g^n=1$. 令 $\xi_n=e^{2\pi i/n}$, 定义
+\[
+  \rho_j\colon\mathbb{Z}_n\to\mathbb{C}^*,\qquad g\mapsto\xi_n^{\,j}\qquad(0\le j\le n-1).
+\]
+显然 $\rho_j$ 为 $\mathbb{Z}_n$ 的一个不可约表示.
+\end{example}
+
+\begin{proposition}
+若 $j\ne j'$, 则 $\rho_j\ne\rho_{j'}$.
+\end{proposition}
+
+\begin{proof}
+$\rho_j(g)=\xi_n^{\,j}$, $\rho_{j'}(g)=\xi_n^{\,j'}$, 而 $\xi_n^{\,j}\ne\xi_n^{\,j'}$,
+故 $\rho_j\ne\rho_{j'}$.
+\end{proof}
+
+于是我们找到了 $\mathbb{Z}_n$ 的 $n$ 个不可约表示. 记
+$\widehat{\mathbb{Z}}_n=\{\rho_0,\rho_1,\dots,\rho_{n-1}\}$. 注意
+\[
+  (\rho_j\cdot\rho_{j'})(g)=\rho_j(g)\rho_{j'}(g)
+  =\xi_n^{\,j}\xi_n^{\,j'}=\xi_n^{\,j+j'}=\rho_{j+j'}(g),
+\]
+不难发现 $\widehat{\mathbb{Z}}_n\cong\mathbb{Z}_n$, 即 $\widehat{\mathbb{Z}}_n\cong\mathbb{Z}_n$.
+
+\begin{remark}
+上面的例子告诉我们 $\widehat{\mathbb{Z}}_n\cong\mathbb{Z}_n$; 那么为什么要坚持写
+$\widehat{\mathbb{Z}}_n$, 而不直接写 $\mathbb{Z}_n$ 呢?
+\end{remark}
+
+事实上, 这一现象对更广泛的群也成立 (一般称为 Pontryagin 对偶).
+
+回忆 Abel 群结构定理.
+
+\begin{theorem}[有限 Abel 群结构定理]\label{thm:abelian-structure}
+设 $G$ 为有限 Abel 群, 则
+\[
+  G\cong\mathbb{Z}_{m_1}\times\mathbb{Z}_{m_2}\times\cdots\times\mathbb{Z}_{m_t}
+  \qquad(m_i\in\mathbb{N}).
+\]
+\end{theorem}
+
+我们希望给出有限 Abel 群的所有不可约表示. 构造如下: 设 $G_1,G_2$ 为两个群,
+$V_1,V_2$ 分别为 $G_1,G_2$ 的表示, 即 $\rho_i\colon G_i\to\mathrm{GL}_{V_i}$,
+定义 $\rho_1\#\rho_2\colon G_1\times G_2\to\mathrm{GL}_{V_1\otimes V_2}$ 为
+\[
+  (\rho_1\#\rho_2)(g_1,g_2)(v_1\otimes v_2)=(g_1\cdot v_1)\otimes(g_2\cdot v_2).
+\]
+这与之前的张量表示很像, 我们给出如下关系:
+\[
+  G\xrightarrow{\ \Delta\ }G\times G\xrightarrow{\ \rho_1\#\rho_2\ }
+  \mathrm{GL}_{V_1\otimes V_2},\qquad \Delta(g)=(g,g).
+\]
+
+\begin{lemma}\label{lem:tensor-of-irreducibles}
+若 $\rho_1,\rho_2$ 分别为 $G_1,G_2$ 的不可约表示, 则 $\rho_1\#\rho_2$ 不可约.
+\end{lemma}
+
+\begin{proof}
+只需证 $(\chi_{\rho_1\#\rho_2},\chi_{\rho_1\#\rho_2})=1$. 事实上,
+\begin{align*}
+  (\chi_{\rho_1\#\rho_2},\chi_{\rho_1\#\rho_2})
+  &=\frac{1}{|G_1||G_2|}\sum_{(g_1,g_2)\in G_1\times G_2}
+    \chi_{\rho_1\#\rho_2}(g_1,g_2)\,\chi_{\rho_1\#\rho_2}\bigl((g_1,g_2)^{-1}\bigr)\\
+  &=\frac{1}{|G_1||G_2|}\sum_{g_1\in G_1}\sum_{g_2\in G_2}
+    \chi_{\rho_1}(g_1)\chi_{\rho_2}(g_2)\,
+    \chi_{\rho_1}(g_1^{-1})\chi_{\rho_2}(g_2^{-1})\\
+  &=\Bigl(\frac{1}{|G_1|}\sum_{g_1}\chi_{\rho_1}(g_1)\chi_{\rho_1}(g_1^{-1})\Bigr)
+    \Bigl(\frac{1}{|G_2|}\sum_{g_2}\chi_{\rho_2}(g_2)\chi_{\rho_2}(g_2^{-1})\Bigr)=1 .
+\end{align*}
+\end{proof}
+
+由这个引理, 我们就给出了 Abel 群 $G$ 的所有不可约表示:
+\[
+  \Bigl\{\,\rho_{1,j_1}\#\,\rho_{2,j_2}\#\cdots\#\,\rho_{t,j_t}
+  \ \Bigm|\ 0\le j_k\le m_k-1\,\Bigr\},
+\]
+其中 $\rho_{k,j}$ 为 $\mathbb{Z}_{m_k}$ 的不可约表示.
+
+\subsection{特征标表的应用}
+
+\begin{definition}[特征标的核]\label{def:kernel-of-character}
+设 $\rho\colon G\to\mathrm{GL}_V$ 为一个表示, 记
+\[
+  \ker\chi_\rho=\{g\in G\mid \chi_\rho(g)=\chi_\rho(e)\},
+\]
+称为特征标 $\chi_\rho$ 的核.
+\end{definition}
+
+\begin{proposition}\label{prop:kernel-equality}
+$\ker\chi_\rho=\ker\rho$.
+\end{proposition}
+
+\begin{proof}
+(1) $\ker\chi_\rho\subseteq\ker\rho$. 设 $g\in\ker\chi_\rho$, 则
+$\chi_\rho(g)=\operatorname{Tr}(\rho(g))=\dim V=n$. 设 $g$ 的阶为 $m$, 即 $g^m=1$,
+则 $\rho(g)^m=I$, 故 $\rho(g)$ 的特征值 $\lambda_1,\dots,\lambda_n$ 满足
+$\lambda_i^m=1$, 从而 $|\lambda_i|=1$. 又
+\[
+  \operatorname{Tr}(\rho(g))=\sum_{i=1}^{n}\lambda_i=\dim V=n,
+\]
+两边取实部得 $\sum_i\operatorname{Re}\lambda_i=n$; 而 $|\lambda_i|=1$ 给出
+$\operatorname{Re}\lambda_i\le1$, 故每个 $\operatorname{Re}\lambda_i=1$, 即 $\lambda_i=1$.
+于是 $\rho(g)=I$, 即 $g\in\ker\rho$.
+
+(2) $\ker\rho\subseteq\ker\chi_\rho$. 设 $g\in\ker\rho$, 则 $\rho(g)=I$,
+故 $\chi_\rho(g)=\dim V=\chi_\rho(e)$, 即 $g\in\ker\chi_\rho$.
+
+综上 $\ker\chi_\rho=\ker\rho$.
+\end{proof}
+
+我们希望能由特征标表读出 $G$ 的所有正规子群, 为此还需要下面的引理.
+
+\begin{lemma}\label{lem:kernel-of-direct-sum}
+若 $\rho$ 可写为不可约表示的直和 $\rho=n_1\rho_1\oplus\cdots\oplus n_s\rho_s$, 则
+\[
+  \ker\rho=\bigcap_{n_i>0}\ker\rho_i .
+\]
+\end{lemma}
+
+\begin{proof}
+设 $g\in\ker\rho$, 则 $\rho(g)$ 为恒等变换; 而 $\rho$ 是各 $\rho_i$ 的直和,
+考察矩阵的直和分解 (回忆 \S 3.2), 即知 $g\in\ker\rho_i$ 对每个 $n_i>0$ 成立.
+反之亦然.
+\end{proof}
+
+
+
+\begin{theorem}\label{thm:normal-subgroup-as-kernel}
+设 $N\trianglelefteq G$ 为任意正规子群, 则
+\[
+  N=\bigcap_{\substack{\chi\in\mathrm{Irr}\\ N\subseteq\ker\chi}}\ker\chi,
+\]
+其中 $\mathrm{Irr}$ 为 $G$ 的不可约特征标的全体.
+\end{theorem}
+
+\begin{proof}
+记 $\pi\colon G\to G/N$, 则 $N=\ker\pi$. 考虑 $G/N$ 的正则表示
+$\rho_{\mathrm{reg}}^{G/N}$, 它是忠实的. 于是
+\[
+  N=\ker\pi=\ker\bigl(\rho_{\mathrm{reg}}^{G/N}\circ\pi\bigr)
+  =\ker\chi_{\rho_{\mathrm{reg}}^{G/N}\circ\pi}.
+\]
+而 $\rho_{\mathrm{reg}}^{G/N}\circ\pi$ 是 $G$ 的表示, 可写为不可约表示的直和, 故由
+Lemma \ref{lem:kernel-of-direct-sum} 得
+\[
+  N=\bigcap_{\substack{\chi\in\mathrm{Irr}\\ N\subseteq\ker\chi}}\ker\chi .
+\]
+\end{proof}
+
+\begin{corollary}\label{cor:simple-criterion}
+$G$ 是单群当且仅当对每个 $\chi\in\mathrm{Irr}$ 都有 $\ker\chi=\{1\}$ 或 $G$.
+\end{corollary}
+
+\begin{proof}
+由 $\ker\chi_\rho$ 的定义可知 $\ker\chi_\rho$ 为 $G$ 的正规子群.
+
+($\Rightarrow$) 若 $G$ 为单群, 则 $G$ 的正规子群只有 $\{1\}$ 与 $G$, 故
+$\ker\chi_\rho$ 只能是 $\{1\}$ 或 $G$.
+
+($\Leftarrow$) 反设 $G$ 有非平凡正规子群 $N$. 由
+Theorem \ref{thm:normal-subgroup-as-kernel} 知 $N$ 是一些 $\ker\chi$ 的交, 而每个
+$\ker\chi$ 只能是 $\{1\}$ 或 $G$, 其交也只能是 $\{1\}$ 或 $G$, 与 $N$ 非平凡矛盾.
+故 $G$ 为单群.
+\end{proof}
