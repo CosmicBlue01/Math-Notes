@@ -11,7 +11,7 @@ notes/<course>/chapters/chNN.tex
 notes/<course>/.latexmkrc
 scan/<course>/                扫描件原件
 dist/<course>.pdf             发布用 PDF
-index/theorems.md|csv         自动生成，勿手改
+index/<course>.md|csv        每门课一份，自动生成，勿手改
 tools/make_index.py
 ```
 
@@ -98,6 +98,6 @@ style: 标题页与目录分页
 
 - [ ] 编译零报错，无 overfull 超过 3pt
 - [ ] 目录页码正确（编译两遍）
-- [ ] 每个定理/定义都有 `\label`，`index/theorems.md` 条目数对得上
+- [ ] 每个定理/定义都有 `\label`，`index/<course>.md` 条目数对得上
 - [ ] 没有中文标点、没有 `Q:`、没有孤行（单字或单句独占一行）
 - [ ] 数学验算：每个「显然」「不难」都问一遍是否真的成立

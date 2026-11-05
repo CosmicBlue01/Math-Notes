@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""扫描 notes/ 下的定理类环境，生成可检索的 index/theorems.md 与 .csv。
+"""扫描 notes/<course>/ 下的定理类环境，每门课生成一份 index/<course>.md 与 .csv。
 用法： python tools/make_index.py
 """
 import csv
@@ -56,24 +56,28 @@ def scan(path: Path):
 
 
 def main():
-    rows = []
-    for p in sorted(SRC.rglob("*.tex")):
-        if p.name == "preamble.tex":
-            continue
-        rows += scan(p)
     OUT.mkdir(exist_ok=True)
+    # 一门课 = 一个带 main.tex 的子目录（跳过 common/ 等共用目录）
+    courses = sorted(p for p in SRC.iterdir() if p.is_dir() and (p / "main.tex").exists())
+    for course in courses:
+        rows = []
+        for p in sorted(course.rglob("*.tex")):
+            if p.name == "preamble.tex":
+                continue
+            rows += scan(p)
 
-    with (OUT / "theorems.csv").open("w", encoding="utf-8-sig", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["type", "title", "label", "section", "file", "text"])
-        w.writeheader()
-        w.writerows(rows)
+        with (OUT / f"{course.name}.csv").open("w", encoding="utf-8-sig", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=["type", "title", "label", "section", "file", "text"])
+            w.writeheader()
+            w.writerows(rows)
 
-    lines = ["# 定理索引", "", f"共 {len(rows)} 条，由 `tools/make_index.py` 自动生成。", "",
-             "| # | 类型 | 标题 | 标签 | 章节 | 文件 |", "|---|---|---|---|---|---|"]
-    for i, r in enumerate(rows, 1):
-        lines.append(f"| {i} | {r['type']} | {r['title']} | `{r['label']}` | {r['section']} | {r['file']} |")
-    (OUT / "theorems.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print(f"indexed {len(rows)} items -> index/theorems.md, index/theorems.csv")
+        lines = [f"# 定理索引 · {course.name}", "",
+                 f"共 {len(rows)} 条，由 `tools/make_index.py` 自动生成。", "",
+                 "| # | 类型 | 标题 | 标签 | 章节 | 文件 |", "|---|---|---|---|---|---|"]
+        for i, r in enumerate(rows, 1):
+            lines.append(f"| {i} | {r['type']} | {r['title']} | `{r['label']}` | {r['section']} | {r['file']} |")
+        (OUT / f"{course.name}.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+        print(f"indexed {len(rows):4d} items -> index/{course.name}.md, index/{course.name}.csv")
 
 
 if __name__ == "__main__":

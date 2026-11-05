@@ -12,9 +12,16 @@
 | `scan/reptheory/` | 手写原稿扫描件（留档，不参与编译） |
 | `inbox/` | 待处理文件暂存（不进版本库） |
 | `tools/make_index.py` | 扫描定理环境，生成索引 |
-| `index/theorems.md` | 定理索引（自动生成，可直接在网页看） |
-| `index/theorems.csv` | 同上，给脚本/Anki 用 |
+| `index/<course>.md` | 定理索引，每门课一份（自动生成，可直接在网页看） |
+| `index/<course>.csv` | 同上，给脚本/Anki 用 |
 | `dist/reptheory.pdf` | 最新编译产物 |
+
+目前收录两门课，各自独立编译、独立索引：
+
+| 课程 | 源码 | 索引 | 成品 |
+|---|---|---|---|
+| 表示论 | `notes/reptheory/` | `index/reptheory.md` | `dist/reptheory.pdf` |
+| 微分几何 | `notes/dg/` | `index/dg.md` | `dist/dg.pdf` |
 
 ## 编译
 

@@ -24,7 +24,7 @@ inbox/*
 !inbox/.gitkeep
 
 # 只有 dist/ 里的 PDF 进版本库
-notes/*.pdf
+notes/**/*.pdf
 .tmp/
 
 # 入站文件 (老师讲义等, 不入库)
