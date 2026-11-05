@@ -219,3 +219,52 @@
 引理,,lem:tensor-hom-dual,诱导表示,notes/reptheory/chapters/ch07.tex,.
 注,,,诱导表示,notes/reptheory/chapters/ch07.tex,"上述证明写得比较粗糙, 我们主要作如下几点补充说明. 首先是 与直和的作用: [ _ ( _ i I M_i, N ) _ i I _ (M_i,N). ] 定义 , ; 反向 , , 其中 . 直接验证可得 . 另一方面要说明: 有限直和"
 推论,,cor:frobenius-character,诱导表示,notes/reptheory/chapters/ch07.tex,", 其中 为 的表示的特征标, 为 的表示的特征标."
+定义,拓扑群,def:topological-group,紧群表示,notes/reptheory/chapters/ch08.tex,"称群 为拓扑群, 若 为 Hausdorff 空间; 群运算是连续的, 即 [ G G G, (g_1,g_2) g_1g_2, G G, g g^ -1 ] 都连续."
+注,,def:compact-group,紧群表示,notes/reptheory/chapters/ch08.tex,"在一般的拓扑群定义中不要求 一定是 Hausdorff 空间, 但在大多数情况下 一般默认 是 Hausdorff 的."
+定义,紧群,def:compact-group,紧群表示,notes/reptheory/chapters/ch08.tex,"称 为紧群, 若 为拓扑群且紧致."
+例,,ex:topological-groups,紧群表示,notes/reptheory/chapters/ch08.tex,"为拓扑群; 为拓扑群; 全矩阵空间 . 考虑 , 要说明的是: 赋于标准 (Euclid) 拓扑, 赋于 Frobenius 范数 [ |A |_F= a_ ij ^2 , ] 下诱导的度量拓扑. 我们说明 是同胚, 即 是双射且 均连续:"
+注,,prop:SOn-maximal,紧群表示,notes/reptheory/chapters/ch08.tex,"考虑 的连通性: 是不连通的. 只须取行列式函数 ; , , 像是不连通的, 显然 就不连通."
+命题,,prop:SOn-maximal,紧群表示,notes/reptheory/chapters/ch08.tex,是 的极大连通紧子群.
+定义,拓扑群同态,def:topological-hom,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为拓扑群, 称映射 为拓扑群同态, 若 为群同态; 是连续的."
+例,,ex:top-hom,紧群表示,notes/reptheory/chapters/ch08.tex,"为拓扑群同态: , 且 连续. 考虑 . 是单位圆周群, 且是紧群. 这是因为考虑 , , 则 , 而 为 中闭集, 故 闭; 而 显然有界, 故 紧. 考虑 , . 是群同态且连续, 故 是拓扑群同态. , 是闭集. 同时 也是开映射: "
+定理,拓扑群同态基本定理,thm:top-hom-fundamental,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为拓扑群同态, 若 是开映射, 则 是闭子群, 且有拓扑群同构 ."
+注,,def:haar,紧群表示,notes/reptheory/chapters/ch08.tex,"若 为拓扑群, 则 是闭的, 且 是开映射."
+定义,Haar 积分,def:haar,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为紧群, 若对定义在 上的每一个实值连续函数 都存在一个实数, 记为 , 满足 线性性: , , ; 正定性: 若 , , 则 , 且取等当且仅当 ; 规范性: ; 左不变性: , , ; 右不变性: , , ; 可逆性: , ; 则称"
+注,,thm:haar-existence,紧群表示,notes/reptheory/chapters/ch08.tex,"; 若 满足上述 , 则它已经称为 Haar 积分 (即其余条件自动成立)."
+定理,Haar,thm:haar-existence,紧群表示,notes/reptheory/chapters/ch08.tex,任一紧群上有且仅有一种方式建立 Haar 积分.
+例,,ex:haar-finite,紧群表示,notes/reptheory/chapters/ch08.tex,"有限群在离散拓扑下的 Haar 积分. 有限群 上的全体函数构成 (回顾 6.2), 则 , 即 满足 Haar 积分定义中的各个条件. 则 [ _G f_1(x) , x= f,f_1 =f(f_1). ] 由左不变性: ."
+命题,,def:complex-continuous,紧群表示,notes/reptheory/chapters/ch08.tex,.
+定义,,def:complex-continuous,紧群表示,notes/reptheory/chapters/ch08.tex,"上复值函数 , 其中 为实值函数. 若 都连续, 称 为连续复值函数."
+命题,,prop:haar-conjugate,紧群表示,notes/reptheory/chapters/ch08.tex,.
+定理,Fubini,thm:fubini-haar,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为紧群, 为两个变量 与 的连续实值函数, , , 则 [ _H ( _G f(x,y) , x ) y = _G ( _H f(x,y) , y ) x = _ G H f(z) , z . ]"
+注,,def:G-invariant-form,紧群表示,notes/reptheory/chapters/ch08.tex,记上述积分为 .
+定义,$G$-不变双线性型,def:G-invariant-form,紧群表示,notes/reptheory/chapters/ch08.tex,"设 上一个双线性函数 , 若对 [ g G, v_ 1,2 V, (g v_1, g v_2)=(v_1,v_2), ] 则称该双线性型是 -不变的."
+引理,,lem:invariant-form-orthogonal,紧群表示,notes/reptheory/chapters/ch08.tex,"若 上的 -不变双线性函数 还是内积, 则 保持内积不变, 即 为正交变换."
+定理,,thm:invariant-inner-product,紧群表示,notes/reptheory/chapters/ch08.tex,"若 上有 -不变的内积, 则 完全可约."
+命题,,prop:averaged-inner-product,紧群表示,notes/reptheory/chapters/ch08.tex,上总存在 -不变内积.
+定理,"Maschke, 有限群",thm:maschke-finite-real,紧群表示,notes/reptheory/chapters/ch08.tex,有限群的有限维实表示都是正交表示; 有限群的有限维复表示都是酉表示 (unitary representation).
+定义,,def:topological-rep,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为拓扑群, 称拓扑群同态 为 的一个 维表示."
+注,,thm:maschke-compact,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为一个 维线性空间, 则作为拓扑群 ; 也称 为一个 -模."
+定理,"Maschke, 紧群",thm:maschke-compact,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为紧群, 则 的有限维实表示都是正交表示; 的有限维复表示都是酉表示."
+定义,特征标,def:compact-character,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为紧群, 域为 , 设 为 的表示, 称 [ G , g ( (g)) ] 为 的一个特征标."
+注,,,紧群表示,notes/reptheory/chapters/ch08.tex,"是连续的. 事实上, 是连续的, 等价于 连续对一切 (称 为矩阵元); 又 是连续的. 由 [ (g^ -1 )= ( (g)^ -1 ) = ( ) = ( )= _ i (g) = . ]"
+定义,,def:compact-bilinear,紧群表示,notes/reptheory/chapters/ch08.tex,"定义紧群上的双线性函数: 对 , [ (f_1,f_2)= _G f_1(g) ,f_2(g^ -1 ) , g . ]"
+定理,正交关系,thm:compact-orthogonality,紧群表示,notes/reptheory/chapters/ch08.tex,"设 , , , , 并设 [ (g)=(a_ ij (g))_ n n , (g)=(b_ kl (g))_ m m . ] 若 , 则 , , ; 若 , 则 , , ."
+注,,thm:character-orthogonality-compact,紧群表示,notes/reptheory/chapters/ch08.tex,"对有限群, 我们有 [ : |G| _ g G a_ ij (g) (g) =0, : |G| _ g G a_ ij (g) (g) = n _ il _ jk . ]"
+定理,特征标的正交关系,thm:character-orthogonality-compact,紧群表示,notes/reptheory/chapters/ch08.tex,"设 , 为紧群 的两个不可约表示, 记其特征标分别为 , , 则 [ ( _ , _ )= 1, & , 0, & . ]"
+推论,,cor:compact-iso-char,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为紧群 的两个不可约表示, 则 [ U V _U= _V . ]"
+推论,,cor:compact-irreducible-test,紧群表示,notes/reptheory/chapters/ch08.tex,表示 不可约 .
+推论,,cor:compact-iso-general,紧群表示,notes/reptheory/chapters/ch08.tex,"任意两个有限维表示 , 则 [ U V _U= _V . ]"
+例,,ex:S1-reps,紧群表示,notes/reptheory/chapters/ch08.tex,"上连续函数 . 注意 是交换的, 故 的所有不可约表示 都是 维的. 记 [ _n S^1 ^ , e^ i e^ in , n , ] 则 为 的所有不可约表示. 事实上, 上所有连续函数都已被 的线性组合逼近."
+定义,完备系,def:complete-system,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为一个紧群, 为 中的一个子集. 称 为完备的, 若对 上任一连续函数 和 , 均存在复数 , , 使得 [ |f(h)- _ i=1 ^ n a_if_i(h) |< , h G . ] 进一步, 若 , 其中 , , 称 为正交完备"
+定理,Peter--Weyl,thm:peter-weyl,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为紧群. 上所有互不等价的有限维不可约表示的矩阵元全体, 构成一个 的正交完备系; 上所有不可约特征标全体, 构成一个 的标准正交完备系."
+注,,prop:SU2-form,紧群表示,notes/reptheory/chapters/ch08.tex,标准即指 .
+命题,,prop:SU2-form,紧群表示,notes/reptheory/chapters/ch08.tex,.
+注,,,紧群表示,notes/reptheory/chapters/ch08.tex,"令 , 则 就是 Hamilton 四元数代数 ."
+引理,,lem:SU2-norm-one,紧群表示,notes/reptheory/chapters/ch08.tex,.
+命题,,prop:SU2-S3,紧群表示,notes/reptheory/chapters/ch08.tex,.
+定理,,thm:Vn-irreducible,紧群表示,notes/reptheory/chapters/ch08.tex,为 的不可约表示.
+引理,,lem:Vn-inequivalent,紧群表示,notes/reptheory/chapters/ch08.tex,( ).
+引理,Stone--Weierstrass,lem:stone-weierstrass,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为 上的连续且满足 的函数全体, 令 , 则 在 中稠密."
+定理,,thm:SU2-classification,紧群表示,notes/reptheory/chapters/ch08.tex,的全部不可约表示为 .
+注,,,紧群表示,notes/reptheory/chapters/ch08.tex,.

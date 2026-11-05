@@ -1,0 +1,726 @@
+\section{紧群表示}
+
+此处不再对拓扑 (特别是点集拓扑) 内容作额外回顾, 后续必要时再叙述.
+
+\subsection{拓扑群}
+
+\begin{definition}[拓扑群]\label{def:topological-group}
+称群 $G$ 为拓扑群, 若
+\begin{enumerate}
+  \item $G$ 为 Hausdorff 空间;
+  \item 群运算是连续的, 即
+  \[
+    G\times G\longrightarrow G,\quad (g_1,g_2)\longmapsto g_1g_2,
+    \qquad
+    G\longrightarrow G,\quad g\longmapsto g^{-1}
+  \]
+  都连续.
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+在一般的拓扑群定义中不要求 $G$ 一定是 Hausdorff 空间, 但在大多数情况下
+一般默认 $G$ 是 Hausdorff 的.
+\end{remark}
+
+\begin{definition}[紧群]\label{def:compact-group}
+称 $G$ 为紧群, 若 $G$ 为拓扑群且紧致.
+\end{definition}
+
+\begin{example}\label{ex:topological-groups}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+  \item $(\mathbb{R},+)$ 为拓扑群;
+  \item $(\mathbb{R}^{\times},\cdot)$ 为拓扑群;
+  \item 全矩阵空间 $M_n(\mathbb{R})$. 考虑 $f\colon M_n(\mathbb{R})\to\mathbb{R}^{n^2}$,
+  要说明的是: $\mathbb{R}^{n^2}$ 赋于标准 (Euclid) 拓扑, $M_n(\mathbb{R})$ 赋于
+  Frobenius 范数
+  \[
+    \|A\|_F=\sqrt{\sum_{i,j}a_{ij}^2},
+  \]
+  下诱导的度量拓扑. 我们说明 $f$ 是同胚, 即 $f$ 是双射且 $f,f^{-1}$ 均连续:
+  对 $\varepsilon>0$, 取 $A_0\in M_n(\mathbb{R})$, 则对任意 $A\in M_n(\mathbb{R})$,
+  \[
+    d(A,A_0)=\|A-A_0\|_F=\sqrt{\sum_{i,j}(a_{ij}-a_{ij}^{(0)})^2}=d\bigl(f(A),f(A_0)\bigr),
+  \]
+  故 $d(A,A_0)<\varepsilon\iff d(f(A),f(A_0))<\varepsilon$, 即 $f$ 连续;
+  类似可证 $f^{-1}$ 连续. 故 $f$ 为同胚, 即 $M_n(\mathbb{R})\cong\mathbb{R}^{n^2}$.
+
+  其次, 行列式函数 $\det\colon M_n(\mathbb{R})\to\mathbb{R}$ 是连续的, 这是显然的,
+  因为 $\det$ 本质为 $n^2$ 元多项式函数.
+
+  $M_n(\mathbb{R})$ 当然不是群, 为此我们着眼于其可逆矩阵上.
+  $\mathrm{GL}_n(\mathbb{R})$ 为拓扑群:
+  $\mathrm{GL}_n(\mathbb{R})$ 的群结构是自然的, 拓扑结构继承 $M_n(\mathbb{R})$ 的子空间拓扑.
+  这可以作为一个补充说明: $\mathrm{GL}_n(\mathbb{R})$ 为 $M_n(\mathbb{R})$ 中的开集
+  (由于 $\mathrm{GL}_n(\mathbb{R})=\det^{-1}(\mathbb{R}\setminus\{0\})$),
+  故 $\mathrm{GL}_n(\mathbb{R})$ 上乘法连续. 下面看取逆: 对 $A\in\mathrm{GL}_n(\mathbb{R})$,
+  \[
+    A^{-1}=\frac{1}{\det(A)}A^*,
+  \]
+  其中 $A^*$ 的每个元素都是一个行列式, 故 $A\mapsto A^*$ 连续, 从而 $A\mapsto A^{-1}$ 连续.
+  于是 $\mathrm{GL}_n(\mathbb{R})$ 为拓扑群.
+
+  下面看 $\mathrm{SL}_n(\mathbb{R})$: $\mathrm{SL}_n(\mathbb{R})$ 是群, 且
+  $\mathrm{SL}_n(\mathbb{R})=\det^{-1}(1)$ 是 $M_n(\mathbb{R})$ 中的闭集,
+  仍赋成 $\mathrm{GL}_n(\mathbb{R})$ 的子空间拓扑, 从而 $\mathrm{SL}_n(\mathbb{R})$ 为拓扑空间;
+  类似可以证明 $\mathrm{SL}_n(\mathbb{R})$ 为拓扑群.
+  而我们也有 $\mathrm{GL}_n(\mathbb{C})$, $\mathrm{SL}_n(\mathbb{C})$ 也是拓扑群.
+
+  \item $O(n)=\{A\in\mathrm{GL}_n(\mathbb{R})\mid AA^{\mathrm{T}}=I_n\}$ (正交群),
+  $U(n)=\{A\in\mathrm{GL}_n(\mathbb{C})\mid AA^{\mathrm{T}}=I_n\}$ (酉群),
+  都是拓扑群, 这一点我们就不证了. 我们说 $O(n)$, $U(n)$ 都是紧的.
+\end{enumerate}
+\end{example}
+
+我们先说明 $\mathrm{GL}_n(\mathbb{R})$, $\mathrm{SL}_n(\mathbb{R})$, $\mathrm{GL}_n(\mathbb{C})$,
+$\mathrm{SL}_n(\mathbb{C})$ 都不紧.
+
+作为 $\mathbb{R}^{n^2}$ 的子空间拓扑, Euclid 拓扑中紧致即为有界闭.
+而 $\mathrm{GL}_n$ 的行列式无界, 因此不紧.
+对 $\mathrm{SL}_n$, 需要利用 Frobenius 范数: 考虑
+\[
+  A_k=\operatorname{diag}\Bigl(k,\dots,k,\frac1k,\dots,\frac1k\Bigr),
+\]
+则 $|A_k|=1$, 而
+\[
+  \|A_k\|_F=\sqrt{k^2+\cdots+k^2+\frac{1}{k^2}+\cdots+\frac{1}{k^2}}\xrightarrow{k\to\infty}\infty,
+\]
+因此 $\mathrm{SL}_n$ 也不是紧的.
+
+$O(n)$, $U(n)$ 闭是显然的, 下面我们只考虑有界性. 为方便, 以 $O(n)$ 为例.
+设 $A=(a_{ij})_{n\times n}$, $A^{\mathrm{T}}=(a_{ji})_{n\times n}$. 由 $A\cdot A^{\mathrm{T}}=I_n$ 知
+$A\cdot A^{\mathrm{T}}=\operatorname{diag}\Bigl(\sum_{j}a_{1j}^2,\ \dots,\ \sum_{j}a_{nj}^2\Bigr)$,
+故 $\sum_j a_{ij}^2=1$ 对每个 $i$ 成立, 于是 $|a_{ij}|\le1$, 从而 $O(n)$ 有界.
+故 $O(n)$ 为紧群.
+
+\begin{remark}
+考虑 $O(n)$ 的连通性: $O(n)$ 是不连通的. 只须取行列式函数
+$\det\colon O(n)\to\mathbb{R}^{\times}$; $\det A=\pm1$, $A\in O(n)$, 像是不连通的,
+显然 $O(n)$ 就不连通.
+\end{remark}
+
+\begin{proposition}\label{prop:SOn-maximal}
+$\mathrm{SO}(n)$ 是 $\mathrm{GL}_n(\mathbb{R})$ 的极大连通紧子群.
+\end{proposition}
+
+\subsection{拓扑群同态}
+
+\begin{definition}[拓扑群同态]\label{def:topological-hom}
+设 $G_{1,2}$ 为拓扑群, 称映射 $f\colon G_1\to G_2$ 为拓扑群同态, 若
+\begin{enumerate}
+  \item $f\colon G_1\to G_2$ 为群同态;
+  \item $f$ 是连续的.
+\end{enumerate}
+\end{definition}
+
+\begin{example}\label{ex:top-hom}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+  \item $\det\colon\mathrm{GL}_n(\mathbb{C})\to\mathbb{R}^{\times}$ 为拓扑群同态:
+  $\det(AB)=\det(A)\det(B)$, 且 $\det$ 连续.
+  \item 考虑 $S^1=\{e^{i\theta}\mid0\le\theta<2\pi\}$.
+  $S^1$ 是单位圆周群, 且是紧群. 这是因为考虑 $f\colon\mathbb{C}\to\mathbb{R}$,
+  $z\mapsto|z|$, 则 $S^1=f^{-1}(\{1\})$, 而 $\{1\}$ 为 $\mathbb{R}$ 中闭集, 故 $S^1$ 闭;
+  而 $S^1$ 显然有界, 故 $S^1$ 紧.
+
+  考虑 $\pi\colon(\mathbb{R},+)\to S^1$, $a\mapsto e^{2\pi ia}$.
+  $\pi$ 是群同态且连续, 故 $\pi$ 是拓扑群同态. $\ker\pi=\mathbb{Z}$, 是闭集.
+  同时 $\pi$ 也是开映射: 想象 $\pi$ 把实数轴``缠绕''在 $S^1$ 上, 无迁一段长度为 $1$ 的
+  区间在 $S^1$ 上恰好绕一圈. 这告诉我们一个有趣的结果:
+  \[
+    \mathbb{R}/\mathbb{Z}\cong S^1 .
+  \]
+  \item 仍考虑 $S^1$: 映射 $\rho_n\colon S^1\to\mathbb{C}^{\times}$,
+  $e^{2\pi i\theta}\mapsto e^{n\cdot2\pi i\theta}$ ($0\le\theta\le1$) 为拓扑群同态.
+\end{enumerate}
+\end{example}
+
+\begin{theorem}[拓扑群同态基本定理]\label{thm:top-hom-fundamental}
+设 $f\colon G_1\to G_2$ 为拓扑群同态, 若 $f$ 是开映射, 则 $\ker f\trianglelefteq G_1$ 是闭子群,
+且有拓扑群同构 $G_1/\ker f\cong\operatorname{Im}f$.
+\end{theorem}
+
+\begin{remark}
+若 $G/H$ 为拓扑群, 则 $H$ 是闭的, 且 $G\to G/H$ 是开映射.
+\end{remark}
+
+\subsection{Haar 积分}
+
+\begin{definition}[Haar 积分]\label{def:haar}
+设 $G$ 为紧群, 若对定义在 $G$ 上的每一个实值连续函数 $f$ 都存在一个实数, 记为
+$\int_G f(x)\,\mathrm{d}x$, 满足
+\begin{enumerate}
+  \item 线性性: $\displaystyle\int_G(\alpha f+\beta g)(x)\,\mathrm{d}x
+        =\alpha\int_G f(x)\,\mathrm{d}x+\beta\int_G g(x)\,\mathrm{d}x$,
+        $\alpha,\beta\in\mathbb{R}$, $f,g\in C(G,\mathbb{R})$;
+  \item 正定性: 若 $\forall x\in G$, $f(x)\ge0$, 则 $\displaystyle\int_G f(x)\,\mathrm{d}x\ge0$,
+        且取等当且仅当 $f=0$;
+  \item 规范性: $\displaystyle\int_G 1\,\mathrm{d}x=1$;
+  \item 左不变性: $\forall f\in C(G,\mathbb{R})$, $\forall g\in G$,
+        $\displaystyle\int_G f(gx)\,\mathrm{d}x=\int_G f(x)\,\mathrm{d}x$;
+  \item 右不变性: $\forall f\in C(G,\mathbb{R})$, $\forall g\in G$,
+        $\displaystyle\int_G f(xg)\,\mathrm{d}x=\int_G f(x)\,\mathrm{d}x$;
+  \item 可逆性: $\forall f\in C(G,\mathbb{R})$, $\displaystyle\int_G f(x)\,\mathrm{d}x
+        =\int_G f(x^{-1})\,\mathrm{d}x$;
+\end{enumerate}
+则称 $G$ 上存在一个 Haar 积分.
+\end{definition}
+
+\begin{remark}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+  \item $\displaystyle\int_G -\,\mathrm{d}x\in\bigl(C(G,\mathbb{R})\bigr)^*$;
+  \item 若 $\displaystyle\int_G-\,\mathrm{d}x\in\bigl(C(G,\mathbb{R})\bigr)^*$ 满足上述
+        $1^\circ,2^\circ,3^\circ,4^\circ$, 则它已经称为 Haar 积分 (即其余条件自动成立).
+\end{enumerate}
+\end{remark}
+
+\begin{theorem}[Haar]\label{thm:haar-existence}
+任一紧群上有且仅有一种方式建立 Haar 积分.
+\end{theorem}
+
+\begin{example}\label{ex:haar-finite}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+  \item 有限群在离散拓扑下的 Haar 积分.
+  有限群 $G$ 上的全体函数构成 $(\mathbb{R}G)^*$ (回顾 \S 6.2), 则
+  $\int_G-\,\mathrm{d}x\in\bigl((\mathbb{R}G)^*\bigr)^*\cong\mathbb{R}G$,
+  即 $\exists f\in\mathbb{R}G$ 满足 Haar 积分定义中的各个条件. 则
+  \[
+    \int_G f_1(x)\,\mathrm{d}x=\langle f,f_1\rangle=f(f_1).
+  \]
+  由左不变性: $\displaystyle\int_G f(gx)\,\mathrm{d}x=\int_G f(x)\,\mathrm{d}x
+  \Longrightarrow f(g)=f(1)$.
+\end{enumerate}
+\end{example}
+
+\begin{proposition}
+$\bigl|\int_G f\,\mathrm{d}x\bigr|\le\int_G|f|\,\mathrm{d}x$.
+\end{proposition}
+
+\begin{proof}
+设 $f\in C(G,\mathbb{R})$.
+\[
+  \int_G\bigl(|f|+f\bigr)\,\mathrm{d}x\ge0,\qquad \int_G\bigl(|f|-f\bigr)\,\mathrm{d}x\ge0,
+\]
+故
+\[
+  \int_G|f(x)|\,\mathrm{d}x\ge-\int_G f(x)\,\mathrm{d}x,
+\]
+从而 $\displaystyle\int_G|f(x)|\,\mathrm{d}x\ge\Bigl|\int_G f(x)\,\mathrm{d}x\Bigr|$.
+\end{proof}
+
+\begin{definition}\label{def:complex-continuous}
+$G$ 上复值函数 $h=f+\mathrm{i}g$, 其中 $f,g$ 为实值函数. 若 $f,g$ 都连续,
+称 $h$ 为连续复值函数.
+\end{definition}
+
+复值连续函数 $h=f+\mathrm{i}g$ 的 Haar 积分为
+\[
+  \int_G h\,\mathrm{d}x=\int_G f\,\mathrm{d}x+\mathrm{i}\int_G g\,\mathrm{d}x,
+\]
+则易见该 Haar 积分满足前面所述的所有性质. 当然还有如下这个性质:
+
+\begin{proposition}\label{prop:haar-conjugate}
+$\displaystyle\overline{\int_G h(x)\,\mathrm{d}x}=\int_G\overline{h(x)}\,\mathrm{d}x$.
+\end{proposition}
+
+作为一个补充, 我们不加证明地给出下面的定理.
+
+\begin{theorem}[Fubini]\label{thm:fubini-haar}
+设 $G,H$ 为紧群, $f$ 为两个变量 $x\in G$ 与 $y\in H$ 的连续实值函数,
+$f(x,y)=f(z)$, $z=(x,y)\in G\times H$, 则
+\[
+  \int_H\Bigl(\int_G f(x,y)\,\mathrm{d}x\Bigr)\mathrm{d}y
+  =\int_G\Bigl(\int_H f(x,y)\,\mathrm{d}y\Bigr)\mathrm{d}x
+  =\int_{G\times H}f(z)\,\mathrm{d}z .
+\]
+\end{theorem}
+
+\begin{remark}
+记上述积分为 $\displaystyle\iint_{G\times H}f(x,y)\,\mathrm{d}x\,\mathrm{d}y$.
+\end{remark}
+
+\subsection{紧群上的 Maschke 定理}
+
+回忆 Maschke 定理 (\S 5.3): 先令 $G$ 为有限群, $V$ 为 $G$ 的有限维实表示.
+我们先给出 Maschke 定理的另一种证明方式.
+
+\begin{definition}[$G$-不变双线性型]\label{def:G-invariant-form}
+设 $V$ 上一个双线性函数 $(\cdot,\cdot)\colon V\times V\to\mathbb{R}$, 若对
+\[
+  \forall g\in G,\ \forall v_{1,2}\in V,\qquad (g\cdot v_1,\ g\cdot v_2)=(v_1,v_2),
+\]
+则称该双线性型是 $G$-不变的.
+\end{definition}
+
+\begin{lemma}\label{lem:invariant-form-orthogonal}
+若 $V$ 上的 $G$-不变双线性函数 $(\cdot,\cdot)$ 还是内积, 则 $\rho(g)$ 保持内积不变,
+即 $\rho(g)$ 为正交变换.
+\end{lemma}
+
+\begin{proof}
+根据定义 $(g\cdot v_1,g\cdot v_2)=(v_1,v_2)$, 即
+\[
+  \text{左边}=(\rho(g)v_1,\rho(g)v_2)=\text{右边},
+\]
+故根据正交变换的定义即得.
+\end{proof}
+
+\begin{theorem}\label{thm:invariant-inner-product}
+若 $V$ 上有 $G$-不变的内积, 则 $V$ 完全可约.
+\end{theorem}
+
+\begin{proof}
+只要证明 $V$ 的任一子表示都是 $V$ 的正交项. 令 $V_1\subset V$ 为 $V$ 的一个子表示,
+令 $V_2=V_1^{\perp}=\{v\in V\mid(v,v_1)=0,\ \forall v_1\in V_1\}$.
+下面我们说明 $V=V_1\oplus V_1^{\perp}$. 事实上, 作为线性空间 $V=V_1\oplus V_1^{\perp}$;
+只需说明 $V_1^{\perp}$ 也是 $G$ 的子表示即可: 对 $v_2\in V_1^{\perp}$, $g\in G$,
+\[
+  (g\cdot v_2,\ v_1)=(v_2,\ g^{-1}v_1)=(v_2,\ v_1)=0,
+\]
+故 $g\cdot v_2\in V_1^{\perp}$, 即 $V_1^{\perp}$ 也为 $G$ 的子表示.
+\end{proof}
+
+下面作为最后一步, 只要说明 $V$ 上总有 $G$-不变内积, 则 Maschke 定理就成立了.
+
+\begin{proposition}\label{prop:averaged-inner-product}
+$V$ 上总存在 $G$-不变内积.
+\end{proposition}
+
+\begin{proof}
+事实上, 任取 $V$ 上内积 $(\cdot,\cdot)_0$, 令
+\[
+  \langle u,v\rangle=\frac{1}{|G|}\sum_{g\in G}(g\cdot u,\ g\cdot v)_0,
+\]
+它显然是 $G$-不变的.
+\end{proof}
+
+此处我们给出 Maschke 定理的另外一种表述, 而先前 \S 5.3 处我们记得要求域 $K$ 满足
+$\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上表示,
+故不存在这种问题 (把求和换成紧群上的 Haar 积分即可).
+
+\begin{theorem}[Maschke, 有限群]\label{thm:maschke-finite-real}
+有限群的有限维实表示都是正交表示; 有限群的有限维复表示都是酉表示
+(unitary representation).
+\end{theorem}
+
+下面我们给出拓扑群的表示.
+
+\begin{definition}\label{def:topological-rep}
+设 $G$ 为拓扑群, 称拓扑群同态 $\rho\colon G\to\mathrm{GL}_n$ 为 $G$ 的一个 $n$ 维表示.
+\end{definition}
+
+\begin{remark}
+设 $V$ 为一个 $n$ 维线性空间, 则作为拓扑群 $\mathrm{GL}_V\cong\mathrm{GL}_n$;
+也称 $V$ 为一个 $G$-模.
+\end{remark}
+
+\begin{theorem}[Maschke, 紧群]\label{thm:maschke-compact}
+设 $G$ 为紧群, 则
+\begin{enumerate}
+  \item $G$ 的有限维实表示都是正交表示;
+  \item $G$ 的有限维复表示都是酉表示.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+我们只说明 1°, 2° 的证明与此类似, 不作过多叙述.
+设 $V$ 为 $G$ 的一个有限维实表示, 只要说明 $V$ 上有一个 $G$-不变的内积.
+取 $V$ 上一个内积 $(\cdot,\cdot)$, $\forall u,v\in V$, 取
+\[
+  f_{u,v}\colon G\to\mathbb{R},\qquad g\longmapsto (g\cdot u,\ g\cdot v),
+\]
+并定义
+\[
+  \langle u,v\rangle=\int_G f_{u,v}(x)\,\mathrm{d}x,
+\]
+则 $\langle u,v\rangle$ 为 $G$-不变的内积.
+\end{proof}
+
+\subsection{正交关系}
+
+参考有限群表示论的相关内容: 上一节我们讨论了紧群上的 Maschke 定理,
+提到任一有限维表示都完全可约. 因此, 现在的目标是解出全体不可约表示.
+为此, 我们仍需引入特征标.
+
+\begin{definition}[特征标]\label{def:compact-character}
+设 $G$ 为紧群, 域为 $\mathbb{C}$, 设 $\rho\colon G\to\mathrm{GL}_V$ 为 $G$ 的表示, 称
+\[
+  \chi\colon G\to\mathbb{C},\qquad g\longmapsto\operatorname{Tr}(\rho(g))
+\]
+为 $G$ 的一个特征标.
+\end{definition}
+
+\begin{remark}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+  \item $\chi\colon G\to\mathbb{C}$ 是连续的. 事实上, $\rho\colon g\mapsto(a_{ij}(g))_{n\times n}$
+  是连续的, 等价于 $a_{ij}\colon G\to\mathbb{C}$ 连续对一切 $1\le i,j\le n$
+  (称 $a_{ij}$ 为矩阵元); 又 $\chi(g)=\sum_i a_{ii}(g)$ 是连续的.
+  \item 由
+  \[
+    \chi(g^{-1})=\operatorname{Tr}\bigl(\rho(g)^{-1}\bigr)
+    \overset{\text{unitary}}{=}\operatorname{Tr}\bigl(\overline{\rho(g)^{\mathrm{T}}}\bigr)
+    =\operatorname{Tr}\bigl(\overline{\rho(g)}\bigr)=\sum_{i}\overline{a_{ii}(g)}
+    =\overline{\chi(g)} .
+  \]
+\end{enumerate}
+\end{remark}
+
+\begin{definition}\label{def:compact-bilinear}
+定义紧群上的双线性函数: 对 $f_{1,2}\in C(G,\mathbb{C})$,
+\[
+  (f_1,f_2)=\int_G f_1(g)\,f_2(g^{-1})\,\mathrm{d}g .
+\]
+\end{definition}
+
+为方便后面叙述, 约定两个记号:
+\[
+  \mathrm{Irr}\,G=\{G\ \text{的互不同构的不可约表示}\},\qquad
+  \mathrm{Irr}_\chi G=\{G\ \text{的所有不可约特征标}\}.
+\]
+
+\begin{theorem}[正交关系]\label{thm:compact-orthogonality}
+设 $(V,\rho_1)$, $(U,\rho_2)\in\mathrm{Irr}\,G$, $\dim V=n$, $\dim U=m$, 并设
+\[
+  \rho(g)=(a_{ij}(g))_{n\times n},\qquad \gamma(g)=(b_{kl}(g))_{m\times m}.
+\]
+\begin{enumerate}
+  \item 若 $\rho\ncong\gamma$, 则 $(a_{ij},b_{kl})=0$, $1\le i,j\le n$, $1\le k,l\le m$;
+  \item 若 $\rho\cong\gamma$, 则 $(a_{ij},b_{kl})=\dfrac{1}{n}\delta_{il}\delta_{jk}$,
+        $1\le i,j\le n$, $k,l\le n=m$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+为方便书写, 引入如下记号: 若 $M(g)=(a_{ij}(g))_{k\times k}$, $a_{ij}\in C(G,\mathbb{C})$, 记
+\[
+  \int_G M(g)\,\mathrm{d}g=\Bigl(\int_G a_{ij}(g)\,\mathrm{d}g\Bigr)_{k\times k}.
+\]
+取一矩阵 $C_{nm}\colon V\to U$, 令
+\[
+  \widetilde C_{nm}:=\int_G\gamma(g)\,C\,\rho(g)\,\mathrm{d}g,
+\]
+则对 $x\in G$,
+\[
+  \gamma(x)\,\widetilde C_{nm}\,\rho(x)^{-1}
+  =\int_G\gamma(x)\gamma(g)\,C\,\rho(g)\rho(x)^{-1}\,\mathrm{d}g .
+\]
+
+\[
+  =\int_G\gamma(gx)\,C\,\rho\bigl((gx)^{-1}\bigr)\,\mathrm{d}g
+  =\widetilde C_{nm},
+\]
+注意每个矩阵元都是实连续函数, 由 Haar 积分的左、右不变性上式成立. 故上式可写为
+\[
+  \gamma(x)\,\widetilde C_{nm}\,\rho(x)^{-1}=\widetilde C_{nm}
+  \ \Longrightarrow\
+  \widetilde C_{nm}\,\rho(x)=\gamma(x)\,\widetilde C_{nm},
+\]
+即右图交换, 故 $\widetilde C$ 为 $G$-模同态, 即 $\widetilde C\in\operatorname{Hom}_G(V,U)$.
+
+1° 若 $V\ncong U$, 由紧群的 Schur 引理, $\operatorname{Hom}_G(V,U)=0\Rightarrow\widetilde C=0$.
+而 $C$ 是任取的, 取 $C=e_{kl}$ (其中 $e_{kl}$ 为矩阵单位, 在第 $k$ 行、第 $l$ 列为 $1$,
+其余位置为 $0$), 则
+\[
+  \widetilde C=\int_G\gamma(g)\,e_{kl}\,\rho(g)\,\mathrm{d}g
+  =\int_G b_{kj}(g)\,e_{kl}\,a_{ij}(g)\,\mathrm{d}g
+  =\Bigl(\int_G b_{kj}(g)\,a_{ij}(g)\,\mathrm{d}g\Bigr)e_{kl}=0,
+\]
+取 $C$ 的 $(l,j)$ 位置, 即得 $\displaystyle\int_G b_{kj}(g)a_{ij}(g)\,\mathrm{d}g=0$,
+即 $(a_{ij},b_{kl})=0$.
+
+2° 若 $V\cong U$, 由 Schur 引理, $\operatorname{Hom}_G(V,U)=\mathbb{C}\,\mathrm{Id}$.
+则 $\widetilde C=\lambda I_n$, $\operatorname{Tr}(\widetilde C)=n\lambda$. 又 $C=e_{kl}$, $\operatorname{Tr}(C)=\delta_{kl}$, 则
+\[
+  \operatorname{Tr}(\widetilde C)=\operatorname{Tr}\Bigl(\int_G\gamma(g)\,C\,\rho(g)\,\mathrm{d}g\Bigr)
+  =\int_G\operatorname{Tr}\bigl(\gamma(g)\,C\,\rho(g)\bigr)\mathrm{d}g
+  =\int_G\operatorname{Tr}(C)\,\mathrm{d}g=\operatorname{Tr}(C)=\delta_{kl},
+\]
+故 $\widetilde C=\dfrac{\delta_{kl}}{n}I_n$. 取 $\widetilde C$ 的 $(l,j)$ 位置, 则
+\[
+  (a_{ij},b_{kl})=\frac{\delta_{kl}}{n}\delta_{lj}.
+\]
+\end{proof}
+
+\begin{remark}
+对有限群, 我们有
+\[
+  \rho\ncong\gamma:\ \frac{1}{|G|}\sum_{g\in G}a_{ij}(g)\overline{b_{kl}(g)}=0,
+  \qquad
+  \rho\cong\gamma:\ \frac{1}{|G|}\sum_{g\in G}a_{ij}(g)\overline{b_{kl}(g)}
+  =\frac{1}{n}\delta_{il}\delta_{jk}.
+\]
+\end{remark}
+
+下面我们考察特征标的（正交）关系.
+
+\begin{theorem}[特征标的正交关系]\label{thm:character-orthogonality-compact}
+设 $(V,\rho)$, $(U,\gamma)$ 为紧群 $G$ 的两个不可约表示, 记其特征标分别为
+$\chi_\rho$, $\chi_\gamma$, 则
+\[
+  (\chi_\rho,\chi_\gamma)=
+  \begin{cases}
+    1, & \rho\cong\gamma,\\
+    0, & \rho\ncong\gamma .
+  \end{cases}
+\]
+\end{theorem}
+
+\begin{proof}
+\begin{align*}
+  (\chi_\rho,\chi_\gamma)
+  &=\int_G\chi_\rho(g)\,\chi_\gamma(g^{-1})\,\mathrm{d}g
+   =\int_G\chi_\rho(g)\,\overline{\chi_\gamma(g)}\,\mathrm{d}g\\
+  &=\int_G\Bigl(\sum_{i}a_{ii}(g)\Bigr)\Bigl(\sum_{j}\overline{b_{jj}(g)}\Bigr)\mathrm{d}g
+   =\sum_{i,j}\int_G a_{ii}(g)\,\overline{b_{jj}(g)}\,\mathrm{d}g
+   =\sum_{i,j}(a_{ii},b_{jj}),
+\end{align*}
+故特征标的正交关系转化为矩阵元正交关系, 由前面的定理, 结论是显然的.
+\end{proof}
+
+\begin{corollary}\label{cor:compact-iso-char}
+设 $U,V$ 为紧群 $G$ 的两个不可约表示, 则
+\[
+  U\cong V\iff\chi_U=\chi_V .
+\]
+\end{corollary}
+
+\begin{corollary}\label{cor:compact-irreducible-test}
+表示 $\rho$ 不可约 $\iff(\chi_\rho,\chi_\rho)=1$.
+\end{corollary}
+
+\begin{corollary}\label{cor:compact-iso-general}
+任意两个有限维表示 $U,V$, 则
+\[
+  U\cong V\iff\chi_U=\chi_V .
+\]
+\end{corollary}
+
+自然我们要问: 紧群 $G$ 的不可约特征标有多少个? 我们讨论过, 特征标是类函数空间的一组基.
+为后面讨论, 先看一个例子.
+
+\begin{example}\label{ex:S1-reps}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+  \item $S^1$ 上连续函数 $C(S^1,\mathbb{R})$. 注意 $S^1$ 是交换的, 故 $S^1$ 的所有不可约表示
+  都是 $1$ 维的. 记
+  \[
+    \rho_n\colon S^1\to\mathbb{C}^{\times},\qquad e^{i\theta}\longmapsto e^{in\theta},
+    \qquad n\in\mathbb{Z},
+  \]
+  则 $\rho_n$ 为 $S^1$ 的所有不可约表示. 事实上, $S^1$ 上所有连续函数都已被
+  $\{e^{in\theta}\mid n\in\mathbb{Z}\}$ 的线性组合逼近.
+\end{enumerate}
+\end{example}
+
+回忆 $\mathbb{R}$ 上光滑周期函数可以展开为 Fourier 级数的形式:
+\[
+  f(x)=\frac12a_0+\sum_{n\ge1}\bigl(a_n\cos(nx)+b_n\sin(nx)\bigr),
+\]
+其中 $a_n=\frac{1}{\pi}\int_0^{2\pi}f(x)\cos(nx)\,\mathrm{d}x$,
+$b_n=\frac{1}{\pi}\int_0^{2\pi}f(x)\sin(nx)\,\mathrm{d}x$.
+而 $S^1$ 上连续周期函数也具有 Fourier 展开式
+\[
+  f(\theta)=\sum_{n=-\infty}^{\infty}a_ne^{in\theta},
+  \qquad a_n=\frac{1}{2\pi}\int_0^{2\pi}f(\theta)e^{-in\theta}\,\mathrm{d}\theta .
+\]
+可以见得, 周期函数也即恰好是 $S^1$ 上的函数. 因此可以说: Fourier 分析也为研究
+$S^1$ 上连续函数的一组正交函数的线性逼近.
+
+\subsection{Peter--Weyl 定理}
+
+首先要介绍正交完备系的概念.
+
+\begin{definition}[完备系]\label{def:complete-system}
+设 $G$ 为一个紧群, $\Delta$ 为 $C(G,\mathbb{C})$ 中的一个子集.
+称 $\Delta$ 为完备的, 若对 $G$ 上任一连续函数 $f$ 和 $\forall\varepsilon>0$,
+均存在复数 $a_1,\dots,a_n\in\mathbb{C}$, $f_1,\dots,f_n\in\Delta$, 使得
+\[
+  \Bigl|f(h)-\sum_{i=1}^{n}a_if_i(h)\Bigr|<\varepsilon,\qquad\forall h\in G .
+\]
+进一步, 若 $(f,g)=0$, 其中 $f\ne g$, $f,g\in\Delta$, 称 $\Delta$ 为正交完备的.
+\end{definition}
+
+\begin{theorem}[Peter--Weyl]\label{thm:peter-weyl}
+设 $G$ 为紧群.
+\begin{enumerate}
+  \item $G$ 上所有互不等价的有限维不可约表示的矩阵元全体, 构成一个 $C(G,\mathbb{C})$
+        的正交完备系;
+  \item $G$ 上所有不可约特征标全体, 构成一个 $C(G,\mathbb{C})$ 的标准正交完备系.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+标准即指 $(\chi_i,\chi_j)=1$.
+\end{remark}
+
+\subsection{$SU_2$ 的所有不可约表示}
+
+回忆 $SU_2=\{A\in M_2(\mathbb{C})\mid AA^{\mathrm{T}}=I_2,\ \det(A)=1\}$.
+
+\begin{proposition}\label{prop:SU2-form}
+$SU_2=\Bigl\{\begin{pmatrix}z_1&z_2\\-\bar z_2&\bar z_1\end{pmatrix}\ \Bigm|\ z_{1,2}\in\mathbb{C},\
+|z_1|^2+|z_2|^2=1\Bigr\}$.
+\end{proposition}
+
+\begin{proof}
+设 $A=\begin{pmatrix}z_1&z_2\\z_3&z_4\end{pmatrix}$, 则
+\[
+  A\cdot A^{\mathrm{T}}=\begin{pmatrix}z_1&z_2\\z_3&z_4\end{pmatrix}
+  \begin{pmatrix}\bar z_1&\bar z_3\\ \bar z_2&\bar z_4\end{pmatrix}
+  =\begin{pmatrix}1&\\&1\end{pmatrix},
+\]
+于是
+\[
+  \begin{pmatrix}|z_1|^2+|z_2|^2 & z_1\bar z_3+z_2\bar z_4\\
+  z_3\bar z_1+z_4\bar z_2 & |z_3|^2+|z_4|^2\end{pmatrix}=\begin{pmatrix}1&\\&1\end{pmatrix},
+\]
+故 $|z_1|^2+|z_2|^2=|z_3|^2+|z_4|^2=1$, $z_1\bar z_3+z_2\bar z_4=0$.
+
+又 $|A|=1$ 时
+\[
+  A^{-1}=\begin{pmatrix}z_4&-z_2\\-z_3&z_1\end{pmatrix}
+  =\overline{A^{\mathrm{T}}}=\begin{pmatrix}\bar z_1&\bar z_3\\ \bar z_2&\bar z_4\end{pmatrix},
+\]
+故 $z_4=\bar z_1$, $z_3=-\bar z_2$, 即
+\[
+  A=\begin{pmatrix}z_1&z_2\\-\bar z_2&\bar z_1\end{pmatrix}.
+\]
+\end{proof}
+
+\begin{remark}
+令 $H=\Bigl\{\begin{pmatrix}z_1&z_2\\-\bar z_2&\bar z_1\end{pmatrix}\ \Bigm|\ z_{1,2}\in\mathbb{C}\Bigr\}$,
+则 $H$ 就是 Hamilton 四元数代数 $\mathbb{H}$.
+\end{remark}
+
+取
+\[
+  e_0=\begin{pmatrix}1&\\&1\end{pmatrix},\quad
+  e_1=\begin{pmatrix}i&\\&-i\end{pmatrix},\quad
+  e_2=\begin{pmatrix}&1\\-1&\end{pmatrix},\quad
+  e_3=\begin{pmatrix}&i\\ i&\end{pmatrix},
+\]
+则 $\operatorname{span}_{\mathbb{R}}\{e_0,e_1,e_2,e_3\}=\mathbb{H}$.
+在其上可定义内积: 设 $X=\sum_{i=0}^{3}x_ie_i$, $Y=\sum_{i=0}^{3}y_je_j\in\mathbb{H}$, 令
+\[
+  \langle X,Y\rangle:=\sum_{i=0}^{3}x_i\overline{y_i}.
+\]
+
+\begin{lemma}\label{lem:SU2-norm-one}
+$A\in SU_2\iff\langle A,A\rangle=1$.
+\end{lemma}
+
+\begin{proof}
+$A\in SU_2\iff A=\begin{pmatrix}a+bi&c+di\\-c+di&a-bi\end{pmatrix}$ 且
+$a^2+b^2+c^2+d^2=1$
+\[
+  \iff A=a\begin{pmatrix}1&\\&1\end{pmatrix}+b\begin{pmatrix}i&\\&-i\end{pmatrix}
+  +c\begin{pmatrix}&1\\-1&\end{pmatrix}+d\begin{pmatrix}&i\\ i&\end{pmatrix}
+  =ae_0+be_1+ce_2+de_3,
+\]
+且 $a^2+b^2+c^2+d^2=1\iff\langle A,A\rangle=1$.
+\end{proof}
+
+因此, 我们可以有结论.
+
+\begin{proposition}\label{prop:SU2-S3}
+$SU_2\cong S^3$.
+\end{proposition}
+
+下面我们来构造 $SU_2$ 上的表示. 考虑两变元的多项式代数 $\mathbb{C}[x,y]$, 令
+\[
+  V_n=\mathbb{C}[x,y]_{(n)}=\{\mathbb{C}[x,y]\ \text{中}\ n\ \text{次齐次多项式}\}
+  =\operatorname{span}_{\mathbb{C}}\{x^iy^{n-i}\mid 0\le i\le n\},
+\]
+则 $\dim_{\mathbb{C}}V_n=n+1$.
+
+定义 $\Xi_n\colon SU_2\to\mathrm{GL}_{V_n}$, $A=\begin{pmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{pmatrix}\mapsto\Xi_n(A)$,
+其中
+\[
+  \Xi_n(A)\colon x^iy^{n-i}\longmapsto(a_{11}x+a_{21}y)^i(a_{12}x+a_{22}y)^{n-i},
+\]
+则 $\Xi_n$ 为一个拓扑群同态, 故 $V_n$ 为 $SU_2$ 的一个 $n+1$ 维表示.
+
+\begin{theorem}\label{thm:Vn-irreducible}
+$V_n$ 为 $SU_2$ 的不可约表示.
+\end{theorem}
+
+\begin{proof}
+令 $T=\Bigl\{A(\theta)=\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}\ \Bigm|\ \theta\in\mathbb{R}\Bigr\}\subset SU_2$,
+则
+\[
+  \Xi_n\bigl(A(\theta)\bigr)(x^iy^{n-i})=(e^{i\theta}x)^i(e^{-i\theta}y)^{n-i}
+  =e^{i(2i-n)\theta}x^iy^{n-i},
+\]
+即 $\forall j$, $x^iy^{n-i}$ 都是 $T$ 的特征向量, 且属于不同特征子空间.
+
+令 $W\subset V_n$ 为非零子表示, 只要说明 $W=V_n$.
+1° $W$ 在 $T$ 的作用下稳定, 故 $W$ 在 $T$ 的作用下也会成为特征子空间的直和,
+从而 $W$ 必为某些 $x^iy^{n-i}$ 的线性组合, 即
+$\exists I\subseteq\{0,1,\dots,n\}$ s.t. $W=\operatorname{span}\{x^iy^{n-i}\mid i\in I\}$.
+
+2° 由 1°, 不妨令 $x^{i_0}y^{n-i_0}\in W$. 由于
+\[
+  \Xi_n\Bigl(\begin{pmatrix}\bar z_2&\bar z_1\\-\bar z_1&z_2\end{pmatrix}\Bigr)(x^{i_0}y^{n-i_0})
+  =(\bar z_1x-\bar z_2y)^{i_0}(z_2x+z_1y)^{n-i_0}\in W,
+\]
+由 $z_{1,2}$ 的任意性, 知 $\forall j\in\{0,1,\dots,n\}$, $x^iy^{n-i}$ 的系数不为 $0$,
+故 $x^iy^{n-i}\in W$, 从而 $W=V_n$.
+\end{proof}
+
+\begin{lemma}\label{lem:Vn-inequivalent}
+$V_n\ncong V_m$ ($n\ne m$).
+\end{lemma}
+
+\begin{proof}
+$\dim V_n\ne\dim V_m$.
+\end{proof}
+
+下面我们要说明 $\{V_n\mid n\in\mathbb{N}\}$ 为 $SU_2$ 的全部不可约表示.
+为此, 我们要一个引理.
+
+\begin{lemma}[Stone--Weierstrass]\label{lem:stone-weierstrass}
+设 $C(S^1)$ 为 $S^1$ 上的连续且满足 $f(e^{i\theta})=\overline{f(e^{i\theta})}$ 的函数全体, 令
+$P=\{f\colon S^1\ \text{上多项式函数}\mid f(e^{i\theta})=\overline{f(e^{-i\theta})}\}$,
+则 $P$ 在 $C(S^1)$ 中稠密.
+\end{lemma}
+
+\begin{theorem}\label{thm:SU2-classification}
+$SU_2$ 的全部不可约表示为 $\{V_n\mid n\in\mathbb{N}\}$.
+\end{theorem}
+
+\begin{proof}
+只要证明: $\chi_n=\chi_{V_n}$ 为 $SU_2$ 上连续类函数全体的完备系 (Peter--Weyl).
+设 $f$ 为 $SU_2$ 的任一连续类函数. 对 $\forall B\in SU_2$, 存在酉矩阵 $U$ 使得
+$UBU^{\mathrm{T}}=\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}$, $\theta\in\mathbb{R}$, 则
+\[
+  f(B)=f\Bigl(\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}\Bigr).
+\]
+注意
+\[
+  \begin{pmatrix}e^{-i\theta}&\\&e^{i\theta}\end{pmatrix}
+  =\begin{pmatrix}&1\\-1&\end{pmatrix}
+  \begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}
+  \begin{pmatrix}&1\\-1&\end{pmatrix}^{-1},
+\]
+故 $f\Bigl(\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}\Bigr)
+=f\Bigl(\begin{pmatrix}e^{-i\theta}&\\&e^{i\theta}\end{pmatrix}\Bigr)$.
+把 $f$ 看作 $C(S^1)$ 中元素 $f'(e^{i\theta})=f\Bigl(\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}\Bigr)$,
+则 $f'\in C(S^1)$.
+
+其次, 考虑 $\chi_n$ 在 $T$ 上的作用:
+\[
+  \chi_n\Bigl(\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}\Bigr)
+  =\sum_{j=0}^{n}(e^{i\theta})^j\overline{(e^{i\theta})}^{\,n-j}
+  =\frac{(e^{i\theta})^{n+1}-(e^{i\theta})^{-(n+1)}}{e^{i\theta}-e^{-i\theta}} .
+\]
+可以证明 $P=\operatorname{span}_{\mathbb{C}}\{\chi_n(\cdot)\}$.
+由 Stone--Weierstrass 引理即证.
+\end{proof}
+
+\begin{remark}
+$V_n\otimes_{\mathbb{C}}V_m=\bigoplus_{k=0}^{\min\{n,m\}}V_{n+m-2k}$.
+\end{remark}
