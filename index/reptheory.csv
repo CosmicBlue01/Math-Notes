@@ -14,11 +14,11 @@
 例,,eg:algebra,代数,notes/reptheory/chapters/ch01.tex,"给定数域 , 多项式环 是 -代数. 给定数域 , 全体 阶方阵 是 -代数, 称为全矩阵代数. 设 为 -线性空间, 则 是 -代数. Hamilton 四元数 是 -代数, 其乘法表为 c|cccc & & & & & & & & & "
 例,,eg:group-algebra-Z2,代数,notes/reptheory/chapters/ch01.tex,"群 . 作同态 : [ 1 1&0 0&1 , -1 0&1 1&0 . ] 于是 [ _2= _ 1&0 0&1 , 0&1 1&0 ] 为群代数."
 定义,子代数,def:subalgebra,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, , 称 为 的子代数, 若: (单位元必须和 中的一样); 在 的运算下构成 -代数."
-注,,rem:unit-in-group,代数,notes/reptheory/chapters/ch01.tex,"群的定义中不要求子集的单位元与整个群一致, 因为乘法封闭性已经保证了这一点; 子代数则不同, 必须显式要求 ."
+注,,rem:unit-in-group,代数,notes/reptheory/chapters/ch01.tex,"群的定义中对单位元没有要求, 因为可由乘法封闭性推出."
 注,,rem:unit-mismatch,代数,notes/reptheory/chapters/ch01.tex,"对 Definition 中 (1) 的举例. 和 为 -代数, 存在嵌入 , 让 [ A_ n n A&0 0&0 . ] 在嵌入 意义下 . 但是 的单位元 , 故 不是 的子代数."
 例,,ex:poly-subalgebra,代数,notes/reptheory/chapters/ch01.tex,"为子代数. 设 为子代数, 且 , 那么 ( , 但一般默认 包含 , 故简记为 ). 考虑: ."
-注,,rem:hilbert-basis,代数,notes/reptheory/chapters/ch01.tex,"的每个子代数是否都形如 ? 这正是 Hilbert 基定理 (Hilbert basis theorem) 的内容, 此处不展开."
-例,,ex:matrix-subalgebras,代数,notes/reptheory/chapters/ch01.tex,全矩阵代数 的子代数: 上三角矩阵 (常记为 ) 的全体为子代数; 对角矩阵 (常记为 ) 的全体为子代数.
+命题,,prop:fx-subalgebra-fg,代数,notes/reptheory/chapters/ch01.tex,的每个子代数都形如 .
+例,,ex:matrix-subalgebras,代数,notes/reptheory/chapters/ch01.tex,全矩阵代数 的子代数: 上三角矩阵的全体 (常记为 ) 为子代数; 对角矩阵的全体 (常记为 ) 为子代数.
 例,,ex:group-algebra-F2,代数,notes/reptheory/chapters/ch01.tex,为子代数.
 例,子群代数,ex:subgroup-algebra,代数,notes/reptheory/chapters/ch01.tex,"设 , 则 为子代数."
 注,,rem:subalgebra-not-subgroup,代数,notes/reptheory/chapters/ch01.tex,"由 不能推出 . 反例: 取 , 仍考虑 , , 记 . 现考虑元素 [ a= 3 (1+ g+ ^2 g^2 ) _3 . ] 直接计算得 [ a^2= 9 (1+ g+ ^2 g^2 )^2 = 9 (3+3 g+3 ^2 g^2 ) "
@@ -31,11 +31,11 @@
 例,,ex:block-diagonal-algebra,代数,notes/reptheory/chapters/ch01.tex,"设 , 均为 -代数, 则 [ M_ n_1 ( ) M_ n_2 ( ) = A&0 0&B | A M_ n_1 ( ), B M_ n_2 ( ) . ] 代数 . 设 , , 则 均为 的子代数, 空间的和 构成代数 . 没有内直和"
 定义,理想,def:ideal,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 称子空间 是 的左 (右) 理想, 若 ( ). 若 既是左理想, 又是右理想, 则称 是理想. 左理想记作 , 右理想记作 , 理想记作 ."
 注,,rem:summand-ideal,代数,notes/reptheory/chapters/ch01.tex,都是 的理想.
-例,,ex:matrix-left-ideals,代数,notes/reptheory/chapters/ch01.tex,"考虑全矩阵代数 . 记 为第 个矩阵单位, 为第 个标准基向量. 设 为左理想, 令 [ U= xB x ^ n , B I_l ^ 1 n ] 为 中所有行向量张成的子空间, 则 [ I_l= A M_n( ) A U . ] 事实上 """
+例,,ex:matrix-left-ideals,代数,notes/reptheory/chapters/ch01.tex,"考虑全矩阵代数 . 记 为第 个矩阵单位, 为第 个标准基向量. 设 为左理想, 令 [ U= xB x ^ n , B I_1 ^ 1 n ] 为 中所有行向量张成的子空间, 则 [ I_1= A M_n( ) A U . ] 事实上 """
 定义,单代数,def:simple-algebra,代数,notes/reptheory/chapters/ch01.tex,"称代数 是单代数, 若 没有非平凡理想 (即只有 和 本身)."
 定理,,thm:simple-over-C,代数,notes/reptheory/chapters/ch01.tex,上所有有限维单代数只有 .
 例,,ex:quaternion-simple,代数,notes/reptheory/chapters/ch01.tex,"是单代数. 设 , 若 , 取 . 既然 是可除代数, 故 , 有 , . 于是 的理想只有 和 , 故为单代数."
-例,,ex:FZ3-decomposition,代数,notes/reptheory/chapters/ch01.tex,"回忆 , . 令 , 仍取 , 其中 , 则 为子空间 (不是子代数!). 下面说明 . 由于 交换, 只需证 ; 又只需对基验证. g^ a &= g 3 (1+ g+ ^2 g^2 ) = 3 (g+ g^2+ ^2 ) = 3 ^2 "
+例,,ex:FZ3-decomposition,代数,notes/reptheory/chapters/ch01.tex,"回忆 , . 令 , 仍取 , 其中 , 则 为子空间 (不是子代数!). 下面说明 . 因为 是 Abel 群, 只需证 ; 又只需对基验证. g^ a &= g 3 (1+ g+ ^2 g^2 ) = 3 (g+ g^2+ ^2 ) ="
 定义,商代数,def:quotient-algebra,代数,notes/reptheory/chapters/ch01.tex,称在上述乘法定义下形成的代数 为 模去 形成的商代数.
 注,,rem:ideal-necessary,代数,notes/reptheory/chapters/ch01.tex,"为理想是必要的, 我们用一个例子来说明: 取全矩阵代数 , 设 . 显然, 为子空间而不是理想."
 例,,ex:direct-sum-quotient,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 记 , 那么 , ."

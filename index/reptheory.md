@@ -22,7 +22,7 @@
 | 16 | 注 |  | `rem:unit-in-group` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 17 | 注 |  | `rem:unit-mismatch` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 18 | 例 |  | `ex:poly-subalgebra` | 代数 | notes/reptheory/chapters/ch01.tex |
-| 19 | 注 |  | `rem:hilbert-basis` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 19 | 命题 |  | `prop:fx-subalgebra-fg` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 20 | 例 |  | `ex:matrix-subalgebras` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 21 | 例 |  | `ex:group-algebra-F2` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 22 | 例 | 子群代数 | `ex:subgroup-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
