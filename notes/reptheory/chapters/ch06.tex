@@ -1285,12 +1285,31 @@ $Q_8=\{x,y\mid x^4=y^4=1,\ x^2=y^2,\ xy=y^2x^3\}$.
 $G/G'$ 为 Abel 群.
 \end{lemma}
 
+\begin{proof}
+$G'$ 是换位子生成的子群, 共轭不变, 故 $G'\trianglelefteq G$, 商群有定义. 对 $x,y\in G$,
+$xyx^{-1}y^{-1}\in G'$, 故在 $G/G'$ 中
+\[
+  \bar x\bar y\bar x^{-1}\bar y^{-1}=\overline{xyx^{-1}y^{-1}}=\bar e,
+\]
+即 $\bar x\bar y=\bar y\bar x$, 所以 $G/G'$ 交换.
+\end{proof}
+
 \begin{theorem}\label{thm:one-dim-count}
 设 $G$ 为有限群, 则
 \[
   \bigl|\{V\mid V\ \text{为}\ G\ \text{的不可约表示},\ \dim V=1\}\bigr|=|G/G'|.
 \]
 \end{theorem}
+
+\begin{proof}
+一维表示即同态 $G\to\mathbb{F}^{\times}$. 由于 $\mathbb{F}^{\times}$ 交换, 这样的同态必把
+$G'$ 映入 $1$, 于是由商群的泛性质, $G$ 的一维表示与 $G/G'$ 的一维表示一一对应.
+
+另一方面, 有限 Abel 群 $A$ 的不可约复表示全是一维的: $A$ 交换, 故诸 $\rho(a)$ 可同时
+上三角化, 而不可约性迫使它们都是数量矩阵. 于是 $A$ 的不可约表示个数就是它的一维表示个数;
+由定理 \ref{thm:num-irreducible}, 该个数又等于共轭类个数, 即 $|A|$. 取 $A=G/G'$ 即得
+$|G/G'|$ 个一维表示.
+\end{proof}
 
 \begin{corollary}\label{cor:Sn-one-dim}
 设 $n\ge3$, $G=S_n$, 则 $G'=A_n$, 于是 $S_n$ 的一维不可约表示只有 $2$ 个.
@@ -1336,6 +1355,20 @@ $\mathrm{FSch}(V)$ 只能取 $-1,0,1$ 三个值, 且
         此时 $V\cong V^*$.
 \end{enumerate}
 \end{theorem}
+
+\begin{proof}
+设 $\chi=\chi_V$. $\rho(g)$ 在 $\mathrm{Sym}^2V$ 与 $\Lambda^2V$ 上的迹分别为
+$(\chi(g)^2+\chi(g^2))/2$ 与 $(\chi(g)^2-\chi(g^2))/2$, 两者之差正是 $\chi(g^2)$. 于是
+\[
+  \mathrm{FSch}(V)=\frac{1}{|G|}\sum_{g\in G}\chi(g^2)
+  =\dim(\mathrm{Sym}^2V)^G-\dim(\Lambda^2V)^G .
+\]
+$G$-不变双线性型构成的空间同构于 $\mathrm{Hom}_G(V,V^*)$. 若 $V\ncong V^*$, 由 Schur 引理
+$\mathrm{Hom}_G(V,V^*)=0$, 两项都是 $0$, 得 $\mathrm{FSch}(V)=0$. 若 $V\cong V^*$, 则
+$\dim\mathrm{Hom}_G(V,V^*)=1$: 不变双线性型在相差非零常数的意义下唯一. 它不可能既是对称型
+又是交错型 (因为 $\mathrm{Sym}^2V\cap\Lambda^2V=0$), 故上面两项中恰有一个为 $1$、另一个为 $0$,
+从而 $\mathrm{FSch}(V)=\pm1$. 这也说明三种取值情形正好对应 $V\cong V^*$ 与否.
+\end{proof}
 
 \begin{definition}\label{def:types}
 称 $V$ 是实型 (real type) 的, 若 $\mathrm{FSch}(V)=1$; 称 $V$ 是复型 (complex type)
