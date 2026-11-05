@@ -1,4 +1,10 @@
-\newcommand{\yb}{\framebox[1.15em]{\rule{0pt}{1.1em}}}
+% Young 图: 边长 10pt 的小正方形, 相邻格共边
+\newcommand{\young}[1]{%
+  \begin{tikzpicture}[x=10pt,y=10pt,baseline=(current bounding box.center),line width=0.4pt]
+    \foreach \len [count=\i from 0] in {#1}{%
+      \foreach \j in {1,...,\len}{%
+        \draw (\j-1,-\i) rectangle (\j,-\i-1);}}
+  \end{tikzpicture}}
 \section{对称群的表示与 Young 图}
 
 \subsection{分拆与 Young 图}
@@ -24,32 +30,7 @@ $\lambda'_1\ge\lambda'_2\ge\cdots$, 称 $\lambda'=(\lambda'_1,\lambda'_2,\dots)$
 
 例如 $n=4$ 的五个分拆与它们的 Young 图为
 \[
-\begin{array}{l}
-\yb\yb\yb\yb
-\end{array}
-\quad
-\begin{array}{l}
-\yb\yb\yb\\[2pt]
-\yb
-\end{array}
-\quad
-\begin{array}{l}
-\yb\yb\\[2pt]
-\yb\yb
-\end{array}
-\quad
-\begin{array}{l}
-\yb\yb\\[2pt]
-\yb\\[2pt]
-\yb
-\end{array}
-\quad
-\begin{array}{l}
-\yb\\[2pt]
-\yb\\[2pt]
-\yb\\[2pt]
-\yb
-\end{array}
+  \young{4}\qquad \young{3,1}\qquad \young{2,2}\qquad \young{2,1,1}\qquad \young{1,1,1,1}
 \]
 其中第二个与第四个互为共轭分拆, 第三个是自共轭的.
 

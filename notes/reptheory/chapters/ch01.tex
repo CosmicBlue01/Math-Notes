@@ -91,13 +91,10 @@ $I_{n+1}\notin M_n(\mathbb{F})$, 故 $M_n(\mathbb{F})$ 不是 $M_{n+1}(\mathbb{F
 \end{remark}
 
 \begin{example}\label{ex:poly-subalgebra}
-\mbox{}\par\vspace{-0.2em}
-\begin{enumerate}
-  \item $\mathbb{F}\subseteq \mathbb{F}[x]$ 为子代数.
+$\mathbb{F}\subseteq \mathbb{F}[x]$ 为子代数.
   设 $B\subseteq \mathbb{F}[x]$ 为子代数, 且 $1,x\in B$, 那么 $B=\mathbb{F}[x]=\langle x\rangle$
   ($\langle 1,x\rangle=\mathbb{F}[x]$, 但一般默认 $\langle\,\cdot\,\rangle$ 包含 $\mathbb{F}$, 故简记为 $\langle x\rangle$).
   考虑: $\langle x^2\rangle=\operatorname{span}_{\mathbb{F}}\{1,x^2,x^4,\dots,x^{2n},\dots\}$.
-\end{enumerate}
 \end{example}
 
 \begin{remark}\label{rem:hilbert-basis}
@@ -274,9 +271,7 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
 \end{proof}
 
 \begin{example}\label{ex:matrix-left-ideals}
-\mbox{}\par\vspace{-0.2em}
-\begin{enumerate}
-  \item 考虑全矩阵代数 $M_n(\mathbb{F})$. 记 $E_{ij}$ 为第 $(i,j)$ 个矩阵单位, $e_j$ 为第 $j$ 个标准基向量.
+考虑全矩阵代数 $M_n(\mathbb{F})$. 记 $E_{ij}$ 为第 $(i,j)$ 个矩阵单位, $e_j$ 为第 $j$ 个标准基向量.
   设 $I_l\trianglelefteq_l M_n(\mathbb{F})$ 为左理想, 令
   \[
     U=\{xB \mid x\in \mathbb{F}^{n},\ B\in I_l\}\subseteq \mathbb{F}^{1\times n}
@@ -313,7 +308,6 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
   并设 $a_{ij}\neq 0$, 则 $E_{ij}=a_{ij}^{-1}E_{ii}AE_{jj}\in I$;
   于是全部矩阵单位都属于 $I$, 从而 $I=M_n(\mathbb{F})$.
   故 $I$ 只能是 $\{0\}$ 或 $M_n(\mathbb{F})$.
-\end{enumerate}
 \end{example}
 
 \begin{definition}[单代数]\label{def:simple-algebra}
@@ -512,12 +506,9 @@ $\varphi([1])=f(1_A)=1_B$, 且
 \end{proof}
 
 \begin{example}\label{ex:evaluation-homomorphism}
-\mbox{}\par\vspace{-0.2em}
-\begin{enumerate}
-  \item 设 $A=\mathbb{F}[x]$. $\forall a\in \mathbb{F}$, 记同态 $f_a\colon \mathbb{F}[x]\to \mathbb{F}[a]$, $p(x)\mapsto p(a)$.
+设 $A=\mathbb{F}[x]$. $\forall a\in \mathbb{F}$, 记同态 $f_a\colon \mathbb{F}[x]\to \mathbb{F}[a]$, $p(x)\mapsto p(a)$.
   于是 $\operatorname{Im}(f_a)=\mathbb{F}[a]$, $\operatorname{Ker}(f_a)=(x-a)$, 从而
   \[
     \mathbb{F}[x]/(x-a)\cong \mathbb{F}[a].
   \]
-\end{enumerate}
 \end{example}

@@ -246,7 +246,7 @@
 定理,拓扑群同态基本定理,thm:top-hom-fundamental,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为拓扑群同态, 若 是开映射, 则 是闭子群, 且有拓扑群同构 ."
 注,,rem:quotient-closed-subgroup,紧群表示,notes/reptheory/chapters/ch08.tex,"若 为拓扑群, 则 是闭的, 且 是开映射."
 定义,Haar 积分,def:haar,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为紧群, 若对定义在 上的每一个实值连续函数 都存在一个实数, 记为 , 满足 线性性: , , ; 正定性: 若 , , 则 , 且取等当且仅当 ; 规范性: ; 左不变性: , , ; 右不变性: , , ; 可逆性: , ; 则称"
-注,,rem:haar-integral-axioms,紧群表示,notes/reptheory/chapters/ch08.tex,"; 若 满足上述 , 则它已经称为 Haar 积分 (即其余条件自动成立)."
+注,,rem:haar-integral-axioms,紧群表示,notes/reptheory/chapters/ch08.tex,"; 若 满足上述 , 则它已经成为 Haar 积分 (即其余条件自动成立)."
 定理,Haar,thm:haar-existence,紧群表示,notes/reptheory/chapters/ch08.tex,任一紧群上有且仅有一种方式建立 Haar 积分.
 例,,ex:haar-finite,紧群表示,notes/reptheory/chapters/ch08.tex,"有限群在离散拓扑下的 Haar 积分. 有限群 上的全体函数构成 (回顾 6.2), 则 , 即 满足 Haar 积分定义中的各个条件. 则 [ _G f_1(x) , x= f,f_1 =f(f_1). ] 由左不变性: ."
 命题,,prop:haar-integral-triangle,紧群表示,notes/reptheory/chapters/ch08.tex,.

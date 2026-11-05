@@ -100,13 +100,13 @@ $\rho_{\mathrm{can}}$ 是忠实表示, 即它是单射.
 \end{remark}
 
 \begin{proposition}\label{prop:std-irreducible}
-设域 $\mathbb{F}$, $\operatorname{char}\mathbb{F}\nmid n$, $V$ 为 $\mathbb{F}$-线性空间, 则 $S_n$ 的标准表示 $V_1$ 是不可约表示.
+设域 $\mathbb{F}$, $\operatorname{char}\mathbb{F}\ndivides n$, $V$ 为 $\mathbb{F}$-线性空间, 则 $S_n$ 的标准表示 $V_1$ 是不可约表示.
 \end{proposition}
 
 \begin{proof}
 沿用上面的记号, 设 $W\subsetneq V_1$ 为非零子表示.
 任取 $0\neq w\in W$, 写 $w=\sum_i k_i\alpha_i$, 且 $\sum_i k_i=0$.
-若所有 $k_i$ 相等, 则 $nk_i=0$, 由 $\operatorname{char}\mathbb{F}\nmid n$ 得 $k_i=0$, 与 $w\neq0$ 矛盾;
+若所有 $k_i$ 相等, 则 $nk_i=0$, 由 $\operatorname{char}\mathbb{F}\ndivides n$ 得 $k_i=0$, 与 $w\neq0$ 矛盾;
 故存在 $j\neq l$ 使 $k_j\neq k_l$.
 考虑对换 $\tau=(j\,l)\in S_n$. 由于 $W$ 为不变子空间, $\tau\cdot w\in W$, 故
 \begin{equation*}
@@ -358,7 +358,7 @@ $f_i(v)=a_i$, 故
 \end{proof}
 
 \begin{theorem}[Maschke]\label{thm:maschke}
-设 $G$ 为群, $\mathbb{F}$ 为域, 若 $\operatorname{char}\mathbb{F}\nmid|G|$, 则 $G$ 的所有有限维表示都是完全可约的,
+设 $G$ 为群, $\mathbb{F}$ 为域, 若 $\operatorname{char}\mathbb{F}\ndivides|G|$, 则 $G$ 的所有有限维表示都是完全可约的,
 即都可以写成不可约表示的直和.
 \end{theorem}
 
@@ -372,7 +372,7 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
   \bar p\colon V\longrightarrow V_1,\qquad
   v\longmapsto\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}\cdot v).
 \end{equation*}
-这里由于 $\operatorname{char}\mathbb{F}\nmid|G|$, $\frac{1}{|G|}$ 有意义, 上面的定义才是合理的.
+这里由于 $\operatorname{char}\mathbb{F}\ndivides|G|$, $\frac{1}{|G|}$ 有意义, 上面的定义才是合理的.
 
 \begin{enumerate}
 \item 先说明 $\bar p$ 是线性映射:
@@ -406,12 +406,12 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
 \end{proof}
 
 \begin{remark}\label{rem:maschke-sharp}
-关于 $\operatorname{char}\mathbb{F}\mid|G|$ 的情形, 已在第 3 章的 $\mathbb{Z}_2$ 例子中讨论过:
-此时 $\mathbb{F}\mathbb{Z}_2$ 可约但不可分解. 因此 $\operatorname{char}\mathbb{F}\nmid|G|$ 是 Maschke 定理成立的充要条件
+关于 $\operatorname{char}\mathbb{F}\divides|G|$ 的情形, 已在第 3 章的 $\mathbb{Z}_2$ 例子中讨论过:
+此时 $\mathbb{F}\mathbb{Z}_2$ 可约但不可分解. 因此 $\operatorname{char}\mathbb{F}\ndivides|G|$ 是 Maschke 定理成立的充要条件
 (必要性由该反例说明, 充分性即定理本身).
 \end{remark}
 
 \begin{definition}[常表示与模表示]\label{def:ordinary-modular}
-称群代数 $\mathbb{F}G$ 的表示为 $G$ 的\textbf{常表示} (ordinary representation), 若 $\operatorname{char}\mathbb{F}\nmid|G|$;
+称群代数 $\mathbb{F}G$ 的表示为 $G$ 的\textbf{常表示} (ordinary representation), 若 $\operatorname{char}\mathbb{F}\ndivides|G|$;
 否则称为\textbf{模表示} (modular representation).
 \end{definition}

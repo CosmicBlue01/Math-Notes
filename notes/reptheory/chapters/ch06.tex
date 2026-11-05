@@ -111,7 +111,7 @@ $\mathbb{R}^n$ 上的内积即为对称非退化的双线性函数.
 \end{remark}
 
 \begin{proposition}\label{prop:dual-pairing}
-设 $\operatorname{char}\mathbb{F}\nmid |G|$, 则 $(\mathbb{F}G)^*$ 上存在对称非退化的双线性函数.
+设 $\operatorname{char}\mathbb{F}\ndivides |G|$, 则 $(\mathbb{F}G)^*$ 上存在对称非退化的双线性函数.
 \end{proposition}
 
 \begin{proof}
@@ -913,7 +913,7 @@ $A\otimes B$ 都是整矩阵, 故 $\alpha+\beta$ 与 $\alpha\beta$ 也是代数�
 
 \begin{proof}
 设 $p/q$ 为代数整数, 其中 $p,q\in\mathbb{Z}$ 且 $\gcd(p,q)=1$. 则 $p/q$ 是某首一
-整系数多项式的根, 由有理根定理知 $q\mid 1$, 故 $q=\pm1$, 即 $p/q\in\mathbb{Z}$.
+整系数多项式的根, 由有理根定理知 $q\divides 1$, 故 $q=\pm1$, 即 $p/q\in\mathbb{Z}$.
 \end{proof}
 
 于是 $a,b,c,d$ 只能取整数值, 结合前面解出的两组解即得
@@ -1082,9 +1082,9 @@ $\prod_k\lambda_k!$.
 作为一种``担忧'', 我们注意到在 $S_4$ 时, 由多个平方之和为某个数,
 可能会陷入迷茫: 不知道如何选取恰当的 $n_i$. 为此需要一个观察.
 $S_3$ 中为 $1,1,2$; $S_4$ 中为 $1,1,2,3,3$, 而
-$1\mid6$, $2\mid6$; $1\mid24$, $2\mid24$, $3\mid24$. 于是猜测
+$1\divides6$, $2\divides6$; $1\divides24$, $2\divides24$, $3\divides24$. 于是猜测
 \[
-  \dim V_i \mid |G| .
+  \dim V_i \divides |G| .
 \]
 为此需要一些铺垫.
 
@@ -1140,7 +1140,7 @@ $\dfrac{[G:Z_g]\,\chi_V(g)}{\chi_V(e)}$ 为代数整数.
 \end{proof}
 
 \begin{theorem}[整除定理]\label{thm:degree-divides-order}
-设 $G$ 为有限群, $V$ 为 $G$ 的不可约表示, 则 $\dim V\mid |G|$.
+设 $G$ 为有限群, $V$ 为 $G$ 的不可约表示, 则 $\dim V\divides |G|$.
 \end{theorem}
 
 \begin{proof}
@@ -1154,7 +1154,7 @@ $\dfrac{[G:Z_g]\,\chi_V(g)}{\chi_V(e)}$ 为代数整数.
   =\sum_{i}\frac{[G:Z_{g_i}]\,\chi_V(g_i)}{\chi_V(e)}\,\chi_V(g_i^{-1}).
 \]
 由 Lemma \ref{lem:class-sum-integral}, 右端每一项都是代数整数之积, 故右端为代数整数,
-即 $\dfrac{|G|}{\chi_V(e)}$ 为代数整数. 又它是有理数, 故为整数, 即 $\dim V\mid|G|$.
+即 $\dfrac{|G|}{\chi_V(e)}$ 为代数整数. 又它是有理数, 故为整数, 即 $\dim V\divides|G|$.
 \end{proof}
 
 下面会出现这样的问题: 既然特征标表反映了群的特点, 能否由表反过来读出群的信息?
@@ -1169,7 +1169,7 @@ $yx=x^{-1}y=x^3y$, $yx^2=x^2y$, $yx^3=xy$.
   C_1=\{1\},\quad C_2=\{x,x^3\},\quad C_3=\{x^2\},\quad
   C_4=\{y,x^2y\},\quad C_5=\{xy,x^3y\}.
 \]
-$|D_8|=8$, 已知 $n_1=1$, 故 $n_2^2+n_3^2+n_4^2+n_5^2=7$, 且 $n_i\mid 8$,
+$|D_8|=8$, 已知 $n_1=1$, 故 $n_2^2+n_3^2+n_4^2+n_5^2=7$, 且 $n_i\divides 8$,
 $n_i\le 2$, 于是 $n_2=n_3=n_4=1$, $n_5=2$. 可以先将特征标表写成下表:
 \[
 \begin{array}{c|ccccc}
@@ -1324,12 +1324,12 @@ $|G/G'|$ 个一维表示.
 设 $n\ge3$, $G=S_n$, 则 $G'=A_n$, 于是 $S_n$ 的一维不可约表示只有 $2$ 个.
 \end{corollary}
 
-此前我们有 $n_i\mid|G|$, 下面给出更强的结论:
+此前我们有 $n_i\divides|G|$, 下面给出更强的结论:
 
 \begin{theorem}\label{thm:degree-divides-center-quotient}
 设 $G$ 为有限群, $n_i$ 为不可约表示的维数, 则
 \[
-  n_i\mid |G/Z(G)|,\qquad n_i^2\le |G/Z(G)|.
+  n_i\divides |G/Z(G)|,\qquad n_i^2\le |G/Z(G)|.
 \]
 \end{theorem}
 
