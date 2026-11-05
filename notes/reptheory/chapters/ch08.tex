@@ -439,9 +439,9 @@ $\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上�
   =\int_G\operatorname{Tr}\bigl(\gamma(g)\,C\,\rho(g)\bigr)\mathrm{d}g
   =\int_G\operatorname{Tr}(C)\,\mathrm{d}g=\operatorname{Tr}(C)=\delta_{kl},
 \]
-故 $\widetilde C=\dfrac{\delta_{kl}}{n}I_n$. 取 $\widetilde C$ 的 $(l,j)$ 位置, 则
+故 $\widetilde C=\dfrac{\delta_{kl}}{n}I_n$. 取 $\widetilde C$ 的 $(i,j)$ 位置并重命名指标, 则
 \[
-  (a_{ij},b_{kl})=\frac{\delta_{kl}}{n}\delta_{lj}.
+  (a_{ij},b_{kl})=\frac{1}{n}\delta_{il}\delta_{jk}.
 \]
 \end{proof}
 
@@ -664,11 +664,11 @@ $\exists I\subseteq\{0,1,\dots,n\}$ s.t. $W=\operatorname{span}\{x^iy^{n-i}\mid 
 
 2° 由 1°, 不妨令 $x^{i_0}y^{n-i_0}\in W$. 由于
 \[
-  \Xi_n\Bigl(\begin{pmatrix}\bar z_2&\bar z_1\\-\bar z_1&z_2\end{pmatrix}\Bigr)(x^{i_0}y^{n-i_0})
+  \Xi_n\Bigl(\begin{pmatrix}\bar z_1&z_2\\-\bar z_2&z_1\end{pmatrix}\Bigr)(x^{i_0}y^{n-i_0})
   =(\bar z_1x-\bar z_2y)^{i_0}(z_2x+z_1y)^{n-i_0}\in W,
 \]
-由 $z_{1,2}$ 的任意性, 知 $\forall j\in\{0,1,\dots,n\}$, $x^iy^{n-i}$ 的系数不为 $0$,
-故 $x^iy^{n-i}\in W$, 从而 $W=V_n$.
+由 $z_{1,2}$ 的任意性, 知 $\forall j\in\{0,1,\dots,n\}$, $x^jy^{n-j}$ 的系数不为 $0$,
+故 $x^jy^{n-j}\in W$, 从而 $W=V_n$.
 \end{proof}
 
 \begin{lemma}\label{lem:Vn-inequivalent}
