@@ -29,3 +29,7 @@ notes/*.pdf
 
 # 入站文件 (老师讲义等, 不入库)
 .dsh-im/
+
+# 临时调试产物
+tmpdg/
+texput.log
