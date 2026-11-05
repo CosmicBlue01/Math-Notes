@@ -18,7 +18,7 @@
 \end{enumerate}
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{rem:hausdorff-topological-group}
 在一般的拓扑群定义中不要求 $G$ 一定是 Hausdorff 空间, 但在大多数情况下
 一般默认 $G$ 是 Hausdorff 的.
 \end{remark}
@@ -94,7 +94,7 @@ $A\cdot A^{\mathrm{T}}=\operatorname{diag}\Bigl(\sum_{j}a_{1j}^2,\ \dots,\ \sum_
 故 $\sum_j a_{ij}^2=1$ 对每个 $i$ 成立, 于是 $|a_{ij}|\le1$, 从而 $O(n)$ 有界.
 故 $O(n)$ 为紧群.
 
-\begin{remark}
+\begin{remark}\label{rem:orthogonal-disconnected}
 考虑 $O(n)$ 的连通性: $O(n)$ 是不连通的. 只须取行列式函数
 $\det\colon O(n)\to\mathbb{R}^{\times}$; $\det A=\pm1$, $A\in O(n)$, 像是不连通的,
 显然 $O(n)$ 就不连通.
@@ -141,7 +141,7 @@ $\mathrm{SO}(n)$ 是 $\mathrm{GL}_n(\mathbb{R})$ 的极大连通紧子群.
 且有拓扑群同构 $G_1/\ker f\cong\operatorname{Im}f$.
 \end{theorem}
 
-\begin{remark}
+\begin{remark}\label{rem:quotient-closed-subgroup}
 若 $G/H$ 为拓扑群, 则 $H$ 是闭的, 且 $G\to G/H$ 是开映射.
 \end{remark}
 
@@ -167,7 +167,7 @@ $\int_G f(x)\,\mathrm{d}x$, 满足
 则称 $G$ 上存在一个 Haar 积分.
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{rem:haar-integral-axioms}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
   \item $\displaystyle\int_G -\,\mathrm{d}x\in\bigl(C(G,\mathbb{R})\bigr)^*$;
@@ -195,7 +195,7 @@ $\int_G f(x)\,\mathrm{d}x$, 满足
 \end{enumerate}
 \end{example}
 
-\begin{proposition}
+\begin{proposition}\label{prop:haar-integral-triangle}
 $\bigl|\int_G f\,\mathrm{d}x\bigr|\le\int_G|f|\,\mathrm{d}x$.
 \end{proposition}
 
@@ -238,7 +238,7 @@ $f(x,y)=f(z)$, $z=(x,y)\in G\times H$, 则
 \]
 \end{theorem}
 
-\begin{remark}
+\begin{remark}\label{rem:product-haar-integral}
 记上述积分为 $\displaystyle\iint_{G\times H}f(x,y)\,\mathrm{d}x\,\mathrm{d}y$.
 \end{remark}
 
@@ -312,7 +312,7 @@ $\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上�
 设 $G$ 为拓扑群, 称拓扑群同态 $\rho\colon G\to\mathrm{GL}_n$ 为 $G$ 的一个 $n$ 维表示.
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{rem:GL-module}
 设 $V$ 为一个 $n$ 维线性空间, 则作为拓扑群 $\mathrm{GL}_V\cong\mathrm{GL}_n$;
 也称 $V$ 为一个 $G$-模.
 \end{remark}
@@ -353,7 +353,7 @@ $\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上�
 为 $G$ 的一个特征标.
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{rem:character-continuous}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
   \item $\chi\colon G\to\mathbb{C}$ 是连续的. 事实上, $\rho\colon g\mapsto(a_{ij}(g))_{n\times n}$
@@ -445,7 +445,7 @@ $\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上�
 \]
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rem:orthogonality-relations}
 对有限群, 我们有
 \[
   \rho\ncong\gamma:\ \frac{1}{|G|}\sum_{g\in G}a_{ij}(g)\overline{b_{kl}(g)}=0,
@@ -553,7 +553,7 @@ $S^1$ 上连续函数的一组正交函数的线性逼近.
 \end{enumerate}
 \end{theorem}
 
-\begin{remark}
+\begin{remark}\label{rem:standard-character}
 标准即指 $(\chi_i,\chi_j)=1$.
 \end{remark}
 
@@ -591,7 +591,7 @@ $SU_2=\Bigl\{\begin{pmatrix}z_1&z_2\\-\bar z_2&\bar z_1\end{pmatrix}\ \Bigm|\ z_
 \]
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rem:quaternion-subgroup}
 令 $H=\Bigl\{\begin{pmatrix}z_1&z_2\\-\bar z_2&\bar z_1\end{pmatrix}\ \Bigm|\ z_{1,2}\in\mathbb{C}\Bigr\}$,
 则 $H$ 就是 Hamilton 四元数代数 $\mathbb{H}$.
 \end{remark}
@@ -721,6 +721,6 @@ $UBU^{\mathrm{T}}=\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}$, $\th
 由 Stone--Weierstrass 引理即证.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rem:sl2-tensor-decomposition}
 $V_n\otimes_{\mathbb{C}}V_m=\bigoplus_{k=0}^{\min\{n,m\}}V_{n+m-2k}$.
 \end{remark}

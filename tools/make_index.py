@@ -4,6 +4,7 @@
 """
 import csv
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -41,8 +42,10 @@ def scan(path: Path):
         nxt = text.find("\\end{" + m.group(1) + "}", body_start)
         body = text[body_start:nxt] if nxt != -1 else ""
         lab = LABEL.search(body)
-        if not lab:  # 无 label 时回退到该环境之后最近的 label
-            lab = LABEL.search(text[body_start:body_start + 500])
+        if not lab:  # 不给兜底: 缺 label 就留空并报警, 避免错抓下一个对象的锚点
+            print(f"warning: {path.name}: 第 "
+                  f"{text.count(chr(10), 0, m.start()) + 1} 行 {m.group(1)} 环境没有 label",
+                  file=sys.stderr)
         rows.append({
             "type": KIND[m.group(1)],
             "title": (m.group("title") or "").strip(),

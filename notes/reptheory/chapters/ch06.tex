@@ -11,7 +11,7 @@
 为表示 $\rho$ 的特征标. 为强调所对应的表示, 常将 $\chi$ 记为 $\chi_\rho$ 或 $\chi_V$.
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{rem:character-not-homomorphism}
 $\chi_\rho$ 一般不是群同态: 若它是, 就等于要求
 $\operatorname{Tr}(AB)=\operatorname{Tr}(A)\operatorname{Tr}(B)$, 而这不成立.
 \end{remark}
@@ -30,7 +30,7 @@ $\chi_V(ghg^{-1})=\operatorname{Tr}\bigl(\rho(ghg^{-1})\bigr)
 即在同一共轭类上取值不变.
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{rem:character-class-function}
 由 Lemma \ref{lem:char-class}, $\chi_V$ 为类函数.
 \end{remark}
 
@@ -79,7 +79,7 @@ $(\mathbb{F}G)^*$ 自然是线性空间. 定义其上的乘法: $\forall f_1,f_2
 \end{enumerate}
 \end{definition}
 
-\begin{example}
+\begin{example}\label{ex:transpose-star-algebra}
 全矩阵代数 $M_n(\mathbb{F})$ 在转置下是 $*$-代数:
 \[
   M_n(\mathbb{F})\to M_n(\mathbb{F}),\qquad A\longmapsto A^{\mathrm{T}},
@@ -103,7 +103,7 @@ $\bigl(*(*(f))\bigr)(g)=\bigl(*(f)\bigr)(g^{-1})=f(g)$, 即 $*\circ *=\mathrm{Id
 即 $*(f_1f_2)=*(f_2)\cdot *(f_1)$.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rem:symmetric-bilinear-form}
 回忆 $V$ 上的双线性函数 $(\cdot,\cdot)\colon V\times V\to\mathbb{F}$.
 称其是对称的, 若 $(\alpha,\beta)=(\beta,\alpha)$, $\alpha,\beta\in V$;
 称其是非退化的, 若 $\forall\beta\in V$, $(\alpha,\beta)=0$ 蕴含 $\alpha=0$.
@@ -241,7 +241,7 @@ $\rho(g)\cdot\zeta=\zeta\cdot\rho(g)=\zeta$.
 这是 $V$ 的一个子表示.
 \end{definition}
 
-\begin{remark}
+\begin{remark}\label{rem:invariants-trivial}
 $V^G$ 是 $V$ 的平凡子表示的和 (而 $V^G$ 本身也是平凡的).
 \end{remark}
 
@@ -528,7 +528,7 @@ $\chi_V(g)=\sum_i\lambda_i$, 从而 $\chi_{V\otimes V}(g)=\sum_{i,j}\lambda_i\la
 于是 $\chi_V^2(g)=\chi_{\mathrm{Sym}^2}(g)+\chi_{\mathrm{Alt}^2}(g)$, 结论成立.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rem:tensor-sym-alt}
 (1) 一般而言, 不可约表示的张量积不再不可约.
 
 (2) 这里称 $\mathrm{Sym}^2(V)$ 为 $V$ 的二阶对称表示, 称 $\mathrm{Alt}^2(V)$ 为
@@ -554,7 +554,7 @@ $V=\bigoplus_{i=1}^{r}V_i^{(n_i)}$, 则 $n_i=(\chi_i,\chi_V)$.
 \]
 \end{proof}
 
-\begin{remark}[正则表示]
+\begin{remark}\label{rem:regular-representation}[正则表示]
 设 $G=\{g_1,\dots,g_n\}$, $V=\mathbb{F}G=\operatorname{span}_{\mathbb{F}}\{g\mid g\in G\}$,
 则 $\rho\colon G\to\mathrm{GL}_V$, $g\mapsto\rho(g)$, 其中 $\rho(g)(h)=gh$.
 称这个表示为正则表示. 由定义 $\dim V_{\mathrm{reg}}=|G|$; 且 $\chi_{\mathrm{reg}}(1)=|G|$,
@@ -855,7 +855,7 @@ $C_3=\{(123),(132)\}$):
 于是 $\chi(g)=\operatorname{Tr}(A)=\sum_i\lambda_i$ 仍为代数整数.
 \end{proof}
 
-\begin{remark}
+\begin{remark}\label{rem:algebraic-integer}
 称 $a\in\mathbb{C}$ 为代数数, 若 $a$ 是某个整系数多项式 $f(x)$ 的根; 进一步,
 若 $f(x)$ 是首一多项式, 则称 $a$ 为代数整数 (代数数的定义中也可用有理系数多项式).
 \end{remark}
@@ -1405,7 +1405,7 @@ $|G|=1+1+\cdots+1=s$, 即 $G$ 有 $|G|$ 个共轭类, 故每个共轭类只含�
 显然 $\rho_j$ 为 $\mathbb{Z}_n$ 的一个不可约表示.
 \end{example}
 
-\begin{proposition}
+\begin{proposition}\label{prop:distinct-irreducibles}
 若 $j\ne j'$, 则 $\rho_j\ne\rho_{j'}$.
 \end{proposition}
 
@@ -1422,7 +1422,7 @@ $\widehat{\mathbb{Z}}_n=\{\rho_0,\rho_1,\dots,\rho_{n-1}\}$. 注意
 \]
 不难发现 $\widehat{\mathbb{Z}}_n\cong\mathbb{Z}_n$, 即 $\widehat{\mathbb{Z}}_n\cong\mathbb{Z}_n$.
 
-\begin{remark}
+\begin{remark}\label{rem:dual-group-Zn}
 上面的例子告诉我们 $\widehat{\mathbb{Z}}_n\cong\mathbb{Z}_n$; 那么为什么要坚持写
 $\widehat{\mathbb{Z}}_n$, 而不直接写 $\mathbb{Z}_n$ 呢?
 \end{remark}
