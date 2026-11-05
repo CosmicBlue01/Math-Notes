@@ -105,9 +105,88 @@ $0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap 
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
   \item 不可约模一定是不可分解模.
-  \item 任何模都可以写为一些不可分解模的直和.
+  \item 若 $M$ 是\emph{有限长}的 (见下面的 Definition \ref{def:finite-length}),
+  则 $M$ 可以写成有限多个不可分解子模的直和, 且这种分解在相差次序与同构的意义下唯一
+  (Theorem \ref{thm:krull-schmidt}). 不加有限长假设时, 该结论一般不对.
 \end{enumerate}
 \end{remark}
+
+\begin{definition}[有限长模]\label{def:finite-length}
+称左 $R$-模 $M$ 为\emph{有限长}的, 若 $M$ 的任意子模升链与降链都稳定;
+等价地, $M$ 有一组合成列 (Definition \ref{def:composition-series}).
+\end{definition}
+
+\begin{lemma}[Fitting]\label{lem:fitting}
+设 $M$ 是有限长左 $R$-模, $f\in\operatorname{End}_R(M)$. 则存在 $n\ge1$ 使
+\[
+  M=\operatorname{Im}f^n\oplus\ker f^n .
+\]
+\end{lemma}
+
+\begin{proof}
+链 $\operatorname{Im}f\supseteq\operatorname{Im}f^2\supseteq\cdots$ 与
+$\ker f\subseteq\ker f^2\subseteq\cdots$ 都是 $M$ 的子模链, 由有限长性存在 $n$ 使
+$\operatorname{Im}f^n=\operatorname{Im}f^{2n}$ 且 $\ker f^n=\ker f^{2n}$.
+任取 $m\in M$, 由 $\operatorname{Im}f^n=\operatorname{Im}f^{2n}$ 存在 $m'$ 使
+$f^n(m)=f^{2n}(m')=f^n\bigl(f^n(m')\bigr)$, 故 $m-f^n(m')\in\ker f^n$, 即
+$M=\operatorname{Im}f^n+\ker f^n$.
+再设 $y\in\operatorname{Im}f^n\cap\ker f^n$, 写 $y=f^n(x)$; 由 $f^n(y)=f^{2n}(x)=0$ 得
+$x\in\ker f^{2n}=\ker f^n$, 故 $y=f^n(x)=0$. 于是和为直和.
+\end{proof}
+
+\begin{corollary}\label{cor:end-local}
+设 $M\ne0$ 是有限长左 $R$-模且不可分解. 则 $\operatorname{End}_R(M)$ 是局部环:
+其中每个元素或为可逆元, 或为幂零元.
+\end{corollary}
+
+\begin{proof}
+设 $f\in\operatorname{End}_R(M)$, 由 Lemma \ref{lem:fitting} 取 $n$ 使
+$M=\operatorname{Im}f^n\oplus\ker f^n$. 若 $\ker f^n=M$, 则 $f^n=0$, $f$ 幂零;
+否则由 $M\ne0$ 不可分解必有 $\ker f^n=0$ 且 $\operatorname{Im}f^n=M$, 此时 $f^n$ 可逆,
+从而 $f$ 可逆.
+\end{proof}
+
+\begin{lemma}[交换引理]\label{lem:exchange}
+设 $M=M_1\oplus M_2=N_1\oplus\cdots\oplus N_s$, 其中 $M_1\ne0$ 不可分解. 则存在 $j_0$ 使
+\[
+  M=M_1\oplus\bigoplus_{j\ne j_0}N_j,\qquad N_{j_0}\cong M_1 .
+\]
+\end{lemma}
+
+\begin{proof}
+设 $\pi\colon M\to M_1$ 为沿 $M_2$ 的投影, $\pi_j\colon M\to N_j$ 为沿其余项的投影,
+则 $\sum_j\pi_j=\mathrm{id}_M$, 于是
+$\mathrm{id}_{M_1}=\pi|_{M_1}=\sum_j\pi\pi_j|_{M_1}$.
+由 Corollary \ref{cor:end-local}, $\operatorname{End}_R(M_1)$ 是局部环, 其非可逆元之集对加法封闭,
+故和式中至少有一项 $\pi\pi_{j_0}|_{M_1}$ 可逆.
+
+记 $\alpha=\pi|_{N_{j_0}}\colon N_{j_0}\to M_1$, $\beta=\pi_{j_0}|_{M_1}\colon M_1\to N_{j_0}$,
+则 $\alpha\beta$ 可逆, 故 $\beta$ 单、$\alpha$ 满. 令
+$s=\beta(\alpha\beta)^{-1}\colon M_1\to N_{j_0}$, 则 $\alpha s=\mathrm{id}_{M_1}$, 于是
+$N_{j_0}=s(M_1)\oplus\ker\alpha$ 且 $s(M_1)\cong M_1$. 由 $N_{j_0}\ne0$ 不可分解得
+$\ker\alpha=0$, 从而 $N_{j_0}\cong M_1$.
+
+最后, $M_1\cap\bigoplus_{j\ne j_0}N_j=0$: 若 $x$ 属于此交, 则 $\pi_{j_0}(x)=0$ 且 $x\in M_1$,
+而 $\beta$ 单, 故 $x=0$. 比较长度即知 $M=M_1\oplus\bigoplus_{j\ne j_0}N_j$.
+\end{proof}
+
+\begin{theorem}[Krull--Schmidt]\label{thm:krull-schmidt}
+设 $M$ 是有限长左 $R$-模, 且
+\[
+  M=M_1\oplus\cdots\oplus M_r=N_1\oplus\cdots\oplus N_s
+\]
+是两族非零不可分解子模的直和. 则 $r=s$, 且适当重排下标后有 $M_i\cong N_i$.
+\end{theorem}
+
+\begin{proof}
+对 $r$ 归纳. $r=1$ 时 $M$ 不可分解, 若 $s\ge2$ 则 $M$ 是两个真子模的直和, 矛盾, 故 $s=1$.
+设 $r\ge2$, 把 $M=M_1\oplus(M_2\oplus\cdots\oplus M_r)$ 与 $N_1,\dots,N_s$ 一起代入
+Lemma \ref{lem:exchange}, 得某个 $j_0$ 使 $N_{j_0}\cong M_1$ 且
+$M=M_1\oplus\bigoplus_{j\ne j_0}N_j$. 于是
+$M_2\oplus\cdots\oplus M_r\cong M/M_1\cong\bigoplus_{j\ne j_0}N_j$ 是 $r-1$ 与 $s-1$
+个不可分解模的直和, 由归纳假设 $r-1=s-1$ 且相应项同构.
+\end{proof}
+
 
 \begin{example}
 \mbox{}\par\vspace{-0.2em}

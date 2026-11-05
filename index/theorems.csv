@@ -53,7 +53,12 @@
 定义,商模,def:quotient-module,模,notes/reptheory/chapters/ch02.tex,"设 为环, 为左 -模, 为 的子模. 商群 在运算 下形成左 -模, 其中 , . 称 为 模去 形成的商模."
 注,,rem:quotient-group-exists,模,notes/reptheory/chapters/ch02.tex,"加群 默认是 Abel 群, 因此任意子群均正规, 故商群总是存在的."
 定义,,def:irreducible-module,模,notes/reptheory/chapters/ch02.tex,"设 为左 -模. 称 是 , 若 没有非平凡的子模, 即 没有除 和 以外的子模. 这样的 也称为 . 称 是 , 若 不能写成两个真子模的直和."
-注,,rem:irreducible-vs-indecomposable,模,notes/reptheory/chapters/ch02.tex,不可约模一定是不可分解模. 任何模都可以写为一些不可分解模的直和.
+注,,rem:irreducible-vs-indecomposable,模,notes/reptheory/chapters/ch02.tex,"不可约模一定是不可分解模. 若 是 的 (见下面的 Definition ), 则 可以写成有限多个不可分解子模的直和, 且这种分解在相差次序与同构的意义下唯一 (Theorem ). 不加有限长假设时, 该结论一般不对."
+定义,有限长模,def:finite-length,模,notes/reptheory/chapters/ch02.tex,"称左 -模 为 的, 若 的任意子模升链与降链都稳定; 等价地, 有一组合成列 (Definition )."
+引理,Fitting,lem:fitting,模,notes/reptheory/chapters/ch02.tex,"设 是有限长左 -模, . 则存在 使 [ M= f^n f^n . ]"
+推论,,cor:end-local,模,notes/reptheory/chapters/ch02.tex,"设 是有限长左 -模且不可分解. 则 是局部环: 其中每个元素或为可逆元, 或为幂零元."
+引理,交换引理,lem:exchange,模,notes/reptheory/chapters/ch02.tex,"设 , 其中 不可分解. 则存在 使 [ M=M_1 _ j j_0 N_j, N_ j_0 M_1 . ]"
+定理,Krull--Schmidt,thm:krull-schmidt,模,notes/reptheory/chapters/ch02.tex,"设 是有限长左 -模, 且 [ M=M_1 M_r=N_1 N_s ] 是两族非零不可分解子模的直和. 则 , 且适当重排下标后有 ."
 例,,,模,notes/reptheory/chapters/ch02.tex,"设 . 的不可约模形如 , 其中 , 即只有第一列非零的矩阵: [ _1 & 0 & & 0 _2 & 0 & & 0 & & & _n & 0 & & 0 . ] 回忆 , 记 . 取 [ e_k= _ j=0 ^ n-1 ^ -kj g"
 定义,合成列,def:composition-series,模,notes/reptheory/chapters/ch02.tex,称上述序列构成的链为 的一个合成列.
 定义,模同态,def:module-hom,模,notes/reptheory/chapters/ch02.tex,"设 为环, , 为左 -模. 称映射 为模同态, 若 ; . 其中 , ."
