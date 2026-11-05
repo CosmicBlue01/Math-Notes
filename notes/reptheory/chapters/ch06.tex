@@ -41,7 +41,7 @@ $\chi_\rho(g^{-1})=\overline{\chi_\rho(g)}$.
 
 \begin{proof}
 设 $g^m=1$, 则 $\rho(g)^m=\rho(g^m)=\mathrm{Id}$. 于是 $\rho(g)$ 可对角化, 其本征值
-$\lambda_1,\dots,\lambda_m$ 满足 $\lambda_i^m=1$, 从而 $\lambda_i^{-1}=\overline{\lambda_i}$. 故
+$\lambda_1,\dots,\lambda_n$ 满足 $\lambda_i^m=1$, 从而 $\lambda_i^{-1}=\overline{\lambda_i}$. 故
 \[
   \chi_\rho(g^{-1})=\operatorname{Tr}\bigl(\rho(g)^{-1}\bigr)=\sum_i\lambda_i^{-1}
   =\sum_i\overline{\lambda_i}=\overline{\operatorname{Tr}(\rho(g))}=\overline{\chi_\rho(g)}.
@@ -128,7 +128,7 @@ $\mathbb{R}^n$ 上的内积即为对称非退化的双线性函数.
 非退化性: 设 $f_1\neq 0$, 取 $g\in G$ 使 $f_1(g)\neq 0$, 并令 $\delta_g\in(\mathbb{F}G)^*$
 为 $\delta_g(g')=1$ ($g'=g$), $\delta_g(g')=0$ ($g'\neq g$). 则
 \[
-  (f_1,\delta_g)=\frac{1}{|G|}\sum_{h}f_1(h)\delta_g(h^{-1})=\frac{1}{|G|}f_1(g)\neq 0 .
+  (f_1,\delta_g)=\frac{1}{|G|}\sum_{h}f_1(h)\delta_g(h^{-1})=\frac{1}{|G|}f_1(g^{-1})\neq 0 .
 \]
 故 $(\cdot,\cdot)$ 非退化.
 \end{proof}
@@ -835,12 +835,16 @@ $C_3=\{(123),(132)\}$):
   1\cdot1\cdot1+1\cdot a+2\cdot c=0,\qquad
   1\cdot1\cdot1+1\cdot b+2\cdot d=0 .
 \]
-由此可解得 $a=\frac13(c+d+2)$, $b=-2a-1$, $c=-\frac13(d+2)$; 再由 $C_1$ 列的
-正交关系
+由此可解得
 \[
-  1+a^2+c^2=\frac{6}{3}=2\ \Longrightarrow\ a^2+c^2=1 ,
+  b=-\frac{1+3a}{2},\qquad d=-\frac{2+3c}{2};
 \]
-便得到两组解 ($d=1$ 或 $d=-\frac12$). 这里遇到了一个问题: 特征标本应是确定的,
+再由 $\chi_2$, $\chi_3$ 的范数 (即 $C_1$ 列的"自正交"关系)
+\[
+  1+3a^2+2b^2=6,\qquad 4+3c^2+2d^2=6
+\]
+得 $5a^2+2a-3=0$, $5c^2+4c=0$, 即 $a=-1$ 或 $\frac35$, $c=0$ 或 $-\frac45$, 于是得到两组解
+$(a,b,c,d)=(-1,1,0,-1)$ 或 $(\frac35,-\frac75,-\frac45,\frac15)$. 这里遇到了一个问题: 特征标本应是确定的,
 却解出了两组解, 说明还有些信息没有用到.
 \end{example}
 
@@ -1125,7 +1129,8 @@ $\dfrac{[G:Z_g]\,\chi_V(g)}{\chi_V(e)}$ 为代数整数.
 故 $\lambda=\dfrac{[G:Z_g]\chi_V(g)}{\chi_V(e)}$.
 
 再说明 $\lambda$ 是代数整数. 由于 $\mathbb{C}G$ 作为正则表示可写为不可约表示的直和,
-对每个 $k\in G$, $k$ 在 $\mathbb{C}G$ 上对应的矩阵是置换矩阵, 从而是整数矩阵;
+对每个 $k\in G$, 左乘 $k$ 在 $\mathbb{C}G$ 的这组基下对应的矩阵是置换矩阵, 从而是整数矩阵;
+于是左乘 $\sum_{h\in C_g}h$ 对应的矩阵也是整数矩阵, 其特征值 $\lambda$ 为代数整数.
 于是 $\sum_{h\in C_g}\rho(h)$ 在某一组基下也是整数矩阵, 其特征值 $\lambda$ 为代数整数.
 \end{proof}
 
@@ -1242,7 +1247,7 @@ $N_{ij}^k=(\chi_k,\chi_i\chi_j)=\dfrac{1}{|G|}\sum_g\chi_k(g)\chi_i(g)\chi_j(g)$
 因此 $V_5\otimes V_5=V_1\oplus V_2\oplus V_3\oplus V_4$.
 
 \noindent\textbf{例.} 四元数群
-$Q_8=\{x,y\mid x^4=y^4=1,\ x^2=y^2,\ xy=y^2x^3\}$.
+$Q_8=\{x,y\mid x^4=y^4=1,\ x^2=y^2,\ xy=yx^3\}$.
 首先 $Q_8=\{1,x,x^2,x^3,y,xy,x^2y,x^3y\}$, 共轭类为
 \[
   C_1=\{1\},\ C_2=\{x,x^3\},\ C_3=\{x^2\},\ C_4=\{y,x^2y\},\ C_5=\{xy,x^3y\}.
@@ -1271,7 +1276,7 @@ $Q_8=\{x,y\mid x^4=y^4=1,\ x^2=y^2,\ xy=y^2x^3\}$.
 \[
   x\mapsto\begin{pmatrix}i&0\\0&-i\end{pmatrix},\qquad
   y\mapsto\begin{pmatrix}0&1\\-1&0\end{pmatrix},\qquad
-  xy\mapsto\begin{pmatrix}0&i\\-i&0\end{pmatrix}.
+  xy\mapsto\begin{pmatrix}0&i\\i&0\end{pmatrix}.
 \]
 
 \subsection{若干标准结论}\label{sec:supplement}

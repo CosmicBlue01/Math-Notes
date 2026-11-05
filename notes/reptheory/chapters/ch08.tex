@@ -70,6 +70,7 @@
   \item $O(n)=\{A\in\mathrm{GL}_n(\mathbb{R})\mid AA^{\mathrm{T}}=I_n\}$ (正交群),
   $U(n)=\{A\in\mathrm{GL}_n(\mathbb{C})\mid AA^{\mathrm{T}}=I_n\}$ (酉群),
   都是拓扑群, 这一点我们就不证了. 我们说 $O(n)$, $U(n)$ 都是紧的.
+  \par 本书中复矩阵的 $A^{\mathrm{T}}$ 一律指共轭转置 $\bar A^{\mathrm{T}}$.
 \end{enumerate}
 \end{example}
 
@@ -80,11 +81,11 @@ $\mathrm{SL}_n(\mathbb{C})$ 都不紧.
 而 $\mathrm{GL}_n$ 的行列式无界, 因此不紧.
 对 $\mathrm{SL}_n$, 需要利用 Frobenius 范数: 考虑
 \[
-  A_k=\operatorname{diag}\Bigl(k,\dots,k,\frac1k,\dots,\frac1k\Bigr),
+  A_k=\operatorname{diag}\Bigl(k,1,\dots,1,\frac1k\Bigr),
 \]
 则 $|A_k|=1$, 而
 \[
-  \|A_k\|_F=\sqrt{k^2+\cdots+k^2+\frac{1}{k^2}+\cdots+\frac{1}{k^2}}\xrightarrow{k\to\infty}\infty,
+  \|A_k\|_F=\sqrt{k^2+1+\cdots+1+\frac{1}{k^2}}\xrightarrow{k\to\infty}\infty,
 \]
 因此 $\mathrm{SL}_n$ 也不是紧的.
 
@@ -117,7 +118,7 @@ $\mathrm{SO}(n)$ 是 $\mathrm{GL}_n(\mathbb{R})$ 的极大连通紧子群.
 \begin{example}\label{ex:top-hom}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-  \item $\det\colon\mathrm{GL}_n(\mathbb{C})\to\mathbb{R}^{\times}$ 为拓扑群同态:
+  \item $\det\colon\mathrm{GL}_n(\mathbb{C})\to\mathbb{C}^{\times}$ 为拓扑群同态:
   $\det(AB)=\det(A)\det(B)$, 且 $\det$ 连续.
   \item 考虑 $S^1=\{e^{i\theta}\mid0\le\theta<2\pi\}$.
   $S^1$ 是单位圆周群, 且是紧群. 这是因为考虑 $f\colon\mathbb{C}\to\mathbb{R}$,
@@ -278,7 +279,7 @@ $f(x,y)=f(z)$, $z=(x,y)\in G\times H$, 则
 下面我们说明 $V=V_1\oplus V_1^{\perp}$. 事实上, 作为线性空间 $V=V_1\oplus V_1^{\perp}$;
 只需说明 $V_1^{\perp}$ 也是 $G$ 的子表示即可: 对 $v_2\in V_1^{\perp}$, $g\in G$,
 \[
-  (g\cdot v_2,\ v_1)=(v_2,\ g^{-1}v_1)=(v_2,\ v_1)=0,
+  (g\cdot v_2,\ v_1)=(v_2,\ g^{-1}v_1)=0,
 \]
 故 $g\cdot v_2\in V_1^{\perp}$, 即 $V_1^{\perp}$ 也为 $G$ 的子表示.
 \end{proof}
@@ -401,12 +402,12 @@ $\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上�
 \]
 取一矩阵 $C_{nm}\colon V\to U$, 令
 \[
-  \widetilde C_{nm}:=\int_G\gamma(g)\,C\,\rho(g)\,\mathrm{d}g,
+\widetilde C_{nm}:=\int_G\gamma(g)\,C\,\rho(g)^{-1}\,\mathrm{d}g,
 \]
 则对 $x\in G$,
 \[
   \gamma(x)\,\widetilde C_{nm}\,\rho(x)^{-1}
-  =\int_G\gamma(x)\gamma(g)\,C\,\rho(g)\rho(x)^{-1}\,\mathrm{d}g .
+  =\int_G\gamma(x)\gamma(g)\,C\,\rho(g)^{-1}\rho(x)^{-1}\,\mathrm{d}g .
 \]
 
 \[
@@ -425,7 +426,7 @@ $\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上�
 而 $C$ 是任取的, 取 $C=e_{kl}$ (其中 $e_{kl}$ 为矩阵单位, 在第 $k$ 行第 $l$ 列为 $1$,
 其余位置为 $0$), 则
 \[
-  \widetilde C=\int_G\gamma(g)\,e_{kl}\,\rho(g)\,\mathrm{d}g
+  \widetilde C=\int_G\gamma(g)\,e_{kl}\,\rho(g)^{-1}\,\mathrm{d}g
   =\int_G b_{kj}(g)\,e_{kl}\,a_{ij}(g)\,\mathrm{d}g
   =\Bigl(\int_G b_{kj}(g)\,a_{ij}(g)\,\mathrm{d}g\Bigr)e_{kl}=0,
 \]
@@ -435,7 +436,7 @@ $\operatorname{char}K\nmid|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ 上�
 2° 若 $V\cong U$, 由 Schur 引理, $\operatorname{Hom}_G(V,U)=\mathbb{C}\,\mathrm{Id}$.
 则 $\widetilde C=\lambda I_n$, $\operatorname{Tr}(\widetilde C)=n\lambda$. 又 $C=e_{kl}$, $\operatorname{Tr}(C)=\delta_{kl}$, 则
 \[
-  \operatorname{Tr}(\widetilde C)=\operatorname{Tr}\Bigl(\int_G\gamma(g)\,C\,\rho(g)\,\mathrm{d}g\Bigr)
+  \operatorname{Tr}(\widetilde C)=\operatorname{Tr}\Bigl(\int_G\gamma(g)\,C\,\rho(g)^{-1}\,\mathrm{d}g\Bigr)
   =\int_G\operatorname{Tr}\bigl(\gamma(g)\,C\,\rho(g)\bigr)\mathrm{d}g
   =\int_G\operatorname{Tr}(C)\,\mathrm{d}g=\operatorname{Tr}(C)=\delta_{kl},
 \]
@@ -549,12 +550,12 @@ $S^1$ 上连续函数的一组正交函数的线性逼近.
 \begin{enumerate}
   \item $G$ 上所有互不等价的有限维不可约表示的矩阵元全体, 构成一个 $C(G,\mathbb{C})$
         的正交完备系;
-  \item $G$ 上所有不可约特征标全体, 构成一个 $C(G,\mathbb{C})$ 的标准正交完备系.
+  \item $G$ 上所有不可约特征标全体, 构成类函数空间的标准正交完备系.
 \end{enumerate}
 \end{theorem}
 
 \begin{remark}\label{rem:standard-character}
-标准即指 $(\chi_i,\chi_j)=1$.
+标准即指 $(\chi_i,\chi_j)=\delta_{ij}$.
 \end{remark}
 
 \subsection{$SU_2$ 的所有不可约表示}

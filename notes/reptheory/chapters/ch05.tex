@@ -220,9 +220,9 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
   &=(g_2\cdot f)(g_1^{-1}\cdot v)=\bigl(g_1\cdot(g_2\cdot f)\bigr)(v).
 \end{align*}
 设 $g(\alpha_1,\dots,\alpha_n)=(\alpha_1,\dots,\alpha_n)A$, $g^*(f_1,\dots,f_n)=(f_1,\dots,f_n)B$,
-其中 $B=A^{-\mathrm{T}}$. 令 $B=(b_{ij})_{n\times n}$, 并设 $g\cdot f_i=\sum_s c_{si}f_s$, 则对每个 $j$,
+其中 $B=A^{-1}$. 令 $B=(b_{ij})_{n\times n}$, 并设 $g\cdot f_i=\sum_s c_{si}f_s$, 则对每个 $j$,
 \begin{equation*}
-  c_{ji}=(g\cdot f_i)(\alpha_j)=f_i(g^{-1}\alpha_j)=f_i\Bigl(\sum_s b_{sj}\alpha_s\Bigr)=b_{ji},
+  c_{ji}=(g\cdot f_i)(\alpha_j)=f_i(g^{-1}\alpha_j)=f_i\Bigl(\sum_s b_{sj}\alpha_s\Bigr)=b_{ij},
 \end{equation*}
 故 $g(f_1,\dots,f_n)=(f_1,\dots,f_n)B^{\mathrm{T}}=(f_1,\dots,f_n)A^{-\mathrm{T}}$, 从而
 \begin{equation*}
@@ -278,7 +278,15 @@ $f_1,\dots,f_m$ 为 $V_1^*$ 的基. 设 $\operatorname{Ker}(\psi)$ 中元素为
   \sum_{j,k}a_{jk}\,f_j(\alpha_i)\beta_k=\sum_{j,k}a_{jk}\delta_{ij}\beta_k=\sum_k a_{ik}\beta_k=0 .
 \end{equation*}
 由 $\beta_k$ 线性无关得 $a_{ik}=0$ 对一切 $i,k$ 成立, 故 $t=0$, 即 $\operatorname{Ker}(\psi)=\{0\}$.
-因此 $\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)\cong V_1^*\otimes_{\mathbb{F}} V_2$.
+最后说明 $\psi$ 与 $G$ 的作用交换: 记 $G$ 在 $\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)$ 上的作用为
+$(g\cdot\varphi)(v_1)=g\cdot\varphi(g^{-1}v_1)$, 则对 $f\otimes v_2\in V_1^*\otimes V_2$,
+\[
+  \psi\bigl(g\cdot(f\otimes v_2)\bigr)(v_1)
+  =\psi\bigl((g\cdot f)\otimes(g\cdot v_2)\bigr)(v_1)
+  =f(g^{-1}v_1)\,g\cdot v_2
+  =\bigl(g\cdot\psi(f\otimes v_2)\bigr)(v_1),
+\]
+故 $\psi$ 是表示同构, 即 $\operatorname{Hom}_{\mathbb{F}}(V_1,V_2)\cong V_1^*\otimes_{\mathbb{F}} V_2$ 为表示同构.
 \end{proof}
 
 \begin{remark}\label{rem:rep-trace}

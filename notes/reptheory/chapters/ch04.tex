@@ -55,10 +55,11 @@ $C(M\times N)$ 中的元素形如 $\sum_i b_i(m_i,n_i)$, $b_i\in\mathbb{Z}$, 故
 \[
   \pi\Bigl(\sum_i b_i(m_i,n_i)\Bigr)=\sum_i b_i\,(m_i\otimes n_i).
 \]
-对 $k\in\mathbb{Z}$ 有
+对 $k\in\mathbb{Z}_{>0}$ 有
 \[
-  (km)\otimes n=\underbrace{m\otimes n+\cdots+m\otimes n}_{|k|\ \text{个}}=k\,(m\otimes n),
+  (km)\otimes n=\underbrace{m\otimes n+\cdots+m\otimes n}_{k\ \text{个}}=k\,(m\otimes n),
 \]
+对 $k<0$ 由 $k=-|k|$ 及加群中取负的性质同样成立,
 故元素可进一步写为 $\sum_i m_i\otimes n_i$ 的形式.
 \end{remark}
 
@@ -104,7 +105,7 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 \]
 \[
   \varphi'\colon \mathbb{Z}/n\mathbb{Z}\longrightarrow\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z},\qquad
-  [n]\longmapsto 1\otimes[n],
+  [a]\longmapsto 1\otimes[a],
 \]
 即可.
 
@@ -231,7 +232,7 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 
 \begin{definition}[双线性映射]\label{def:bilinear}
 设 $\mathbb{F}$ 为域, 给定线性空间 $M_{\mathbb{F}}$, ${}_{\mathbb{F}} N$, $V$.
-称 $F\colon M\otimes_{\mathbb{F}} N\to V$ 为\textbf{平衡双加性映射}, 若
+称 $F\colon M\times_{\mathbb{F}} N\to V$ 为\textbf{平衡双加性映射}, 若
 \begin{enumerate}[label=(\arabic*)]
   \item $F(m_1+m_2,n)=F(m_1,n)+F(m_2,n)$;
   \item $F(m,n_1+n_2)=F(m,n_1)+F(m,n_2)$;
@@ -273,7 +274,7 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
   \varphi\Bigl(r\cdot\sum_i r_i\otimes m_i\Bigr)=\varphi\Bigl(\sum_i rr_i\otimes m_i\Bigr)
   =\sum_i rr_i\,m_i=r\sum_i r_i m_i=r\cdot\varphi\Bigl(\sum_i r_i\otimes m_i\Bigr),
 \]
-故 $\varphi$ 是左 $R$-模同态, 从而是同构, 即 $R\otimes_R M\cong M$.
+故 $\varphi$ 是左 $R$-模同态; 又 $m\longmapsto1\otimes m$ 给出其逆, 故 $\varphi$ 是同构, 即 $R\otimes_R M\cong M$.
 \end{proof}
 
 \begin{corollary}\label{cor:tensor-KV}
@@ -297,7 +298,7 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
   \psi\colon (M_1\otimes_R N)\oplus(M_2\otimes_R N)\longrightarrow (M_1\oplus M_2)\otimes_R N,
 \]
 \[
-  m_1\otimes n_1+m_2\otimes n_2\longmapsto (m_1,n_1)\otimes n_1+(m_2,n_2)\otimes n_2,
+  m_1\otimes n_1+m_2\otimes n_2\longmapsto (m_1,0)\otimes n_1+(0,m_2)\otimes n_2,
 \]
 其中 $(m_1,m_2)\in M_1\oplus M_2$, $n,n_1,n_2\in N$. 直接验证 $\psi\varphi=\operatorname{Id}$ 且
 $\varphi\psi=\operatorname{Id}$, 即可.

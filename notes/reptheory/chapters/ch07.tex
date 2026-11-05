@@ -134,7 +134,7 @@ $f\longmapsto\bigl(m\otimes n\mapsto f(n)(m)\bigr)$.
 \[
   \mathbb{C}G=\mathbb{C}g_1H\oplus\cdots\oplus\mathbb{C}g_\ell H .
 \]
-进一步, 作为左 $\mathbb{C}H$-模也有上述分解. 显然, 作为左 $H$-模
+进一步, 作为右 $\mathbb{C}H$-模也有上述分解. 显然, 作为右 $H$-模
 $\mathbb{C}g_iH\cong\mathbb{C}H$. 于是
 \[
   V_H^G=\mathbb{C}G\otimes_{\mathbb{C}H}V
@@ -241,7 +241,7 @@ $\mathbb{C}G\otimes_{\mathbb{C}H}\mathbb{C}H\cong\mathbb{C}G$, 该诱导表示�
 \end{corollary}
 
 \begin{corollary}\label{cor:induced-central}
-若 $H\subseteq Z(G)$, 则 $\chi_{V_H^G}(g)=[G:H]\,\chi(g)$.
+若 $H\subseteq Z(G)$, 则对 $g\in H$ 有 $\chi_{V_H^G}(g)=[G:H]\,\chi(g)$, 且 $g\notin H$ 时 $\chi_{V_H^G}(g)=0$.
 \end{corollary}
 
 \begin{proof}
@@ -344,7 +344,7 @@ $H\subseteq Z(G)$ 时, 当 $g\notin H$ 有 $\chi_{V_H^G}(g)=0$; 故只需看 $g\
 \begin{align*}
   \Psi\bigl(g'\cdot(g\otimes u\otimes v)\bigr)
   &=\Psi\bigl(g'g\otimes u\otimes g'\cdot v\bigr)
-   =g'g\otimes u\otimes g'g\cdot(g^{-1}g'\cdot v)\\
+   =g'g\otimes u\otimes (g'g)\cdot v\\
   &=g'\cdot(g\otimes u\otimes g\cdot v)=g'\cdot\Psi(g\otimes u\otimes v).
 \end{align*}
 故 $\Psi$ 为同构, 即左边 $\cong$ 右边.

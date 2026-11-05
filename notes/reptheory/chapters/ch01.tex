@@ -279,28 +279,28 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
   \item 考虑全矩阵代数 $M_n(\mathbb{F})$. 记 $E_{ij}$ 为第 $(i,j)$ 个矩阵单位, $e_j$ 为第 $j$ 个标准基向量.
   设 $I_l\trianglelefteq_l M_n(\mathbb{F})$ 为左理想, 令
   \[
-    W=\{Ae_j \mid A\in I_l,\ 1\le j\le n\}\subseteq \mathbb{F}^{n}
+    U=\{xB \mid x\in \mathbb{F}^{n},\ B\in I_l\}\subseteq \mathbb{F}^{1\times n}
   \]
-  为 $I_l$ 中所有矩阵的列向量张成的子空间, 则
+  为 $I_l$ 中所有行向量张成的子空间, 则
   \[
-    I_l=\{A\in M_n(\mathbb{F}) \mid \operatorname{Im}(A)\subseteq W\}.
+    I_l=\{A\in M_n(\mathbb{F}) \mid A\ \text{的每一行都属于}\ U\}.
   \]
-  事实上, "$\subseteq$" 由 $W$ 的定义直接得到. 反之设 $A$ 的每一列都属于 $W$,
-  则对每个 $j$ 存在 $B\in I_l$ 与 $k$ 使 $Ae_j=Be_k$, 于是
-  $Ae_j e_j^{\mathrm{T}}=B e_k e_j^{\mathrm{T}}=BE_{kj}\in I_l$;
-  由 $A=\sum_j Ae_j e_j^{\mathrm{T}}$ 得 $A\in I_l$.
+  事实上 "$\subseteq$" 由 $U$ 的定义直接得到. 反之设 $A$ 的每一行都属于 $U$,
+  则每一行都是 $I_l$ 中某些矩阵的行的线性组合, 于是 $A$ 是形如 $E_{ij}B$ ($B\in I_l$) 的矩阵的线性组合;
+  而 $E_{ij}B$ 正是把 $B$ 的第 $j$ 行搬到第 $i$ 行、其余行置零的矩阵, 由 $I_l$ 对左乘封闭知 $E_{ij}B\in I_l$,
+  故 $A\in I_l$.
 
-  于是左理想与 $\mathbb{F}^{n}$ 的子空间一一对应. 取 $W=\operatorname{span}_{\mathbb{F}}\{e_{i_1},\dots,e_{i_k}\}$,
+  于是左理想与 $\mathbb{F}^{n}$ 的子空间一一对应. 取 $U=\operatorname{span}_{\mathbb{F}}\{e_{i_1}^{\mathrm{T}},\dots,e_{i_k}^{\mathrm{T}}\}$,
   即得"只有第 $i_1,\dots,i_k$ 列可能非零"的左理想, 其元素形如 (其中 $0$ 为零列)
   \[
     \left(\alpha_{i_1}\ \ 0\ \alpha_{i_2}\ \ 0\ \cdots\ 0\ \alpha_{i_k}\ \ 0\ \cdots\right),
     \qquad \alpha_{i_j}\in \mathbb{F}^{n\times 1};
   \]
-  取 $W=\mathbb{F}^{n}$ 得 $I_l=M_n(\mathbb{F})$, 取 $W=\{0\}$ 得 $I_l=\{0\}$.
+  取 $U=\mathbb{F}^{1\times n}$ 得 $I_l=M_n(\mathbb{F})$, 取 $U=\{0\}$ 得 $I_l=\{0\}$.
 
-  同理, 对右理想 $I_r\trianglelefteq_r M_n(\mathbb{F})$, 令 $U$ 为其所有行向量张成的子空间, 则
-  $I_r=\{A\in M_n(\mathbb{F})\mid$ $A$ 的每一行都属于 $U\}$;
-  取 $U=\operatorname{span}_{\mathbb{F}}\{e_{j_1}^{\mathrm{T}},\dots,e_{j_k}^{\mathrm{T}}\}$ 即得"只有第 $j_1,\dots,j_k$ 行可能非零"的右理想,
+  同理, 对右理想 $I_r\trianglelefteq_r M_n(\mathbb{F})$, 令 $W$ 为其所有列向量张成的子空间, 则
+  $I_r=\{A\in M_n(\mathbb{F})\mid \operatorname{Im}(A)\subseteq W\}$;
+  取 $W=\operatorname{span}_{\mathbb{F}}\{e_{j_1},\dots,e_{j_k}\}$ 即得"只有第 $j_1,\dots,j_k$ 行可能非零"的右理想,
   其元素形如 (其中 $0$ 为零行)
   \[
     \begin{pmatrix}
