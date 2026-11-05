@@ -105,3 +105,7 @@
 \newcommand{\divides}{\mathrel{\big|}}
 \newcommand{\ndivides}{\mathrel{\not\big|}}
 
+% 作用记号: 自绘弯箭头, 代替过小的 \curvearrowright
+\newcommand{\acts}{\mathrel{\tikz[baseline=-0.4ex]%
+  \draw[->,>=stealth,line width=0.4pt] (0,0.5ex) to[bend left=40] (1.1em,-0.12ex);}}
+
