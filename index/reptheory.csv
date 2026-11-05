@@ -20,7 +20,7 @@
 注,,rem:hilbert-basis,代数,notes/reptheory/chapters/ch01.tex,"的每个子代数是否都形如 ? 这正是 Hilbert 基定理 (Hilbert basis theorem) 的内容, 此处不展开."
 例,,ex:matrix-subalgebras,代数,notes/reptheory/chapters/ch01.tex,全矩阵代数 的子代数: 上三角矩阵 (常记为 ) 的全体为子代数; 对角矩阵 (常记为 ) 的全体为子代数.
 例,,ex:group-algebra-F2,代数,notes/reptheory/chapters/ch01.tex,为子代数.
-例,,ex:subgroup-algebra,代数,notes/reptheory/chapters/ch01.tex,"[子群代数] 设 , 则 为子代数."
+例,子群代数,ex:subgroup-algebra,代数,notes/reptheory/chapters/ch01.tex,"设 , 则 为子代数."
 注,,rem:subalgebra-not-subgroup,代数,notes/reptheory/chapters/ch01.tex,"由 不能推出 . 反例: 取 , 仍考虑 , , 记 . 现考虑元素 [ a= 3 (1+ g+ ^2 g^2 ) _3 . ] 直接计算得 [ a^2= 9 (1+ g+ ^2 g^2 )^2 = 9 (3+3 g+3 ^2 g^2 ) "
 例,,ex:quaternion-inverse,代数,notes/reptheory/chapters/ch01.tex,"四元数代数 中每个非零元都可逆. 设 ( 不全为 ), , 则 [ x^ -1 = |x|^2 = a^2+b^2+c^2+d^2 . ]"
 定义,可除代数,def:division-algebra,代数,notes/reptheory/chapters/ch01.tex,"称代数 是可除代数, 若 中每个非零元都有逆元."
@@ -95,7 +95,7 @@
 注,,rem:balanced,张量积,notes/reptheory/chapters/ch04.tex,"上述定义中, 双加性指 (i), (ii); 平衡指 (iii)."
 定理,张量积的泛性质,thm:tensor-universal,张量积,notes/reptheory/chapters/ch04.tex,"设 为环, , 为模, 为加群. 对任意平衡双加性映射 , 都存在唯一的加群同态 , 使得下图交换, 即 : [ [row sep=1.4cm, column sep=2.4cm, arrows= ->,>=stealth ] M N [r"
 注,,rem:tensor-universal,张量积,notes/reptheory/chapters/ch04.tex,"典范映射 [ M N M _R N, (m,n) m n ] 本身就是平衡双加性映射. 若 满足同样的泛性质, 则 ."
-注,证明的结构,rem:tensor-proof-pic,张量积,notes/reptheory/chapters/ch04.tex,"定理的证明可概括为下图: [ [row sep=1.4cm, column sep=1.7cm, arrows= ->,>=stealth ] M N [r,""i""] [dr,""f""'] & C(M N) [r,"" ""] [d,"" f""] "
+注,证明的结构,rem:tensor-proof-pic,张量积,notes/reptheory/chapters/ch04.tex,"定理的证明可概括为下图: [ [row sep=1.4cm, column sep=1.7cm, arrows= ->,>=stealth ] M N [r,hook,""i""] [dr,""f""'] & C(M N) [r,"" ""] [d,"""
 例,,ex:tensor-module-structure,张量积,notes/reptheory/chapters/ch04.tex,"给定环 , , 取 - 双模 和左模 . 此时 自然成为一个左 -模: [ S (M _R N) M _R N, (s,m n) (s m) n . ] 注意这里 是等价类, 故验证上述运算是否良定义是必要的. 给定环 , , 取右模 和 "
 注,,rem:tensor-no-module,张量积,notes/reptheory/chapters/ch04.tex,"一般而言, 给定右模 和左模 , 此时 仅仅是 Abel 群, 并没有模的结构."
 命题,,prop:tensor-vector-space,张量积,notes/reptheory/chapters/ch04.tex,"设 为域, 给定线性空间 和 , 则 也是 -线性空间."
@@ -160,7 +160,7 @@
 注,,rem:tensor-sym-alt,特征标,notes/reptheory/chapters/ch06.tex,"(1) 一般而言, 不可约表示的张量积不再不可约. (2) 这里称 为 的二阶对称表示, 称 为 的二阶交错表示."
 定理,表示的重数,thm:multiplicity,特征标,notes/reptheory/chapters/ch06.tex,"若有限维表示 可写成不可约表示的直和 , 则 ."
 定理,,thm:regular-contains,特征标,notes/reptheory/chapters/ch06.tex,"每个不可约表示 都是正则表示的子表示, 且重数为 ."
-注,,rem:regular-representation,特征标,notes/reptheory/chapters/ch06.tex,"[正则表示] 设 , , 则 , , 其中 . 称这个表示为正则表示. 由定义 ; 且 , 而对 , 是置换矩阵且没有不动点, 故 ."
+注,正则表示,rem:regular-representation,特征标,notes/reptheory/chapters/ch06.tex,"设 , , 则 , , 其中 . 称这个表示为正则表示. 由定义 ; 且 , 而对 , 是置换矩阵且没有不动点, 故 ."
 推论,,cor:sum-dim-square,特征标,notes/reptheory/chapters/ch06.tex,"设 的所有不可约表示为 , 则 ."
 定理,,thm:tensor-multiplicity,特征标,notes/reptheory/chapters/ch06.tex,"取 的所有不可约表示 , 设 , 则 ."
 例,,ex:S3-tensor-square,特征标,notes/reptheory/chapters/ch06.tex,"在 中求 的分解. 事实上 [ ( _ , _ _ ) = 6 _ g S_3 _ (g) _ (g^ -1 ) _ (g^ -1 ) = 6 (4+0+0+0+1+1 )=1, ] 类似可算得 [ ( _ , _ _ )=1, ( _ ,"

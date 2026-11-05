@@ -25,7 +25,7 @@
 | 19 | 注 |  | `rem:hilbert-basis` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 20 | 例 |  | `ex:matrix-subalgebras` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 21 | 例 |  | `ex:group-algebra-F2` | 代数 | notes/reptheory/chapters/ch01.tex |
-| 22 | 例 |  | `ex:subgroup-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
+| 22 | 例 | 子群代数 | `ex:subgroup-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 23 | 注 |  | `rem:subalgebra-not-subgroup` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 24 | 例 |  | `ex:quaternion-inverse` | 代数 | notes/reptheory/chapters/ch01.tex |
 | 25 | 定义 | 可除代数 | `def:division-algebra` | 代数 | notes/reptheory/chapters/ch01.tex |
@@ -165,7 +165,7 @@
 | 159 | 注 |  | `rem:tensor-sym-alt` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 160 | 定理 | 表示的重数 | `thm:multiplicity` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 161 | 定理 |  | `thm:regular-contains` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 162 | 注 |  | `rem:regular-representation` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 162 | 注 | 正则表示 | `rem:regular-representation` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 163 | 推论 |  | `cor:sum-dim-square` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 164 | 定理 |  | `thm:tensor-multiplicity` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 165 | 例 |  | `ex:S3-tensor-square` | 特征标 | notes/reptheory/chapters/ch06.tex |

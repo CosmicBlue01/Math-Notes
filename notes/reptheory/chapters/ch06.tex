@@ -143,6 +143,7 @@ $\mathbb{R}^n$ 上的内积即为对称非退化的双线性函数.
 下面以几个特征标的计算引入.
 
 \begin{example}\label{eg:char-Z3}
+\mbox{}\par\vspace{-0.2em}
 (1) 回忆 $\mathbb{C}\mathbb{Z}_3$. 在 II.\ 例 2 中我们讨论了 $\mathbb{C}\mathbb{Z}_n$, 利用结论可写
 \[
   \mathbb{C}\mathbb{Z}_3=\bigoplus_{j=1}^{3}\mathbb{C}x_j,\qquad
@@ -165,7 +166,7 @@ $1\mapsto 1$, $g\mapsto\omega$, $g^2\mapsto\omega^2$. 则
 \]
 而注意 $(\chi_{\mathbb{C}x_2},\chi_{\mathbb{C}x_2})=(\chi_{\mathbb{C}x_1},\chi_{\mathbb{C}x_1})=1$.
 
-(2) 回忆 $S_3=\{(),(12),(13),(23),(123),(132)\}$,
+(2) 回忆 $S_3=\{1,(12),(13),(23),(123),(132)\}$,
 \[
   \rho_{\mathrm{triv}}\colon S_3\to\mathbb{C}^\times,\ g\mapsto 1;\qquad
   \rho_{\mathrm{sign}}\colon S_3\to\mathbb{C}^\times,\
@@ -175,7 +176,7 @@ $1\mapsto 1$, $g\mapsto\omega$, $g^2\mapsto\omega^2$. 则
 \[
   V_1=\Bigl\{\sum_i k_ie_i \Bigm| \sum_i k_i=0\Bigr\}
 \]
-上, 取 $V_1$ 的一组基 $\{e_1-e_2,\ e_1-e_3\}$. 显然 $()\mapsto I_2$, 且
+上, 取 $V_1$ 的一组基 $\{e_1-e_2,\ e_1-e_3\}$. 显然 $1\mapsto I_2$, 且
 \[
   (12)(e_1-e_2,\ e_1-e_3)=(e_2-e_1,\ e_2-e_3)
   =(e_1-e_2,\ e_1-e_3)\begin{pmatrix}-1&-1\\ 0&1\end{pmatrix},
@@ -195,7 +196,7 @@ $1\mapsto 1$, $g\mapsto\omega$, $g^2\mapsto\omega^2$. 则
   =\frac{1}{6}\sum_{g\in S_3}\chi_{\mathrm{triv}}(g)\chi_{\mathrm{triv}}(g^{-1})
   =\frac{1}{6}\sum_{g\in S_3}1=1 .
 \]
-注意到 $S_3$ 中 $(),(123),(132)$ 是偶置换, $(12),(13),(23)$ 是奇置换, 于是
+注意到 $S_3$ 中 $1,(123),(132)$ 是偶置换, $(12),(13),(23)$ 是奇置换, 于是
 \[
   (\chi_{\mathrm{triv}},\chi_{\mathrm{sign}})
   =\frac{1}{6}\sum_{g}\chi_{\mathrm{triv}}(g)\chi_{\mathrm{sign}}(g^{-1})
@@ -263,6 +264,7 @@ $\zeta(V)=V^G$.
 \end{lemma}
 
 \begin{proof}
+\mbox{}\par\vspace{-0.2em}
 (1) 任取 $v\in V$, 则 $\zeta(v)\in V$. 对任意 $g\in G$ 有 $g\cdot\zeta(v)=\zeta(v)$,
 故 $\zeta(v)\in V^G$, 即 $\zeta(V)\subseteq V^G$.
 
@@ -336,6 +338,7 @@ $f\in\operatorname{Hom}_G(V_1,V_2)$.
 \end{lemma}
 
 \begin{proof}
+\mbox{}\par\vspace{-0.2em}
 (1) 设 $V_1\ncong V_2$. 任取 $f\in\operatorname{Hom}_A(V_1,V_2)$, 反设 $f\neq 0$.
 由同态基本定理, $\operatorname{Ker}(f)\subseteq V_1$ 且为子模; 既然 $f\neq 0$, 则
 $\operatorname{Ker}(f)\subsetneq V_1$; 而 $V_1$ 不可约, 故 $\operatorname{Ker}(f)=\{0\}$, 即 $f$ 是单射.
@@ -393,6 +396,7 @@ $V_1\cong V_2$ 当且仅当 $\chi_{V_1}=\chi_{V_2}$.
 \end{theorem}
 
 \begin{proof}
+\mbox{}\par\vspace{-0.2em}
 (1) 设 $V_1\cong V_2$, 即有同构 $\varphi\colon V_1\to V_2$ 使下图交换:
 \[
   \begin{tikzcd}[row sep=3.2cm, column sep=4.5cm, arrows={->,>=stealth}]
@@ -529,6 +533,7 @@ $\chi_V(g)=\sum_i\lambda_i$, 从而 $\chi_{V\otimes V}(g)=\sum_{i,j}\lambda_i\la
 \end{proof}
 
 \begin{remark}\label{rem:tensor-sym-alt}
+\mbox{}\par\vspace{-0.2em}
 (1) 一般而言, 不可约表示的张量积不再不可约.
 
 (2) 这里称 $\mathrm{Sym}^2(V)$ 为 $V$ 的二阶对称表示, 称 $\mathrm{Alt}^2(V)$ 为
@@ -554,7 +559,7 @@ $V=\bigoplus_{i=1}^{r}V_i^{(n_i)}$, 则 $n_i=(\chi_i,\chi_V)$.
 \]
 \end{proof}
 
-\begin{remark}\label{rem:regular-representation}[正则表示]
+\begin{remark}[正则表示]\label{rem:regular-representation}
 设 $G=\{g_1,\dots,g_n\}$, $V=\mathbb{F}G=\operatorname{span}_{\mathbb{F}}\{g\mid g\in G\}$,
 则 $\rho\colon G\to\mathrm{GL}_V$, $g\mapsto\rho(g)$, 其中 $\rho(g)(h)=gh$.
 称这个表示为正则表示. 由定义 $\dim V_{\mathrm{reg}}=|G|$; 且 $\chi_{\mathrm{reg}}(1)=|G|$,
@@ -980,7 +985,7 @@ $S_n$ 中共轭类的个数等于 $n$ 的无序分拆的个数.
 故 $S_4$ 有 $5$ 个共轭类, 相应地
 \[
 \begin{array}{ll}
-  1+1+1+1 & \text{即单位元 } ();\\
+  1+1+1+1 & \text{即单位元 } 1;\\
   2+1+1 & \text{即对换 } (12),(13),\dots \quad\text{(奇置换)};\\
   3+1 & \text{即 } (123),(124),\dots \quad\text{(偶置换)};\\
   2+2 & \text{即 } (12)(34),\dots \quad\text{(偶置换)};\\
@@ -997,11 +1002,11 @@ $S_n$ 中共轭类的个数等于 $n$ 的无序分拆的个数.
 
 其二: 回忆商群的办法. 回忆 Klein 四元群
 \[
-  K_4=\{(),(12)(34),(13)(24),(14)(23)\},
+  K_4=\{1,(12)(34),(13)(24),(14)(23)\},
 \]
 有 $K_4\trianglelefteq S_4$, 且 $S_4/K_4\cong S_3$. 设 $\pi\colon S_4\to S_3$, 则
 \[
-  ()\mapsto(),\quad (12)\mapsto(12),\quad (12)(34)\mapsto(),\quad
+  1\mapsto1,\quad (12)\mapsto(12),\quad (12)(34)\mapsto1,\quad
   (13)\mapsto(13),\quad (1234)\mapsto(13).
 \]
 由此即可写出相应的特征标.
@@ -1496,6 +1501,7 @@ $\ker\chi_\rho=\ker\rho$.
 \end{proposition}
 
 \begin{proof}
+\mbox{}\par\vspace{-0.2em}
 (1) $\ker\chi_\rho\subseteq\ker\rho$. 设 $g\in\ker\chi_\rho$, 则
 $\chi_\rho(g)=\operatorname{Tr}(\rho(g))=\dim V=n$. 设 $g$ 的阶为 $m$, 即 $g^m=1$,
 则 $\rho(g)^m=I$, 故 $\rho(g)$ 的特征值 $\lambda_1,\dots,\lambda_n$ 满足
