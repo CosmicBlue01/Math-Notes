@@ -39,11 +39,13 @@
   \pi\colon C(M\times N)\longrightarrow M\otimes_R N,\qquad (m,n)\longmapsto \pi\bigl((m,n)\bigr),
 \]
 记 $\pi\bigl((m,n)\bigr)=m\otimes n$. 由 $\operatorname{Ker}(\pi)=L$ 可得
-\begin{gather*}
-  (m_1+m_2)\otimes n=m_1\otimes n+m_2\otimes n,\\
-  m\otimes(n_1+n_2)=m\otimes n_1+m\otimes n_2,\\
-  (m\cdot r)\otimes n=m\otimes(r\cdot n).
-\end{gather*}
+\[
+  \begin{aligned}
+    &(m_1+m_2)\otimes n=m_1\otimes n+m_2\otimes n,\\
+    &m\otimes(n_1+n_2)=m\otimes n_1+m\otimes n_2,\\
+    &(m\cdot r)\otimes n=m\otimes(r\cdot n).
+  \end{aligned}
+\]
 \item $C(M\times N)$ 中的元素形如 $\sum_i b_i(m_i,n_i)$, $b_i\in\mathbb{Z}$, 故 $M\otimes_R N$ 中的元素形如
 \[
   \pi\Bigl(\sum_i b_i(m_i,n_i)\Bigr)=\sum_i b_i\,(m_i\otimes n_i).
@@ -73,11 +75,13 @@
 $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 
 下面验证 $\varphi$ 将 $L$ 中元素映为 $0$. 为方便, 将 $\varphi\bigl((m,n)\bigr)$ 简写为 $\varphi(m,n)$:
-\begin{gather*}
-  \varphi\bigl((m_1+m_2,n)-(m_1,n)-(m_2,n)\bigr)=(m_1+m_2)n-m_1n-m_2n=0,\\
-  \varphi\bigl((m,n_1+n_2)-(m,n_1)-(m,n_2)\bigr)=m(n_1+n_2)-mn_1-mn_2=0,\\
-  \varphi\bigl((m\cdot r,n)-(m,r\cdot n)\bigr)=0 .
-\end{gather*}
+\[
+  \begin{aligned}
+    &\varphi\bigl((m_1+m_2,n)-(m_1,n)-(m_2,n)\bigr)=(m_1+m_2)n-m_1n-m_2n=0,\\
+    &\varphi\bigl((m,n_1+n_2)-(m,n_1)-(m,n_2)\bigr)=m(n_1+n_2)-mn_1-mn_2=0,\\
+    &\varphi\bigl((m\cdot r,n)-(m,r\cdot n)\bigr)=0 .
+  \end{aligned}
+\]
 从而 $\varphi$ 是一个同态. 下面说明 $\varphi$ 是同构: 只需找 $\varphi'\colon\mathbb{Z}\to\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}$
 使 $\varphi'\varphi=\operatorname{Id}$. 定义
 \[
@@ -152,11 +156,13 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 由平衡双加法映射 $f\colon M\times N\to L$ 可以找到加群同态
 $\tilde f\colon C(M\times N)\to L$, 它由基 $M\times N$ 上的像确定, 即 $\tilde f(m,n)=f(m,n)$.
 注意 $\tilde f$ 作用在张量积定义中的三类元素上有
-\begin{gather*}
-  \tilde f\bigl((m_1+m_2,n)-(m_1,n)-(m_2,n)\bigr)=f(m_1+m_2,n)-f(m_1,n)-f(m_2,n)=0,\\
-  \tilde f\bigl((m,n_1+n_2)-(m,n_1)-(m,n_2)\bigr)=f(m,n_1+n_2)-f(m,n_1)-f(m,n_2)=0,\\
-  \tilde f\bigl((m\cdot r,n)-(m,r\cdot n)\bigr)=f(m\cdot r,n)-f(m,r\cdot n)=0 .
-\end{gather*}
+\[
+  \begin{aligned}
+    &\tilde f\bigl((m_1+m_2,n)-(m_1,n)-(m_2,n)\bigr)=f(m_1+m_2,n)-f(m_1,n)-f(m_2,n)=0,\\
+    &\tilde f\bigl((m,n_1+n_2)-(m,n_1)-(m,n_2)\bigr)=f(m,n_1+n_2)-f(m,n_1)-f(m,n_2)=0,\\
+    &\tilde f\bigl((m\cdot r,n)-(m,r\cdot n)\bigr)=f(m\cdot r,n)-f(m,r\cdot n)=0 .
+  \end{aligned}
+\]
 因此 $\tilde f$ 在由上述三类元素生成的子群上为零, 从而诱导出加群同态 $\bar f\colon M\otimes_R N\to L$.
 事实上
 \[
