@@ -96,7 +96,7 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
   \varphi'\varphi\Bigl(\sum_i m_i\otimes n_i\Bigr)=\varphi'\Bigl(\sum_i m_i n_i\Bigr)
   =1\otimes\sum_i m_i n_i=\sum_i m_i\otimes n_i .
 \]
-于是 $\varphi'\varphi=\operatorname{Id}$, 故 $\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}\cong\mathbb{Z}$.
+于是 $\varphi'\varphi=\operatorname{Id}$, 故 $\varphi$ 是单射; 又 $\varphi(1\otimes a)=a$, 即 $\varphi\varphi'=\operatorname{Id}$, 故 $\varphi$ 是满射. 从而 $\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}\cong\mathbb{Z}$.
 
 \item $\mathbb{Z}\otimes_{\mathbb{Z}}\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}/n\mathbb{Z}$. 定义
 \[
@@ -129,9 +129,9 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 
 \subsection{泛性质}
 
-\begin{definition}[平衡双加性映射]\label{def:balanced}
+\begin{definition}[平衡双加法映射]\label{def:balanced}
 设 $R$ 为环, $M$ 为右 $R$-模, $N$ 为左 $R$-模, $L$ 为加群.
-称 $f\colon M\times N\to L$ 为\textbf{平衡双加性映射}, 若
+称 $f\colon M\times N\to L$ 为\textbf{平衡双加法映射}, 若
 \begin{enumerate}[label=(\arabic*)]
   \item $f(m_1+m_2,n)=f(m_1,n)+f(m_2,n)$;
   \item $f(m,n_1+n_2)=f(m,n_1)+f(m,n_2)$;
@@ -141,12 +141,12 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 \end{definition}
 
 \begin{remark}\label{rem:balanced}
-上述定义中, 双加性指 (i), (ii); 平衡指 (iii).
+上述定义中, 双加法指 (i), (ii); 平衡指 (iii).
 \end{remark}
 
 \begin{theorem}[张量积的泛性质]\label{thm:tensor-universal}
 设 $R$ 为环, $M_R$, ${}_R N$ 为模, $L$ 为加群.
-对任意平衡双加性映射 $f\colon M\times N\to L$, 都存在唯一的加群同态 $\bar f\colon M\otimes_R N\to L$,
+对任意平衡双加法映射 $f\colon M\times N\to L$, 都存在唯一的加群同态 $\bar f\colon M\otimes_R N\to L$,
 使得下图交换, 即 $\bar f\circ\pi=f$:
 \[
   \begin{tikzcd}[row sep=1.4cm, column sep=2.4cm, arrows={->,>=stealth}]
@@ -157,7 +157,7 @@ $\sum_i b_i(m_i,n_i)\mapsto\sum_i b_i m_i n_i$.
 \end{theorem}
 
 \begin{proof}
-由平衡双加性映射 $f\colon M\times N\to L$ 可以找到加群同态
+由平衡双加法映射 $f\colon M\times N\to L$ 可以找到加群同态
 $\tilde f\colon C(M\times N)\to L$, 它由基 $M\times N$ 上的像确定, 即 $\tilde f(m,n)=f(m,n)$.
 注意 $\tilde f$ 作用在张量积定义中的三类元素上有
 \begin{align*}
@@ -184,7 +184,7 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 \[
   \pi\colon M\times N\longrightarrow M\otimes_R N,\qquad (m,n)\longmapsto m\otimes n
 \]
-本身就是平衡双加性映射.
+本身就是平衡双加法映射.
 
 \item 若 $L'$ 满足同样的泛性质, 则 $L'\cong M\otimes_R N$.
 \end{enumerate}
@@ -230,9 +230,9 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 设 $\mathbb{F}$ 为域, 给定线性空间 $M_{\mathbb{F}}$ 和 ${}_{\mathbb{F}} N$, 则 $M\otimes_{\mathbb{F}} N$ 也是 $\mathbb{F}$-线性空间.
 \end{proposition}
 
-\begin{definition}[双线性映射]\label{def:bilinear}
+\begin{definition}[平衡双加法映射]\label{def:bilinear}
 设 $\mathbb{F}$ 为域, 给定线性空间 $M_{\mathbb{F}}$, ${}_{\mathbb{F}} N$, $V$.
-称 $F\colon M\times_{\mathbb{F}} N\to V$ 为\textbf{平衡双加性映射}, 若
+称 $F\colon M\times_{\mathbb{F}} N\to V$ 为\textbf{平衡双加法映射}, 若
 \begin{enumerate}[label=(\arabic*)]
   \item $F(m_1+m_2,n)=F(m_1,n)+F(m_2,n)$;
   \item $F(m,n_1+n_2)=F(m,n_1)+F(m,n_2)$;
@@ -243,7 +243,7 @@ $g(m\otimes n)=f(m,n)=\bar f(m\otimes n)$, 故 $g=\bar f$, 唯一性成立.
 
 \begin{remark}\label{rem:bilinear}
 若 $V$ 是线性空间, 则平衡性可加强为 $F(km,n)=kF(m,n)$;
-此时平衡双加性映射即为\textbf{双线性映射}.
+此时平衡双加法映射即为\textbf{双线性映射}.
 \end{remark}
 
 \begin{theorem}[线性空间张量积的泛性质]\label{thm:tensor-universal-k}

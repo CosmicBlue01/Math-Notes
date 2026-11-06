@@ -338,9 +338,11 @@ $H\subseteq Z(G)$ 时, 当 $g\notin H$ 有 $\chi_{V_H^G}(g)=0$; 故只需看 $g\
 \begin{proof}
 左边 $=\ U_H^G\otimes V\cong(\mathbb{C}G\otimes_{\mathbb{C}H}U)\otimes V$,
 右边 $=\ (U\otimes V_H)_H^G\cong\mathbb{C}G\otimes_{\mathbb{C}H}(U\otimes V)$.
-构造 $\Psi\colon(U\otimes V_H)_H^G\to U_H^G\otimes V$, $g\otimes u\otimes v\longmapsto g\otimes u\otimes g\cdot v$;
-显然 $\Psi$ 是良定义的, 且任取 $g\otimes u\otimes v$ 则有原像 $g\otimes u\otimes g^{-1}\cdot v$;
-又两边维数相同, 故 $\Psi$ 是双射. 最后说明 $\Psi$ 是同态: 对 $g'\in G$,
+令 $\Psi\colon(U\otimes V_H)_H^G\to U_H^G\otimes V$ 把 $g\otimes u\otimes v$ 送到 $g\otimes u\otimes g\cdot v$.
+左边是 $\mathbb{C}G\otimes_{\mathbb{C}H}(U\otimes V)$, 而 $H$ 在 $U\otimes V$ 上对角作用, 故
+$gh\otimes u\otimes v$ 与 $g\otimes hu\otimes hv$ 是同一个元素, 二者的像同为 $gh\otimes u\otimes gh\cdot v$,
+这说明 $\Psi$ 良定义. 反之 $\Psi(g\otimes u\otimes g^{-1}\cdot v)=g\otimes u\otimes v$, 可见 $\Psi$ 有逆,
+从而是双射. 最后说明 $\Psi$ 与 $G$ 的作用交换: 对 $g'\in G$,
 \begin{align*}
   \Psi\bigl(g'\cdot(g\otimes u\otimes v)\bigr)
   &=\Psi\bigl(g'g\otimes u\otimes v\bigr)

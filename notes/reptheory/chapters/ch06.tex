@@ -1329,11 +1329,24 @@ $|G/G'|$ 个一维表示.
 此前我们有 $n_i\divides|G|$, 下面给出更强的结论:
 
 \begin{theorem}\label{thm:degree-divides-center-quotient}
-设 $G$ 为有限群, $n_i$ 为不可约表示的维数, 则
-\[
-  n_i\divides |G/Z(G)|,\qquad n_i^2\le |G/Z(G)|.
-\]
+设 $G$ 为有限群, $n_i$ 为不可约表示的维数, 则 $n_i\divides |G/Z(G)|$.
 \end{theorem}
+
+\begin{theorem}\label{thm:degree-square-center-quotient}
+设 $G$ 为有限群, $n_i$ 为不可约表示的维数, 则 $n_i^2\le |G/Z(G)|$.
+\end{theorem}
+
+\begin{proof}
+设 $V_i$ 为 $n_i$ 维不可约表示, $\chi_i$ 为其特征标. 对 $z\in Z(G)$, 由 Schur 引理
+$\rho_i(z)=\lambda(z)\,\mathrm{Id}_{V_i}$, 其中 $\lambda(z)\in\mathbb{C}^{\times}$;
+而 $z$ 的阶有限, 故 $\lambda(z)$ 是单位根, 于是 $|\chi_i(z)|=n_i|\lambda(z)|=n_i$. 从而
+\[
+  |G|=\sum_{g\in G}\bigl|\chi_i(g)\bigr|^2
+  \ \ge\ \sum_{z\in Z(G)}\bigl|\chi_i(z)\bigr|^2
+  =|Z(G)|\,n_i^2,
+\]
+即 $n_i^2\le |G|/|Z(G)|$.
+\end{proof}
 
 \begin{theorem}\label{thm:row-column-sums}
 特征标表中任意一列元素之和是整数; 相反地, 任意一行元素之和是非负整数.
@@ -1344,6 +1357,16 @@ $|G/G'|$ 个一维表示.
 \begin{theorem}\label{thm:one-dim-times-irreducible}
 设 $\chi_0$ 为一个一维特征标, $\chi$ 为一个不可约特征标, 则 $\chi_0\chi$ 也不可约.
 \end{theorem}
+
+\begin{proof}
+一维特征标取单位根值, 故 $|\chi_0(g)|=1$ 对一切 $g\in G$ 成立. 于是
+\[
+  (\chi_0\chi,\chi_0\chi)
+  =\frac{1}{|G|}\sum_{g\in G}\bigl|\chi_0(g)\chi(g)\bigr|^2
+  =\frac{1}{|G|}\sum_{g\in G}\bigl|\chi(g)\bigr|^2=(\chi,\chi)=1,
+\]
+由不可约表示的判定定理即知 $\chi_0\chi$ 不可约.
+\end{proof}
 
 最后再引入一个定义.
 

@@ -410,10 +410,10 @@ $\operatorname{char}K\ndivides|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ �
 \]
 
 \[
-  =\int_G\gamma(gx)\,C\,\rho\bigl((gx)^{-1}\bigr)\,\mathrm{d}g
+  =\int_G\gamma(xg)\,C\,\rho\bigl((xg)^{-1}\bigr)\,\mathrm{d}g
   =\widetilde C_{nm},
 \]
-注意每个矩阵元都是实连续函数, 由 Haar 积分的左右不变性上式成立. 故上式可写为
+注意每个矩阵元都是复值连续函数, 由 Haar 积分的左右不变性上式成立. 故上式可写为
 \[
   \gamma(x)\,\widetilde C_{nm}\,\rho(x)^{-1}=\widetilde C_{nm}
   \ \Longrightarrow\
@@ -432,13 +432,13 @@ $\operatorname{char}K\ndivides|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ �
 故 $\displaystyle\int_G\overline{b_{kl}(g)}\,a_{ij}(g)\,\mathrm{d}g=0$, 即 $(a_{ij},b_{kl})=0$.
 
 2° 若 $V\cong U$, 由 Schur 引理, $\operatorname{Hom}_G(V,U)=\mathbb{C}\,\mathrm{Id}$.
-则 $\widetilde C=\lambda I_n$, $\operatorname{Tr}(\widetilde C)=n\lambda$. 又 $C=e_{kl}$, $\operatorname{Tr}(C)=\delta_{kl}$, 则
+则 $\widetilde C=\lambda I_n$, $\operatorname{Tr}(\widetilde C)=n\lambda$. 又 $C=e_{ki}$, $\operatorname{Tr}(C)=\delta_{ki}$, 则
 \[
   \operatorname{Tr}(\widetilde C)=\operatorname{Tr}\Bigl(\int_G\gamma(g)\,C\,\rho(g)^{-1}\,\mathrm{d}g\Bigr)
   =\int_G\operatorname{Tr}\bigl(\gamma(g)\,C\,\rho(g)^{-1}\bigr)\mathrm{d}g
-  =\int_G\operatorname{Tr}(C)\,\mathrm{d}g=\operatorname{Tr}(C)=\delta_{kl},
+  =\int_G\operatorname{Tr}(C)\,\mathrm{d}g=\operatorname{Tr}(C)=\delta_{ki},
 \]
-故 $\widetilde C=\dfrac{\delta_{kl}}{n}I_n$. 取 $\widetilde C$ 的 $(i,j)$ 位置并重命名指标, 则
+故 $\widetilde C=\dfrac{\delta_{ki}}{n}I_n$. 取 $\widetilde C$ 的 $(l,j)$ 位置并重命名指标, 则
 \[
   (a_{ij},b_{kl})=\frac{1}{n}\delta_{il}\delta_{jk}.
 \]
@@ -498,8 +498,8 @@ $\chi_\rho$, $\chi_\gamma$, 则
 \]
 \end{corollary}
 
-自然我们要问: 紧群 $G$ 的不可约特征标有多少个? 我们讨论过, 特征标是类函数空间的一组基.
-为后面讨论, 先看一个例子.
+自然要问: 紧群 $G$ 的不可约特征标一共有多少个? 答案与有限群时一样, 它们构成类函数空间的一组基,
+因而只有可数多个. 为看清这组基长什么样, 先看一个例子.
 
 \begin{example}\label{ex:S1-reps}
 $S^1$ 上连续函数 $C(S^1,\mathbb{R})$. 注意 $S^1$ 是交换的, 故 $S^1$ 的所有不可约表示
@@ -663,8 +663,10 @@ $\exists I\subseteq\{0,1,\dots,n\}$ s.t. $W=\operatorname{span}\{x^iy^{n-i}\mid 
   \Xi_n\Bigl(\begin{pmatrix}\bar z_1&z_2\\-\bar z_2&z_1\end{pmatrix}\Bigr)(x^{i_0}y^{n-i_0})
   =(\bar z_1x-\bar z_2y)^{i_0}(z_2x+z_1y)^{n-i_0}\in W,
 \]
-由 $z_{1,2}$ 的任意性, 知 $\forall j\in\{0,1,\dots,n\}$, $x^jy^{n-j}$ 的系数不为 $0$,
-故 $x^jy^{n-j}\in W$, 从而 $W=V_n$.
+记 $p_j$ 为右端展开式中 $x^jy^{n-j}$ 的系数. 由二项式定理, $p_j$ 的各项中 $z_1$ 的次数两两不同,
+故 $p_j\not\equiv0$; 而 $|z_1|^2+|z_2|^2=1$ 上存在使 $p_j\neq0$ 的点.
+若 $j\notin I$, 取这样的 $(z_1,z_2)$, 则右端含有 $x^jy^{n-j}$ 的非零分量,
+与 $W=\operatorname{span}\{x^iy^{n-i}\mid i\in I\}$ 矛盾. 故 $I=\{0,1,\dots,n\}$, 即 $W=V_n$.
 \end{proof}
 
 \begin{lemma}\label{lem:Vn-inequivalent}
@@ -713,8 +715,8 @@ $UBU^{\dagger}=\begin{pmatrix}e^{i\theta}&\\&e^{-i\theta}\end{pmatrix}$, $\theta
   =\sum_{j=0}^{n}(e^{i\theta})^j\overline{(e^{i\theta})}^{\,n-j}
   =\frac{(e^{i\theta})^{n+1}-(e^{i\theta})^{-(n+1)}}{e^{i\theta}-e^{-i\theta}} .
 \]
-可以证明 $P=\operatorname{span}_{\mathbb{C}}\{\chi_n(\cdot)\}$.
-由 Stone--Weierstrass 引理即证.
+而由 $\chi_n$ 在 $T$ 上的显式表达式可知 $P=\operatorname{span}_{\mathbb{C}}\{\chi_n\}$.
+于是由 Stone--Weierstrass 引理, $P$ 在 $C(S^1)$ 中稠密, 即 $\{\chi_n\}$ 是完备系.
 \end{proof}
 
 \begin{remark}\label{rem:sl2-tensor-decomposition}

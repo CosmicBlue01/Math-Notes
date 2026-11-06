@@ -1,6 +1,6 @@
 # 定理索引 · 表示论
 
-共 285 条，由 `tools/make_index.py` 自动生成。
+共 286 条，由 `tools/make_index.py` 自动生成。
 
 | # | 类型 | 标题 | 标签 | 章节 | 文件 |
 |---|---|---|---|---|---|
@@ -96,7 +96,7 @@
 | 90 | 注 |  | `rem:tensor-basic` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 91 | 注 |  | `rem:tensor-form` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 92 | 例 |  | `ex:tensor-basic` | 张量积 | notes/reptheory/chapters/ch04.tex |
-| 93 | 定义 | 平衡双加性映射 | `def:balanced` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 93 | 定义 | 平衡双加法映射 | `def:balanced` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 94 | 注 |  | `rem:balanced` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 95 | 定理 | 张量积的泛性质 | `thm:tensor-universal` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 96 | 注 |  | `rem:tensor-universal` | 张量积 | notes/reptheory/chapters/ch04.tex |
@@ -104,7 +104,7 @@
 | 98 | 例 |  | `ex:tensor-module-structure` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 99 | 注 |  | `rem:tensor-no-module` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 100 | 命题 |  | `prop:tensor-vector-space` | 张量积 | notes/reptheory/chapters/ch04.tex |
-| 101 | 定义 | 双线性映射 | `def:bilinear` | 张量积 | notes/reptheory/chapters/ch04.tex |
+| 101 | 定义 | 平衡双加法映射 | `def:bilinear` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 102 | 注 |  | `rem:bilinear` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 103 | 定理 | 线性空间张量积的泛性质 | `thm:tensor-universal-k` | 张量积 | notes/reptheory/chapters/ch04.tex |
 | 104 | 引理 |  | `lem:tensor-with-R` | 张量积 | notes/reptheory/chapters/ch04.tex |
@@ -199,93 +199,94 @@
 | 193 | 定理 |  | `thm:one-dim-count` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 194 | 推论 |  | `cor:Sn-one-dim` | 特征标 | notes/reptheory/chapters/ch06.tex |
 | 195 | 定理 |  | `thm:degree-divides-center-quotient` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 196 | 定理 |  | `thm:row-column-sums` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 197 | 定理 |  | `thm:one-dim-times-irreducible` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 198 | 定义 | Frobenius--Schur 指标 | `def:fs-indicator` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 199 | 定理 |  | `thm:fsch-values` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 200 | 定义 |  | `def:types` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 201 | 定理 |  | `thm:abelian-all-one-dim` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 202 | 例 |  | `ex:Zn-irreducibles` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 203 | 命题 |  | `prop:distinct-irreducibles` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 204 | 注 |  | `rem:dual-group-Zn` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 205 | 定理 | 有限 Abel 群结构定理 | `thm:abelian-structure` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 206 | 引理 |  | `lem:tensor-of-irreducibles` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 207 | 定义 | 特征标的核 | `def:kernel-of-character` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 208 | 命题 |  | `prop:kernel-equality` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 209 | 引理 |  | `lem:kernel-of-direct-sum` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 210 | 定理 |  | `thm:normal-subgroup-as-kernel` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 211 | 推论 |  | `cor:simple-criterion` | 特征标 | notes/reptheory/chapters/ch06.tex |
-| 212 | 命题 |  | `prop:hom-left-S-module` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 213 | 注 |  | `rem:hom-right-module` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 214 | 引理 |  | `lem:hom-R-M` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 215 | 定理 | Hom--Tensor 伴随 | `thm:hom-tensor-adjunction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 216 | 定义 | 诱导表示 | `def:induced-rep` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 217 | 引理 |  | `lem:induced-dim` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 218 | 引理 |  | `lem:induced-basis` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 219 | 例 |  | `ex:induced-examples` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 220 | 命题 |  | `prop:induced-character-zero` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 221 | 推论 |  | `cor:induced-normal` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 222 | 推论 |  | `cor:induced-central` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 223 | 例 |  | `ex:S3-in-S4-character` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 224 | 命题 |  | `prop:induction-subrep` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 225 | 命题 | 传递性 | `prop:induction-transitive` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 226 | 定义 | 限制 | `def:restriction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 227 | 引理 |  | `lem:induction-direct-sum` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 228 | 引理 | 投影公式 | `lem:projection-formula` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 229 | 命题 |  | `prop:dual-induction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 230 | 推论 |  | `cor:induced-character-properties` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 231 | 注 |  | `rem:induced-character-notation` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 232 | 定理 | Frobenius 互反律 I | `thm:frobenius-reciprocity-1` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 233 | 定理 | Frobenius 互反律 II | `thm:frobenius-reciprocity-2` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 234 | 引理 |  | `lem:tensor-hom-dual` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 235 | 注 |  | `rem:induction-proof-supplement` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 236 | 推论 |  | `cor:frobenius-character` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
-| 237 | 定义 | 拓扑群 | `def:topological-group` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 238 | 注 |  | `rem:hausdorff-topological-group` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 239 | 定义 | 紧群 | `def:compact-group` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 240 | 例 |  | `ex:topological-groups` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 241 | 注 |  | `rem:orthogonal-disconnected` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 242 | 命题 |  | `prop:SOn-maximal` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 243 | 定义 | 拓扑群同态 | `def:topological-hom` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 244 | 例 |  | `ex:top-hom` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 245 | 定理 | 拓扑群同态基本定理 | `thm:top-hom-fundamental` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 246 | 注 |  | `rem:quotient-closed-subgroup` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 247 | 定义 | Haar 积分 | `def:haar` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 248 | 注 |  | `rem:haar-integral-axioms` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 249 | 定理 | Haar | `thm:haar-existence` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 250 | 例 |  | `ex:haar-finite` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 251 | 命题 |  | `prop:haar-integral-triangle` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 252 | 定义 |  | `def:complex-continuous` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 253 | 命题 |  | `prop:haar-conjugate` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 254 | 定理 | Fubini | `thm:fubini-haar` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 255 | 注 |  | `rem:product-haar-integral` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 256 | 定义 | $G$-不变双线性型 | `def:G-invariant-form` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 257 | 引理 |  | `lem:invariant-form-orthogonal` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 258 | 定理 |  | `thm:invariant-inner-product` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 259 | 命题 |  | `prop:averaged-inner-product` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 260 | 定理 | Maschke, 有限群 | `thm:maschke-finite-real` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 261 | 定义 |  | `def:topological-rep` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 262 | 注 |  | `rem:GL-module` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 263 | 定理 | Maschke, 紧群 | `thm:maschke-compact` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 264 | 定义 | 特征标 | `def:compact-character` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 265 | 注 |  | `rem:character-continuous` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 266 | 定义 |  | `def:compact-bilinear` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 267 | 定理 | 正交关系 | `thm:compact-orthogonality` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 268 | 注 |  | `rem:orthogonality-relations` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 269 | 定理 | 特征标的正交关系 | `thm:character-orthogonality-compact` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 270 | 推论 |  | `cor:compact-iso-char` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 271 | 推论 |  | `cor:compact-irreducible-test` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 272 | 推论 |  | `cor:compact-iso-general` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 273 | 例 |  | `ex:S1-reps` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 274 | 定义 | 完备系 | `def:complete-system` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 275 | 定理 | Peter--Weyl | `thm:peter-weyl` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 276 | 注 |  | `rem:standard-character` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 277 | 命题 |  | `prop:SU2-form` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 278 | 注 |  | `rem:quaternion-subgroup` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 279 | 引理 |  | `lem:SU2-norm-one` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 280 | 命题 |  | `prop:SU2-S3` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 281 | 定理 |  | `thm:Vn-irreducible` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 282 | 引理 |  | `lem:Vn-inequivalent` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 283 | 引理 | Stone--Weierstrass | `lem:stone-weierstrass` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 284 | 定理 |  | `thm:SU2-classification` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
-| 285 | 注 |  | `rem:sl2-tensor-decomposition` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 196 | 定理 |  | `thm:degree-square-center-quotient` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 197 | 定理 |  | `thm:row-column-sums` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 198 | 定理 |  | `thm:one-dim-times-irreducible` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 199 | 定义 | Frobenius--Schur 指标 | `def:fs-indicator` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 200 | 定理 |  | `thm:fsch-values` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 201 | 定义 |  | `def:types` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 202 | 定理 |  | `thm:abelian-all-one-dim` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 203 | 例 |  | `ex:Zn-irreducibles` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 204 | 命题 |  | `prop:distinct-irreducibles` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 205 | 注 |  | `rem:dual-group-Zn` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 206 | 定理 | 有限 Abel 群结构定理 | `thm:abelian-structure` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 207 | 引理 |  | `lem:tensor-of-irreducibles` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 208 | 定义 | 特征标的核 | `def:kernel-of-character` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 209 | 命题 |  | `prop:kernel-equality` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 210 | 引理 |  | `lem:kernel-of-direct-sum` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 211 | 定理 |  | `thm:normal-subgroup-as-kernel` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 212 | 推论 |  | `cor:simple-criterion` | 特征标 | notes/reptheory/chapters/ch06.tex |
+| 213 | 命题 |  | `prop:hom-left-S-module` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 214 | 注 |  | `rem:hom-right-module` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 215 | 引理 |  | `lem:hom-R-M` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 216 | 定理 | Hom--Tensor 伴随 | `thm:hom-tensor-adjunction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 217 | 定义 | 诱导表示 | `def:induced-rep` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 218 | 引理 |  | `lem:induced-dim` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 219 | 引理 |  | `lem:induced-basis` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 220 | 例 |  | `ex:induced-examples` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 221 | 命题 |  | `prop:induced-character-zero` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 222 | 推论 |  | `cor:induced-normal` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 223 | 推论 |  | `cor:induced-central` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 224 | 例 |  | `ex:S3-in-S4-character` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 225 | 命题 |  | `prop:induction-subrep` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 226 | 命题 | 传递性 | `prop:induction-transitive` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 227 | 定义 | 限制 | `def:restriction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 228 | 引理 |  | `lem:induction-direct-sum` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 229 | 引理 | 投影公式 | `lem:projection-formula` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 230 | 命题 |  | `prop:dual-induction` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 231 | 推论 |  | `cor:induced-character-properties` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 232 | 注 |  | `rem:induced-character-notation` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 233 | 定理 | Frobenius 互反律 I | `thm:frobenius-reciprocity-1` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 234 | 定理 | Frobenius 互反律 II | `thm:frobenius-reciprocity-2` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 235 | 引理 |  | `lem:tensor-hom-dual` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 236 | 注 |  | `rem:induction-proof-supplement` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 237 | 推论 |  | `cor:frobenius-character` | 诱导表示 | notes/reptheory/chapters/ch07.tex |
+| 238 | 定义 | 拓扑群 | `def:topological-group` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 239 | 注 |  | `rem:hausdorff-topological-group` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 240 | 定义 | 紧群 | `def:compact-group` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 241 | 例 |  | `ex:topological-groups` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 242 | 注 |  | `rem:orthogonal-disconnected` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 243 | 命题 |  | `prop:SOn-maximal` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 244 | 定义 | 拓扑群同态 | `def:topological-hom` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 245 | 例 |  | `ex:top-hom` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 246 | 定理 | 拓扑群同态基本定理 | `thm:top-hom-fundamental` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 247 | 注 |  | `rem:quotient-closed-subgroup` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 248 | 定义 | Haar 积分 | `def:haar` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 249 | 注 |  | `rem:haar-integral-axioms` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 250 | 定理 | Haar | `thm:haar-existence` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 251 | 例 |  | `ex:haar-finite` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 252 | 命题 |  | `prop:haar-integral-triangle` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 253 | 定义 |  | `def:complex-continuous` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 254 | 命题 |  | `prop:haar-conjugate` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 255 | 定理 | Fubini | `thm:fubini-haar` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 256 | 注 |  | `rem:product-haar-integral` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 257 | 定义 | $G$-不变双线性型 | `def:G-invariant-form` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 258 | 引理 |  | `lem:invariant-form-orthogonal` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 259 | 定理 |  | `thm:invariant-inner-product` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 260 | 命题 |  | `prop:averaged-inner-product` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 261 | 定理 | Maschke, 有限群 | `thm:maschke-finite-real` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 262 | 定义 |  | `def:topological-rep` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 263 | 注 |  | `rem:GL-module` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 264 | 定理 | Maschke, 紧群 | `thm:maschke-compact` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 265 | 定义 | 特征标 | `def:compact-character` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 266 | 注 |  | `rem:character-continuous` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 267 | 定义 |  | `def:compact-bilinear` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 268 | 定理 | 正交关系 | `thm:compact-orthogonality` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 269 | 注 |  | `rem:orthogonality-relations` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 270 | 定理 | 特征标的正交关系 | `thm:character-orthogonality-compact` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 271 | 推论 |  | `cor:compact-iso-char` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 272 | 推论 |  | `cor:compact-irreducible-test` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 273 | 推论 |  | `cor:compact-iso-general` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 274 | 例 |  | `ex:S1-reps` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 275 | 定义 | 完备系 | `def:complete-system` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 276 | 定理 | Peter--Weyl | `thm:peter-weyl` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 277 | 注 |  | `rem:standard-character` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 278 | 命题 |  | `prop:SU2-form` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 279 | 注 |  | `rem:quaternion-subgroup` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 280 | 引理 |  | `lem:SU2-norm-one` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 281 | 命题 |  | `prop:SU2-S3` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 282 | 定理 |  | `thm:Vn-irreducible` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 283 | 引理 |  | `lem:Vn-inequivalent` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 284 | 引理 | Stone--Weierstrass | `lem:stone-weierstrass` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 285 | 定理 |  | `thm:SU2-classification` | 紧群表示 | notes/reptheory/chapters/ch08.tex |
+| 286 | 注 |  | `rem:sl2-tensor-decomposition` | 紧群表示 | notes/reptheory/chapters/ch08.tex |

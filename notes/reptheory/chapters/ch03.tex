@@ -16,7 +16,7 @@
 \begin{enumerate}
   \item 由 $\mathbb{F}\mathbb{Z}_2\to M_2(\mathbb{F})\cong\operatorname{End}(\mathbb{F}^2)$,
   \[
-    \rho\colon g\longmapsto\begin{pmatrix}0&1\\1&0\end{pmatrix},
+    1\longmapsto I_2,\qquad \rho\colon g\longmapsto\begin{pmatrix}0&1\\1&0\end{pmatrix},
   \]
   得到 $\mathbb{F}\mathbb{Z}_2$ 的一个表示 $(\mathbb{F}^2,\rho)$.
   \item 由 $\mathbb{C}\mathbb{Z}_n\to\operatorname{End}(\mathbb{C})=\mathbb{C}$,
@@ -100,8 +100,16 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \end{example}
 
 \begin{proposition}\label{prop:regular-module-exists}
-任何群代数都有正则模 (都对应唯一同态).
+设 $G$ 为群. 则群代数 $\mathbb{F}G$ 上有正则模 ${}_{\mathbb{F}G}\mathbb{F}G$; 并且对任意群同态
+$\rho\colon G\to\operatorname{GL}(V)$, 存在唯一的代数同态 $\widetilde\rho\colon\mathbb{F}G\to\operatorname{End}(V)$
+使 $\widetilde\rho(g)=\rho(g)$ 对一切 $g\in G$ 成立.
 \end{proposition}
+
+\begin{proof}
+正则模即 $\mathbb{F}G$ 在自身上的左乘作用. 至于后半句, 由于 $\mathbb{F}G$ 以 $G$ 为基,
+规定 $\widetilde\rho\bigl(\sum_g c_g g\bigr)=\sum_g c_g\rho(g)$ 是唯一可能的选择;
+而 $\rho$ 为群同态保证 $\widetilde\rho$ 保持乘法, 故 $\widetilde\rho$ 确为代数同态.
+\end{proof}
 
 \subsection{表示论的直观解释}
 
@@ -110,7 +118,8 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 $\alpha_1,\dots,\alpha_m,\alpha_{m+1},\dots,\alpha_n$.
 
 \begin{definition}[子表示]\label{def:subrepresentation}
-称 $\rho|_{V_1}$ 为 $\rho$ 的子表示, 若对任意 $a\in A$, $v_1\in V_1$, 都有 $\rho(a)(v_1)\in V_1$.
+若对任意 $a\in A$, $v_1\in V_1$ 都有 $\rho(a)(v_1)\in V_1$, 则称 $V_1$ 为 $\rho$ 的不变子空间,
+并称限制 $\rho|_{V_1}\colon A\to\operatorname{End}(V_1)$ 为 $\rho$ 的一个子表示.
 \end{definition}
 
 此时 $V_1$ 是 $\rho$-不变子空间, 且

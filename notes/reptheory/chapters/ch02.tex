@@ -87,6 +87,7 @@ $0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap 
 \begin{definition}[商模]\label{def:quotient-module}
 设 $R$ 为环, $M$ 为左 $R$-模, $N\leq M$ 为 $M$ 的子模.
 商群 $M/N$ 在运算 $r\cdot[m]\mapsto[rm]$ 下形成左 $R$-模, 其中 $r\in R$, $m\in M$.
+该运算与代表元的选取无关: 若 $[m]=[m']$, 则 $m-m'\in N$, 从而 $r(m-m')\in N$, 即 $[rm]=[rm']$.
 称 $M/N$ 为 $M$ 模去 $N$ 形成的商模.
 \end{definition}
 
@@ -97,7 +98,7 @@ $0$ 同时属于 $M_1$ 与 $M_2$, 故 $M_1\cap M_2$ 非空. 设 $x,y\in M_1\cap 
 \subsection{不可约模与不可分解模}
 
 \begin{definition}\label{def:irreducible-module}
-设 $M$ 为左 $R$-模.
+设 $M\ne0$ 为左 $R$-模.
 \begin{enumerate}
   \item 称 $M$ 是\emph{不可约的}, 若 $M$ 没有非平凡的子模, 即 $M$ 没有除 $\{0\}$ 和 $M$
   以外的子模. 这样的 $M$ 也称为\emph{单模}.
@@ -223,7 +224,8 @@ $M_2\oplus\cdots\oplus M_r\cong M/M_1\cong\bigoplus_{j\ne j_0}N_j$ 是 $r-1$ 与
     \mathbb{F}\mathbb{Z}_n=\bigoplus_{k=0}^{n-1}U_k .
   \]
   \item 设 $M$ 为非零有限长左 $R$-模. 若 $M$ 不可约, 则 $0\subset M$ 即为合成列.
-  否则取 $M$ 的非零真子模, 并在其中取极小非零子模 $M_1$, 则 $M_1$ 不可约且 $M_1\subsetneq M$,
+  否则取 $M$ 的非零真子模, 并在其中取极小非零子模 $M_1$ (由 $M$ 有限长, 这样的极小元存在),
+  则 $M_1$ 不可约且 $M_1\subsetneq M$,
   并有嵌入 $M_1\hookrightarrow M$
   与满射 $M\twoheadrightarrow M/M_1$. 记 $M_1'=M/M_1$, 即
   \[
@@ -235,7 +237,11 @@ $M_2\oplus\cdots\oplus M_r\cong M/M_1\cong\bigoplus_{j\ne j_0}N_j$ 是 $r-1$ 与
 \end{example}
 
 \begin{definition}[合成列]\label{def:composition-series}
-称上述序列构成的链为 $M$ 的一个合成列.
+设 $M$ 为左 $R$-模. 称子模链
+\[
+  0=M_0\subset M_1\subset\cdots\subset M_n=M
+\]
+为 $M$ 的一个\emph{合成列}, 若每个商模 $M_i/M_{i-1}$ ($1\le i\le n$) 都不可约.
 \end{definition}
 
 \subsection{模同态}
@@ -257,6 +263,21 @@ $M_2\oplus\cdots\oplus M_r\cong M/M_1\cong\bigoplus_{j\ne j_0}N_j$ 是 $r-1$ 与
   \item $M/\operatorname{Ker}(f)\cong\operatorname{Im}(f)$.
 \end{enumerate}
 \end{theorem}
+
+\begin{proof}
+\mbox{}\par\vspace{-0.2em}
+\begin{enumerate}
+  \item $f(0)=0$, 故 $0\in\operatorname{Ker}(f)$. 设 $m,n\in\operatorname{Ker}(f)$, $r\in R$, 则
+  $f(m-n)=f(m)-f(n)=0$, $f(r\cdot m)=r\cdot f(m)=0$, 故 $\operatorname{Ker}(f)$ 为 $M$ 的子模.
+  \item 同理, $0=f(0)\in\operatorname{Im}(f)$; 若 $n_1=f(m_1)$, $n_2=f(m_2)$, 则
+  $n_1-n_2=f(m_1-m_2)$, $r\cdot n_1=f(r\cdot m_1)$, 故 $\operatorname{Im}(f)$ 为 $N$ 的子模.
+  \item 定义 $\varphi\colon M/\operatorname{Ker}(f)\to\operatorname{Im}(f)$, $[m]\mapsto f(m)$.
+  若 $[m]=[m']$, 则 $m-m'\in\operatorname{Ker}(f)$, 即 $f(m)=f(m')$, 故 $\varphi$ 良定义;
+  又 $\varphi([m]+[m'])=f(m+m')=\varphi([m])+\varphi([m'])$, $\varphi(r\cdot[m])=f(r\cdot m)=r\cdot\varphi([m])$,
+  故 $\varphi$ 为模同态. 若 $\varphi([m])=0$, 则 $m\in\operatorname{Ker}(f)$, 即 $[m]=[0]$, 故 $\varphi$ 单;
+  而 $\varphi$ 显然满. 于是 $M/\operatorname{Ker}(f)\cong\operatorname{Im}(f)$.
+\end{enumerate}
+\end{proof}
 
 \begin{remark}\label{rem:module-iso-right}
 上述定理对右 $R$-模同样成立.
@@ -286,6 +307,12 @@ $M_2\oplus\cdots\oplus M_r\cong M/M_1\cong\bigoplus_{j\ne j_0}N_j$ 是 $r-1$ 与
 \begin{proposition}\label{prop:left-right-module}
 $M$ 是一个左 $R$-模当且仅当 $M$ 是一个右 $R^{\mathrm{op}}$-模.
 \end{proposition}
+
+\begin{proof}
+若 $M$ 是左 $R$-模, 定义 $m\cdot r:=r\cdot m$ ($m\in M$, $r\in R$). 则
+$(m\cdot r)\cdot s=s\cdot(r\cdot m)=(sr)\cdot m=m\cdot(sr)=m\cdot(r*s)$, 其中 $*$ 为 $R^{\mathrm{op}}$ 的乘法,
+故 $M$ 是右 $R^{\mathrm{op}}$-模; 反之若 $M$ 是右 $R^{\mathrm{op}}$-模, 令 $r\cdot m:=m\cdot r$ 即得左 $R$-模结构.
+\end{proof}
 
 \begin{definition}[双模]\label{def:bimodule}
 设 $M$ 为左 $R$-模, 同时为右 $S$-模. 称 $M$ 为一个 $R$-$S$ 双模, 记作 ${}_RM_S$, 若
