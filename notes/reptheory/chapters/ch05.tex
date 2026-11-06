@@ -13,12 +13,13 @@
 \end{definition}
 
 \begin{remark}\label{rem:gl-matrix}
-给线性空间 $V$ 的一组基 $\alpha_1,\dots,\alpha_n$, 对 $\sigma\in\mathrm{GL}_V$,
+给线性空间 $V$ 的一组基 $\alpha_1,\dots,\alpha_n$, 对 $\sigma\in\mathrm{GL}_V$, 记
+$\sigma(\alpha_j)=\sum_{i}a_{ij}\alpha_i$, 则
 \begin{equation*}
   \sigma(\alpha_1,\dots,\alpha_n)=\bigl(\sigma(\alpha_1),\dots,\sigma(\alpha_n)\bigr)
-  =(\alpha_{i_1},\dots,\alpha_{i_n})=(\alpha_1,\dots,\alpha_n)A_\sigma ,
+  =(\alpha_1,\dots,\alpha_n)A_\sigma ,
 \end{equation*}
-其中 $i_1,\dots,i_n$ 为 $1,\dots,n$ 的一个排列, $A_\sigma$ 为 $n$ 阶可逆矩阵.
+其中 $A_\sigma=(a_{ij})$ 为 $n$ 阶可逆矩阵.
 全体 $n$ 阶可逆矩阵构成群 $\mathrm{GL}_n$. 事实上 $\mathrm{GL}_n\cong\mathrm{GL}_V$, 后续不加区分.
 \end{remark}
 

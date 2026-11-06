@@ -110,7 +110,7 @@
 命题,,prop:tensor-dim,张量积,notes/reptheory/chapters/ch04.tex,"设 为 -线性空间, 且 , , 那么 [label=( )] ; 若 , , 则 [ V_1 _ V_2= _ _i _j 1 i m, 1 j n . ]"
 定义,一般线性群,def:glv,群的线性表示,notes/reptheory/chapters/ch05.tex,"设 为线性空间. 的全体可逆线性变换构成一个群, 称为 的 , 记作 ."
 定义,群的线性表示,def:group-rep,群的线性表示,notes/reptheory/chapters/ch05.tex,"设 为群, 为线性空间, 称群同态 为 的一个 . 有时也称 是 的一个线性表示."
-注,,rem:gl-matrix,群的线性表示,notes/reptheory/chapters/ch05.tex,"给线性空间 的一组基 , 对 , ( _1, , _n)= ( ( _1), , ( _n) ) =( _ i_1 , , _ i_n )=( _1, , _n)A_ , 其中 为 的一个排列, 为 阶可逆矩阵. 全体 阶可逆矩阵构成群 ."
+注,,rem:gl-matrix,群的线性表示,notes/reptheory/chapters/ch05.tex,"给线性空间 的一组基 , 对 , 记 , 则 ( _1, , _n)= ( ( _1), , ( _n) ) =( _1, , _n)A_ , 其中 为 阶可逆矩阵. 全体 阶可逆矩阵构成群 . 事实上 , 后续不加区分."
 命题,,prop:rep-alg,群的线性表示,notes/reptheory/chapters/ch05.tex,为 的群表示当且仅当 为 的代数表示.
 注,,rem:subrep,群的线性表示,notes/reptheory/chapters/ch05.tex,"可以类似定义子表示, 交, 直和, 商表示, 同态, 此处不再赘述."
 例,,ex:group-reps,群的线性表示,notes/reptheory/chapters/ch05.tex,": , , . (sign representation): , 将偶排列映到 , 将奇排列映到 . (canonical representation): 设 为线性空间, 有基 . 对 , ( _1, , _n):= ( ( _1), "
