@@ -77,10 +77,10 @@
 例,,ex:representation-FZ2,表示,notes/reptheory/chapters/ch03.tex,"由 , [ 1 I_2, g 0&1 1&0 , ] 得到 的一个表示 . 由 , [ g^j ^j, = ( n ), ] 得到 的一个表示 ."
 定理,,thm:rep-is-module,表示,notes/reptheory/chapters/ch03.tex,是 的一个表示当且仅当 是一个 -模.
 定义,群的表示,def:group-representation,表示,notes/reptheory/chapters/ch03.tex,"设 为群, 为 -线性空间. 称 为 的一个 (线性) 表示, 若存在代数同态 [ G (V). ]"
-例,,ex:FZ2-representation-model,表示,notes/reptheory/chapters/ch03.tex,"设 , 其中 , , , , 且 [ (g)= 0&1 1&0 . ] 规定 , 则 g _1&= (g)( _1)= 0&1 1&0 10= 01= _2, g _2&= (g)( _2)= 0&1 1&0 01= 10= _1 . 正则"
+例,,ex:FZ2-representation-model,表示,notes/reptheory/chapters/ch03.tex,"设 , 其中 , , , , 且 [ (g)= 0&1 1&0 . ] 规定 , 则 [ &g _1= (g)( _1)= 0&1 1&0 10= 01= _2, &g _2= (g)( _2)= 0&1 1&0 01= 10= _1 . "
 命题,,prop:regular-module-exists,表示,notes/reptheory/chapters/ch03.tex,"设 为群. 则群代数 上有正则模 ; 并且对任意群同态 , 存在唯一的代数同态 使 对一切 成立."
 定义,子表示,def:subrepresentation,表示,notes/reptheory/chapters/ch03.tex,"若对任意 , 都有 , 则称 为 的不变子空间, 并称限制 为 的一个子表示."
-例,,ex:FZ2-semisimple-decomposition,表示,notes/reptheory/chapters/ch03.tex,"设 . 先设 , 记 [ e_1= 12(1+g), e_2= 12(1-g). ] 则 , 均为子表示, 并且 g e_1&= 12 g (1+g)= 12(g+g^2)= 12(1+g)=e_1, g e_2&= 12 g (1-g)="
+例,,ex:FZ2-semisimple-decomposition,表示,notes/reptheory/chapters/ch03.tex,"设 . 先设 , 记 [ e_1= 12(1+g), e_2= 12(1-g). ] 则 , 均为子表示, 并且 [ &g e_1= 12 g (1+g)= 12(g+g^2)= 12(1+g)=e_1, &g e_2= 12 g (1-g"
 定义,忠实表示,def:faithful-rep,表示,notes/reptheory/chapters/ch03.tex,"称表示 是忠实的, 若 是单射."
 命题,,prop:faithful-equiv,表示,notes/reptheory/chapters/ch03.tex,是忠实 -模当且仅当 是忠实 -表示.
 注,,rem:faithful-algebra-only,表示,notes/reptheory/chapters/ch03.tex,"上述命题中特意强调了 ""代数"", 这是因为在其他结构中结论不一定成立. 例如在群表示中表示是 , 而对模而言仍定义在群代数 上; 扩大 的作用范围, 可能不会保证 仍是单射."

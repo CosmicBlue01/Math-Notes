@@ -86,10 +86,12 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
     \rho(g)=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
   \]
   规定 $g\cdot v=\rho(g)(v)$, 则
-  \begin{align*}
-    g\cdot\alpha_1&=\rho(g)(\alpha_1)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\binom10=\binom01=\alpha_2,\\
-    g\cdot\alpha_2&=\rho(g)(\alpha_2)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\binom01=\binom10=\alpha_1 .
-  \end{align*}
+  \[
+    \begin{aligned}
+      &g\cdot\alpha_1=\rho(g)(\alpha_1)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\binom10=\binom01=\alpha_2,\\
+      &g\cdot\alpha_2=\rho(g)(\alpha_2)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\binom01=\binom10=\alpha_1 .
+    \end{aligned}
+  \]
   \item 正则模: $\mathbb{F}\mathbb{Z}_2\acts \mathbb{F}\mathbb{Z}_2=\operatorname{span}_{\mathbb{F}}\{1,g\}$, 记 $\mathbb{F}\mathbb{Z}_2=V$,
   \[
     \rho\colon \mathbb{F}\mathbb{Z}_2\longrightarrow\operatorname{End}(V),\qquad g\longmapsto\rho(g).
@@ -157,10 +159,12 @@ $\alpha_1,\dots,\alpha_m$ 给出) 被映为 $0$, 故 $V/V_1$ 可由 $M_2$ 描述
   e_1=\frac12(1+g),\qquad e_2=\frac12(1-g).
 \]
 则 $V_1=\operatorname{span}_{\mathbb{F}}\{e_1\}$, $V_2=\operatorname{span}_{\mathbb{F}}\{e_2\}$ 均为子表示, 并且
-\begin{align*}
-  g\cdot e_1&=\frac12 g\cdot(1+g)=\frac12(g+g^2)=\frac12(1+g)=e_1,\\
-  g\cdot e_2&=\frac12 g\cdot(1-g)=\frac12(g-1)=-e_2 .
-\end{align*}
+\[
+  \begin{aligned}
+    &g\cdot e_1=\frac12 g\cdot(1+g)=\frac12(g+g^2)=\frac12(1+g)=e_1,\\
+    &g\cdot e_2=\frac12 g\cdot(1-g)=\frac12(g-1)=-e_2 .
+  \end{aligned}
+\]
 于是 $\mathbb{F}\mathbb{Z}_2$ 可以分解为 $\mathbb{F}\mathbb{Z}_2=V_1\oplus V_2$. 既然 $\mathbb{F}\mathbb{Z}_2$ 有真子模,
 故 $\mathbb{F}\mathbb{Z}_2$ 可约.
 
