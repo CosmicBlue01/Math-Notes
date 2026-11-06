@@ -30,7 +30,7 @@ $V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
 \begin{proof}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-\item 设 $\rho\colon G\to\mathrm{GL}_V$ 为同态, 要找 $\rho'\colon \mathbb{F}G\to\operatorname{End}(V)$.
+\item ``$\Longrightarrow$'' 设 $\rho\colon G\to\mathrm{GL}_V$ 为同态, 要找 $\rho'\colon \mathbb{F}G\to\operatorname{End}(V)$.
 定义
 \begin{equation*}
   \rho'\colon\sum_{g\in G}a_g\,g\longmapsto\sum_{g\in G}a_g\,\rho(g),
@@ -44,7 +44,7 @@ $V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
 \end{align*}
 故 $\rho'$ 为代数同态.
 
-\item 设 $\rho'\colon \mathbb{F}G\to\operatorname{End}(V)$ 为代数同态, 定义 $\rho=\rho'|_G\colon G\to\operatorname{End}(V)$.
+\item ``$\Longleftarrow$'' 设 $\rho'\colon \mathbb{F}G\to\operatorname{End}(V)$ 为代数同态, 定义 $\rho=\rho'|_G\colon G\to\operatorname{End}(V)$.
 由 $\rho'(e)=\operatorname{Id}$ 及 $\forall g\in G$ 存在 $g^{-1}$ 使 $gg^{-1}=e$, 得
 \begin{equation*}
   \operatorname{Id}=\rho'(e)=\rho'(gg^{-1})=\rho'(g)\rho'(g^{-1})=\rho(g)\rho(g^{-1}),
@@ -320,10 +320,10 @@ $f_i(v)=a_i$, 故
 \begin{proof}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-\item 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$: 由直和, 每个 $v\in V$ 可唯一写为 $v=v_1+v_2$,
+\item ``$\Longrightarrow$'' 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$: 由直和, 每个 $v\in V$ 可唯一写为 $v=v_1+v_2$,
 其中 $v_1\in V_1$, $v_2\in V_2$. 令 $p(v)=v_1$ 即可.
 
-\item 设已有线性映射 $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
+\item ``$\Longleftarrow$'' 设已有线性映射 $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
 记 $\operatorname{Ker}(p)=\{v\in V\mid p(v)=0\}$, 证明 $V=V_1\oplus\operatorname{Ker}(p)$.
 对任意 $v\in V$ 有 $p(v)\in V_1$, 故 $p\bigl(p(v)\bigr)=p(v)$.
 考虑 $v-p(v)$, 则
@@ -345,7 +345,7 @@ $f_i(v)=a_i$, 故
 \begin{proof}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-\item 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$, $v=v_1+v_2\mapsto v_1$
+\item ``$\Longrightarrow$'' 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$, $v=v_1+v_2\mapsto v_1$
 (其中 $v_1\in V_1$, $v_2\in V_2$). 下面验证 $p$ 是表示同态.
 考虑表示 $\rho\colon G\to\mathrm{GL}_V$, 以及 $\rho|_{V_1}\colon G\to\mathrm{GL}_{V_1}$, 则
 \begin{align*}
@@ -353,7 +353,7 @@ $f_i(v)=a_i$, 故
   &=p\bigl(\rho(g)v_1+\rho(g)v_2\bigr)=\rho(g)v_1\\
   &=\rho|_{V_1}(g)v_1=\rho|_{V_1}(g)\,p(v_1+v_2).
 \end{align*}
-\item 设 $p$ 为表示同态, 仍考虑 $\operatorname{Ker}(p)$. 由同态基本定理, $\operatorname{Ker}(p)$ 是子表示,
+\item ``$\Longleftarrow$'' 设 $p$ 为表示同态, 仍考虑 $\operatorname{Ker}(p)$. 由同态基本定理, $\operatorname{Ker}(p)$ 是子表示,
 于是同 Lemma \ref{lem:complement} 的论证即得 $V=V_1\oplus\operatorname{Ker}(p)$.
 \end{enumerate}
 \end{proof}

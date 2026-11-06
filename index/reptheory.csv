@@ -89,7 +89,6 @@
 定义,自由 Abel 群,def:free-abel,张量积,notes/reptheory/chapters/ch04.tex,"设集合 , 称集合 [ C(S)= _ i I m_i s_i | m_i , s_i S, m_i 0 ] 在加法 [ ( _ i I m_i s_i )+ ( _ i I n_i s_i )= _ i I (m_i+n_i) ,s_i "
 定义,模的张量积,def:tensor,张量积,notes/reptheory/chapters/ch04.tex,"设 为环, 为右 -模, 为左 -模. 记由集合 生成的自由 Abel 群为 . 设 为由以下三类元素生成的 的子群: [label=( )] ; ; . 其中 , , . 称商群 为 和 在 上的 , 记为 ."
 注,,rem:tensor-basic,张量积,notes/reptheory/chapters/ch04.tex,"仅仅是集合而不是模的直和, 我们没有在它上面定义运算, 故不存在""坐标分量对应相加""的说法; 只应将元素看作没有任何关系的形式记号. 为 Abel 群. 有典范同态 [ C(M N) M _R N, (m,n) ((m,n) ), ] 记 "
-注,,rem:tensor-form,张量积,notes/reptheory/chapters/ch04.tex,"中的元素形如 , , 故 中的元素形如 [ ( _i b_i(m_i,n_i) )= _i b_i ,(m_i n_i). ] 对 有 [ (km) n= _ k =k ,(m n), ] 对 由 及加群中取负的性质同样成立, 故元素可进一"
 例,,ex:tensor-basic,张量积,notes/reptheory/chapters/ch04.tex,"考虑 . 注意 [ _i m_i n_i= _i 1 m_i n_i= _i 1 m_i n_i=1 _i m_i n_i . ] 因此设 [ _ , _i m_i n_i=1 _i m_i n_i _i m_i n_i . ] 从 出发看"
 定义,平衡双加法映射,def:balanced,张量积,notes/reptheory/chapters/ch04.tex,"设 为环, 为右 -模, 为左 -模, 为加群. 称 为 , 若 [label=( )] ; ; . 其中 , , ."
 注,,rem:balanced,张量积,notes/reptheory/chapters/ch04.tex,"上述定义中, 双加法指 (i), (ii); 平衡指 (iii)."

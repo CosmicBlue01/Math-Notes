@@ -433,11 +433,12 @@ $\operatorname{char}K\ndivides|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ �
 
 2° 若 $V\cong U$, 由 Schur 引理, $\operatorname{Hom}_G(V,U)=\mathbb{C}\,\mathrm{Id}$.
 则 $\widetilde C=\lambda I_n$, $\operatorname{Tr}(\widetilde C)=n\lambda$. 又 $C=e_{ki}$, $\operatorname{Tr}(C)=\delta_{ki}$, 则
-\[
-  \operatorname{Tr}(\widetilde C)=\operatorname{Tr}\Bigl(\int_G\gamma(g)\,C\,\rho(g)^{-1}\,\mathrm{d}g\Bigr)
-  =\int_G\operatorname{Tr}\bigl(\gamma(g)\,C\,\rho(g)^{-1}\bigr)\mathrm{d}g
-  =\int_G\operatorname{Tr}(C)\,\mathrm{d}g=\operatorname{Tr}(C)=\delta_{ki},
-\]
+\begin{align*}
+  \operatorname{Tr}(\widetilde C)
+  &=\operatorname{Tr}\Bigl(\int_G\gamma(g)\,C\,\rho(g)^{-1}\,\mathrm{d}g\Bigr)
+  =\int_G\operatorname{Tr}\bigl(\gamma(g)\,C\,\rho(g)^{-1}\bigr)\mathrm{d}g\\
+  &=\int_G\operatorname{Tr}(C)\,\mathrm{d}g=\operatorname{Tr}(C)=\delta_{ki},
+\end{align*}
 故 $\widetilde C=\dfrac{\delta_{ki}}{n}I_n$. 取 $\widetilde C$ 的 $(l,j)$ 位置并重命名指标, 则
 \[
   (a_{ij},b_{kl})=\frac{1}{n}\delta_{il}\delta_{jk}.

@@ -16,7 +16,7 @@
 \begin{enumerate}
   \item 由 $\mathbb{F}\mathbb{Z}_2\to M_2(\mathbb{F})\cong\operatorname{End}(\mathbb{F}^2)$,
   \[
-    1\longmapsto I_2,\qquad \rho\colon g\longmapsto\begin{pmatrix}0&1\\1&0\end{pmatrix},
+    \rho\colon 1\longmapsto I_2,\qquad g\longmapsto\begin{pmatrix}0&1\\1&0\end{pmatrix},
   \]
   得到 $\mathbb{F}\mathbb{Z}_2$ 的一个表示 $(\mathbb{F}^2,\rho)$.
   \item 由 $\mathbb{C}\mathbb{Z}_n\to\operatorname{End}(\mathbb{C})=\mathbb{C}$,
@@ -34,7 +34,7 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \begin{proof}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-\item 设 $V$ 为 $A$ 的一个表示, 有同态 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$.
+\item ``$\Longrightarrow$'' 设 $V$ 为 $A$ 的一个表示, 有同态 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$.
 定义运算
 \[
   A\times V\longrightarrow V,\qquad (a,v)\longmapsto a\cdot v:=\rho(a)(v).
@@ -53,7 +53,7 @@ $V$ 是 $A$ 的一个表示当且仅当 $V$ 是一个 $A$-模.
 \end{align*}
 故 $V$ 是一个 $A$-模.
 
-\item 设 $V$ 为 $A$-模, 运算为 $A\times V\to V$, $(a,v)\mapsto a\cdot v$.
+\item ``$\Longleftarrow$'' 设 $V$ 为 $A$-模, 运算为 $A\times V\to V$, $(a,v)\mapsto a\cdot v$.
 定义映射 $\rho\colon A\to\operatorname{End}(V)$, $a\mapsto\rho(a)$, 其中 $\rho(a)$ 由 $\rho(a)(v)=a\cdot v$ 规定.
 只需证明 $\rho$ 是代数同态.
 \begin{enumerate}
@@ -113,7 +113,7 @@ $\rho\colon G\to\operatorname{GL}(V)$, 存在唯一的代数同态 $\widetilde\r
 
 \subsection{表示论的直观解释}
 
-以矩阵来说明. 设 $\rho\colon A\to\operatorname{End}(V)$ 为表示, 取子空间 $V_1\leq V$.
+以矩阵来说明. 设 $\rho\colon A\to\operatorname{End}(V)$ 为表示, 取子空间 $V_1\subseteq V$.
 设 $V_1$ 的一组基为 $\alpha_1,\alpha_2,\dots,\alpha_m$, 那么可以扩充为 $V$ 的一组基
 $\alpha_1,\dots,\alpha_m,\alpha_{m+1},\dots,\alpha_n$.
 
@@ -202,12 +202,12 @@ $V$ 是忠实 $A$-模当且仅当 $V$ 是忠实 $A$-表示.
 \begin{proof}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-\item 设 $V$ 为忠实模, 只要证明 $\rho$ 是单射, 即 $\operatorname{Ker}(\rho)=\{0\}$.
+\item ``$\Longrightarrow$'' 设 $V$ 为忠实模, 只要证明 $\rho$ 是单射, 即 $\operatorname{Ker}(\rho)=\{0\}$.
 任取 $a\in\operatorname{Ker}(\rho)$, 则 $\rho(a)=0$, 于是 $\rho(a)(v)=0$, $\forall v\in V$,
 即 $a\cdot v=0$. 由忠实模的定义知 $a=0$. 故 $\operatorname{Ker}(\rho)=\{0\}$, $\rho$ 是单射,
 $V$ 是忠实表示.
 
-\item 设 $V$ 为忠实表示, 且 $a\cdot v=0$, $\forall v\in V$. 由表示的定义, 这意味着
+\item ``$\Longleftarrow$'' 设 $V$ 为忠实表示, 且 $a\cdot v=0$, $\forall v\in V$. 由表示的定义, 这意味着
 $\rho(a)(v)=0$, $\forall v\in V$, 即 $\rho(a)=0$. 而 $\rho$ 是单射, 故 $a=0$. 因此 $V$ 是忠实模.
 \end{enumerate}
 \end{proof}
