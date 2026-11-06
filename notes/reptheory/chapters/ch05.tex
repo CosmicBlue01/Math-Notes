@@ -172,8 +172,8 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
 由于 $\{\alpha_i\otimes\beta_j\}$ 为 $V_1\otimes V_2$ 的基, 有
 \[\begin{aligned}
   &g(\alpha_i\otimes\beta_j)=(g\cdot\alpha_i)\otimes(g\cdot\beta_j)\\
-  &=\Bigl(\sum_s a_{si}\alpha_s\Bigr)\otimes\Bigl(\sum_t b_{tj}\beta_t\Bigr)
-  &=\sum_{s,t}a_{si}b_{tj}\,\alpha_s\otimes\beta_t .
+  &\phantom{g(\alpha_i\otimes\beta_j)}=\Bigl(\sum_s a_{si}\alpha_s\Bigr)\otimes\Bigl(\sum_t b_{tj}\beta_t\Bigr)
+  &\phantom{g(\alpha_i\otimes\beta_j)}=\sum_{s,t}a_{si}b_{tj}\,\alpha_s\otimes\beta_t .
 \end{aligned}\]
 排成矩阵即为 Kronecker 积. 记 $A=(a_{ij})_{m\times m}$, $B=(b_{ij})_{n\times n}$,
 则 $g$ 在基 $\{\alpha_i\otimes\beta_j\}$ 下的矩阵 $C$ 若按元素写出, 形如
@@ -218,7 +218,7 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
 这需要验证良定义, 即 $g_1\cdot(g_2\cdot f)=(g_1g_2)\cdot f$:
 \[\begin{aligned}
   &\bigl((g_1g_2)\cdot f\bigr)(v)=f\bigl((g_1g_2)^{-1}\cdot v\bigr)=f\bigl(g_2^{-1}g_1^{-1}\cdot v\bigr)\\
-  &=(g_2\cdot f)(g_1^{-1}\cdot v)=\bigl(g_1\cdot(g_2\cdot f)\bigr)(v).
+  &\phantom{\bigl((g_1g_2)\cdot f\bigr)(v)}=(g_2\cdot f)(g_1^{-1}\cdot v)=\bigl(g_1\cdot(g_2\cdot f)\bigr)(v).
 \end{aligned}\]
 设 $g(\alpha_1,\dots,\alpha_n)=(\alpha_1,\dots,\alpha_n)A$, $g^{-1}(\alpha_1,\dots,\alpha_n)=(\alpha_1,\dots,\alpha_n)B$,
 其中 $B=A^{-1}$. 令 $B=(b_{ij})_{n\times n}$, 并设 $g\cdot f_i=\sum_s c_{si}f_s$, 则对每个 $j$,
@@ -378,20 +378,21 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
 \begin{enumerate}
 \item 先说明 $\bar p$ 是线性映射:
 \[\begin{aligned}
-  &\bar p(v+v')=\frac{1}{|G|}\sum_{g\in G}g\cdot p\bigl(g^{-1}(v+v')\bigr)
-  &=\frac{1}{|G|}\sum_{g\in G}g\cdot\bigl(p(g^{-1}v)+p(g^{-1}v')\bigr)\\
-  &=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)+\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v')
-  &=\bar p(v)+\bar p(v'),\\
+  &\bar p(v+v')=\frac{1}{|G|}\sum_{g\in G}g\cdot p\bigl(g^{-1}(v+v')\bigr)\\
+  &\phantom{\bar p(v+v')}=\frac{1}{|G|}\sum_{g\in G}g\cdot\bigl(p(g^{-1}v)+p(g^{-1}v')\bigr)\\
+  &\phantom{\bar p(v+v')}=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)
+   +\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v')\\
+  &\phantom{\bar p(v+v')}=\bar p(v)+\bar p(v'),\\
   &\bar p(kv)=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}kv)
-  &=k\cdot\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)=k\,\bar p(v).
+   =k\cdot\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)=k\,\bar p(v).
 \end{aligned}\]
 
 \item 证明 $\bar p$ 确为表示同态, 即证 $\forall h\in G$ 有 $\bar p(h\cdot v)=h\cdot\bar p(v)$.
 事实上, 令 $g'=h^{-1}g$, 则
 \[\begin{aligned}
   &\bar p(h\cdot v)=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}hv)
-  &=\frac{1}{|G|}\sum_{g'\in G}(hg')\cdot p(g'^{-1}v)\\
-  &=h\cdot\frac{1}{|G|}\sum_{g'\in G}g'\cdot p(g'^{-1}v)=h\cdot\bar p(v).
+  &\phantom{\bar p(h\cdot v)}=\frac{1}{|G|}\sum_{g'\in G}(hg')\cdot p(g'^{-1}v)\\
+  &\phantom{\bar p(h\cdot v)}=h\cdot\frac{1}{|G|}\sum_{g'\in G}g'\cdot p(g'^{-1}v)=h\cdot\bar p(v).
 \end{aligned}\]
 
 \item 考察 $\bar p$ 在 $V_1$ 上的限制. 对 $v_1\in V_1$, 由于 $V_1$ 是子表示, $g^{-1}v_1\in V_1$, 故
