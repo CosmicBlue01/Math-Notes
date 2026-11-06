@@ -216,11 +216,11 @@ $1_A$ 同时属于 $B_1$ 与 $B_2$, 故 $1_A\in B_1\cap B_2$. 设 $x,y\in B_1\ca
   A_1\times A_2=\{(a_1,a_2)\mid a_i\in A_i,\ i=1,2\},
 \]
 直和上运算定义如下:
-\begin{align*}
-  \text{加法: } & (a_1,a_2)+(a_1',a_2')=(a_1+a_1',a_2+a_2'),\\
-  \text{数乘: } & k\cdot(a_1,a_2)=(ka_1,ka_2),\\
-  \text{乘法: } & (a_1,a_2)\cdot(a_1',a_2')=(a_1a_1',a_2a_2'),
-\end{align*}
+\[\begin{aligned}
+  &\text{加法: }  (a_1,a_2)+(a_1',a_2')=(a_1+a_1',a_2+a_2'),\\
+  &\text{数乘: }  k\cdot(a_1,a_2)=(ka_1,ka_2),\\
+  &\text{乘法: }  (a_1,a_2)\cdot(a_1',a_2')=(a_1a_1',a_2a_2'),
+\end{aligned}\]
 其中 $k\in \mathbb{F}$, $a_i,a_i'\in A_i$. 直和的单位元为 $(1_{A_1},1_{A_2})$.
 \end{definition}
 
@@ -280,10 +280,10 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
 
 \begin{proof}
 只证 $A_1$. 设 $a_1,a_1'\in A_1$, $a_2\in A_2$, 有
-\begin{align*}
-  (a_1+a_2)\cdot a_1' &= a_1\cdot a_1'+a_2\cdot a_1'=a_1\cdot a_1'+0=a_1a_1'\in A_1,\\
-  a_1'\cdot(a_1+a_2) &= a_1'\cdot a_1+a_1'\cdot a_2=a_1'a_1+0=a_1'a_1\in A_1 .
-\end{align*}
+\[\begin{aligned}
+  &(a_1+a_2)\cdot a_1' = a_1\cdot a_1'+a_2\cdot a_1'=a_1\cdot a_1'+0=a_1a_1'\in A_1,\\
+  &a_1'\cdot(a_1+a_2) = a_1'\cdot a_1+a_1'\cdot a_2=a_1'a_1+0=a_1'a_1\in A_1 .
+\end{aligned}\]
 从而 $(A_1\oplus A_2)\cdot A_1\subseteq A_1$, 且 $A_1\cdot(A_1\oplus A_2)\subseteq A_1$.
 故 $A_1\trianglelefteq(A_1\oplus A_2)$.
 \end{proof}
@@ -351,12 +351,13 @@ $\mathbb{F}\mathbb{Z}_3=\operatorname{span}_{\mathbb{F}}\{1,g,g^2\}$.
 注意 $I$ 对乘法封闭 (因 $a^2=a$), 但不含单位元 $1$, 故不是子代数.
 下面说明 $I\trianglelefteq\mathbb{C}\mathbb{Z}_3$. 因为 $\mathbb{Z}_3$ 是 Abel 群, 只需证
 $\mathbb{C}\mathbb{Z}_3\cdot I\subseteq I$; 又只需对基验证.
-\begin{align*}
-  g^{\phantom{2}}\cdot a &= g\cdot\frac{1}{3}\left(1+\omega g+\omega^2 g^2\right)
-  =\frac{1}{3}\left(g+\omega g^2+\omega^2\right)
-  =\frac{1}{3}\cdot\omega^2\left(1+\omega g+\omega^2 g^2\right)=\omega^2 a\in I,\\
-  g^2\cdot a &= g\cdot(g\cdot a)=\omega^2\cdot g\cdot a=\omega^4 a=\omega a\in I .
-\end{align*}
+\[\begin{aligned}
+  &g\cdot a=g\cdot\tfrac13\left(1+\omega g+\omega^2g^2\right)\\
+  &=\tfrac13\left(g+\omega g^2+\omega^2\right)
+   =\tfrac13\cdot\omega^2\left(1+\omega g+\omega^2g^2\right)\\
+  &=\omega^2a\in I,\\
+  &g^2\cdot a=g\cdot(g\cdot a)=\omega^2\cdot g\cdot a=\omega^4a=\omega a\in I .
+\end{aligned}\]
 故 $I\trianglelefteq\mathbb{C}\mathbb{Z}_3$.
 \end{example}
 
@@ -479,14 +480,14 @@ $x^2\mapsto[x^2]$, 则 $[x^2]=[x]^2=[a]^2=[a^2]$.
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
 \item $\operatorname{Ker}(f)$ 是线性映射 $f$ 的核, 故为 $A$ 的子空间. 又 $\forall a\in A$, $a_0\in\operatorname{Ker}(f)$, 有
-\begin{align*}
-  f(a\cdot a_0) &= f(a)\cdot f(a_0)=f(a)\cdot 0=0
-  \Rightarrow a\cdot a_0\in\operatorname{Ker}(f)
-  \Rightarrow A\cdot\operatorname{Ker}(f)\subseteq\operatorname{Ker}(f),\\
-  f(a_0\cdot a) &= f(a_0)\cdot f(a)=0\cdot f(a)=0
-  \Rightarrow a_0\cdot a\in\operatorname{Ker}(f)
-  \Rightarrow \operatorname{Ker}(f)\cdot A\subseteq\operatorname{Ker}(f).
-\end{align*}
+\[\begin{aligned}
+  &f(a\cdot a_0) = f(a)\cdot f(a_0)=f(a)\cdot 0=0
+  &\Rightarrow a\cdot a_0\in\operatorname{Ker}(f)
+  &\Rightarrow A\cdot\operatorname{Ker}(f)\subseteq\operatorname{Ker}(f),\\
+  &f(a_0\cdot a) = f(a_0)\cdot f(a)=0\cdot f(a)=0
+  &\Rightarrow a_0\cdot a\in\operatorname{Ker}(f)
+  &\Rightarrow \operatorname{Ker}(f)\cdot A\subseteq\operatorname{Ker}(f).
+\end{aligned}\]
 
 于是 $\operatorname{Ker}(f)\trianglelefteq A$.
 
@@ -496,10 +497,10 @@ $x^2\mapsto[x^2]$, 则 $[x^2]=[x]^2=[a]^2=[a^2]$.
 取 $b_{1,2}\in\operatorname{Im}(f)$, 则 $\exists a_{1,2}\in A$, s.t. $f(a_{1,2})=b_{1,2}$.
 
 由于 $f$ 是线性映射 (参看 Definition \ref{def:algebra-hom}), 故
-\begin{align*}
-  b_1+b_2 &= f(a_1)+f(a_2)=f(a_1+a_2)\in\operatorname{Im}(f),\\
-  kb_1 &= kf(a_1)=f(ka_1)\in\operatorname{Im}(f),
-\end{align*}
+\[\begin{aligned}
+  &b_1+b_2 = f(a_1)+f(a_2)=f(a_1+a_2)\in\operatorname{Im}(f),\\
+  &kb_1 = kf(a_1)=f(ka_1)\in\operatorname{Im}(f),
+\end{aligned}\]
 其中 $k\in \mathbb{F}$. 其次 $b_1b_2=f(a_1)f(a_2)=f(a_1a_2)\in\operatorname{Im}(f)$.
 又 $1_B=f(1_A)\in\operatorname{Im}(f)$, 故 $\operatorname{Im}(f)$ 是 $B$ 的子代数.
 

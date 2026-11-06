@@ -89,13 +89,13 @@ $f\longmapsto\bigl(n\mapsto(m\mapsto f(m\otimes n))\bigr)$, 即
 $f\longmapsto\bigl(m\otimes n\mapsto f(n)(m)\bigr)$.
 
 要说明 $\Psi(f)$ 是良定义的, 即不依赖代表元的选取; 回忆张量积的定义, 验证三类元素被映为 $0$:
-\begin{align*}
+\[\begin{aligned}
   &\Psi(f)\bigl((m_1+m_2)\otimes n-m_1\otimes n-m_2\otimes n\bigr)\\
   &\qquad=f(n)(m_1+m_2)-f(n)(m_1)-f(n)(m_2)=0,\\
   &\Psi(f)\bigl(m\otimes(n_1+n_2)-m\otimes n_1-m\otimes n_2\bigr)=0,\\
   &\Psi(f)\bigl((m\cdot s)\otimes n-m\otimes(s\cdot n)\bigr)
-  =f(s\cdot n)(m)-f(n)(m\cdot s)=0 .
-\end{align*}
+  &=f(s\cdot n)(m)-f(n)(m\cdot s)=0 .
+\end{aligned}\]
 还需验证 $\Psi(f)\in\operatorname{Hom}_R(M\otimes_S N,L)$:
 \[
   \Psi(f)\bigl(r\cdot(m\otimes n)\bigr)=\Psi(f)(r\cdot m\otimes n)=f(n)(r\cdot m)
@@ -298,11 +298,11 @@ $H\subseteq Z(G)$ 时, 当 $g\notin H$ 有 $\chi_{V_H^G}(g)=0$; 故只需看 $g\
 \end{proposition}
 
 \begin{proof}
-\begin{align*}
-  (W_H^K)_K^G&=\mathbb{C}G\otimes_{\mathbb{C}K}\bigl(\mathbb{C}K\otimes_{\mathbb{C}H}W\bigr)\\
+\[\begin{aligned}
+  &(W_H^K)_K^G=\mathbb{C}G\otimes_{\mathbb{C}K}\bigl(\mathbb{C}K\otimes_{\mathbb{C}H}W\bigr)\\
   &=\bigl(\mathbb{C}G\otimes_{\mathbb{C}K}\mathbb{C}K\bigr)\otimes_{\mathbb{C}H}W\\
   &=\mathbb{C}G\otimes_{\mathbb{C}H}W=W_H^G .
-\end{align*}
+\end{aligned}\]
 \end{proof}
 
 为以后书写方便, 对 $G$ 的所有表示形成一个范畴 $\mathrm{Rep}\,G$, 态射为表示同态.
@@ -343,12 +343,12 @@ $H\subseteq Z(G)$ 时, 当 $g\notin H$ 有 $\chi_{V_H^G}(g)=0$; 故只需看 $g\
 $gh\otimes u\otimes v$ 与 $g\otimes hu\otimes hv$ 是同一个元素, 二者的像同为 $gh\otimes u\otimes gh\cdot v$,
 这说明 $\Psi$ 良定义. 反之 $\Psi(g\otimes u\otimes g^{-1}\cdot v)=g\otimes u\otimes v$, 可见 $\Psi$ 有逆,
 从而是双射. 最后说明 $\Psi$ 与 $G$ 的作用交换: 对 $g'\in G$,
-\begin{align*}
-  \Psi\bigl(g'\cdot(g\otimes u\otimes v)\bigr)
+\[\begin{aligned}
+  &\Psi\bigl(g'\cdot(g\otimes u\otimes v)\bigr)
   &=\Psi\bigl(g'g\otimes u\otimes v\bigr)
-   =g'g\otimes u\otimes (g'g)\cdot v\\
+  &=g'g\otimes u\otimes (g'g)\cdot v\\
   &=g'\cdot(g\otimes u\otimes g\cdot v)=g'\cdot\Psi(g\otimes u\otimes v).
-\end{align*}
+\end{aligned}\]
 故 $\Psi$ 为同构, 即左边 $\cong$ 右边.
 \end{proof}
 

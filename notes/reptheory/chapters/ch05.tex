@@ -36,12 +36,12 @@ $V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
   \rho'\colon\sum_{g\in G}a_g\,g\longmapsto\sum_{g\in G}a_g\,\rho(g),
 \end{equation*}
 它是线性映射; 只需说明 $\rho'$ 为代数同态. 由 $\rho(e)=\operatorname{Id}$ 有 $\rho'(e)=\operatorname{Id}$, 且
-\begin{align*}
-  \rho'\Bigl(\sum_{g}a_g g\cdot\sum_{h}b_h h\Bigr)
+\[\begin{aligned}
+  &\rho'\Bigl(\sum_{g}a_g g\cdot\sum_{h}b_h h\Bigr)
   &=\rho'\Bigl(\sum_{g,h}a_gb_h\,gh\Bigr)=\sum_{g,h}a_gb_h\,\rho(gh)\\
   &=\sum_{g,h}a_gb_h\,\rho(g)\rho(h)
-  =\rho'\Bigl(\sum_{g}a_g g\Bigr)\rho'\Bigl(\sum_{h}b_h h\Bigr).
-\end{align*}
+  &=\rho'\Bigl(\sum_{g}a_g g\Bigr)\rho'\Bigl(\sum_{h}b_h h\Bigr).
+\end{aligned}\]
 故 $\rho'$ 为代数同态.
 
 \item ``$\Longleftarrow$'' 设 $\rho'\colon \mathbb{F}G\to\operatorname{End}(V)$ 为代数同态, 定义 $\rho=\rho'|_G\colon G\to\operatorname{End}(V)$.
@@ -170,11 +170,11 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
 得到张量表示 $G\to\mathrm{GL}_{V_1\otimes V_2}$ (良定义: $(v_1,v_2)\mapsto(g\cdot v_1)\otimes(g\cdot v_2)$
 关于两个变量分别线性, 由张量积的泛性质诱导出 $V_1\otimes_{\mathbb{F}}V_2$ 上的线性映射).
 由于 $\{\alpha_i\otimes\beta_j\}$ 为 $V_1\otimes V_2$ 的基, 有
-\begin{align*}
-  g(\alpha_i\otimes\beta_j)&=(g\cdot\alpha_i)\otimes(g\cdot\beta_j)\\
+\[\begin{aligned}
+  &g(\alpha_i\otimes\beta_j)=(g\cdot\alpha_i)\otimes(g\cdot\beta_j)\\
   &=\Bigl(\sum_s a_{si}\alpha_s\Bigr)\otimes\Bigl(\sum_t b_{tj}\beta_t\Bigr)
-  =\sum_{s,t}a_{si}b_{tj}\,\alpha_s\otimes\beta_t .
-\end{align*}
+  &=\sum_{s,t}a_{si}b_{tj}\,\alpha_s\otimes\beta_t .
+\end{aligned}\]
 排成矩阵即为 Kronecker 积. 记 $A=(a_{ij})_{m\times m}$, $B=(b_{ij})_{n\times n}$,
 则 $g$ 在基 $\{\alpha_i\otimes\beta_j\}$ 下的矩阵 $C$ 若按元素写出, 形如
 \begin{equation*}
@@ -216,10 +216,10 @@ $\alpha_{j'}-\alpha_{l'}\in W$. 特别地取 $l'=n$, $j'=1,2,\dots,n-1$, 得
 \end{equation*}
 给出对偶表示 $\rho^*\colon G\to\mathrm{GL}_{V^*}$.
 这需要验证良定义, 即 $g_1\cdot(g_2\cdot f)=(g_1g_2)\cdot f$:
-\begin{align*}
-  \bigl((g_1g_2)\cdot f\bigr)(v)&=f\bigl((g_1g_2)^{-1}\cdot v\bigr)=f\bigl(g_2^{-1}g_1^{-1}\cdot v\bigr)\\
+\[\begin{aligned}
+  &\bigl((g_1g_2)\cdot f\bigr)(v)=f\bigl((g_1g_2)^{-1}\cdot v\bigr)=f\bigl(g_2^{-1}g_1^{-1}\cdot v\bigr)\\
   &=(g_2\cdot f)(g_1^{-1}\cdot v)=\bigl(g_1\cdot(g_2\cdot f)\bigr)(v).
-\end{align*}
+\end{aligned}\]
 设 $g(\alpha_1,\dots,\alpha_n)=(\alpha_1,\dots,\alpha_n)A$, $g^{-1}(\alpha_1,\dots,\alpha_n)=(\alpha_1,\dots,\alpha_n)B$,
 其中 $B=A^{-1}$. 令 $B=(b_{ij})_{n\times n}$, 并设 $g\cdot f_i=\sum_s c_{si}f_s$, 则对每个 $j$,
 \begin{equation*}
@@ -348,11 +348,11 @@ $f_i(v)=a_i$, 故
 \item ``$\Longrightarrow$'' 设 $V=V_1\oplus V_2$, 定义 $p\colon V\to V_1$, $v=v_1+v_2\mapsto v_1$
 (其中 $v_1\in V_1$, $v_2\in V_2$). 下面验证 $p$ 是表示同态.
 考虑表示 $\rho\colon G\to\mathrm{GL}_V$, 以及 $\rho|_{V_1}\colon G\to\mathrm{GL}_{V_1}$, 则
-\begin{align*}
-  p\bigl(\rho(g)(v_1+v_2)\bigr)
+\[\begin{aligned}
+  &p\bigl(\rho(g)(v_1+v_2)\bigr)
   &=p\bigl(\rho(g)v_1+\rho(g)v_2\bigr)=\rho(g)v_1\\
   &=\rho|_{V_1}(g)v_1=\rho|_{V_1}(g)\,p(v_1+v_2).
-\end{align*}
+\end{aligned}\]
 \item ``$\Longleftarrow$'' 设 $p$ 为表示同态, 仍考虑 $\operatorname{Ker}(p)$. 由同态基本定理, $\operatorname{Ker}(p)$ 是子表示,
 于是同 Lemma \ref{lem:complement} 的论证即得 $V=V_1\oplus\operatorname{Ker}(p)$.
 \end{enumerate}
@@ -377,22 +377,22 @@ $p\colon V\to V_1$ 使 $p|_{V_1}=\operatorname{Id}_{V_1}$.
 
 \begin{enumerate}
 \item 先说明 $\bar p$ 是线性映射:
-\begin{align*}
-  \bar p(v+v')&=\frac{1}{|G|}\sum_{g\in G}g\cdot p\bigl(g^{-1}(v+v')\bigr)
-  =\frac{1}{|G|}\sum_{g\in G}g\cdot\bigl(p(g^{-1}v)+p(g^{-1}v')\bigr)\\
+\[\begin{aligned}
+  &\bar p(v+v')=\frac{1}{|G|}\sum_{g\in G}g\cdot p\bigl(g^{-1}(v+v')\bigr)
+  &=\frac{1}{|G|}\sum_{g\in G}g\cdot\bigl(p(g^{-1}v)+p(g^{-1}v')\bigr)\\
   &=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)+\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v')
-  =\bar p(v)+\bar p(v'),\\
-  \bar p(kv)&=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}kv)
-  =k\cdot\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)=k\,\bar p(v).
-\end{align*}
+  &=\bar p(v)+\bar p(v'),\\
+  &\bar p(kv)=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}kv)
+  &=k\cdot\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}v)=k\,\bar p(v).
+\end{aligned}\]
 
 \item 证明 $\bar p$ 确为表示同态, 即证 $\forall h\in G$ 有 $\bar p(h\cdot v)=h\cdot\bar p(v)$.
 事实上, 令 $g'=h^{-1}g$, 则
-\begin{align*}
-  \bar p(h\cdot v)&=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}hv)
-  =\frac{1}{|G|}\sum_{g'\in G}(hg')\cdot p(g'^{-1}v)\\
+\[\begin{aligned}
+  &\bar p(h\cdot v)=\frac{1}{|G|}\sum_{g\in G}g\cdot p(g^{-1}hv)
+  &=\frac{1}{|G|}\sum_{g'\in G}(hg')\cdot p(g'^{-1}v)\\
   &=h\cdot\frac{1}{|G|}\sum_{g'\in G}g'\cdot p(g'^{-1}v)=h\cdot\bar p(v).
-\end{align*}
+\end{aligned}\]
 
 \item 考察 $\bar p$ 在 $V_1$ 上的限制. 对 $v_1\in V_1$, 由于 $V_1$ 是子表示, $g^{-1}v_1\in V_1$, 故
 \begin{equation*}

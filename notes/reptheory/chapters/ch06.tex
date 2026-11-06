@@ -575,14 +575,14 @@ $|G|=\sum_{i=1}^{s}(\dim V_i)^2$.
 \begin{proof}
 由 Theorem \ref{thm:regular-contains}, 有
 $V_{\mathrm{reg}}\cong\bigoplus_{i=1}^{s}V_i^{(\dim V_i)}$, 两边取维数得
-\begin{align*}
-  |G|=\dim V_{\mathrm{reg}}
+\[\begin{aligned}
+  &|G|=\dim V_{\mathrm{reg}}
   &=\dim\Bigl(\bigoplus_{i=1}^{s}V_i^{(\dim V_i)}\Bigr)\\
   &=\underbrace{\dim(V_1\oplus\cdots\oplus V_1)}_{\dim V_1\text{ 个}}
-   +\cdots+
-   \underbrace{\dim(V_s\oplus\cdots\oplus V_s)}_{\dim V_s\text{ 个}}\\
+  &+\cdots+
+  &\underbrace{\dim(V_s\oplus\cdots\oplus V_s)}_{\dim V_s\text{ 个}}\\
   &=(\dim V_1)^2+\cdots+(\dim V_s)^2=\sum_{i=1}^{s}(\dim V_i)^2 .
-\end{align*}
+\end{aligned}\]
 \end{proof}
 
 作为进一步的讨论, 我们考虑张量积的分解公式.
@@ -667,14 +667,14 @@ $\rho(f)\in\operatorname{End}_G(V)$.
 
 \begin{proof}
 对任意 $h\in G$,
-\begin{align*}
-  \rho(f)(h\cdot v)
+\[\begin{aligned}
+  &\rho(f)(h\cdot v)
   &=\frac{1}{|G|}\sum_{g}f(g)\rho(g)(h\cdot v)
-   =\frac{1}{|G|}\sum_{g}f(g)\,gh\cdot v\\
+  &=\frac{1}{|G|}\sum_{g}f(g)\,gh\cdot v\\
   &=\frac{1}{|G|}\sum_{g}f(g)\,h(h^{-1}gh)\cdot v
-   =h\cdot\frac{1}{|G|}\sum_{g}f(hgh^{-1})\,g\cdot v
-   =h\cdot\rho(f)(v),
-\end{align*}
+  &=h\cdot\frac{1}{|G|}\sum_{g}f(hgh^{-1})\,g\cdot v
+  &=h\cdot\rho(f)(v),
+\end{aligned}\]
 其中用到了 $f$ 为类函数.
 \end{proof}
 
@@ -1492,16 +1492,15 @@ $V_1,V_2$ 分别为 $G_1,G_2$ 的表示, 即 $\rho_i\colon G_i\to\mathrm{GL}_{V_
 
 \begin{proof}
 只需证 $(\chi_{\rho_1\#\rho_2},\chi_{\rho_1\#\rho_2})=1$. 事实上,
-\begin{align*}
-  (\chi_{\rho_1\#\rho_2},\chi_{\rho_1\#\rho_2})
+\[\begin{aligned}
+  &(\chi_{\rho_1\#\rho_2},\chi_{\rho_1\#\rho_2})\\
   &=\frac{1}{|G_1||G_2|}\sum_{(g_1,g_2)\in G_1\times G_2}
-    \chi_{\rho_1\#\rho_2}(g_1,g_2)\,\chi_{\rho_1\#\rho_2}\bigl((g_1,g_2)^{-1}\bigr)\\
+   \chi_{\rho_1\#\rho_2}(g_1,g_2)\,\chi_{\rho_1\#\rho_2}\bigl((g_1,g_2)^{-1}\bigr)\\
   &=\frac{1}{|G_1||G_2|}\sum_{g_1\in G_1}\sum_{g_2\in G_2}
-    \chi_{\rho_1}(g_1)\chi_{\rho_2}(g_2)\,
-    \chi_{\rho_1}(g_1^{-1})\chi_{\rho_2}(g_2^{-1})\\
+   \chi_{\rho_1}(g_1)\chi_{\rho_2}(g_2)\chi_{\rho_1}(g_1^{-1})\chi_{\rho_2}(g_2^{-1})\\
   &=\Bigl(\frac{1}{|G_1|}\sum_{g_1}\chi_{\rho_1}(g_1)\chi_{\rho_1}(g_1^{-1})\Bigr)
-    \Bigl(\frac{1}{|G_2|}\sum_{g_2}\chi_{\rho_2}(g_2)\chi_{\rho_2}(g_2^{-1})\Bigr)=1 .
-\end{align*}
+   \Bigl(\frac{1}{|G_2|}\sum_{g_2}\chi_{\rho_2}(g_2)\chi_{\rho_2}(g_2^{-1})\Bigr)=1 .
+\end{aligned}\]
 \end{proof}
 
 由这个引理, 我们就给出了 Abel 群 $G$ 的所有不可约表示:

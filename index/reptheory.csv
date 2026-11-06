@@ -26,7 +26,7 @@
 定义,可除代数,def:division-algebra,代数,notes/reptheory/chapters/ch01.tex,"称代数 是可除代数, 若 中每个非零元都有逆元."
 定理,Frobenius,thm:frobenius,代数,notes/reptheory/chapters/ch01.tex,"上有限维可除代数只有 , , ."
 命题,,prop:intersection,代数,notes/reptheory/chapters/ch01.tex,"设 为 的子代数, 则 仍为 的子代数."
-定义,外直和,def:direct-sum,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 的外直和记作 , 定义为 的 Cartesian 积: [ A_1 A_2= (a_1,a_2) a_i A_i, i=1,2 , ] 直和上运算定义如下: & (a_1,a_2)+(a_1',a_2')=(a_1+a_1"
+定义,外直和,def:direct-sum,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 的外直和记作 , 定义为 的 Cartesian 积: [ A_1 A_2= (a_1,a_2) a_i A_i, i=1,2 , ] 直和上运算定义如下: [ & (a_1,a_2)+(a_1',a_2')=(a_1+a"
 注,,rem:direct-sum-not-subalgebra,代数,notes/reptheory/chapters/ch01.tex,"都不是 的子代数. 按 Definition 的第 (1) 条, 子代数必须与 有相同的单位元; 而 的单位元是 , 的单位元是 , 二者不同."
 例,,ex:block-diagonal-algebra,代数,notes/reptheory/chapters/ch01.tex,"设 , 均为 -代数, 则 [ M_ n_1 ( ) M_ n_2 ( ) = A&0 0&B | A M_ n_1 ( ), B M_ n_2 ( ) . ] 代数 . 设 , , 则 均为 的子代数, 由 生成的子代数为 . 没有内直和"
 定义,理想,def:ideal,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 称子空间 是 的左 (右) 理想, 若 ( ). 若 既是左理想, 又是右理想, 则称 是理想. 左理想记作 , 右理想记作 , 理想记作 ."
@@ -35,7 +35,7 @@
 定义,单代数,def:simple-algebra,代数,notes/reptheory/chapters/ch01.tex,"称代数 是单代数, 若 没有非平凡理想 (即只有 和 本身)."
 定理,,thm:simple-over-C,代数,notes/reptheory/chapters/ch01.tex,上任意有限维单代数都同构于某个全矩阵代数 .
 例,,ex:quaternion-simple,代数,notes/reptheory/chapters/ch01.tex,"是单代数. 设 , 若 , 取 . 既然 是可除代数, 故 , 有 , . 于是 的理想只有 和 , 故为单代数."
-例,,ex:FZ3-decomposition,代数,notes/reptheory/chapters/ch01.tex,"回忆 , . 令 , 仍取 , 其中 , 则 为子空间. 注意 对乘法封闭 (因 ), 但不含单位元 , 故不是子代数. 下面说明 . 因为 是 Abel 群, 只需证 ; 又只需对基验证. g^ a &= g 3 (1+ g+ ^2 g^"
+例,,ex:FZ3-decomposition,代数,notes/reptheory/chapters/ch01.tex,"回忆 , . 令 , 仍取 , 其中 , 则 为子空间. 注意 对乘法封闭 (因 ), 但不含单位元 , 故不是子代数. 下面说明 . 因为 是 Abel 群, 只需证 ; 又只需对基验证. [ &g a=g 13 (1+ g+ ^2g^2"
 定义,商代数,def:quotient-algebra,代数,notes/reptheory/chapters/ch01.tex,称在上述乘法定义下形成的代数 为 模去 形成的商代数.
 注,,rem:ideal-necessary,代数,notes/reptheory/chapters/ch01.tex,"为理想是必要的, 我们用一个例子来说明: 取全矩阵代数 , 设 . 显然, 为子空间而不是理想."
 例,,ex:direct-sum-quotient,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 记 , 那么 , ."
