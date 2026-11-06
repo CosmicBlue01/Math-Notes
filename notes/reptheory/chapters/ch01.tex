@@ -74,7 +74,8 @@
 \end{definition}
 
 \begin{remark}\label{rem:unit-in-group}
-子群的定义中对单位元没有额外要求, 因为由乘法封闭与逆元封闭可推出单位元属于该子集.
+子群的定义中对单位元没有额外要求: 若 $H$ 非空, 且对乘法与取逆封闭,
+则取 $h\in H$, 有 $h^{-1}\in H$, 从而 $hh^{-1}=1\in H$.
 \end{remark}
 
 \begin{remark}\label{rem:unit-mismatch}
@@ -237,7 +238,7 @@ $\lambda\colon A_1\hookrightarrow A_1\times A_2$, $a_1\mapsto(a_1,0)$, 对 $A_2$
   a_1\cdot a_2=(a_1,0)\cdot(0,a_2)=(0,0)=0 .
 \]
 
-内直和在时, 内外直和没有本质区别, 故统一记作 $A_1\oplus A_2$, 而不加区分.
+内直和存在时, 内外直和没有本质区别, 故统一记作 $A_1\oplus A_2$, 而不加区分.
 
 \begin{remark}\label{rem:direct-sum-not-subalgebra}
 $A_1,A_2$ 都不是 $A_1\oplus A_2$ 的子代数. 按 Definition \ref{def:subalgebra} 的第 (1) 条, 子代数必须与 $A_1\oplus A_2$ 有相同的单位元; 而 $A_1$ 的单位元是 $(1,0)$, $A_1\oplus A_2$ 的单位元是 $(1,1)$, 二者不同.
@@ -253,7 +254,8 @@ $A_1,A_2$ 都不是 $A_1\oplus A_2$ 的子代数. 按 Definition \ref{def:subalg
     \ \middle|\ A\in M_{n_1}(\mathbb{F}),\ B\in M_{n_2}(\mathbb{F})\right\}.
   \]
   \item 代数 $\mathbb{F}[x]$. 设 $B_1=\mathbb{F}[x^2]$, $B_2=\mathbb{F}[x^3]$, 则 $B_1,B_2$ 均为 $\mathbb{F}[x]$ 的子代数,
-  空间的和 $B_1+B_2$ 构成代数 $\mathbb{F}\langle x^2,x^3\rangle$.
+  由 $B_1,B_2$ 生成的子代数为 $\mathbb{F}\langle x^2,x^3\rangle$.
+  注意线性空间的和 $B_1+B_2$ 并不对乘法封闭: $x^2\in B_1$, $x^3\in B_2$, 但 $x^5\notin B_1+B_2$.
   $B_1,B_2$ 没有内直和, 因为 $B_1\cap B_2=\mathbb{F}[x^6]\neq\{0\}$.
   此外, 外直和 $B_1\times B_2$ 与 $\mathbb{F}\langle x^2,x^3\rangle$ 不同构,
   因为对 $b_1\in B_1$, $b_2\in B_2$ 有

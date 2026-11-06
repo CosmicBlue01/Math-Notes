@@ -14,7 +14,7 @@
 例,,eg:algebra,代数,notes/reptheory/chapters/ch01.tex,"给定数域 , 多项式环 是 -代数. 给定数域 , 全体 阶方阵 是 -代数, 称为全矩阵代数. 设 为 -线性空间, 则 是 -代数. Hamilton 四元数 是 -代数, 其乘法表为 c|cccc & & & & & & & & & "
 例,,eg:group-algebra-Z2,代数,notes/reptheory/chapters/ch01.tex,"群 . 作同态 : [ 1 1&0 0&1 , g 0&1 1&0 . ] 于是 [ _2= _ 1&0 0&1 , 0&1 1&0 ] 为群代数."
 定义,子代数,def:subalgebra,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, , 称 为 的子代数, 若: (单位元必须和 中的一样); 在 的运算下构成 -代数."
-注,,rem:unit-in-group,代数,notes/reptheory/chapters/ch01.tex,"子群的定义中对单位元没有额外要求, 因为由乘法封闭与逆元封闭可推出单位元属于该子集."
+注,,rem:unit-in-group,代数,notes/reptheory/chapters/ch01.tex,"子群的定义中对单位元没有额外要求: 若 非空, 且对乘法与取逆封闭, 则取 , 有 , 从而 ."
 注,,rem:unit-mismatch,代数,notes/reptheory/chapters/ch01.tex,"对 Definition 中 (1) 的举例. 和 为 -代数, 存在嵌入 , 让 [ A_ n n A&0 0&0 . ] 在嵌入 意义下 . 但是 的单位元 , 故 不是 的子代数."
 例,,ex:poly-subalgebra,代数,notes/reptheory/chapters/ch01.tex,"为子代数. 设 为子代数, 且 , 那么 ( , 但一般默认 包含 , 故简记为 ). 考虑: ."
 命题,,prop:fx-subalgebra-fg,代数,notes/reptheory/chapters/ch01.tex,的每个子代数都形如 .
@@ -28,7 +28,7 @@
 命题,,prop:intersection,代数,notes/reptheory/chapters/ch01.tex,"设 为 的子代数, 则 仍为 的子代数."
 定义,外直和,def:direct-sum,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 的外直和记作 , 定义为 的 Cartesian 积: [ A_1 A_2= (a_1,a_2) a_i A_i, i=1,2 , ] 直和上运算定义如下: & (a_1,a_2)+(a_1',a_2')=(a_1+a_1"
 注,,rem:direct-sum-not-subalgebra,代数,notes/reptheory/chapters/ch01.tex,"都不是 的子代数. 按 Definition 的第 (1) 条, 子代数必须与 有相同的单位元; 而 的单位元是 , 的单位元是 , 二者不同."
-例,,ex:block-diagonal-algebra,代数,notes/reptheory/chapters/ch01.tex,"设 , 均为 -代数, 则 [ M_ n_1 ( ) M_ n_2 ( ) = A&0 0&B | A M_ n_1 ( ), B M_ n_2 ( ) . ] 代数 . 设 , , 则 均为 的子代数, 空间的和 构成代数 . 没有内直和"
+例,,ex:block-diagonal-algebra,代数,notes/reptheory/chapters/ch01.tex,"设 , 均为 -代数, 则 [ M_ n_1 ( ) M_ n_2 ( ) = A&0 0&B | A M_ n_1 ( ), B M_ n_2 ( ) . ] 代数 . 设 , , 则 均为 的子代数, 由 生成的子代数为 . 注意线性空"
 定义,理想,def:ideal,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 称子空间 是 的左 (右) 理想, 若 ( ). 若 既是左理想, 又是右理想, 则称 是理想. 左理想记作 , 右理想记作 , 理想记作 ."
 注,,rem:summand-ideal,代数,notes/reptheory/chapters/ch01.tex,都是 的理想.
 例,,ex:matrix-left-ideals,代数,notes/reptheory/chapters/ch01.tex,"考虑全矩阵代数 . 记 为第 个矩阵单位, 为第 个标准基向量. 设 为左理想, 令 [ U= xB x ^ 1 n , B I_1 ^ 1 n ] 为 中所有行向量张成的子空间, 则 [ I_1= A M_n( ) A U . ] 事实上"
