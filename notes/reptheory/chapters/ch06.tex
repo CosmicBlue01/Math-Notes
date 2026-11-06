@@ -125,10 +125,10 @@ $\mathbb{R}^n$ 上的内积即为对称非退化的双线性函数.
   (f_1,f_2)=\frac{1}{|G|}\sum_{g}f_1(g)f_2(g^{-1})
   =\frac{1}{|G|}\sum_{g}f_2(g)f_1(g^{-1})=(f_2,f_1).
 \]
-非退化性: 设 $f_1\neq 0$, 取 $g\in G$ 使 $f_1(g)\neq 0$, 并令 $\delta_g\in(\mathbb{F}G)^*$
-为 $\delta_g(g')=1$ ($g'=g$), $\delta_g(g')=0$ ($g'\neq g$). 则
+非退化性: 设 $f_1\neq 0$, 取 $g\in G$ 使 $f_1(g)\neq 0$, 并令 $\delta_{g^{-1}}\in(\mathbb{F}G)^*$
+为 $\delta_{g^{-1}}(g')=1$ ($g'=g^{-1}$), $\delta_{g^{-1}}(g')=0$ ($g'\neq g^{-1}$). 则
 \[
-  (f_1,\delta_g)=\frac{1}{|G|}\sum_{h}f_1(h)\delta_g(h^{-1})=\frac{1}{|G|}f_1(g^{-1})\neq 0 .
+  (f_1,\delta_{g^{-1}})=\frac{1}{|G|}\sum_{h}f_1(h)\delta_{g^{-1}}(h^{-1})=\frac{1}{|G|}f_1(g)\neq 0 .
 \]
 故 $(\cdot,\cdot)$ 非退化.
 \end{proof}
@@ -1119,7 +1119,8 @@ $\dfrac{[G:Z_g]\,\chi_V(g)}{\chi_V(e)}$ 为代数整数.
 构造 $f=\sum_{h\in C_g}\rho(h)\in\operatorname{End}(V)$.
 断言 $f\in\operatorname{End}_G(V)$. 事实上, 对任意 $k\in G$,
 \[
-  f(k\cdot v)=\sum_{h}\rho(h)(k\cdot v)=\sum_{h}k\cdot(h\cdot v)
+  f(k\cdot v)=\sum_{h}\rho(h)\rho(k)(v)=\sum_{h}\rho(k)\rho(k^{-1}hk)(v)
+  =\sum_{h'\in C_g}k\cdot(h'\cdot v)
   =k\cdot\sum_{h}h\cdot v=k\cdot f(v).
 \]
 由 Schur 引理, $f=\lambda\,\mathrm{Id}_V$, 故

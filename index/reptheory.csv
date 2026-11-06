@@ -76,7 +76,7 @@
 定义,表示,def:representation,表示,notes/reptheory/chapters/ch03.tex,"设 为 -代数. 的一个表示是一个二元组 , 其中 是 -线性空间; , 是代数同态. 有时简称 为 的一个表示, 或称 为 的一个表示."
 例,,ex:representation-FZ2,表示,notes/reptheory/chapters/ch03.tex,"由 , [ g 0&1 1&0 , ] 得到 的一个表示 . 由 , [ g^j ^j, = ( n ), ] 得到 的一个表示 ."
 定理,,thm:rep-is-module,表示,notes/reptheory/chapters/ch03.tex,是 的一个表示当且仅当 是一个 -模.
-定义,群的表示,def:group-representation,表示,notes/reptheory/chapters/ch03.tex,"设 为群, 为 -线性空间. 称 为 的一个 (线性) 表示, 若存在代数同态 [ KG (V). ]"
+定义,群的表示,def:group-representation,表示,notes/reptheory/chapters/ch03.tex,"设 为群, 为 -线性空间. 称 为 的一个 (线性) 表示, 若存在代数同态 [ G (V). ]"
 例,,ex:FZ2-representation-model,表示,notes/reptheory/chapters/ch03.tex,"设 , 其中 , , , , 且 [ (g)= 0&1 1&0 . ] 规定 , 则 g _1&= (g)( _1)= 0&1 1&0 10= 01= _2, g _2&= (g)( _2)= 0&1 1&0 01= 10= _1 . 正则"
 命题,,prop:regular-module-exists,表示,notes/reptheory/chapters/ch03.tex,任何群代数都有正则模 (都对应唯一同态).
 定义,子表示,def:subrepresentation,表示,notes/reptheory/chapters/ch03.tex,"称 为 的子表示, 若对任意 , , 都有 ."
