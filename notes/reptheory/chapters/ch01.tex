@@ -50,7 +50,7 @@
 群 $\mathbb{Z}_2=\langle g \mid g^2=1\rangle$. 作同态 $\mathbb{Z}_2\to M_2(\mathbb{F})$:
 \[
   1\longmapsto \begin{pmatrix}1&0\\0&1\end{pmatrix},\qquad
-  -1\longmapsto \begin{pmatrix}0&1\\1&0\end{pmatrix}.
+  g\longmapsto \begin{pmatrix}0&1\\1&0\end{pmatrix}.
 \]
 
 于是
@@ -74,7 +74,7 @@
 \end{definition}
 
 \begin{remark}\label{rem:unit-in-group}
-群的定义中对单位元没有要求, 因为可由乘法封闭性推出.
+子群的定义中对单位元没有额外要求, 因为由乘法封闭与逆元封闭可推出单位元属于该子集.
 \end{remark}
 
 \begin{remark}\label{rem:unit-mismatch}
@@ -258,7 +258,8 @@ $A_1,A_2$ 都不是 $A_1\oplus A_2$ 的子代数. 按 Definition \ref{def:subalg
   此外, 外直和 $B_1\times B_2$ 与 $\mathbb{F}\langle x^2,x^3\rangle$ 不同构,
   因为对 $b_1\in B_1$, $b_2\in B_2$ 有
   $b_1\cdot b_2=0$,
-  这意味着 $B_1\times B_2$ 有零因子.
+  这意味着 $B_1\times B_2$ 有零因子; 而 $\mathbb{F}\langle x^2,x^3\rangle$ 是 $\mathbb{F}[x]$ 的子代数,
+  无零因子.
 \end{enumerate}
 \end{example}
 
@@ -290,7 +291,7 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
 考虑全矩阵代数 $M_n(\mathbb{F})$. 记 $E_{ij}$ 为第 $(i,j)$ 个矩阵单位, $e_j$ 为第 $j$ 个标准基向量.
   设 $I_1\trianglelefteq_l M_n(\mathbb{F})$ 为左理想, 令
   \[
-    U=\{xB \mid x\in \mathbb{F}^{n},\ B\in I_1\}\subseteq \mathbb{F}^{1\times n}
+    U=\{xB \mid x\in \mathbb{F}^{1\times n},\ B\in I_1\}\subseteq \mathbb{F}^{1\times n}
   \]
   为 $I_1$ 中所有行向量张成的子空间, 则
   \[
@@ -331,7 +332,7 @@ $A_1,A_2$ 都是 $A_1\oplus A_2$ 的理想.
 \end{definition}
 
 \begin{theorem}\label{thm:simple-over-C}
-$\mathbb{C}$ 上所有有限维单代数只有 $M_n(\mathbb{C})$.
+$\mathbb{C}$ 上任意有限维单代数都同构于某个全矩阵代数 $M_n(\mathbb{C})$.
 \end{theorem}
 
 \begin{example}\label{ex:quaternion-simple}
@@ -345,7 +346,8 @@ $\Rightarrow I=\mathbb{H}$. 于是 $\mathbb{H}$ 的理想只有 $\{0\}$ 和 $\ma
 回忆 $\mathbb{Z}_3=\langle g \mid g^3=1\rangle=\{1,g,g^2\}$,
 $\mathbb{F}\mathbb{Z}_3=\operatorname{span}_{\mathbb{F}}\{1,g,g^2\}$.
 令 $\mathbb{F}=\mathbb{C}$, 仍取 $a=\frac{1}{3}(1+\omega g+\omega^2 g^2)$, 其中 $\omega=\exp\left(\frac{2\pi i}{3}\right)$,
-则 $I=\operatorname{span}_{\mathbb{F}}\{a\}=\operatorname{span}_{\mathbb{C}}\{a\}\subseteq\mathbb{C}\mathbb{Z}_3$ 为子空间 (不是子代数!).
+则 $I=\operatorname{span}_{\mathbb{F}}\{a\}=\operatorname{span}_{\mathbb{C}}\{a\}\subseteq\mathbb{C}\mathbb{Z}_3$ 为子空间.
+注意 $I$ 对乘法封闭 (因 $a^2=a$), 但不含单位元 $1$, 故不是子代数.
 下面说明 $I\trianglelefteq\mathbb{C}\mathbb{Z}_3$. 因为 $\mathbb{Z}_3$ 是 Abel 群, 只需证
 $\mathbb{C}\mathbb{Z}_3\cdot I\subseteq I$; 又只需对基验证.
 \begin{align*}
