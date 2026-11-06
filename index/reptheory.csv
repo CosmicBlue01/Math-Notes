@@ -28,7 +28,7 @@
 命题,,prop:intersection,代数,notes/reptheory/chapters/ch01.tex,"设 为 的子代数, 则 仍为 的子代数."
 定义,外直和,def:direct-sum,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 的外直和记作 , 定义为 的 Cartesian 积: [ A_1 A_2= (a_1,a_2) a_i A_i, i=1,2 , ] 直和上运算定义如下: & (a_1,a_2)+(a_1',a_2')=(a_1+a_1"
 注,,rem:direct-sum-not-subalgebra,代数,notes/reptheory/chapters/ch01.tex,"都不是 的子代数. 按 Definition 的第 (1) 条, 子代数必须与 有相同的单位元; 而 的单位元是 , 的单位元是 , 二者不同."
-例,,ex:block-diagonal-algebra,代数,notes/reptheory/chapters/ch01.tex,"设 , 均为 -代数, 则 [ M_ n_1 ( ) M_ n_2 ( ) = A&0 0&B | A M_ n_1 ( ), B M_ n_2 ( ) . ] 代数 . 设 , , 则 均为 的子代数, 由 生成的子代数为 . 注意线性空"
+例,,ex:block-diagonal-algebra,代数,notes/reptheory/chapters/ch01.tex,"设 , 均为 -代数, 则 [ M_ n_1 ( ) M_ n_2 ( ) = A&0 0&B | A M_ n_1 ( ), B M_ n_2 ( ) . ] 代数 . 设 , , 则 均为 的子代数, 由 生成的子代数为 . 没有内直和"
 定义,理想,def:ideal,代数,notes/reptheory/chapters/ch01.tex,"设 为 -代数, 称子空间 是 的左 (右) 理想, 若 ( ). 若 既是左理想, 又是右理想, 则称 是理想. 左理想记作 , 右理想记作 , 理想记作 ."
 注,,rem:summand-ideal,代数,notes/reptheory/chapters/ch01.tex,都是 的理想.
 例,,ex:matrix-left-ideals,代数,notes/reptheory/chapters/ch01.tex,"考虑全矩阵代数 . 记 为第 个矩阵单位, 为第 个标准基向量. 设 为左理想, 令 [ U= xB x ^ 1 n , B I_1 ^ 1 n ] 为 中所有行向量张成的子空间, 则 [ I_1= A M_n( ) A U . ] 事实上"
@@ -57,7 +57,7 @@
 定义,有限长模,def:finite-length,模,notes/reptheory/chapters/ch02.tex,"称左 -模 为 的, 若 的任意子模升链与降链都稳定; 等价地, 有一组合成列 (Definition )."
 引理,Fitting,lem:fitting,模,notes/reptheory/chapters/ch02.tex,"设 是有限长左 -模, . 则存在 使 [ M= f^n f^n . ]"
 推论,,cor:end-local,模,notes/reptheory/chapters/ch02.tex,"设 是有限长左 -模且不可分解. 则 是局部环: 其中每个元素或为可逆元, 或为幂零元."
-引理,交换引理,lem:exchange,模,notes/reptheory/chapters/ch02.tex,"设 , 其中 有限长, 不可分解. 则存在 使 [ M=M_1 _ j j_0 N_j, N_ j_0 M_1 . ]"
+引理,交换引理,lem:exchange,模,notes/reptheory/chapters/ch02.tex,"设 , 其中 有限长, 均非零不可分解. 则存在 使 [ M=M_1 _ j j_0 N_j, N_ j_0 M_1 . ]"
 定理,Krull--Schmidt,thm:krull-schmidt,模,notes/reptheory/chapters/ch02.tex,"设 是有限长左 -模, 且 [ M=M_1 M_r=N_1 N_s ] 是两族非零不可分解子模的直和. 则 , 且适当重排下标后有 ."
 例,,ex:Mn-irreducible-modules,模,notes/reptheory/chapters/ch02.tex,"设 . 的不可约模形如 , 其中 , 即只有第一列非零的矩阵: [ _1 & 0 & & 0 _2 & 0 & & 0 & & & _n & 0 & & 0 . ] 回忆 , 记 . 取 [ e_k= n _ j=0 ^ n-1 ^ -kj"
 定义,合成列,def:composition-series,模,notes/reptheory/chapters/ch02.tex,称上述序列构成的链为 的一个合成列.
@@ -116,13 +116,13 @@
 例,,ex:group-reps,群的线性表示,notes/reptheory/chapters/ch05.tex,": , , . (sign representation): , 将偶排列映到 , 将奇排列映到 . (canonical representation): 设 为线性空间, 有基 . 对 , ( _1, , _n):= ( ( _1), "
 命题,,prop:can-faithful,群的线性表示,notes/reptheory/chapters/ch05.tex,"是忠实表示, 即它是单射."
 注,,rem:faithful-not-equiv,群的线性表示,notes/reptheory/chapters/ch05.tex,忠实的群表示与忠实的相应代数表示并不等价.
-命题,,prop:std-irreducible,群的线性表示,notes/reptheory/chapters/ch05.tex,"设域 , , 为 -线性空间, 则 的标准表示 是不可约表示."
+命题,,prop:std-irreducible,群的线性表示,notes/reptheory/chapters/ch05.tex,"设域 , , , 为 -线性空间, 则 的标准表示 是不可约表示."
 例,,ex:rep-constructions,群的线性表示,notes/reptheory/chapters/ch05.tex,". 设 为群, 为 -线性空间, 取 的两个线性表示 _1 G _ V_1 _m, _2 G _ V_2 _n . 定义直和表示 _1 _2 G _ V_1 V_2 , g (v_1+v_2)=g v_1+g v_2 . 设 , , 其中 "
 命题,,prop:hom-tensor,群的线性表示,notes/reptheory/chapters/ch05.tex,作为表示有同构 .
 注,,rem:rep-trace,群的线性表示,notes/reptheory/chapters/ch05.tex,"上面的讨论中同时出现了 与 , 容易混淆, 因为 作用在它们上时并不相同. 取 , 则 中的元素 不依赖于基的选取 (其中 ). 事实上由 有同构 , 而任取 有 , 故 ( _i f_i _i )(v)= _i f_i(v) _i= _i"
 引理,,lem:complement,群的线性表示,notes/reptheory/chapters/ch05.tex,"设线性空间 , 子空间 , 则 V=V_1 V_2 p V V_1 p|_ V_1 = _ V_1 ."
 引理,,lem:rep-complement,群的线性表示,notes/reptheory/chapters/ch05.tex,"设表示 , 子表示 , 则 V=V_1 V_2 p V V_1 p|_ V_1 = _ V_1 ."
-定理,Maschke,thm:maschke,群的线性表示,notes/reptheory/chapters/ch05.tex,"设 为群, 为域, 若 , 则 的所有有限维表示都是完全可约的, 即都可以写成不可约表示的直和."
+定理,Maschke,thm:maschke,群的线性表示,notes/reptheory/chapters/ch05.tex,"设 为有限群, 为域, 若 , 则 的所有有限维表示都是完全可约的, 即都可以写成不可约表示的直和."
 注,,rem:maschke-sharp,群的线性表示,notes/reptheory/chapters/ch05.tex,"关于 的情形, 已在第 3 章的 例子中讨论过: 此时 可约但不可分解. 因此 是 Maschke 定理成立的充要条件 (必要性由该反例说明, 充分性即定理本身)."
 定义,常表示与模表示,def:ordinary-modular,群的线性表示,notes/reptheory/chapters/ch05.tex,"称群代数 的表示为 的 (ordinary representation), 若 ; 否则称为 (modular representation)."
 定义,特征标,def:character,特征标,notes/reptheory/chapters/ch06.tex,"设 为群, 为 -线性空间, 为表示. 称 上的 -值函数 [ G , g ( (g)) ] 为表示 的特征标. 为强调所对应的表示, 常将 记为 或 ."
@@ -156,7 +156,7 @@
 定理,同构表示的判定,thm:iso-iff-char-finite,特征标,notes/reptheory/chapters/ch06.tex,"设 为有限群, 为 的两个有限维复表示, 则 当且仅当 ."
 例,,ex:sym-alt,特征标,notes/reptheory/chapters/ch06.tex,"对称表示 (symmetric representation) 与交错表示 (alternating representation). 仍设 为有限群, 为不可约复表示, 定义 [ V V V V, v_1 v_2 v_2 v_1 . ] "
 命题,,prop:sym-alt-sub,特征标,notes/reptheory/chapters/ch06.tex,与 都是 的子表示.
-命题,,prop:sym-alt-decomp,特征标,notes/reptheory/chapters/ch06.tex,.
+命题,,prop:sym-alt-decomp,特征标,notes/reptheory/chapters/ch06.tex,"设 , 则 ."
 注,,rem:tensor-sym-alt,特征标,notes/reptheory/chapters/ch06.tex,"(1) 一般而言, 不可约表示的张量积不再不可约. (2) 这里称 为 的二阶对称表示, 称 为 的二阶交错表示."
 定理,表示的重数,thm:multiplicity,特征标,notes/reptheory/chapters/ch06.tex,"若有限维表示 可写成不可约表示的直和 , 则 ."
 定理,,thm:regular-contains,特征标,notes/reptheory/chapters/ch06.tex,"每个不可约表示 都是正则表示的子表示, 且重数为 ."
@@ -232,7 +232,7 @@
 注,,rem:induced-character-notation,诱导表示,notes/reptheory/chapters/ch07.tex,"即为诱导表示的特征标, 后面为方便, 简写为 ."
 定理,Frobenius 互反律 I,thm:frobenius-reciprocity-1,诱导表示,notes/reptheory/chapters/ch07.tex,"设 为群, , , , 则 [ _ G (M^G,N ) _ H (M,N_H ). ]"
 定理,Frobenius 互反律 II,thm:frobenius-reciprocity-2,诱导表示,notes/reptheory/chapters/ch07.tex,"设 为群, , , , 则 [ _ G (M,N^G ) _ H (M_H,N). ]"
-引理,,lem:tensor-hom-dual,诱导表示,notes/reptheory/chapters/ch07.tex,.
+引理,,lem:tensor-hom-dual,诱导表示,notes/reptheory/chapters/ch07.tex,"设 为有限维复表示, 则 ."
 注,,rem:induction-proof-supplement,诱导表示,notes/reptheory/chapters/ch07.tex,"上述证明写得比较粗糙, 我们主要作如下几点补充说明. 首先是 与直和的作用: [ _ ( _ i I M_i, N ) _ i I _ (M_i,N). ] 定义 , ; 反向 , , 其中 . 直接验证可得 . 另一方面要说明: 有限直和"
 推论,,cor:frobenius-character,诱导表示,notes/reptheory/chapters/ch07.tex,", 其中 为 的表示的特征标, 为 的表示的特征标."
 定义,拓扑群,def:topological-group,紧群表示,notes/reptheory/chapters/ch08.tex,"称群 为拓扑群, 若 为 Hausdorff 空间; 群运算是连续的, 即 [ G G G, (g_1,g_2) g_1g_2, G G, g g^ -1 ] 都连续."
@@ -248,7 +248,7 @@
 定义,Haar 积分,def:haar,紧群表示,notes/reptheory/chapters/ch08.tex,"设 为紧群, 若对定义在 上的每一个实值连续函数 都存在一个实数, 记为 , 满足 线性性: , , ; 正定性: 若 , , 则 , 且取等当且仅当 ; 规范性: ; 左不变性: , , ; 右不变性: , , ; 可逆性: , ; 则称"
 注,,rem:haar-integral-axioms,紧群表示,notes/reptheory/chapters/ch08.tex,"; 若 满足上述 , 则它已经成为 Haar 积分 (即其余条件自动成立)."
 定理,Haar,thm:haar-existence,紧群表示,notes/reptheory/chapters/ch08.tex,任一紧群上有且仅有一种方式建立 Haar 积分.
-例,,ex:haar-finite,紧群表示,notes/reptheory/chapters/ch08.tex,"有限群在离散拓扑下的 Haar 积分. 有限群 上的全体函数构成 (回顾 6.2), 则 , 即 满足 Haar 积分定义中的各个条件. 则 [ _G f_1(x) , x= f,f_1 =f(f_1). ] 由左不变性: ."
+例,,ex:haar-finite,紧群表示,notes/reptheory/chapters/ch08.tex,"有限群在离散拓扑下的 Haar 积分. 有限群 上的全体函数构成 (回顾 6.2), 则 , 即 满足 Haar 积分定义中的各个条件. 则 [ _G f_1(x) , x= f,f_1 =f(f_1). ] 由左不变性: . 取 得 , "
 命题,,prop:haar-integral-triangle,紧群表示,notes/reptheory/chapters/ch08.tex,.
 定义,,def:complex-continuous,紧群表示,notes/reptheory/chapters/ch08.tex,"上复值函数 , 其中 为实值函数. 若 都连续, 称 为连续复值函数."
 命题,,prop:haar-conjugate,紧群表示,notes/reptheory/chapters/ch08.tex,.

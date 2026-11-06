@@ -29,7 +29,7 @@ $V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
 \begin{proof}
 \mbox{}\par\vspace{-0.2em}
 \begin{enumerate}
-\item 设 $\rho\colon G\to\mathrm{GL}_V$ 为同态, 要找 $\rho'\colon KG\to\operatorname{End}(V)$.
+\item 设 $\rho\colon G\to\mathrm{GL}_V$ 为同态, 要找 $\rho'\colon \mathbb{F}G\to\operatorname{End}(V)$.
 定义
 \begin{equation*}
   \rho'\colon\sum_{g\in G}a_g\,g\longmapsto\sum_{g\in G}a_g\,\rho(g),
@@ -43,7 +43,7 @@ $V$ 为 $G$ 的群表示当且仅当 $V$ 为 $\mathbb{F}G$ 的代数表示.
 \end{align*}
 故 $\rho'$ 为代数同态.
 
-\item 设 $\rho'\colon KG\to\operatorname{End}(V)$ 为代数同态, 定义 $\rho=\rho'|_G\colon G\to\operatorname{End}(V)$.
+\item 设 $\rho'\colon \mathbb{F}G\to\operatorname{End}(V)$ 为代数同态, 定义 $\rho=\rho'|_G\colon G\to\operatorname{End}(V)$.
 由 $\rho'(e)=\operatorname{Id}$ 及 $\forall g\in G$ 存在 $g^{-1}$ 使 $gg^{-1}=e$, 得
 \begin{equation*}
   \operatorname{Id}=\rho'(e)=\rho'(gg^{-1})=\rho'(g)\rho'(g^{-1})=\rho(g)\rho(g^{-1}),
@@ -100,7 +100,7 @@ $\rho_{\mathrm{can}}$ 是忠实表示, 即它是单射.
 \end{remark}
 
 \begin{proposition}\label{prop:std-irreducible}
-设域 $\mathbb{F}$, $\operatorname{char}\mathbb{F}\ndivides n$, $V$ 为 $\mathbb{F}$-线性空间, 则 $S_n$ 的标准表示 $V_1$ 是不可约表示.
+设域 $\mathbb{F}$, $n\ge2$, $\operatorname{char}\mathbb{F}\ndivides n$, $V$ 为 $\mathbb{F}$-线性空间, 则 $S_n$ 的标准表示 $V_1$ 是不可约表示.
 \end{proposition}
 
 \begin{proof}
@@ -358,7 +358,7 @@ $f_i(v)=a_i$, 故
 \end{proof}
 
 \begin{theorem}[Maschke]\label{thm:maschke}
-设 $G$ 为群, $\mathbb{F}$ 为域, 若 $\operatorname{char}\mathbb{F}\ndivides|G|$, 则 $G$ 的所有有限维表示都是完全可约的,
+设 $G$ 为有限群, $\mathbb{F}$ 为域, 若 $\operatorname{char}\mathbb{F}\ndivides|G|$, 则 $G$ 的所有有限维表示都是完全可约的,
 即都可以写成不可约表示的直和.
 \end{theorem}
 

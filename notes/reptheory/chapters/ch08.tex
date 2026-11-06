@@ -82,7 +82,7 @@ $\mathrm{SL}_n(\mathbb{C})$ 都不紧.
 \[
   A_k=\operatorname{diag}\Bigl(k,1,\dots,1,\frac1k\Bigr),
 \]
-则 $|A_k|=1$, 而
+则 $\det A_k=1$, 而
 \[
   \|A_k\|_F=\sqrt{k^2+1+\cdots+1+\frac{1}{k^2}}\xrightarrow{k\to\infty}\infty,
 \]
@@ -126,7 +126,7 @@ $\mathrm{SO}(n)$ 是 $\mathrm{GL}_n(\mathbb{R})$ 的极大连通紧子群.
 
   考虑 $\pi\colon(\mathbb{R},+)\to S^1$, $a\mapsto e^{2\pi ia}$.
   $\pi$ 是群同态且连续, 故 $\pi$ 是拓扑群同态. $\ker\pi=\mathbb{Z}$, 是闭集.
-  同时 $\pi$ 也是开映射: 想象 $\pi$ 把实数轴``缠绕''在 $S^1$ 上, 无迁一段长度为 $1$ 的
+  同时 $\pi$ 也是开映射: 想象 $\pi$ 把实数轴``缠绕''在 $S^1$ 上, 任意一段长度为 $1$ 的
   区间在 $S^1$ 上恰好绕一圈. 这告诉我们一个有趣的结果:
   \[
     \mathbb{R}/\mathbb{Z}\cong S^1 .
@@ -190,6 +190,8 @@ $\int_G f(x)\,\mathrm{d}x$, 满足
   \]
   由左不变性: $\displaystyle\int_G f(gx)\,\mathrm{d}x=\int_G f(x)\,\mathrm{d}x
   \Longrightarrow f(g)=f(1)$.
+  取 $f_1\equiv1$ 得 $\displaystyle\int_G1\,\mathrm{d}x=1$, 即 $|G|f(1)=1$,
+  故 $f(1)=\dfrac1{|G|}$, 从而 $\displaystyle\int_Gf_1(x)\,\mathrm{d}x=\frac1{|G|}\sum_{g\in G}f_1(g)$.
 \end{example}
 
 \begin{proposition}\label{prop:haar-integral-triangle}
@@ -203,7 +205,8 @@ $\bigl|\int_G f\,\mathrm{d}x\bigr|\le\int_G|f|\,\mathrm{d}x$.
 \]
 故
 \[
-  \int_G|f(x)|\,\mathrm{d}x\ge-\int_G f(x)\,\mathrm{d}x,
+  \int_G|f(x)|\,\mathrm{d}x\ge-\int_G f(x)\,\mathrm{d}x,\qquad
+  \int_G|f(x)|\,\mathrm{d}x\ge\int_G f(x)\,\mathrm{d}x,
 \]
 从而 $\displaystyle\int_G|f(x)|\,\mathrm{d}x\ge\Bigl|\int_G f(x)\,\mathrm{d}x\Bigr|$.
 \end{proof}
@@ -270,7 +273,7 @@ $f(x,y)=f(z)$, $z=(x,y)\in G\times H$, 则
 \end{theorem}
 
 \begin{proof}
-只要证明 $V$ 的任一子表示都是 $V$ 的正交项. 令 $V_1\subset V$ 为 $V$ 的一个子表示,
+只要证明 $V$ 的任一子表示都是 $V$ 的正交补. 令 $V_1\subset V$ 为 $V$ 的一个子表示,
 令 $V_2=V_1^{\perp}=\{v\in V\mid(v,v_1)=0,\ \forall v_1\in V_1\}$.
 下面我们说明 $V=V_1\oplus V_1^{\perp}$. 事实上, 作为线性空间 $V=V_1\oplus V_1^{\perp}$;
 只需说明 $V_1^{\perp}$ 也是 $G$ 的子表示即可: 对 $v_2\in V_1^{\perp}$, $g\in G$,
@@ -419,15 +422,14 @@ $\operatorname{char}K\ndivides|G|$; 此处我们已说明 $V$ 是 $\mathbb{R}$ �
 即右图交换, 故 $\widetilde C$ 为 $G$-模同态, 即 $\widetilde C\in\operatorname{Hom}_G(V,U)$.
 
 1° 若 $V\ncong U$, 由紧群的 Schur 引理, $\operatorname{Hom}_G(V,U)=0\Rightarrow\widetilde C=0$.
-而 $C$ 是任取的, 取 $C=e_{kl}$ (其中 $e_{kl}$ 为矩阵单位, 在第 $k$ 行第 $l$ 列为 $1$,
-其余位置为 $0$), 则
+而 $C$ 是任取的, 取 $C=e_{ki}$ (其中 $e_{ki}$ 为矩阵单位, 在第 $k$ 行第 $i$ 列为 $1$,
+其余位置为 $0$), 则 $\widetilde C=0$. 其 $(l,j)$ 元为
 \[
-  \widetilde C=\int_G\gamma(g)\,e_{kl}\,\rho(g)^{-1}\,\mathrm{d}g
-  =\int_G b_{kj}(g)\,e_{kl}\,a_{ij}(g)\,\mathrm{d}g
-  =\Bigl(\int_G b_{kj}(g)\,a_{ij}(g)\,\mathrm{d}g\Bigr)e_{kl}=0,
+  \widetilde C_{lj}=\int_G\bigl(\gamma(g^{-1})\,e_{ki}\,\rho(g)\bigr)_{lj}\,\mathrm{d}g
+  =\int_G b_{lk}(g^{-1})\,a_{ij}(g)\,\mathrm{d}g
+  =\int_G\overline{b_{kl}(g)}\,a_{ij}(g)\,\mathrm{d}g .
 \]
-取 $C$ 的 $(l,j)$ 位置, 即得 $\displaystyle\int_G b_{kj}(g)a_{ij}(g)\,\mathrm{d}g=0$,
-即 $(a_{ij},b_{kl})=0$.
+故 $\displaystyle\int_G\overline{b_{kl}(g)}\,a_{ij}(g)\,\mathrm{d}g=0$, 即 $(a_{ij},b_{kl})=0$.
 
 2° 若 $V\cong U$, 由 Schur 引理, $\operatorname{Hom}_G(V,U)=\mathbb{C}\,\mathrm{Id}$.
 则 $\widetilde C=\lambda I_n$, $\operatorname{Tr}(\widetilde C)=n\lambda$. 又 $C=e_{kl}$, $\operatorname{Tr}(C)=\delta_{kl}$, 则

@@ -44,7 +44,7 @@ $\Phi$ 是加群同态, 下面说明它是 $R$-模同态: 对 $r'\in R$,
 \[
   f_m(rr')=(rr')\cdot m=r\cdot(r'\cdot m)=r\cdot f_m(r').
 \]
-最后说明 $\Phi\circ\Psi=\mathrm{Id}_M$ 且 $\Psi\circ\Phi=\mathrm{Id}$.
+最后说明 $\Phi\circ\Psi=\mathrm{Id}_M$ 且 $\Psi\circ\Phi=\mathrm{Id}_{\operatorname{Hom}_R(R,M)}$.
 一方面 $\Phi\circ\Psi\colon M\to M$,
 \[
   (\Phi\circ\Psi)(m)=\Phi(f_m)=f_m(1_R)=1_R\cdot m=m .
@@ -343,7 +343,7 @@ $H\subseteq Z(G)$ 时, 当 $g\notin H$ 有 $\chi_{V_H^G}(g)=0$; 故只需看 $g\
 又两边维数相同, 故 $\Psi$ 是双射. 最后说明 $\Psi$ 是同态: 对 $g'\in G$,
 \begin{align*}
   \Psi\bigl(g'\cdot(g\otimes u\otimes v)\bigr)
-  &=\Psi\bigl(g'g\otimes u\otimes g'\cdot v\bigr)
+  &=\Psi\bigl(g'g\otimes u\otimes v\bigr)
    =g'g\otimes u\otimes (g'g)\cdot v\\
   &=g'\cdot(g\otimes u\otimes g\cdot v)=g'\cdot\Psi(g\otimes u\otimes v).
 \end{align*}
@@ -424,6 +424,7 @@ $\chi^G$ 即为诱导表示的特征标, 后面为方便, $V_H^G$ 简写为 $V^G
 \end{proof}
 
 \begin{lemma}\label{lem:tensor-hom-dual}
+设 $N$ 为有限维复表示, 则
 $\mathbb{C}G\otimes_{\mathbb{C}H}N\cong\operatorname{Hom}_{\mathbb{C}H}(\mathbb{C}G,N)$.
 \end{lemma}
 

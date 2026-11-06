@@ -509,6 +509,7 @@ $\mathrm{Sym}^2(V)$, 另一个类似. 对 $\alpha\in\mathrm{Sym}^2(V)$ 与 $g\in
 \end{proof}
 
 \begin{proposition}\label{prop:sym-alt-decomp}
+设 $\operatorname{char}\mathbb{F}\ne2$, 则
 $V\otimes V\cong\mathrm{Sym}^2(V)\oplus\mathrm{Alt}^2(V)$.
 \end{proposition}
 
@@ -844,7 +845,7 @@ $C_3=\{(123),(132)\}$):
 \[
   b=-\frac{1+3a}{2},\qquad d=-\frac{2+3c}{2};
 \]
-再由 $\chi_2$, $\chi_3$ 的范数 (即 $C_1$ 列的"自正交"关系)
+由于 $S_3$ 中每个元素与其逆共轭, 故特征标取实值. 再由 $\chi_2$, $\chi_3$ 的范数 (即 $C_1$ 列的"自正交"关系)
 \[
   1+3a^2+2b^2=6,\qquad 4+3c^2+2d^2=6
 \]
@@ -1134,9 +1135,10 @@ $\dfrac{[G:Z_g]\,\chi_V(g)}{\chi_V(e)}$ 为代数整数.
 \]
 故 $\lambda=\dfrac{[G:Z_g]\chi_V(g)}{\chi_V(e)}$.
 
-再说明 $\lambda$ 是代数整数. 由于 $\mathbb{C}G$ 作为正则表示可写为不可约表示的直和,
-对每个 $k\in G$, 左乘 $k$ 在 $\mathbb{C}G$ 的这组基下对应的矩阵是置换矩阵, 从而是整数矩阵;
-于是左乘 $\sum_{h\in C_g}h$ 对应的矩阵也是整数矩阵, 其特征值 $\lambda$ 为代数整数.
+再说明 $\lambda$ 是代数整数. 在 $\mathbb{C}G$ 的自然基 $G$ 下, 对每个 $k\in G$,
+左乘 $k$ 对应的矩阵是置换矩阵, 从而是整数矩阵;
+于是左乘 $\sum_{h\in C_g}h$ 对应的矩阵也是整数矩阵. 该线性变换在不可约分量 $V$ 上
+的限制为 $\lambda\operatorname{Id}_V$, 故 $\lambda$ 是这个整数矩阵的特征值, 从而是代数整数.
 \end{proof}
 
 \begin{theorem}[整除定理]\label{thm:degree-divides-order}
@@ -1246,7 +1248,7 @@ $N_{ij}^k=(\chi_k,\chi_i\chi_j)=\dfrac{1}{|G|}\sum_g\chi_k(g)\chi_i(g)\chi_j(g)$
 \]
 \[
   N_{55}^3=N_{55}^4=1,\quad
-  N_{55}^5=\frac18\bigl(2\cdot2\cdot4+1\cdot(-2)\cdot4\bigr)=0 .
+  N_{55}^5=\frac18\bigl(1\cdot2^3+1\cdot(-2)^3\bigr)=0 .
 \]
 
 因此 $V_5\otimes V_5=V_1\oplus V_2\oplus V_3\oplus V_4$.
@@ -1366,16 +1368,16 @@ $\mathrm{FSch}(V)$ 只能取 $-1,0,1$ 三个值, 且
 \end{theorem}
 
 \begin{proof}
-设 $\chi=\chi_V$. $\rho(g)$ 在 $\mathrm{Sym}^2V$ 与 $\Lambda^2V$ 上的迹分别为
+设 $\chi=\chi_V$. $\rho(g)$ 在 $\mathrm{Sym}^2V$ 与 $\mathrm{Alt}^2V$ 上的迹分别为
 $(\chi(g)^2+\chi(g^2))/2$ 与 $(\chi(g)^2-\chi(g^2))/2$, 两者之差正是 $\chi(g^2)$. 于是
 \[
   \mathrm{FSch}(V)=\frac{1}{|G|}\sum_{g\in G}\chi(g^2)
-  =\dim(\mathrm{Sym}^2V)^G-\dim(\Lambda^2V)^G .
+  =\dim(\mathrm{Sym}^2V)^G-\dim(\mathrm{Alt}^2V)^G .
 \]
 $G$-不变双线性型构成的空间同构于 $\mathrm{Hom}_G(V,V^*)$. 若 $V\ncong V^*$, 由 Schur 引理
 $\mathrm{Hom}_G(V,V^*)=0$, 两项都是 $0$, 得 $\mathrm{FSch}(V)=0$. 若 $V\cong V^*$, 则
 $\dim\mathrm{Hom}_G(V,V^*)=1$: 不变双线性型在相差非零常数的意义下唯一. 它不可能既是对称型
-又是交错型 (因为 $\mathrm{Sym}^2V\cap\Lambda^2V=0$), 故上面两项中恰有一个为 $1$, 另一个为 $0$,
+又是交错型 (因为 $\mathrm{Sym}^2V\cap\mathrm{Alt}^2V=0$), 故上面两项中恰有一个为 $1$, 另一个为 $0$,
 从而 $\mathrm{FSch}(V)=\pm1$. 这也说明三种取值情形正好对应 $V\cong V^*$ 与否.
 \end{proof}
 
@@ -1568,7 +1570,7 @@ $G$ 是单群当且仅当对每个 $\chi\in\mathrm{Irr}$ 都有 $\ker\chi=\{1\}$
 ($\Rightarrow$) 若 $G$ 为单群, 则 $G$ 的正规子群只有 $\{1\}$ 与 $G$, 故
 $\ker\chi_\rho$ 只能是 $\{1\}$ 或 $G$.
 
-($\Leftarrow$) 反设 $G$ 有非平凡正规子群 $N$. 由
+($\Leftarrow$) 反设 $G$ 有非平凡真正规子群 $N$. 由
 Theorem \ref{thm:normal-subgroup-as-kernel} 知 $N$ 是一些 $\ker\chi$ 的交, 而每个
 $\ker\chi$ 只能是 $\{1\}$ 或 $G$, 其交也只能是 $\{1\}$ 或 $G$, 与 $N$ 非平凡矛盾.
 故 $G$ 为单群.

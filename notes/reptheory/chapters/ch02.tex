@@ -27,7 +27,7 @@
   称为\emph{正则模}.
   \item 设 $R$ 为环, $I\trianglelefteq R$ 为理想, 以 $(r,[r'])\mapsto[rr']$ 定义 $R$ 在 $R/I$ 上的作用,
   则 $R/I$ 是一个左 $R$-模. 这里需要验证该映射是良定义的:
-  若 $[r]=[r']$, 则 $r-r'\in I$, 从而 $rr''-r'r''\in I$, 即 $[rr'']=[r'r'']$,
+  若 $[r']=[r'']$, 则 $r'-r''\in I$, 从而 $r(r'-r'')\in I$, 即 $[rr']=[rr'']$,
   其中 $r,r',r''\in R$.
   \item 取整数环 $\mathbb{Z}$, $n\in\mathbb{N}^+$, 记 $\mathbb{Z}/n\mathbb{Z}=\{[0],[1],\dots,[n-1]\}$.
   它不能作用在 $\mathbb{Z}$ 上: 若不然, 设 $\mathbb{Z}/n\mathbb{Z}\times\mathbb{Z}\to\mathbb{Z}$ 为一个作用,
@@ -42,7 +42,8 @@
   \[
     [0]=\frac1n\cdot[n]=\frac1n\cdot n\cdot[1]=[1],
   \]
-  与 $n>1$ 矛盾. 故这样的作用只在 $n=1$ 时才可能存在.
+  与 $n>1$ 矛盾; $n=1$ 时 $\mathbb{Z}/1\mathbb{Z}$ 是零环, $[1]=[0]$, 由 $[0]\cdot1=0\neq1$ 同样矛盾.
+  故不存在这样的作用.
 \end{enumerate}
 \end{example}
 
@@ -150,7 +151,7 @@ $M=\operatorname{Im}f^n\oplus\ker f^n$. 若 $\ker f^n=M$, 则 $f^n=0$, $f$ 幂�
 \end{proof}
 
 \begin{lemma}[交换引理]\label{lem:exchange}
-设 $M=M_1\oplus M_2=N_1\oplus\cdots\oplus N_s$, 其中 $M$ 有限长, $M_1\ne0$ 不可分解. 则存在 $j_0$ 使
+设 $M=M_1\oplus M_2=N_1\oplus\cdots\oplus N_s$, 其中 $M$ 有限长, $M_1,N_1,\dots,N_s$ 均非零不可分解. 则存在 $j_0$ 使
 \[
   M=M_1\oplus\bigoplus_{j\ne j_0}N_j,\qquad N_{j_0}\cong M_1 .
 \]
@@ -217,11 +218,13 @@ $M_2\oplus\cdots\oplus M_r\cong M/M_1\cong\bigoplus_{j\ne j_0}N_j$ 是 $r-1$ 与
     =\frac{1}{n}\,\omega^{k}\sum_{m=0}^{n-1}\omega^{-km}g^{m}=\omega^{k}e_k,
   \]
   故 $U_k$ 为 $\mathbb{F}\mathbb{Z}_n$ 的不可约子模.
-  此外直接验证可得 $e_k^2=\frac1n e_k$, $e_ke_l=0$ ($k\neq l$), $\sum_{k=0}^{n-1}e_k=1$, 因此
+  此外直接验证可得 $e_k^2=e_k$, $e_ke_l=0$ ($k\neq l$), $\sum_{k=0}^{n-1}e_k=1$, 因此
   \[
     \mathbb{F}\mathbb{Z}_n=\bigoplus_{k=0}^{n-1}U_k .
   \]
-  \item 设 $M$ 为非零有限长左 $R$-模, 可以找到 $M$ 的一个不可约真子模 $M_1$, 并有嵌入 $M_1\hookrightarrow M$
+  \item 设 $M$ 为非零有限长左 $R$-模. 若 $M$ 不可约, 则 $0\subset M$ 即为合成列.
+  否则取 $M$ 的非零真子模, 并在其中取极小非零子模 $M_1$, 则 $M_1$ 不可约且 $M_1\subsetneq M$,
+  并有嵌入 $M_1\hookrightarrow M$
   与满射 $M\twoheadrightarrow M/M_1$. 记 $M_1'=M/M_1$, 即
   \[
     M_1\hookrightarrow M\twoheadrightarrow M/M_1=M_1' .
